@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "package": "net.theminecraftman.advancedvaluables.AV_Mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["AdvancedValuables_MixinClass"],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

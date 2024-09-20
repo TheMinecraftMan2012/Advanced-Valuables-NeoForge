@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": {
+      "item": "minecraft:stick"
+    },
+    "g": {
+      "item": "advancedvaluables:red_sapphire"
+    }
+  },
+  "pattern": [
+    " gg",
+    " f ",
+    " f "
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:red_sapphire_hoe"
+  }
+}

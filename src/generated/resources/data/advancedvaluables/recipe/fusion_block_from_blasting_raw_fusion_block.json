@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "fusion_gem",
+  "ingredient": {
+    "item": "advancedvaluables:raw_fusion_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:fusion_block"
+  }
+}

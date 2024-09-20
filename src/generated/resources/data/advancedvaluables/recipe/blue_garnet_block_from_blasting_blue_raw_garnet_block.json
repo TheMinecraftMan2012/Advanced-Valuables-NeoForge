@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "blue_garnet",
+  "ingredient": {
+    "item": "advancedvaluables:blue_raw_garnet_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:blue_garnet_block"
+  }
+}

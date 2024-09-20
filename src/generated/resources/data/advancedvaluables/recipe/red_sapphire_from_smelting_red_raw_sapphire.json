@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "red_sapphire",
+  "ingredient": {
+    "item": "advancedvaluables:red_raw_sapphire"
+  },
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:red_sapphire"
+  }
+}

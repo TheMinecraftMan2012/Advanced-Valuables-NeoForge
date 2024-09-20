@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "p": {
+      "item": "advancedvaluables:blue_sapphire"
+    },
+    "q": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " pp",
+    " q ",
+    " q "
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:blue_sapphire_hoe"
+  }
+}

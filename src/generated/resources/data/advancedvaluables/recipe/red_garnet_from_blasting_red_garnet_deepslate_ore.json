@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "red_garnet",
+  "ingredient": {
+    "item": "advancedvaluables:red_garnet_deepslate_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:red_garnet"
+  }
+}

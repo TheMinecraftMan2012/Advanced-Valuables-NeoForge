@@ -1,0 +1,8 @@
+{
+  "remove": [
+    "#advancedvaluables:needs_all_sapphire_tool"
+  ],
+  "values": [
+    "#minecraft:incorrect_for_iron_tool"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "advancedvaluables:yellow_garnet_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "advancedvaluables:yellow_garnet"
+  }
+}

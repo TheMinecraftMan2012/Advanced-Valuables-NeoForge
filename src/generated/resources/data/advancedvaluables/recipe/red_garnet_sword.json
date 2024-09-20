@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "advancedvaluables:red_garnet"
+    },
+    "b": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " a ",
+    " a ",
+    " b "
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:red_garnet_sword"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "fusion_gem",
+  "ingredient": {
+    "item": "advancedvaluables:raw_fusion_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:fusion_block"
+  }
+}

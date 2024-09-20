@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "h": {
+      "item": "advancedvaluables:red_sapphire"
+    },
+    "i": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " h ",
+    " h ",
+    " i "
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:red_sapphire_sword"
+  }
+}

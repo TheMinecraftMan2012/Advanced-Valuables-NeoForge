@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "j": {
+      "item": "advancedvaluables:blue_sapphire"
+    },
+    "k": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "jjj",
+    " k ",
+    " k "
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:blue_sapphire_pickaxe"
+  }
+}

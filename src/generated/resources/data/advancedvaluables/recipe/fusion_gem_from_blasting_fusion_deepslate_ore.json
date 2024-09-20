@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "fusion_gem",
+  "ingredient": {
+    "item": "advancedvaluables:fusion_deepslate_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:fusion_gem"
+  }
+}

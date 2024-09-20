@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "advancedvaluables:red_sapphire"
+    },
+    "d": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "cc ",
+    "cd ",
+    " d "
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:red_sapphire_axe"
+  }
+}

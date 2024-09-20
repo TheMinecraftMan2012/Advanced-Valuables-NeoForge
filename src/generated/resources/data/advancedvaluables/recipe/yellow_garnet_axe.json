@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "advancedvaluables:yellow_garnet"
+    },
+    "b": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "aa ",
+    "ab ",
+    " b "
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:yellow_garnet_axe"
+  }
+}

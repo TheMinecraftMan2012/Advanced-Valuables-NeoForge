@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "advancedvaluables:yellow_raw_garnet"
+    }
+  },
+  "pattern": [
+    "LLL",
+    "LLL",
+    "LLL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:yellow_raw_garnet_block"
+  }
+}

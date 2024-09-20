@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "e": {
+      "item": "advancedvaluables:red_sapphire"
+    },
+    "f": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " e ",
+    " f ",
+    " f "
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:red_sapphire_shovel"
+  }
+}

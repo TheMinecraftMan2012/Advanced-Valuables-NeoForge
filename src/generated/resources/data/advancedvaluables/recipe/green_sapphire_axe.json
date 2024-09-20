@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "l": {
+      "item": "advancedvaluables:green_sapphire"
+    },
+    "m": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "ll ",
+    "lm ",
+    " m "
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:green_sapphire_axe"
+  }
+}
