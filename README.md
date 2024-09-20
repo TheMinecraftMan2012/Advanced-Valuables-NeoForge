@@ -9,6 +9,8 @@ code is licensed as "All Rights Reserved". You can see this mod source code
 <br>
 for taking an idea how to make a minecraft mod.
 
-<p><strong>NOTE: IF THE SOURCE CODE IS FORKED BY ANYONE, WE WILL TAKE
+NOTE: IF THE SOURCE CODE IS FORKED BY ANYONE, WE WILL TAKE
 <br>
-ACTION AGAINST THE PERSON WHO FORKED THIS SOURCE CODE!</strong></p>
+ACTION AGAINST THE PERSON WHO FORKED THIS SOURCE CODE!
+
+By the way, download this mod from <a href="https://modrinth.com/mod/advanced-valuables" target="_blank">Modrinth</a>
