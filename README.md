@@ -1,16 +1,12 @@
 <a href="https://modrinth.com/mod/advanced-valuables">
-<img src="https://cdn.modrinth.com/data/ilvmemSJ/50835499dcebf0c1ce57ae07371786b8065820e3_96.webp">
+<img src="https://cdn.modrinth.com/data/ilvmemSJ/50835499dcebf0c1ce57ae07371786b8065820e3_96.webp" alt="Advanced-Valuables-Image">
 </a>
 
 # Advanced Valuables
-This source code can't be copied by anyone (except authors) as this source
+This source is freely opened as this source code is under MIT License.
 <br>
-code is licensed as "All Rights Reserved". You can see this mod source code
+You can edit, copy, fork, use, distribute, sell copies and so on. You can
 <br>
-for taking an idea how to make a minecraft mod.
-
-NOTE: IF THE SOURCE CODE IS FORKED BY ANYONE, WE WILL TAKE
-<br>
-ACTION AGAINST THE PERSON WHO FORKED THIS SOURCE CODE!
+also take an  idea how to make a minecraft mod.
 
 By the way, download this mod from <a href="https://modrinth.com/mod/advanced-valuables">Modrinth</a>
