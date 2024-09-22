@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "F": {
+    "a": {
       "item": "advancedvaluables:green_raw_sapphire"
     }
   },
   "pattern": [
-    "FFF",
-    "FFF",
-    "FFF"
+    "aaa",
+    "aaa",
+    "aaa"
   ],
   "result": {
     "count": 1,

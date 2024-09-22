@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "P": {
+    "a": {
       "item": "advancedvaluables:raw_ruby"
     }
   },
   "pattern": [
-    "PPP",
-    "PPP",
-    "PPP"
+    "aaa",
+    "aaa",
+    "aaa"
   ],
   "result": {
     "count": 1,

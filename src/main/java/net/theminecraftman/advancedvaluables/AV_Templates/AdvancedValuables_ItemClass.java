@@ -1,10 +1,12 @@
 package net.theminecraftman.advancedvaluables.AV_Templates;
 
+import net.minecraft.core.Holder;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.theminecraftman.advancedvaluables.AV_ToolsComponents.ToolsTier.AdvancedValuables_ToolsTier;
+import net.theminecraftman.advancedvaluables.AV_ToolsComponents.AdvancedValuables_ArmorMaterials;
+import net.theminecraftman.advancedvaluables.AV_ToolsComponents.AdvancedValuables_ToolsTier;
 import net.theminecraftman.advancedvaluables.AdvancedValuables;
 
 public class AdvancedValuables_ItemClass
@@ -106,6 +108,52 @@ public class AdvancedValuables_ItemClass
 
     public static final DeferredItem<Item> RUBY_SWORD = registerSwordItem("ruby_sword", AdvancedValuables_ToolsTier.RUBY_TOOL_TIER);
 
+    // -- Armors -- //
+    public static final DeferredItem<Item> RED_SAPPHIRE_HELMET = registerArmorItem("red_sapphire_helmet", AdvancedValuables_ArmorMaterials.RED_SAPPHIRE, ArmorItem.Type.HELMET, 15);
+    public static final DeferredItem<Item> RED_SAPPHIRE_CHESTPLATE = registerArmorItem("red_sapphire_chestplate", AdvancedValuables_ArmorMaterials.RED_SAPPHIRE, ArmorItem.Type.CHESTPLATE, 15);
+    public static final DeferredItem<Item> RED_SAPPHIRE_LEGGINGS = registerArmorItem("red_sapphire_leggings", AdvancedValuables_ArmorMaterials.RED_SAPPHIRE, ArmorItem.Type.LEGGINGS, 15);
+    public static final DeferredItem<Item> RED_SAPPHIRE_BOOTS = registerArmorItem("red_sapphire_boots", AdvancedValuables_ArmorMaterials.RED_SAPPHIRE, ArmorItem.Type.BOOTS, 15);
+
+    public static final DeferredItem<Item> BLUE_SAPPHIRE_HELMET = registerArmorItem("blue_sapphire_helmet", AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE, ArmorItem.Type.HELMET, 15);
+    public static final DeferredItem<Item> BLUE_SAPPHIRE_CHESTPLATE = registerArmorItem("blue_sapphire_chestplate", AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE, ArmorItem.Type.CHESTPLATE, 15);
+    public static final DeferredItem<Item> BLUE_SAPPHIRE_LEGGINGS = registerArmorItem("blue_sapphire_leggings", AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE, ArmorItem.Type.LEGGINGS, 15);
+    public static final DeferredItem<Item> BLUE_SAPPHIRE_BOOTS = registerArmorItem("blue_sapphire_boots", AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE, ArmorItem.Type.BOOTS, 15);
+
+    public static final DeferredItem<Item> GREEN_SAPPHIRE_HELMET = registerArmorItem("green_sapphire_helmet", AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE, ArmorItem.Type.HELMET, 15);
+    public static final DeferredItem<Item> GREEN_SAPPHIRE_CHESTPLATE = registerArmorItem("green_sapphire_chestplate", AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE, ArmorItem.Type.CHESTPLATE, 15);
+    public static final DeferredItem<Item> GREEN_SAPPHIRE_LEGGINGS = registerArmorItem("green_sapphire_leggings", AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE, ArmorItem.Type.LEGGINGS, 15);
+    public static final DeferredItem<Item> GREEN_SAPPHIRE_BOOTS = registerArmorItem("green_sapphire_boots", AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE, ArmorItem.Type.BOOTS, 15);
+
+    public static final DeferredItem<Item> RED_GARNET_HELMET = registerArmorItem("red_garnet_helmet", AdvancedValuables_ArmorMaterials.RED_GARNET, ArmorItem.Type.HELMET, 18);
+    public static final DeferredItem<Item> RED_GARNET_CHESTPLATE = registerArmorItem("red_garnet_chestplate", AdvancedValuables_ArmorMaterials.RED_GARNET, ArmorItem.Type.CHESTPLATE, 18);
+    public static final DeferredItem<Item> RED_GARNET_LEGGINGS = registerArmorItem("red_garnet_leggings", AdvancedValuables_ArmorMaterials.RED_GARNET, ArmorItem.Type.LEGGINGS, 18);
+    public static final DeferredItem<Item> RED_GARNET_BOOTS = registerArmorItem("red_garnet_boots", AdvancedValuables_ArmorMaterials.RED_GARNET, ArmorItem.Type.BOOTS, 18);
+
+    public static final DeferredItem<Item> BLUE_GARNET_HELMET = registerArmorItem("blue_garnet_helmet", AdvancedValuables_ArmorMaterials.BLUE_GARNET, ArmorItem.Type.HELMET, 18);
+    public static final DeferredItem<Item> BLUE_GARNET_CHESTPLATE = registerArmorItem("blue_garnet_chestplate", AdvancedValuables_ArmorMaterials.BLUE_GARNET, ArmorItem.Type.CHESTPLATE, 18);
+    public static final DeferredItem<Item> BLUE_GARNET_LEGGINGS = registerArmorItem("blue_garnet_leggings", AdvancedValuables_ArmorMaterials.BLUE_GARNET, ArmorItem.Type.LEGGINGS, 18);
+    public static final DeferredItem<Item> BLUE_GARNET_BOOTS = registerArmorItem("blue_garnet_boots", AdvancedValuables_ArmorMaterials.BLUE_GARNET, ArmorItem.Type.BOOTS, 18);
+
+    public static final DeferredItem<Item> PINK_GARNET_HELMET = registerArmorItem("pink_garnet_helmet", AdvancedValuables_ArmorMaterials.PINK_GARNET, ArmorItem.Type.HELMET, 18);
+    public static final DeferredItem<Item> PINK_GARNET_CHESTPLATE = registerArmorItem("pink_garnet_chestplate", AdvancedValuables_ArmorMaterials.PINK_GARNET, ArmorItem.Type.CHESTPLATE, 18);
+    public static final DeferredItem<Item> PINK_GARNET_LEGGINGS = registerArmorItem("pink_garnet_leggings", AdvancedValuables_ArmorMaterials.PINK_GARNET, ArmorItem.Type.LEGGINGS, 18);
+    public static final DeferredItem<Item> PINK_GARNET_BOOTS = registerArmorItem("pink_garnet_boots", AdvancedValuables_ArmorMaterials.PINK_GARNET, ArmorItem.Type.BOOTS, 18);
+
+    public static final DeferredItem<Item> YELLOW_GARNET_HELMET = registerArmorItem("yellow_garnet_helmet", AdvancedValuables_ArmorMaterials.YELLOW_GARNET, ArmorItem.Type.HELMET, 18);
+    public static final DeferredItem<Item> YELLOW_GARNET_CHESTPLATE = registerArmorItem("yellow_garnet_chestplate", AdvancedValuables_ArmorMaterials.YELLOW_GARNET, ArmorItem.Type.CHESTPLATE, 18);
+    public static final DeferredItem<Item> YELLOW_GARNET_LEGGINGS = registerArmorItem("yellow_garnet_leggings", AdvancedValuables_ArmorMaterials.YELLOW_GARNET, ArmorItem.Type.LEGGINGS, 18);
+    public static final DeferredItem<Item> YELLOW_GARNET_BOOTS = registerArmorItem("yellow_garnet_boots", AdvancedValuables_ArmorMaterials.YELLOW_GARNET, ArmorItem.Type.BOOTS, 18);
+
+    public static final DeferredItem<Item> FUSION_HELMET = registerArmorItem("fusion_helmet", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorItem.Type.HELMET, 50);
+    public static final DeferredItem<Item> FUSION_CHESTPLATE = registerArmorItem("fusion_chestplate", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorItem.Type.CHESTPLATE, 50);
+    public static final DeferredItem<Item> FUSION_LEGGINGS = registerArmorItem("fusion_leggings", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorItem.Type.LEGGINGS, 50);
+    public static final DeferredItem<Item> FUSION_BOOTS = registerArmorItem("fusion_boots", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorItem.Type.BOOTS, 50);
+
+    public static final DeferredItem<Item> RUBY_HELMET = registerArmorItem("ruby_helmet", AdvancedValuables_ArmorMaterials.RUBY, ArmorItem.Type.HELMET, 40);
+    public static final DeferredItem<Item> RUBY_CHESTPLATE = registerArmorItem("ruby_chestplate", AdvancedValuables_ArmorMaterials.RUBY, ArmorItem.Type.CHESTPLATE, 40);
+    public static final DeferredItem<Item> RUBY_LEGGINGS = registerArmorItem("ruby_leggings", AdvancedValuables_ArmorMaterials.RUBY, ArmorItem.Type.LEGGINGS, 40);
+    public static final DeferredItem<Item> RUBY_BOOTS = registerArmorItem("ruby_boots", AdvancedValuables_ArmorMaterials.RUBY, ArmorItem.Type.BOOTS, 40);
+
     private static DeferredItem<Item> registerPickaxeItem(String name, Tier tier)
     {
         return ITEMS.register(name, () -> new PickaxeItem(tier, new Item.Properties().attributes(PickaxeItem.createAttributes(tier, 1, -2.8f))));
@@ -154,6 +202,12 @@ public class AdvancedValuables_ItemClass
     private static DeferredItem<Item> registerFireResistantSwordItem(String name, Tier tier)
     {
         return ITEMS.register(name, () -> new SwordItem(tier, new Item.Properties().attributes(SwordItem.createAttributes(tier, 3, -2.4f)).fireResistant()));
+    }
+
+    // -- Armor -- //
+    private static DeferredItem<Item> registerArmorItem(String name, Holder<ArmorMaterial> armorMaterial, ArmorItem.Type armorType, int getDurability)
+    {
+        return ITEMS.register(name, () -> new ArmorItem(armorMaterial, armorType, new Item.Properties().durability(armorType.getDurability(getDurability))));
     }
 
     public static void register(IEventBus eventBus)

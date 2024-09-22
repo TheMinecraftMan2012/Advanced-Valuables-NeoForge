@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
+    "a": {
       "item": "advancedvaluables:red_sapphire"
     }
   },
   "pattern": [
-    "CCC",
-    "CCC",
-    "CCC"
+    "aaa",
+    "aaa",
+    "aaa"
   ],
   "result": {
     "count": 1,

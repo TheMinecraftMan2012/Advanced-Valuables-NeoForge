@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "K": {
+    "a": {
       "item": "advancedvaluables:yellow_garnet"
     }
   },
   "pattern": [
-    "KKK",
-    "KKK",
-    "KKK"
+    "aaa",
+    "aaa",
+    "aaa"
   ],
   "result": {
     "count": 1,

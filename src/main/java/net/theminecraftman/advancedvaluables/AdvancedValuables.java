@@ -3,6 +3,7 @@ package net.theminecraftman.advancedvaluables;
 import net.theminecraftman.advancedvaluables.AV_CMT.AdvancedValuables_CreativeModeTabs;
 import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_BlockClass;
 import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_ItemClass;
+import net.theminecraftman.advancedvaluables.AV_ToolsComponents.AdvancedValuables_ArmorMaterials;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -37,6 +38,8 @@ public class AdvancedValuables {
 
         AdvancedValuables_ItemClass.register(modEventBus);
         AdvancedValuables_BlockClass.register(modEventBus);
+
+        AdvancedValuables_ArmorMaterials.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

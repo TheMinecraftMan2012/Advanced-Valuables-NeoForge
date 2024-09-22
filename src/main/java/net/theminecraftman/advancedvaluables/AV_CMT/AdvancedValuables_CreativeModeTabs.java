@@ -151,6 +151,51 @@ public class AdvancedValuables_CreativeModeTabs
                 output.accept(AdvancedValuables_ItemClass.RUBY_SHOVEL);
                 output.accept(AdvancedValuables_ItemClass.RUBY_HOE);
                 output.accept(AdvancedValuables_ItemClass.RUBY_SWORD);
+
+                output.accept(AdvancedValuables_ItemClass.RED_SAPPHIRE_HELMET.get());
+                output.accept(AdvancedValuables_ItemClass.RED_SAPPHIRE_CHESTPLATE.get());
+                output.accept(AdvancedValuables_ItemClass.RED_SAPPHIRE_LEGGINGS.get());
+                output.accept(AdvancedValuables_ItemClass.RED_SAPPHIRE_BOOTS.get());
+
+                output.accept(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_HELMET.get());
+                output.accept(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_CHESTPLATE.get());
+                output.accept(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_LEGGINGS.get());
+                output.accept(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_BOOTS.get());
+
+                output.accept(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_HELMET.get());
+                output.accept(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_CHESTPLATE.get());
+                output.accept(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_LEGGINGS.get());
+                output.accept(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_BOOTS.get());
+
+                output.accept(AdvancedValuables_ItemClass.RED_GARNET_HELMET.get());
+                output.accept(AdvancedValuables_ItemClass.RED_GARNET_CHESTPLATE.get());
+                output.accept(AdvancedValuables_ItemClass.RED_GARNET_LEGGINGS.get());
+                output.accept(AdvancedValuables_ItemClass.RED_GARNET_BOOTS.get());
+
+                output.accept(AdvancedValuables_ItemClass.BLUE_GARNET_HELMET.get());
+                output.accept(AdvancedValuables_ItemClass.BLUE_GARNET_CHESTPLATE.get());
+                output.accept(AdvancedValuables_ItemClass.BLUE_GARNET_LEGGINGS.get());
+                output.accept(AdvancedValuables_ItemClass.BLUE_GARNET_BOOTS.get());
+
+                output.accept(AdvancedValuables_ItemClass.PINK_GARNET_HELMET.get());
+                output.accept(AdvancedValuables_ItemClass.PINK_GARNET_CHESTPLATE.get());
+                output.accept(AdvancedValuables_ItemClass.PINK_GARNET_LEGGINGS.get());
+                output.accept(AdvancedValuables_ItemClass.PINK_GARNET_BOOTS.get());
+
+                output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_HELMET.get());
+                output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_CHESTPLATE.get());
+                output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_LEGGINGS.get());
+                output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_BOOTS.get());
+
+                output.accept(AdvancedValuables_ItemClass.FUSION_HELMET.get());
+                output.accept(AdvancedValuables_ItemClass.FUSION_CHESTPLATE.get());
+                output.accept(AdvancedValuables_ItemClass.FUSION_LEGGINGS.get());
+                output.accept(AdvancedValuables_ItemClass.FUSION_BOOTS.get());
+
+                output.accept(AdvancedValuables_ItemClass.RUBY_HELMET.get());
+                output.accept(AdvancedValuables_ItemClass.RUBY_CHESTPLATE.get());
+                output.accept(AdvancedValuables_ItemClass.RUBY_LEGGINGS.get());
+                output.accept(AdvancedValuables_ItemClass.RUBY_BOOTS.get());
             })
             .build());
 

@@ -115,5 +115,50 @@
   "block.advancedvaluables.pink_garnet_ore": "Pink Garnet Ore",
   "block.advancedvaluables.yellow_garnet_ore": "Yellow Garnet Ore",
   "block.advancedvaluables.fusion_ore": "Fusion Ore",
-  "block.advancedvaluables.ruby_ore": "Ruby Ore"
+  "block.advancedvaluables.ruby_ore": "Ruby Ore",
+
+  "item.advancedvaluables.red_sapphire_helmet": "Red Sapphire Helmet",
+  "item.advancedvaluables.red_sapphire_chestplate": "Red Sapphire Chestplate",
+  "item.advancedvaluables.red_sapphire_leggings": "Red Sapphire Leggings",
+  "item.advancedvaluables.red_sapphire_boots": "Red Sapphire Boots",
+
+  "item.advancedvaluables.blue_sapphire_helmet": "Blue Sapphire Helmet",
+  "item.advancedvaluables.blue_sapphire_chestplate": "Blue Sapphire Chestplate",
+  "item.advancedvaluables.blue_sapphire_leggings": "Blue Sapphire Leggings",
+  "item.advancedvaluables.blue_sapphire_boots": "Blue Sapphire Boots",
+
+  "item.advancedvaluables.green_sapphire_helmet": "Green Sapphire Helmet",
+  "item.advancedvaluables.green_sapphire_chestplate": "Green Sapphire Chestplate",
+  "item.advancedvaluables.green_sapphire_leggings": "Green Sapphire Leggings",
+  "item.advancedvaluables.green_sapphire_boots": "Green Sapphire Boots",
+
+  "item.advancedvaluables.red_garnet_helmet": "Red Garnet Helmet",
+  "item.advancedvaluables.red_garnet_chestplate": "Red Garnet Chestplate",
+  "item.advancedvaluables.red_garnet_leggings": "Red Garnet Leggings",
+  "item.advancedvaluables.red_garnet_boots": "Red Garnet Boots",
+
+  "item.advancedvaluables.blue_garnet_helmet": "Blue Garnet Helmet",
+  "item.advancedvaluables.blue_garnet_chestplate": "Blue Garnet Chestplate",
+  "item.advancedvaluables.blue_garnet_leggings": "Blue Garnet Leggings",
+  "item.advancedvaluables.blue_garnet_boots": "Blue Garnet Boots",
+
+  "item.advancedvaluables.pink_garnet_helmet": "Pink Garnet Helmet",
+  "item.advancedvaluables.pink_garnet_chestplate": "Pink Garnet Chestplate",
+  "item.advancedvaluables.pink_garnet_leggings": "Pink Garnet Leggings",
+  "item.advancedvaluables.pink_garnet_boots": "Pink Garnet Boots",
+
+  "item.advancedvaluables.yellow_garnet_helmet": "Yellow Garnet Helmet",
+  "item.advancedvaluables.yellow_garnet_chestplate": "Yellow Garnet Chestplate",
+  "item.advancedvaluables.yellow_garnet_leggings": "Yellow Garnet Leggings",
+  "item.advancedvaluables.yellow_garnet_boots": "Yellow Garnet Boots",
+
+  "item.advancedvaluables.fusion_helmet": "Fusion Helmet",
+  "item.advancedvaluables.fusion_chestplate": "Fusion Chestplate",
+  "item.advancedvaluables.fusion_leggings": "Fusion Leggings",
+  "item.advancedvaluables.fusion_boots": "Fusion Boots",
+
+  "item.advancedvaluables.ruby_helmet": "Ruby Helmet",
+  "item.advancedvaluables.ruby_chestplate": "Ruby Chestplate",
+  "item.advancedvaluables.ruby_leggings": "Ruby Leggings",
+  "item.advancedvaluables.ruby_boots": "Ruby Boots"
 }

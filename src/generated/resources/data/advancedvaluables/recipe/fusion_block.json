@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "M": {
+    "a": {
       "item": "advancedvaluables:fusion_gem"
     }
   },
   "pattern": [
-    "MMM",
-    "MMM",
-    "MMM"
+    "aaa",
+    "aaa",
+    "aaa"
   ],
   "result": {
     "count": 1,

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "advancedvaluables:red_garnet"
+    }
+  },
+  "pattern": [
+    "   ",
+    "a a",
+    "a a"
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:red_garnet_boots"
+  }
+}

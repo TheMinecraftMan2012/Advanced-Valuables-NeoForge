@@ -2,17 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "j": {
+    "a": {
       "item": "advancedvaluables:blue_sapphire"
     },
-    "k": {
+    "b": {
       "item": "minecraft:stick"
     }
   },
   "pattern": [
-    "jjj",
-    " k ",
-    " k "
+    "aaa",
+    " b ",
+    " b "
   ],
   "result": {
     "count": 1,

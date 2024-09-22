@@ -1,13 +1,18 @@
 package net.theminecraftman.advancedvaluables.AV_DataGen;
 
+import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredItem;
 import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_BlockClass;
 import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_ItemClass;
 import net.theminecraftman.advancedvaluables.AdvancedValuables;
@@ -90,510 +95,139 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
         List<ItemLike> COPPER_SMELTING_BLOCK = List.of(Blocks.RAW_COPPER_BLOCK);
 
         // -- Crafting Recipe -- // -- Shaped Recipe -- //
-        // -- Blue Sapphire -- //
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.BLUE_SAPPHIRE_BLOCK.get())
-                .pattern("AAA")
-                .pattern("AAA")
-                .pattern("AAA")
-                .define('A', AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get())
-                .unlockedBy("has_blue_sapphire", has(AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get())).save(recipeOutput);
+        generateBlockRecipe(recipeOutput, AdvancedValuables_BlockClass.BLUE_SAPPHIRE_BLOCK, AdvancedValuables_ItemClass.BLUE_SAPPHIRE, "has_blue_sapphire");
+        generateBlockRecipe(recipeOutput, AdvancedValuables_BlockClass.RED_SAPPHIRE_BLOCK, AdvancedValuables_ItemClass.RED_SAPPHIRE, "has_red_sapphire");
+        generateBlockRecipe(recipeOutput, AdvancedValuables_BlockClass.GREEN_SAPPHIRE_BLOCK, AdvancedValuables_ItemClass.GREEN_SAPPHIRE, "has_green_sapphire");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.BLUE_RAW_SAPPHIRE_BLOCK.get())
-                .pattern("BBB")
-                .pattern("BBB")
-                .pattern("BBB")
-                .define('B', AdvancedValuables_ItemClass.BLUE_RAW_SAPPHIRE.get())
-                .unlockedBy("has_blue_raw_sapphire", has(AdvancedValuables_ItemClass.BLUE_RAW_SAPPHIRE.get())).save(recipeOutput);
+        generateBlockRecipe(recipeOutput, AdvancedValuables_BlockClass.RED_GARNET_BLOCK, AdvancedValuables_ItemClass.RED_GARNET, "has_red_garnet");
+        generateBlockRecipe(recipeOutput, AdvancedValuables_BlockClass.BLUE_GARNET_BLOCK, AdvancedValuables_ItemClass.BLUE_GARNET, "has_blue_garnet");
+        generateBlockRecipe(recipeOutput, AdvancedValuables_BlockClass.PINK_GARNET_BLOCK, AdvancedValuables_ItemClass.PINK_GARNET, "has_pink_garnet");
+        generateBlockRecipe(recipeOutput, AdvancedValuables_BlockClass.YELLOW_GARNET_BLOCK, AdvancedValuables_ItemClass.YELLOW_GARNET, "has_yellow_garnet");
 
-        // -- Red Sapphire -- //
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.RED_SAPPHIRE_BLOCK.get())
-                .pattern("CCC")
-                .pattern("CCC")
-                .pattern("CCC")
-                .define('C', AdvancedValuables_ItemClass.RED_SAPPHIRE.get())
-                .unlockedBy("has_red_sapphire", has(AdvancedValuables_ItemClass.RED_SAPPHIRE.get())).save(recipeOutput);
+        generateBlockRecipe(recipeOutput, AdvancedValuables_BlockClass.FUSION_BLOCK, AdvancedValuables_ItemClass.FUSION_GEM, "has_fusion_gem");
+        generateBlockRecipe(recipeOutput, AdvancedValuables_BlockClass.RUBY_BLOCK, AdvancedValuables_ItemClass.RUBY, "has_ruby");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.RED_RAW_SAPPHIRE_BLOCK.get())
-                .pattern("DDD")
-                .pattern("DDD")
-                .pattern("DDD")
-                .define('D', AdvancedValuables_ItemClass.RED_RAW_SAPPHIRE.get())
-                .unlockedBy("has_red_raw_sapphire", has(AdvancedValuables_ItemClass.RED_RAW_SAPPHIRE.get())).save(recipeOutput);
+        generateBlockRecipe(recipeOutput, AdvancedValuables_BlockClass.BLUE_RAW_SAPPHIRE_BLOCK, AdvancedValuables_ItemClass.BLUE_RAW_SAPPHIRE, "has_blue_raw_sapphire");
+        generateBlockRecipe(recipeOutput, AdvancedValuables_BlockClass.RED_RAW_SAPPHIRE_BLOCK, AdvancedValuables_ItemClass.RED_RAW_SAPPHIRE, "has_red_raw_sapphire");
+        generateBlockRecipe(recipeOutput, AdvancedValuables_BlockClass.GREEN_RAW_SAPPHIRE_BLOCK, AdvancedValuables_ItemClass.GREEN_RAW_SAPPHIRE, "has_green_raw_sapphire");
 
-        // -- Green Sapphire -- //
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.GREEN_SAPPHIRE_BLOCK.get())
-                .pattern("EEE")
-                .pattern("EEE")
-                .pattern("EEE")
-                .define('E', AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get())
-                .unlockedBy("has_green_sapphire", has(AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get())).save(recipeOutput);
+        generateBlockRecipe(recipeOutput, AdvancedValuables_BlockClass.RED_RAW_GARNET_BLOCK, AdvancedValuables_ItemClass.RED_RAW_GARNET, "has_red_raw_garnet");
+        generateBlockRecipe(recipeOutput, AdvancedValuables_BlockClass.BLUE_RAW_GARNET_BLOCK, AdvancedValuables_ItemClass.BLUE_RAW_GARNET, "has_blue_raw_garnet");
+        generateBlockRecipe(recipeOutput, AdvancedValuables_BlockClass.PINK_RAW_GARNET_BLOCK, AdvancedValuables_ItemClass.PINK_RAW_GARNET, "has_pink_raw_garnet");
+        generateBlockRecipe(recipeOutput, AdvancedValuables_BlockClass.YELLOW_RAW_GARNET_BLOCK, AdvancedValuables_ItemClass.YELLOW_RAW_GARNET, "has_yellow_raw_garnet");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.GREEN_RAW_SAPPHIRE_BLOCK.get())
-                .pattern("FFF")
-                .pattern("FFF")
-                .pattern("FFF")
-                .define('F', AdvancedValuables_ItemClass.GREEN_RAW_SAPPHIRE.get())
-                .unlockedBy("has_green_raw_sapphire", has(AdvancedValuables_ItemClass.GREEN_RAW_SAPPHIRE.get())).save(recipeOutput);
-
-        // -- Red Garnet -- //
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.RED_GARNET_BLOCK.get())
-                .pattern("GGG")
-                .pattern("GGG")
-                .pattern("GGG")
-                .define('G', AdvancedValuables_ItemClass.RED_GARNET.get())
-                .unlockedBy("has_red_garnet", has(AdvancedValuables_ItemClass.RED_GARNET.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.RED_RAW_GARNET_BLOCK.get())
-                .pattern("HHH")
-                .pattern("HHH")
-                .pattern("HHH")
-                .define('H', AdvancedValuables_ItemClass.RED_RAW_GARNET.get())
-                .unlockedBy("has_red_raw_garnet", has(AdvancedValuables_ItemClass.RED_RAW_GARNET.get())).save(recipeOutput);
-
-        // -- Blue Garnet -- //
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.BLUE_GARNET_BLOCK.get())
-                .pattern("III")
-                .pattern("III")
-                .pattern("III")
-                .define('I', AdvancedValuables_ItemClass.BLUE_GARNET.get())
-                .unlockedBy("has_blue_garnet", has(AdvancedValuables_ItemClass.BLUE_GARNET.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.BLUE_RAW_GARNET_BLOCK.get())
-                .pattern("JJJ")
-                .pattern("JJJ")
-                .pattern("JJJ")
-                .define('J', AdvancedValuables_ItemClass.BLUE_RAW_GARNET.get())
-                .unlockedBy("has_blue_raw_garnet", has(AdvancedValuables_ItemClass.BLUE_RAW_GARNET.get())).save(recipeOutput);
-
-        // -- Pink Garnet -- //
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.PINK_GARNET_BLOCK.get())
-                .pattern("KKK")
-                .pattern("KKK")
-                .pattern("KKK")
-                .define('K', AdvancedValuables_ItemClass.PINK_GARNET.get())
-                .unlockedBy("has_pink_garnet", has(AdvancedValuables_ItemClass.PINK_GARNET.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.PINK_RAW_GARNET_BLOCK.get())
-                .pattern("LLL")
-                .pattern("LLL")
-                .pattern("LLL")
-                .define('L', AdvancedValuables_ItemClass.PINK_RAW_GARNET.get())
-                .unlockedBy("has_pink_raw_garnet", has(AdvancedValuables_ItemClass.PINK_RAW_GARNET.get())).save(recipeOutput);
-
-        // -- Yellow Garnet -- //
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.YELLOW_GARNET_BLOCK.get())
-                .pattern("KKK")
-                .pattern("KKK")
-                .pattern("KKK")
-                .define('K', AdvancedValuables_ItemClass.YELLOW_GARNET.get())
-                .unlockedBy("has_yellow_garnet", has(AdvancedValuables_ItemClass.YELLOW_GARNET.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.YELLOW_RAW_GARNET_BLOCK.get())
-                .pattern("LLL")
-                .pattern("LLL")
-                .pattern("LLL")
-                .define('L', AdvancedValuables_ItemClass.YELLOW_RAW_GARNET.get())
-                .unlockedBy("has_yellow_raw_garnet", has(AdvancedValuables_ItemClass.YELLOW_RAW_GARNET.get())).save(recipeOutput);
-
-        // -- Fusion Gem -- //
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.FUSION_BLOCK.get())
-                .pattern("MMM")
-                .pattern("MMM")
-                .pattern("MMM")
-                .define('M', AdvancedValuables_ItemClass.FUSION_GEM.get())
-                .unlockedBy("has_fusion_gem", has(AdvancedValuables_ItemClass.FUSION_GEM.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.RAW_FUSION_BLOCK.get())
-                .pattern("NNN")
-                .pattern("NNN")
-                .pattern("NNN")
-                .define('N', AdvancedValuables_ItemClass.RAW_FUSION_GEM.get())
-                .unlockedBy("has_raw_fusion_gem", has(AdvancedValuables_ItemClass.RAW_FUSION_GEM.get())).save(recipeOutput);
-
-        // -- Ruby -- //
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.RUBY_BLOCK.get())
-                .pattern("OOO")
-                .pattern("OOO")
-                .pattern("OOO")
-                .define('O', AdvancedValuables_ItemClass.RUBY.get())
-                .unlockedBy("has_ruby", has(AdvancedValuables_ItemClass.RUBY.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.RAW_RUBY_BLOCK.get())
-                .pattern("PPP")
-                .pattern("PPP")
-                .pattern("PPP")
-                .define('P', AdvancedValuables_ItemClass.RAW_RUBY.get())
-                .unlockedBy("has_raw_ruby", has(AdvancedValuables_ItemClass.RAW_RUBY.get())).save(recipeOutput);
+        generateBlockRecipe(recipeOutput, AdvancedValuables_BlockClass.RAW_FUSION_BLOCK, AdvancedValuables_ItemClass.RAW_FUSION_GEM, "has_raw_fusion_gem");
+        generateBlockRecipe(recipeOutput, AdvancedValuables_BlockClass.RAW_RUBY_BLOCK, AdvancedValuables_ItemClass.RAW_RUBY, "has_raw_ruby");
 
         // -- Crafting Recipe -- // -- Shaped Recipe -- // -- Tools and Armor -- //
-        // -- Red Sapphire Tools -- //
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_SAPPHIRE_PICKAXE)
-                .pattern("aaa")
-                .pattern(" b ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.RED_SAPPHIRE.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_red_sapphire", has(AdvancedValuables_ItemClass.RED_SAPPHIRE.get())).save(recipeOutput);
+        generatePickaxeRecipe(recipeOutput, AdvancedValuables_ItemClass.BLUE_SAPPHIRE_PICKAXE, AdvancedValuables_ItemClass.BLUE_SAPPHIRE, "has_blue_sapphire");
+        generateAxeRecipe(recipeOutput, AdvancedValuables_ItemClass.BLUE_SAPPHIRE_AXE, AdvancedValuables_ItemClass.BLUE_SAPPHIRE, "has_blue_sapphire");
+        generateShovelRecipe(recipeOutput, AdvancedValuables_ItemClass.BLUE_SAPPHIRE_SHOVEL, AdvancedValuables_ItemClass.BLUE_SAPPHIRE, "has_blue_sapphire");
+        generateHoeRecipe(recipeOutput, AdvancedValuables_ItemClass.BLUE_SAPPHIRE_HOE, AdvancedValuables_ItemClass.BLUE_SAPPHIRE, "has_blue_sapphire");
+        generateSwordRecipe(recipeOutput, AdvancedValuables_ItemClass.BLUE_SAPPHIRE_SWORD, AdvancedValuables_ItemClass.BLUE_SAPPHIRE, "has_blue_sapphire");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_SAPPHIRE_AXE)
-                .pattern("cc ")
-                .pattern("cd ")
-                .pattern(" d ")
-                .define('c', AdvancedValuables_ItemClass.RED_SAPPHIRE.get())
-                .define('d', Items.STICK)
-                .unlockedBy("has_red_sapphire", has(AdvancedValuables_ItemClass.RED_SAPPHIRE.get())).save(recipeOutput);
+        generatePickaxeRecipe(recipeOutput, AdvancedValuables_ItemClass.RED_SAPPHIRE_PICKAXE, AdvancedValuables_ItemClass.RED_SAPPHIRE, "has_red_sapphire");
+        generateAxeRecipe(recipeOutput, AdvancedValuables_ItemClass.RED_SAPPHIRE_AXE, AdvancedValuables_ItemClass.RED_SAPPHIRE, "has_red_sapphire");
+        generateShovelRecipe(recipeOutput, AdvancedValuables_ItemClass.RED_SAPPHIRE_SHOVEL, AdvancedValuables_ItemClass.RED_SAPPHIRE, "has_red_sapphire");
+        generateHoeRecipe(recipeOutput, AdvancedValuables_ItemClass.RED_SAPPHIRE_HOE, AdvancedValuables_ItemClass.RED_SAPPHIRE, "has_red_sapphire");
+        generateSwordRecipe(recipeOutput, AdvancedValuables_ItemClass.RED_SAPPHIRE_SWORD, AdvancedValuables_ItemClass.RED_SAPPHIRE, "has_red_sapphire");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_SAPPHIRE_SHOVEL)
-                .pattern(" e ")
-                .pattern(" f ")
-                .pattern(" f ")
-                .define('e', AdvancedValuables_ItemClass.RED_SAPPHIRE.get())
-                .define('f', Items.STICK)
-                .unlockedBy("has_red_sapphire", has(AdvancedValuables_ItemClass.RED_SAPPHIRE.get())).save(recipeOutput);
+        generatePickaxeRecipe(recipeOutput, AdvancedValuables_ItemClass.GREEN_SAPPHIRE_PICKAXE, AdvancedValuables_ItemClass.GREEN_SAPPHIRE, "has_green_sapphire");
+        generateAxeRecipe(recipeOutput, AdvancedValuables_ItemClass.GREEN_SAPPHIRE_AXE, AdvancedValuables_ItemClass.GREEN_SAPPHIRE, "has_green_sapphire");
+        generateShovelRecipe(recipeOutput, AdvancedValuables_ItemClass.GREEN_SAPPHIRE_SHOVEL, AdvancedValuables_ItemClass.GREEN_SAPPHIRE, "has_green_sapphire");
+        generateHoeRecipe(recipeOutput, AdvancedValuables_ItemClass.GREEN_SAPPHIRE_HOE, AdvancedValuables_ItemClass.GREEN_SAPPHIRE, "has_green_sapphire");
+        generateSwordRecipe(recipeOutput, AdvancedValuables_ItemClass.GREEN_SAPPHIRE_SWORD, AdvancedValuables_ItemClass.GREEN_SAPPHIRE, "has_green_sapphire");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_SAPPHIRE_HOE)
-                .pattern(" gg")
-                .pattern(" f ")
-                .pattern(" f ")
-                .define('g', AdvancedValuables_ItemClass.RED_SAPPHIRE.get())
-                .define('f', Items.STICK)
-                .unlockedBy("has_red_sapphire", has(AdvancedValuables_ItemClass.RED_SAPPHIRE.get())).save(recipeOutput);
+        generatePickaxeRecipe(recipeOutput, AdvancedValuables_ItemClass.RED_GARNET_PICKAXE, AdvancedValuables_ItemClass.RED_GARNET, "has_red_garnet");
+        generateAxeRecipe(recipeOutput, AdvancedValuables_ItemClass.RED_GARNET_AXE, AdvancedValuables_ItemClass.RED_GARNET, "has_red_garnet");
+        generateShovelRecipe(recipeOutput, AdvancedValuables_ItemClass.RED_GARNET_SHOVEL, AdvancedValuables_ItemClass.RED_GARNET, "has_red_garnet");
+        generateHoeRecipe(recipeOutput, AdvancedValuables_ItemClass.RED_GARNET_HOE, AdvancedValuables_ItemClass.RED_GARNET, "has_red_garnet");
+        generateSwordRecipe(recipeOutput, AdvancedValuables_ItemClass.RED_GARNET_SWORD, AdvancedValuables_ItemClass.RED_GARNET, "has_red_garnet");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_SAPPHIRE_SWORD)
-                .pattern(" h ")
-                .pattern(" h ")
-                .pattern(" i ")
-                .define('h', AdvancedValuables_ItemClass.RED_SAPPHIRE.get())
-                .define('i', Items.STICK)
-                .unlockedBy("has_red_sapphire", has(AdvancedValuables_ItemClass.RED_SAPPHIRE.get())).save(recipeOutput);
+        generatePickaxeRecipe(recipeOutput, AdvancedValuables_ItemClass.BLUE_GARNET_PICKAXE, AdvancedValuables_ItemClass.BLUE_GARNET, "has_blue_garnet");
+        generateAxeRecipe(recipeOutput, AdvancedValuables_ItemClass.BLUE_GARNET_AXE, AdvancedValuables_ItemClass.BLUE_GARNET, "has_blue_garnet");
+        generateShovelRecipe(recipeOutput, AdvancedValuables_ItemClass.BLUE_GARNET_SHOVEL, AdvancedValuables_ItemClass.BLUE_GARNET, "has_blue_garnet");
+        generateHoeRecipe(recipeOutput, AdvancedValuables_ItemClass.BLUE_GARNET_HOE, AdvancedValuables_ItemClass.BLUE_GARNET, "has_blue_garnet");
+        generateSwordRecipe(recipeOutput, AdvancedValuables_ItemClass.BLUE_GARNET_SWORD, AdvancedValuables_ItemClass.BLUE_GARNET, "has_blue_garnet");
 
-        // -- Blue Sapphire Tools -- //
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_SAPPHIRE_PICKAXE)
-                .pattern("jjj")
-                .pattern(" k ")
-                .pattern(" k ")
-                .define('j', AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get())
-                .define('k', Items.STICK)
-                .unlockedBy("has_blue_sapphire", has(AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get())).save(recipeOutput);
+        generatePickaxeRecipe(recipeOutput, AdvancedValuables_ItemClass.PINK_GARNET_PICKAXE, AdvancedValuables_ItemClass.PINK_GARNET, "has_pink_garnet");
+        generateAxeRecipe(recipeOutput, AdvancedValuables_ItemClass.PINK_GARNET_AXE, AdvancedValuables_ItemClass.PINK_GARNET, "has_pink_garnet");
+        generateShovelRecipe(recipeOutput, AdvancedValuables_ItemClass.PINK_GARNET_SHOVEL, AdvancedValuables_ItemClass.PINK_GARNET, "has_pink_garnet");
+        generateHoeRecipe(recipeOutput, AdvancedValuables_ItemClass.PINK_GARNET_HOE, AdvancedValuables_ItemClass.PINK_GARNET, "has_pink_garnet");
+        generateSwordRecipe(recipeOutput, AdvancedValuables_ItemClass.PINK_GARNET_SWORD, AdvancedValuables_ItemClass.PINK_GARNET, "has_pink_garnet");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_SAPPHIRE_AXE)
-                .pattern("ll ")
-                .pattern("lm ")
-                .pattern(" m ")
-                .define('l', AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get())
-                .define('m', Items.STICK)
-                .unlockedBy("has_blue_sapphire", has(AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get())).save(recipeOutput);
+        generatePickaxeRecipe(recipeOutput, AdvancedValuables_ItemClass.YELLOW_GARNET_PICKAXE, AdvancedValuables_ItemClass.YELLOW_GARNET, "has_yellow_garnet");
+        generateAxeRecipe(recipeOutput, AdvancedValuables_ItemClass.YELLOW_GARNET_AXE, AdvancedValuables_ItemClass.YELLOW_GARNET, "has_yellow_garnet");
+        generateShovelRecipe(recipeOutput, AdvancedValuables_ItemClass.YELLOW_GARNET_SHOVEL, AdvancedValuables_ItemClass.YELLOW_GARNET, "has_yellow_garnet");
+        generateHoeRecipe(recipeOutput, AdvancedValuables_ItemClass.YELLOW_GARNET_HOE, AdvancedValuables_ItemClass.YELLOW_GARNET, "has_yellow_garnet");
+        generateSwordRecipe(recipeOutput, AdvancedValuables_ItemClass.YELLOW_GARNET_SWORD, AdvancedValuables_ItemClass.YELLOW_GARNET, "has_yellow_garnet");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_SAPPHIRE_SHOVEL)
-                .pattern(" n ")
-                .pattern(" o ")
-                .pattern(" o ")
-                .define('n', AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get())
-                .define('o', Items.STICK)
-                .unlockedBy("has_blue_sapphire", has(AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get())).save(recipeOutput);
+        generatePickaxeRecipe(recipeOutput, AdvancedValuables_ItemClass.FUSION_PICKAXE, AdvancedValuables_ItemClass.FUSION_GEM, "has_fusion_gem");
+        generateAxeRecipe(recipeOutput, AdvancedValuables_ItemClass.FUSION_AXE, AdvancedValuables_ItemClass.FUSION_GEM, "has_fusion_gem");
+        generateShovelRecipe(recipeOutput, AdvancedValuables_ItemClass.FUSION_SHOVEL, AdvancedValuables_ItemClass.FUSION_GEM, "has_fusion_gem");
+        generateHoeRecipe(recipeOutput, AdvancedValuables_ItemClass.FUSION_HOE, AdvancedValuables_ItemClass.FUSION_GEM, "has_fusion_gem");
+        generateSwordRecipe(recipeOutput, AdvancedValuables_ItemClass.FUSION_SWORD, AdvancedValuables_ItemClass.FUSION_GEM, "has_fusion_gem");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_SAPPHIRE_HOE)
-                .pattern(" pp")
-                .pattern(" q ")
-                .pattern(" q ")
-                .define('p', AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get())
-                .define('q', Items.STICK)
-                .unlockedBy("has_blue_sapphire", has(AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get())).save(recipeOutput);
+        generatePickaxeRecipe(recipeOutput, AdvancedValuables_ItemClass.RUBY_PICKAXE, AdvancedValuables_ItemClass.RUBY, "has_ruby");
+        generateAxeRecipe(recipeOutput, AdvancedValuables_ItemClass.RUBY_AXE, AdvancedValuables_ItemClass.RUBY, "has_ruby");
+        generateShovelRecipe(recipeOutput, AdvancedValuables_ItemClass.RUBY_SHOVEL, AdvancedValuables_ItemClass.RUBY, "has_ruby");
+        generateHoeRecipe(recipeOutput, AdvancedValuables_ItemClass.RUBY_HOE, AdvancedValuables_ItemClass.RUBY, "has_ruby");
+        generateSwordRecipe(recipeOutput, AdvancedValuables_ItemClass.RUBY_SWORD, AdvancedValuables_ItemClass.RUBY, "has_ruby");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_SAPPHIRE_SWORD)
-                .pattern(" p ")
-                .pattern(" p ")
-                .pattern(" q ")
-                .define('p', AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get())
-                .define('q', Items.STICK)
-                .unlockedBy("has_blue_sapphire", has(AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get())).save(recipeOutput);
+        // -- Armors -- //
+        generateArmorRecipe(recipeOutput,
+                AdvancedValuables_ItemClass.BLUE_SAPPHIRE_HELMET,
+                AdvancedValuables_ItemClass.BLUE_SAPPHIRE_CHESTPLATE,
+                AdvancedValuables_ItemClass.BLUE_SAPPHIRE_LEGGINGS,
+                AdvancedValuables_ItemClass.BLUE_SAPPHIRE_BOOTS, AdvancedValuables_ItemClass.BLUE_SAPPHIRE, "has_blue_sapphire");
 
-        // -- Green Sapphire Tools -- //
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.GREEN_SAPPHIRE_PICKAXE)
-                .pattern("jjj")
-                .pattern(" k ")
-                .pattern(" k ")
-                .define('j', AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get())
-                .define('k', Items.STICK)
-                .unlockedBy("has_green_sapphire", has(AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get())).save(recipeOutput);
+        generateArmorRecipe(recipeOutput,
+                AdvancedValuables_ItemClass.RED_SAPPHIRE_HELMET,
+                AdvancedValuables_ItemClass.RED_SAPPHIRE_CHESTPLATE,
+                AdvancedValuables_ItemClass.RED_SAPPHIRE_LEGGINGS,
+                AdvancedValuables_ItemClass.RED_SAPPHIRE_BOOTS, AdvancedValuables_ItemClass.RED_SAPPHIRE, "has_red_sapphire");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.GREEN_SAPPHIRE_AXE)
-                .pattern("ll ")
-                .pattern("lm ")
-                .pattern(" m ")
-                .define('l', AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get())
-                .define('m', Items.STICK)
-                .unlockedBy("has_green_sapphire", has(AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get())).save(recipeOutput);
+        generateArmorRecipe(recipeOutput,
+                AdvancedValuables_ItemClass.GREEN_SAPPHIRE_HELMET,
+                AdvancedValuables_ItemClass.GREEN_SAPPHIRE_CHESTPLATE,
+                AdvancedValuables_ItemClass.GREEN_SAPPHIRE_LEGGINGS,
+                AdvancedValuables_ItemClass.GREEN_SAPPHIRE_BOOTS, AdvancedValuables_ItemClass.GREEN_SAPPHIRE, "has_green_sapphire");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.GREEN_SAPPHIRE_SHOVEL)
-                .pattern(" n ")
-                .pattern(" o ")
-                .pattern(" o ")
-                .define('n', AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get())
-                .define('o', Items.STICK)
-                .unlockedBy("has_green_sapphire", has(AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get())).save(recipeOutput);
+        generateArmorRecipe(recipeOutput,
+                AdvancedValuables_ItemClass.RED_GARNET_HELMET,
+                AdvancedValuables_ItemClass.RED_GARNET_CHESTPLATE,
+                AdvancedValuables_ItemClass.RED_GARNET_LEGGINGS,
+                AdvancedValuables_ItemClass.RED_GARNET_BOOTS, AdvancedValuables_ItemClass.RED_GARNET, "has_red_garnet");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.GREEN_SAPPHIRE_HOE)
-                .pattern(" pp")
-                .pattern(" q ")
-                .pattern(" q ")
-                .define('p', AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get())
-                .define('q', Items.STICK)
-                .unlockedBy("has_green_sapphire", has(AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get())).save(recipeOutput);
+        generateArmorRecipe(recipeOutput,
+                AdvancedValuables_ItemClass.BLUE_GARNET_HELMET,
+                AdvancedValuables_ItemClass.BLUE_GARNET_CHESTPLATE,
+                AdvancedValuables_ItemClass.BLUE_GARNET_LEGGINGS,
+                AdvancedValuables_ItemClass.BLUE_GARNET_BOOTS, AdvancedValuables_ItemClass.BLUE_GARNET, "has_blue_garnet");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.GREEN_SAPPHIRE_SWORD)
-                .pattern(" p ")
-                .pattern(" p ")
-                .pattern(" q ")
-                .define('p', AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get())
-                .define('q', Items.STICK)
-                .unlockedBy("has_green_sapphire", has(AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get())).save(recipeOutput);
+        generateArmorRecipe(recipeOutput,
+                AdvancedValuables_ItemClass.PINK_GARNET_HELMET,
+                AdvancedValuables_ItemClass.PINK_GARNET_CHESTPLATE,
+                AdvancedValuables_ItemClass.PINK_GARNET_LEGGINGS,
+                AdvancedValuables_ItemClass.PINK_GARNET_BOOTS, AdvancedValuables_ItemClass.PINK_GARNET, "has_pink_garnet");
 
-        // -- Red Garnet Tools -- //
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_GARNET_PICKAXE)
-                .pattern("aaa")
-                .pattern(" b ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.RED_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_red_garnet", has(AdvancedValuables_ItemClass.RED_GARNET.get())).save(recipeOutput);
+        generateArmorRecipe(recipeOutput,
+                AdvancedValuables_ItemClass.YELLOW_GARNET_HELMET,
+                AdvancedValuables_ItemClass.YELLOW_GARNET_CHESTPLATE,
+                AdvancedValuables_ItemClass.YELLOW_GARNET_LEGGINGS,
+                AdvancedValuables_ItemClass.YELLOW_GARNET_BOOTS, AdvancedValuables_ItemClass.YELLOW_GARNET, "has_yellow_garnet");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_GARNET_AXE)
-                .pattern("aa ")
-                .pattern("ab ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.RED_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_red_garnet", has(AdvancedValuables_ItemClass.RED_GARNET.get())).save(recipeOutput);
+        generateArmorRecipe(recipeOutput,
+                AdvancedValuables_ItemClass.FUSION_HELMET,
+                AdvancedValuables_ItemClass.FUSION_CHESTPLATE,
+                AdvancedValuables_ItemClass.FUSION_LEGGINGS,
+                AdvancedValuables_ItemClass.FUSION_BOOTS, AdvancedValuables_ItemClass.FUSION_GEM, "has_fusion_gem");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_GARNET_SHOVEL)
-                .pattern(" a ")
-                .pattern(" b ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.RED_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_red_garnet", has(AdvancedValuables_ItemClass.RED_GARNET.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_GARNET_HOE)
-                .pattern("aa ")
-                .pattern(" b ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.RED_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_red_garnet", has(AdvancedValuables_ItemClass.RED_GARNET.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_GARNET_SWORD)
-                .pattern(" a ")
-                .pattern(" a ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.RED_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_red_garnet", has(AdvancedValuables_ItemClass.RED_GARNET.get())).save(recipeOutput);
-
-        // -- Blue Garnet Tools -- //
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_GARNET_PICKAXE)
-                .pattern("aaa")
-                .pattern(" b ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.BLUE_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_blue_garnet", has(AdvancedValuables_ItemClass.BLUE_GARNET.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_GARNET_AXE)
-                .pattern("aa ")
-                .pattern("ab ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.BLUE_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_blue_garnet", has(AdvancedValuables_ItemClass.BLUE_GARNET.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_GARNET_SHOVEL)
-                .pattern(" a ")
-                .pattern(" b ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.BLUE_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_blue_garnet", has(AdvancedValuables_ItemClass.BLUE_GARNET.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_GARNET_HOE)
-                .pattern("aa ")
-                .pattern(" b ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.BLUE_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_blue_garnet", has(AdvancedValuables_ItemClass.BLUE_GARNET.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_GARNET_SWORD)
-                .pattern(" a ")
-                .pattern(" a ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.BLUE_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_blue_garnet", has(AdvancedValuables_ItemClass.BLUE_GARNET.get())).save(recipeOutput);
-
-        // -- Pink Garnet Tools -- //
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.PINK_GARNET_PICKAXE)
-                .pattern("aaa")
-                .pattern(" b ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.PINK_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_pink_garnet", has(AdvancedValuables_ItemClass.PINK_GARNET.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.PINK_GARNET_AXE)
-                .pattern("aa ")
-                .pattern("ab ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.PINK_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_pink_garnet", has(AdvancedValuables_ItemClass.PINK_GARNET.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.PINK_GARNET_SHOVEL)
-                .pattern(" a ")
-                .pattern(" b ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.PINK_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_pink_garnet", has(AdvancedValuables_ItemClass.PINK_GARNET.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.PINK_GARNET_HOE)
-                .pattern("aa ")
-                .pattern(" b ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.PINK_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_pink_garnet", has(AdvancedValuables_ItemClass.PINK_GARNET.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.PINK_GARNET_SWORD)
-                .pattern(" a ")
-                .pattern(" a ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.PINK_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_pink_garnet", has(AdvancedValuables_ItemClass.PINK_GARNET.get())).save(recipeOutput);
-
-        // -- Yellow Garnet Tools -- //
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.YELLOW_GARNET_PICKAXE.get())
-                .pattern("aaa")
-                .pattern(" b ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.YELLOW_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_yellow_garnet", has(AdvancedValuables_ItemClass.YELLOW_GARNET.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.YELLOW_GARNET_AXE.get())
-                .pattern("aa ")
-                .pattern("ab ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.YELLOW_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_yellow_garnet", has(AdvancedValuables_ItemClass.YELLOW_GARNET.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.YELLOW_GARNET_SHOVEL.get())
-                .pattern(" a ")
-                .pattern(" b ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.YELLOW_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_yellow_garnet", has(AdvancedValuables_ItemClass.YELLOW_GARNET.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.YELLOW_GARNET_HOE.get())
-                .pattern("aa ")
-                .pattern(" b ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.YELLOW_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_yellow_garnet", has(AdvancedValuables_ItemClass.YELLOW_GARNET.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.YELLOW_GARNET_SWORD.get())
-                .pattern(" a ")
-                .pattern(" a ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.YELLOW_GARNET.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_yellow_garnet", has(AdvancedValuables_ItemClass.YELLOW_GARNET.get())).save(recipeOutput);
-
-        // -- Fusion Tools -- //
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.FUSION_PICKAXE)
-                .pattern("aaa")
-                .pattern(" b ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.FUSION_GEM.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_fusion_gem", has(AdvancedValuables_ItemClass.FUSION_GEM.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.FUSION_AXE)
-                .pattern("aa ")
-                .pattern("ab ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.FUSION_GEM.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_fusion_gem", has(AdvancedValuables_ItemClass.FUSION_GEM.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.FUSION_SHOVEL)
-                .pattern(" a ")
-                .pattern(" b ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.FUSION_GEM.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_fusion_gem", has(AdvancedValuables_ItemClass.FUSION_GEM.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.FUSION_HOE)
-                .pattern("aa ")
-                .pattern(" b ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.FUSION_GEM.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_fusion_gem", has(AdvancedValuables_ItemClass.FUSION_GEM.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.FUSION_SWORD)
-                .pattern(" a ")
-                .pattern(" a ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.FUSION_GEM.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_fusion_gem", has(AdvancedValuables_ItemClass.FUSION_GEM.get())).save(recipeOutput);
-
-        // -- Ruby Tools -- //
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.RUBY_PICKAXE)
-                .pattern("aaa")
-                .pattern(" b ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.RUBY.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_ruby", has(AdvancedValuables_ItemClass.RUBY.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.RUBY_AXE)
-                .pattern("aa ")
-                .pattern("ab ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.RUBY.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_ruby", has(AdvancedValuables_ItemClass.RUBY.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.RUBY_SHOVEL)
-                .pattern(" a ")
-                .pattern(" b ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.RUBY.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_ruby", has(AdvancedValuables_ItemClass.RUBY.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.RUBY_HOE)
-                .pattern("aa ")
-                .pattern(" b ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.RUBY.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_ruby", has(AdvancedValuables_ItemClass.RUBY.get())).save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.RUBY_SWORD)
-                .pattern(" a ")
-                .pattern(" a ")
-                .pattern(" b ")
-                .define('a', AdvancedValuables_ItemClass.RUBY.get())
-                .define('b', Items.STICK)
-                .unlockedBy("has_ruby", has(AdvancedValuables_ItemClass.RUBY.get())).save(recipeOutput);
+        generateArmorRecipe(recipeOutput,
+                AdvancedValuables_ItemClass.RUBY_HELMET,
+                AdvancedValuables_ItemClass.RUBY_CHESTPLATE,
+                AdvancedValuables_ItemClass.RUBY_LEGGINGS,
+                AdvancedValuables_ItemClass.RUBY_BOOTS, AdvancedValuables_ItemClass.RUBY, "has_ruby");
 
         // -- Crafting Recipe -- // -- Shapeless Recipe -- //
         // -- Red Sapphire -- //
@@ -753,5 +387,99 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
             SimpleCookingRecipeBuilder.generic(Ingredient.of(itemLike), category, result, experience, cookingTime, cookingSerializer, factory).group(group).unlockedBy(getHasName(itemLike), has(itemLike))
                     .save(recipeOutput, AdvancedValuables.MOD_ID + ":" + getItemName(result) + recipeName + "_" + getItemName(itemLike));
         }
+    }
+
+    // -- Shortcuts -- // -- Tools -- //
+    private static void generateBlockRecipe(RecipeOutput output, DeferredBlock<Block> result, DeferredItem<Item> ingredient, String group)
+    {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
+                .pattern("aaa")
+                .pattern("aaa")
+                .pattern("aaa")
+                .define('a', ingredient)
+                .unlockedBy(group, has(ingredient)).save(output);
+    }
+
+    private static void generatePickaxeRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
+    {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
+                .pattern("aaa")
+                .pattern(" b ")
+                .pattern(" b ")
+                .define('a', ingredient).define('b', Items.STICK)
+                .unlockedBy(group, has(ingredient)).save(output);
+    }
+    private static void generateAxeRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
+    {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
+                .pattern("aa ")
+                .pattern("ab ")
+                .pattern(" b ")
+                .define('a', ingredient).define('b', Items.STICK)
+                .unlockedBy(group, has(ingredient)).save(output);
+    }
+    private static void generateShovelRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
+    {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
+                .pattern(" a ")
+                .pattern(" b ")
+                .pattern(" b ")
+                .define('a', ingredient).define('b', Items.STICK)
+                .unlockedBy(group, has(ingredient)).save(output);
+    }
+    private static void generateHoeRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
+    {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
+                .pattern("aa ")
+                .pattern(" b ")
+                .pattern(" b ")
+                .define('a', ingredient).define('b', Items.STICK)
+                .unlockedBy(group, has(ingredient)).save(output);
+    }
+    private static void generateSwordRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
+    {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
+                .pattern(" a ")
+                .pattern(" a ")
+                .pattern(" b ")
+                .define('a', ingredient).define('b', Items.STICK)
+                .unlockedBy(group, has(ingredient)).save(output);
+    }
+
+    // -- Shortcuts -- // -- Armor -- //
+    private static void generateArmorRecipe(RecipeOutput output,
+                                            DeferredItem<Item> result_helmet,
+                                            DeferredItem<Item> result_chestplate,
+                                            DeferredItem<Item> result_leggings,
+                                            DeferredItem<Item> result_boots,
+                                            DeferredItem<Item> ingredient, String group)
+    {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result_chestplate)
+                .pattern("a a")
+                .pattern("aaa")
+                .pattern("aaa")
+                .define('a', ingredient)
+                .unlockedBy(group, has(ingredient)).save(output);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result_leggings)
+                .pattern("aaa")
+                .pattern("a a")
+                .pattern("a a")
+                .define('a', ingredient)
+                .unlockedBy(group, has(ingredient)).save(output);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result_helmet)
+                .pattern("aaa")
+                .pattern("a a")
+                .pattern("   ")
+                .define('a', ingredient)
+                .unlockedBy(group, has(ingredient)).save(output);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result_boots)
+                .pattern("   ")
+                .pattern("a a")
+                .pattern("a a")
+                .define('a', ingredient)
+                .unlockedBy(group, has(ingredient)).save(output);
     }
 }
