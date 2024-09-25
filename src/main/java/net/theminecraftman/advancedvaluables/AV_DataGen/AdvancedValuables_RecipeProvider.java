@@ -1,6 +1,5 @@
 package net.theminecraftman.advancedvaluables.AV_DataGen;
 
-import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
