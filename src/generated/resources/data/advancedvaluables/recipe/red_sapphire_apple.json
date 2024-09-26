@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "advancedvaluables:red_sapphire"
+    },
+    "b": {
+      "item": "minecraft:apple"
+    }
+  },
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:red_sapphire_apple"
+  }
+}

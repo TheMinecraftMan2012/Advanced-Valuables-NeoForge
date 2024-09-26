@@ -3,8 +3,7 @@ package net.theminecraftman.advancedvaluables.AV_DataGen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
@@ -228,6 +227,19 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
                 AdvancedValuables_ItemClass.RUBY_LEGGINGS,
                 AdvancedValuables_ItemClass.RUBY_BOOTS, AdvancedValuables_ItemClass.RUBY, "has_ruby");
 
+        // -- Crafting Recipe -- // -- Shaped Recipe -- // -- Apple Recipe -- //
+        generateAppleRecipe(recipeOutput, AdvancedValuables_ItemClass.RED_SAPPHIRE_APPLE, AdvancedValuables_ItemClass.RED_SAPPHIRE, "red_sapphire");
+        generateAppleRecipe(recipeOutput, AdvancedValuables_ItemClass.BLUE_SAPPHIRE_APPLE, AdvancedValuables_ItemClass.BLUE_SAPPHIRE, "blue_sapphire");
+        generateAppleRecipe(recipeOutput, AdvancedValuables_ItemClass.GREEN_SAPPHIRE_APPLE, AdvancedValuables_ItemClass.GREEN_SAPPHIRE, "green_sapphire");
+
+        generateAppleRecipe(recipeOutput, AdvancedValuables_ItemClass.RED_GARNET_APPLE, AdvancedValuables_ItemClass.RED_GARNET, "red_garnet");
+        generateAppleRecipe(recipeOutput, AdvancedValuables_ItemClass.BLUE_GARNET_APPLE, AdvancedValuables_ItemClass.BLUE_GARNET, "blue_garnet");
+        generateAppleRecipe(recipeOutput, AdvancedValuables_ItemClass.PINK_GARNET_APPLE, AdvancedValuables_ItemClass.PINK_GARNET, "pink_garnet");
+        generateAppleRecipe(recipeOutput, AdvancedValuables_ItemClass.YELLOW_GARNET_APPLE, AdvancedValuables_ItemClass.YELLOW_GARNET, "yellow_garnet");
+
+        generateAppleRecipe(recipeOutput, AdvancedValuables_ItemClass.FUSION_APPLE, AdvancedValuables_ItemClass.FUSION_GEM, "fusion_gem");
+        generateAppleRecipe(recipeOutput, AdvancedValuables_ItemClass.RUBY_APPLE, AdvancedValuables_ItemClass.RUBY, "ruby");
+
         // -- Crafting Recipe -- // -- Shapeless Recipe -- //
         // -- Red Sapphire -- //
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_SAPPHIRE.get(), 9)
@@ -399,7 +411,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
                 .unlockedBy(group, has(ingredient)).save(output);
     }
 
-    private static void generatePickaxeRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
+    private static void generatePickaxeRecipe(RecipeOutput output, DeferredItem<PickaxeItem> result, DeferredItem<Item> ingredient, String group)
     {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
                 .pattern("aaa")
@@ -408,7 +420,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
                 .define('a', ingredient).define('b', Items.STICK)
                 .unlockedBy(group, has(ingredient)).save(output);
     }
-    private static void generateAxeRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
+    private static void generateAxeRecipe(RecipeOutput output, DeferredItem<AxeItem> result, DeferredItem<Item> ingredient, String group)
     {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
                 .pattern("aa ")
@@ -417,7 +429,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
                 .define('a', ingredient).define('b', Items.STICK)
                 .unlockedBy(group, has(ingredient)).save(output);
     }
-    private static void generateShovelRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
+    private static void generateShovelRecipe(RecipeOutput output, DeferredItem<ShovelItem> result, DeferredItem<Item> ingredient, String group)
     {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
                 .pattern(" a ")
@@ -426,7 +438,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
                 .define('a', ingredient).define('b', Items.STICK)
                 .unlockedBy(group, has(ingredient)).save(output);
     }
-    private static void generateHoeRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
+    private static void generateHoeRecipe(RecipeOutput output, DeferredItem<HoeItem> result, DeferredItem<Item> ingredient, String group)
     {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
                 .pattern("aa ")
@@ -435,7 +447,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
                 .define('a', ingredient).define('b', Items.STICK)
                 .unlockedBy(group, has(ingredient)).save(output);
     }
-    private static void generateSwordRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
+    private static void generateSwordRecipe(RecipeOutput output, DeferredItem<SwordItem> result, DeferredItem<Item> ingredient, String group)
     {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
                 .pattern(" a ")
@@ -447,10 +459,10 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
 
     // -- Shortcuts -- // -- Armor -- //
     private static void generateArmorRecipe(RecipeOutput output,
-                                            DeferredItem<Item> result_helmet,
-                                            DeferredItem<Item> result_chestplate,
-                                            DeferredItem<Item> result_leggings,
-                                            DeferredItem<Item> result_boots,
+                                            DeferredItem<ArmorItem> result_helmet,
+                                            DeferredItem<ArmorItem> result_chestplate,
+                                            DeferredItem<ArmorItem> result_leggings,
+                                            DeferredItem<ArmorItem> result_boots,
                                             DeferredItem<Item> ingredient, String group)
     {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result_chestplate)
@@ -479,6 +491,16 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
                 .pattern("a a")
                 .pattern("a a")
                 .define('a', ingredient)
+                .unlockedBy(group, has(ingredient)).save(output);
+    }
+
+    private static void generateAppleRecipe(RecipeOutput output, DeferredItem<Item> apple_result, DeferredItem<Item> ingredient, String group)
+    {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, apple_result)
+                .pattern("aaa")
+                .pattern("aba")
+                .pattern("aaa")
+                .define('a', ingredient).define('b', Items.APPLE)
                 .unlockedBy(group, has(ingredient)).save(output);
     }
 }

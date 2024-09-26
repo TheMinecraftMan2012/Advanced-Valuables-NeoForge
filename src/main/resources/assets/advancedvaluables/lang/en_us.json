@@ -2,6 +2,7 @@
   "creativetab.advancedvaluables.valuables": "Advanced Valuables : Valuables",
   "creativetab.advancedvaluables.valuable_ores": "Advanced Valuables : Valuable Ores",
   "creativetab.advancedvaluables.tools_armor": "Advanced Valuables : Tools & Armor",
+  "creativetab.advancedvaluables.foods": "Advanced Valuables : Foods",
 
   "item.advancedvaluables.blue_sapphire": "Blue Sapphire",
   "item.advancedvaluables.red_sapphire": "Red Sapphire",
@@ -160,5 +161,17 @@
   "item.advancedvaluables.ruby_helmet": "Ruby Helmet",
   "item.advancedvaluables.ruby_chestplate": "Ruby Chestplate",
   "item.advancedvaluables.ruby_leggings": "Ruby Leggings",
-  "item.advancedvaluables.ruby_boots": "Ruby Boots"
+  "item.advancedvaluables.ruby_boots": "Ruby Boots",
+
+  "item.advancedvaluables.red_sapphire_apple": "Red Sapphire Apple",
+  "item.advancedvaluables.blue_sapphire_apple": "Blue Sapphire Apple",
+  "item.advancedvaluables.green_sapphire_apple": "Green Sapphire Apple",
+
+  "item.advancedvaluables.red_garnet_apple": "Red Garnet Apple",
+  "item.advancedvaluables.blue_garnet_apple": "Blue Garnet Apple",
+  "item.advancedvaluables.pink_garnet_apple": "Pink Garnet Apple",
+  "item.advancedvaluables.yellow_garnet_apple": "Yellow Garnet Apple",
+
+  "item.advancedvaluables.fusion_apple": "Fusion Apple",
+  "item.advancedvaluables.ruby_apple": "Ruby Apple"
 }

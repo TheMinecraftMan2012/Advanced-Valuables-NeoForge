@@ -134,11 +134,11 @@ public class AdvancedValuables_CreativeModeTabs
                 output.accept(AdvancedValuables_ItemClass.PINK_GARNET_HOE);
                 output.accept(AdvancedValuables_ItemClass.PINK_GARNET_SWORD);
 
-                output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_PICKAXE.get());
-                output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_AXE.get());
-                output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_SHOVEL.get());
-                output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_HOE.get());
-                output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_SWORD.get());
+                output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_PICKAXE);
+                output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_AXE);
+                output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_SHOVEL);
+                output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_HOE);
+                output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_SWORD);
 
                 output.accept(AdvancedValuables_ItemClass.FUSION_PICKAXE);
                 output.accept(AdvancedValuables_ItemClass.FUSION_AXE);
@@ -196,6 +196,25 @@ public class AdvancedValuables_CreativeModeTabs
                 output.accept(AdvancedValuables_ItemClass.RUBY_CHESTPLATE.get());
                 output.accept(AdvancedValuables_ItemClass.RUBY_LEGGINGS.get());
                 output.accept(AdvancedValuables_ItemClass.RUBY_BOOTS.get());
+            })
+            .build());
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AV_FOODS_TAB = AV_REGISTER_CMT.register("foods", () -> CreativeModeTab.builder()
+            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "tools_armor"))
+            .icon(() -> new ItemStack(AdvancedValuables_ItemClass.FUSION_APPLE.get()))
+            .title(Component.translatable("creativetab.advancedvaluables.foods"))
+            .displayItems((params, output) -> {
+                output.accept(AdvancedValuables_ItemClass.RED_SAPPHIRE_APPLE);
+                output.accept(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_APPLE);
+                output.accept(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_APPLE);
+
+                output.accept(AdvancedValuables_ItemClass.RED_GARNET_APPLE);
+                output.accept(AdvancedValuables_ItemClass.BLUE_GARNET_APPLE);
+                output.accept(AdvancedValuables_ItemClass.PINK_GARNET_APPLE);
+                output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_APPLE);
+
+                output.accept(AdvancedValuables_ItemClass.FUSION_APPLE);
+                output.accept(AdvancedValuables_ItemClass.RUBY_APPLE);
             })
             .build());
 

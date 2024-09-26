@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "advancedvaluables:red_sapphire_apple"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "red_sapphire": {
+      "conditions": {
+        "items": [
+          {
+            "items": "advancedvaluables:red_sapphire"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "red_sapphire"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "advancedvaluables:red_sapphire_apple"
+    ]
+  }
+}
