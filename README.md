@@ -9,4 +9,4 @@ You can edit, copy, fork, use, distribute, sell copies and so on. You can
 <br>
 also take an  idea how to make a minecraft mod.
 
-By the way, download this mod from <a href="https://modrinth.com/mod/advanced-valuables">Modrinth</a>
+By the way, download this mod from <a href="https://modrinth.com/mod/advanced-valuables">Modrinth</a> or <a href="https://www.curseforge.com/minecraft/mc-mods/advanced-valuables">CurseForge</a>
