@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "pink_garnet",
+  "ingredients": [
+    {
+      "item": "advancedvaluables:pink_garnet"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:pink_garnet_button"
+  }
+}

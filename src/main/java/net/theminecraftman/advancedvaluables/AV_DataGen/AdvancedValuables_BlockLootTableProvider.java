@@ -10,6 +10,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 
+import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
@@ -71,6 +72,96 @@ public class AdvancedValuables_BlockLootTableProvider extends BlockLootSubProvid
         this.add(AdvancedValuables_BlockClass.DEEPSLATE_YELLOW_GARNET_ORE.get(), block -> createMultipleOreDrops(AdvancedValuables_BlockClass.DEEPSLATE_YELLOW_GARNET_ORE.get(), AdvancedValuables_ItemClass.YELLOW_RAW_GARNET.get(), 2, 6));
         this.add(AdvancedValuables_BlockClass.DEEPSLATE_FUSION_ORE.get(), block -> createMultipleOreDrops(AdvancedValuables_BlockClass.DEEPSLATE_FUSION_ORE.get(), AdvancedValuables_ItemClass.RAW_FUSION_GEM.get(), 6, 12));
         this.add(AdvancedValuables_BlockClass.DEEPSLATE_RUBY_ORE.get(), block -> createMultipleOreDrops(AdvancedValuables_BlockClass.DEEPSLATE_RUBY_ORE.get(), AdvancedValuables_ItemClass.RAW_RUBY.get(), 2, 7));
+
+        dropSelf(AdvancedValuables_BlockClass.RED_SAPPHIRE_STAIRS.get());
+        dropSelf(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_STAIRS.get());
+        dropSelf(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_STAIRS.get());
+        dropSelf(AdvancedValuables_BlockClass.RED_GARNET_STAIRS.get());
+        dropSelf(AdvancedValuables_BlockClass.BLUE_GARNET_STAIRS.get());
+        dropSelf(AdvancedValuables_BlockClass.PINK_GARNET_STAIRS.get());
+        dropSelf(AdvancedValuables_BlockClass.YELLOW_GARNET_STAIRS.get());
+        dropSelf(AdvancedValuables_BlockClass.RUBY_STAIRS.get());
+        dropSelf(AdvancedValuables_BlockClass.FUSION_STAIRS.get());
+
+        dropSelf(AdvancedValuables_BlockClass.RED_SAPPHIRE_PRESSURE_PLATE.get());
+        dropSelf(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_PRESSURE_PLATE.get());
+        dropSelf(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_PRESSURE_PLATE.get());
+        dropSelf(AdvancedValuables_BlockClass.RED_GARNET_PRESSURE_PLATE.get());
+        dropSelf(AdvancedValuables_BlockClass.BLUE_GARNET_PRESSURE_PLATE.get());
+        dropSelf(AdvancedValuables_BlockClass.PINK_GARNET_PRESSURE_PLATE.get());
+        dropSelf(AdvancedValuables_BlockClass.YELLOW_GARNET_PRESSURE_PLATE.get());
+        dropSelf(AdvancedValuables_BlockClass.RUBY_PRESSURE_PLATE.get());
+        dropSelf(AdvancedValuables_BlockClass.FUSION_PRESSURE_PLATE.get());
+
+        dropSelf(AdvancedValuables_BlockClass.RED_SAPPHIRE_BUTTON.get());
+        dropSelf(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_BUTTON.get());
+        dropSelf(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_BUTTON.get());
+        dropSelf(AdvancedValuables_BlockClass.RED_GARNET_BUTTON.get());
+        dropSelf(AdvancedValuables_BlockClass.BLUE_GARNET_BUTTON.get());
+        dropSelf(AdvancedValuables_BlockClass.PINK_GARNET_BUTTON.get());
+        dropSelf(AdvancedValuables_BlockClass.YELLOW_GARNET_BUTTON.get());
+        dropSelf(AdvancedValuables_BlockClass.RUBY_BUTTON.get());
+        dropSelf(AdvancedValuables_BlockClass.FUSION_BUTTON.get());
+
+        dropSelf(AdvancedValuables_BlockClass.RED_SAPPHIRE_FENCE.get());
+        dropSelf(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_FENCE.get());
+        dropSelf(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_FENCE.get());
+        dropSelf(AdvancedValuables_BlockClass.RED_GARNET_FENCE.get());
+        dropSelf(AdvancedValuables_BlockClass.BLUE_GARNET_FENCE.get());
+        dropSelf(AdvancedValuables_BlockClass.PINK_GARNET_FENCE.get());
+        dropSelf(AdvancedValuables_BlockClass.YELLOW_GARNET_FENCE.get());
+        dropSelf(AdvancedValuables_BlockClass.RUBY_FENCE.get());
+        dropSelf(AdvancedValuables_BlockClass.FUSION_FENCE.get());
+
+        dropSelf(AdvancedValuables_BlockClass.RED_SAPPHIRE_FENCE_GATE.get());
+        dropSelf(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_FENCE_GATE.get());
+        dropSelf(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_FENCE_GATE.get());
+        dropSelf(AdvancedValuables_BlockClass.RED_GARNET_FENCE_GATE.get());
+        dropSelf(AdvancedValuables_BlockClass.BLUE_GARNET_FENCE_GATE.get());
+        dropSelf(AdvancedValuables_BlockClass.PINK_GARNET_FENCE_GATE.get());
+        dropSelf(AdvancedValuables_BlockClass.YELLOW_GARNET_FENCE_GATE.get());
+        dropSelf(AdvancedValuables_BlockClass.RUBY_FENCE_GATE.get());
+        dropSelf(AdvancedValuables_BlockClass.FUSION_FENCE_GATE.get());
+
+        dropSelf(AdvancedValuables_BlockClass.RED_SAPPHIRE_WALL.get());
+        dropSelf(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_WALL.get());
+        dropSelf(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_WALL.get());
+        dropSelf(AdvancedValuables_BlockClass.RED_GARNET_WALL.get());
+        dropSelf(AdvancedValuables_BlockClass.BLUE_GARNET_WALL.get());
+        dropSelf(AdvancedValuables_BlockClass.PINK_GARNET_WALL.get());
+        dropSelf(AdvancedValuables_BlockClass.YELLOW_GARNET_WALL.get());
+        dropSelf(AdvancedValuables_BlockClass.RUBY_WALL.get());
+        dropSelf(AdvancedValuables_BlockClass.FUSION_WALL.get());
+
+        dropSelf(AdvancedValuables_BlockClass.RED_SAPPHIRE_TRAPDOOR.get());
+        dropSelf(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_TRAPDOOR.get());
+        dropSelf(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_TRAPDOOR.get());
+        dropSelf(AdvancedValuables_BlockClass.RED_GARNET_TRAPDOOR.get());
+        dropSelf(AdvancedValuables_BlockClass.BLUE_GARNET_TRAPDOOR.get());
+        dropSelf(AdvancedValuables_BlockClass.PINK_GARNET_TRAPDOOR.get());
+        dropSelf(AdvancedValuables_BlockClass.YELLOW_GARNET_TRAPDOOR.get());
+        dropSelf(AdvancedValuables_BlockClass.RUBY_TRAPDOOR.get());
+        dropSelf(AdvancedValuables_BlockClass.FUSION_TRAPDOOR.get());
+
+        this.add(AdvancedValuables_BlockClass.RED_SAPPHIRE_SLAB.get(), block -> createSlabItemTable(AdvancedValuables_BlockClass.RED_SAPPHIRE_SLAB.get()));
+        this.add(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_SLAB.get(), block -> createSlabItemTable(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_SLAB.get()));
+        this.add(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_SLAB.get(), block -> createSlabItemTable(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_SLAB.get()));
+        this.add(AdvancedValuables_BlockClass.RED_GARNET_SLAB.get(), block -> createSlabItemTable(AdvancedValuables_BlockClass.RED_GARNET_SLAB.get()));
+        this.add(AdvancedValuables_BlockClass.BLUE_GARNET_SLAB.get(), block -> createSlabItemTable(AdvancedValuables_BlockClass.BLUE_GARNET_SLAB.get()));
+        this.add(AdvancedValuables_BlockClass.PINK_GARNET_SLAB.get(), block -> createSlabItemTable(AdvancedValuables_BlockClass.PINK_GARNET_SLAB.get()));
+        this.add(AdvancedValuables_BlockClass.YELLOW_GARNET_SLAB.get(), block -> createSlabItemTable(AdvancedValuables_BlockClass.YELLOW_GARNET_SLAB.get()));
+        this.add(AdvancedValuables_BlockClass.RUBY_SLAB.get(), block -> createSlabItemTable(AdvancedValuables_BlockClass.RUBY_SLAB.get()));
+        this.add(AdvancedValuables_BlockClass.FUSION_SLAB.get(), block -> createSlabItemTable(AdvancedValuables_BlockClass.FUSION_SLAB.get()));
+
+        this.add(AdvancedValuables_BlockClass.RED_SAPPHIRE_DOOR.get(), block -> createDoorTable(AdvancedValuables_BlockClass.RED_SAPPHIRE_DOOR.get()));
+        this.add(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_DOOR.get(), block -> createDoorTable(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_DOOR.get()));
+        this.add(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_DOOR.get(), block -> createDoorTable(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_DOOR.get()));
+        this.add(AdvancedValuables_BlockClass.RED_GARNET_DOOR.get(), block -> createDoorTable(AdvancedValuables_BlockClass.RED_GARNET_DOOR.get()));
+        this.add(AdvancedValuables_BlockClass.BLUE_GARNET_DOOR.get(), block -> createDoorTable(AdvancedValuables_BlockClass.BLUE_GARNET_DOOR.get()));
+        this.add(AdvancedValuables_BlockClass.PINK_GARNET_DOOR.get(), block -> createDoorTable(AdvancedValuables_BlockClass.PINK_GARNET_DOOR.get()));
+        this.add(AdvancedValuables_BlockClass.YELLOW_GARNET_DOOR.get(), block -> createDoorTable(AdvancedValuables_BlockClass.YELLOW_GARNET_DOOR.get()));
+        this.add(AdvancedValuables_BlockClass.RUBY_DOOR.get(), block -> createDoorTable(AdvancedValuables_BlockClass.RUBY_DOOR.get()));
+        this.add(AdvancedValuables_BlockClass.FUSION_DOOR.get(), block -> createDoorTable(AdvancedValuables_BlockClass.FUSION_DOOR.get()));
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {

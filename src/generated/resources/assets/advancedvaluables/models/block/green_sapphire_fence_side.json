@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "advancedvaluables:block/green_sapphire_block"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "red_garnet",
+  "key": {
+    "#": {
+      "item": "advancedvaluables:red_garnet"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "advancedvaluables:red_garnet_stairs"
+  }
+}

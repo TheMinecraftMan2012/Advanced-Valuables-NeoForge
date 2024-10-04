@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "advancedvaluables:block/red_sapphire_pressure_plate"
+    },
+    "powered=true": {
+      "model": "advancedvaluables:block/red_sapphire_pressure_plate_down"
+    }
+  }
+}

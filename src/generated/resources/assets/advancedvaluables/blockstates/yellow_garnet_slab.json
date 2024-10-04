@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "advancedvaluables:block/yellow_garnet_slab"
+    },
+    "type=double": {
+      "model": "advancedvaluables:block/yellow_garnet_block"
+    },
+    "type=top": {
+      "model": "advancedvaluables:block/yellow_garnet_slab_top"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "advancedvaluables:block/ruby_block"
+  }
+}

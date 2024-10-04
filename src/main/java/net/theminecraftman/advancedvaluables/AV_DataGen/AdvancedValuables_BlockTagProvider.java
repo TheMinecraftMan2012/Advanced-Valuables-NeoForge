@@ -127,5 +127,38 @@ public class AdvancedValuables_BlockTagProvider extends BlockTagsProvider
         this.tag(AdvancedValuables_Tags.Blocks.INCORRECT_FOR_RUBY_TOOL)
                 .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
                 .remove(AdvancedValuables_Tags.Blocks.NEEDS_RUBY_TOOL);
+
+        this.tag(BlockTags.FENCES)
+                .add(AdvancedValuables_BlockClass.RED_SAPPHIRE_FENCE.get())
+                .add(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_FENCE.get())
+                .add(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_FENCE.get())
+                .add(AdvancedValuables_BlockClass.RED_GARNET_FENCE.get())
+                .add(AdvancedValuables_BlockClass.BLUE_GARNET_FENCE.get())
+                .add(AdvancedValuables_BlockClass.PINK_GARNET_FENCE.get())
+                .add(AdvancedValuables_BlockClass.YELLOW_GARNET_FENCE.get())
+                .add(AdvancedValuables_BlockClass.FUSION_FENCE.get())
+                .add(AdvancedValuables_BlockClass.RUBY_FENCE.get());
+
+        this.tag(BlockTags.FENCE_GATES)
+                .add(AdvancedValuables_BlockClass.RED_SAPPHIRE_FENCE_GATE.get())
+                .add(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_FENCE_GATE.get())
+                .add(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_FENCE_GATE.get())
+                .add(AdvancedValuables_BlockClass.RED_GARNET_FENCE_GATE.get())
+                .add(AdvancedValuables_BlockClass.BLUE_GARNET_FENCE_GATE.get())
+                .add(AdvancedValuables_BlockClass.PINK_GARNET_FENCE_GATE.get())
+                .add(AdvancedValuables_BlockClass.YELLOW_GARNET_FENCE_GATE.get())
+                .add(AdvancedValuables_BlockClass.FUSION_FENCE_GATE.get())
+                .add(AdvancedValuables_BlockClass.RUBY_FENCE_GATE.get());
+
+        this.tag(BlockTags.WALLS)
+                .add(AdvancedValuables_BlockClass.RED_SAPPHIRE_WALL.get())
+                .add(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_WALL.get())
+                .add(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_WALL.get())
+                .add(AdvancedValuables_BlockClass.RED_GARNET_WALL.get())
+                .add(AdvancedValuables_BlockClass.BLUE_GARNET_WALL.get())
+                .add(AdvancedValuables_BlockClass.PINK_GARNET_WALL.get())
+                .add(AdvancedValuables_BlockClass.YELLOW_GARNET_WALL.get())
+                .add(AdvancedValuables_BlockClass.FUSION_WALL.get())
+                .add(AdvancedValuables_BlockClass.RUBY_WALL.get());
     }
 }

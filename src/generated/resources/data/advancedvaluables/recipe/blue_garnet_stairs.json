@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "blue_garnet",
+  "key": {
+    "#": {
+      "item": "advancedvaluables:blue_garnet"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "advancedvaluables:blue_garnet_stairs"
+  }
+}

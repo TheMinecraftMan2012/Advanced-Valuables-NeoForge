@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "fusion_gem",
+  "ingredients": [
+    {
+      "item": "advancedvaluables:fusion_gem"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:fusion_button"
+  }
+}

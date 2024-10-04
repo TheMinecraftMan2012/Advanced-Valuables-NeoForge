@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "ruby",
+  "key": {
+    "#": {
+      "item": "advancedvaluables:ruby"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "advancedvaluables:ruby_stairs"
+  }
+}

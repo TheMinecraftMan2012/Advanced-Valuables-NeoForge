@@ -1,4 +1,4 @@
-// 1.21	2024-09-12T22:03:41.6653549	Tags for minecraft:block mod id advancedvaluables
+// 1.21	2024-10-04T22:20:27.0377382	Tags for minecraft:block mod id advancedvaluables
 7f71cc2189f0198333138d3ca33bf1a8992e8f6a data/advancedvaluables/tags/block/incorrect_for_all_garnet_tool.json
 2e1a6b0df861b1244a9d5a51a3bbe3d842115b41 data/advancedvaluables/tags/block/incorrect_for_all_sapphire_tool.json
 6d0550aee937eb9c9960a9fd5dd506a8a1dd9537 data/advancedvaluables/tags/block/incorrect_for_fusion_tool.json
@@ -7,6 +7,9 @@
 32b13946c4cd1f944b029659ccce5fcb2adad4ff data/advancedvaluables/tags/block/needs_all_sapphire_tool.json
 a249c46329a41538f49a564e1f14338aaf1be5a0 data/advancedvaluables/tags/block/needs_fusion_tool.json
 32b13946c4cd1f944b029659ccce5fcb2adad4ff data/advancedvaluables/tags/block/needs_ruby_tool.json
+07b6fe54fe46bee12268ddcc331efeb554914aa1 data/minecraft/tags/block/fences.json
+618f4c8eba2562d3f0cc4086f9ad958fb42d1ad6 data/minecraft/tags/block/fence_gates.json
 f45e8a2eaed93939ec5009681f8e7e848c2a0d07 data/minecraft/tags/block/mineable/pickaxe.json
 3b1b69583d40559777c7626a01d4f8879ecd86ea data/minecraft/tags/block/needs_diamond_tool.json
 13d69c7266b7d842e14886f19fc5aafbc6917401 data/minecraft/tags/block/needs_iron_tool.json
+c3004dd25f7d9749c6e39b697a14e7cb4b4431ee data/minecraft/tags/block/walls.json

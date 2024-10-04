@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "advancedvaluables:block/yellow_garnet_block",
+    "side": "advancedvaluables:block/yellow_garnet_block",
+    "top": "advancedvaluables:block/yellow_garnet_block"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "red_garnet",
+  "key": {
+    "#": {
+      "item": "advancedvaluables:red_garnet"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 2,
+    "id": "advancedvaluables:red_garnet_trapdoor"
+  }
+}

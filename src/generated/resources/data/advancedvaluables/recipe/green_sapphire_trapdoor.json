@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "green_sapphire",
+  "key": {
+    "#": {
+      "item": "advancedvaluables:green_sapphire"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 2,
+    "id": "advancedvaluables:green_sapphire_trapdoor"
+  }
+}

@@ -218,6 +218,103 @@ public class AdvancedValuables_CreativeModeTabs
             })
             .build());
 
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AV_DECOR_TAB = AV_REGISTER_CMT.register("decor", () -> CreativeModeTab.builder()
+            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "foods"))
+            .icon(() -> new ItemStack(AdvancedValuables_BlockClass.RED_SAPPHIRE_DOOR))
+            .title(Component.translatable("creativetab.advancedvaluables.decor"))
+            .displayItems((params, output) -> {
+                output.accept(AdvancedValuables_BlockClass.RED_SAPPHIRE_STAIRS);
+                output.accept(AdvancedValuables_BlockClass.RED_SAPPHIRE_SLAB);
+                output.accept(AdvancedValuables_BlockClass.RED_SAPPHIRE_PRESSURE_PLATE);
+                output.accept(AdvancedValuables_BlockClass.RED_SAPPHIRE_BUTTON);
+                output.accept(AdvancedValuables_BlockClass.RED_SAPPHIRE_FENCE);
+                output.accept(AdvancedValuables_BlockClass.RED_SAPPHIRE_FENCE_GATE);
+                output.accept(AdvancedValuables_BlockClass.RED_SAPPHIRE_WALL);
+                output.accept(AdvancedValuables_BlockClass.RED_SAPPHIRE_DOOR);
+                output.accept(AdvancedValuables_BlockClass.RED_SAPPHIRE_TRAPDOOR);
+
+                output.accept(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_STAIRS);
+                output.accept(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_SLAB);
+                output.accept(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_PRESSURE_PLATE);
+                output.accept(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_BUTTON);
+                output.accept(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_FENCE);
+                output.accept(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_FENCE_GATE);
+                output.accept(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_WALL);
+                output.accept(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_DOOR);
+                output.accept(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_TRAPDOOR);
+
+                output.accept(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_STAIRS);
+                output.accept(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_SLAB);
+                output.accept(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_PRESSURE_PLATE);
+                output.accept(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_BUTTON);
+                output.accept(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_FENCE);
+                output.accept(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_FENCE_GATE);
+                output.accept(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_WALL);
+                output.accept(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_DOOR);
+                output.accept(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_TRAPDOOR);
+
+                output.accept(AdvancedValuables_BlockClass.RED_GARNET_STAIRS);
+                output.accept(AdvancedValuables_BlockClass.RED_GARNET_SLAB);
+                output.accept(AdvancedValuables_BlockClass.RED_GARNET_PRESSURE_PLATE);
+                output.accept(AdvancedValuables_BlockClass.RED_GARNET_BUTTON);
+                output.accept(AdvancedValuables_BlockClass.RED_GARNET_FENCE);
+                output.accept(AdvancedValuables_BlockClass.RED_GARNET_FENCE_GATE);
+                output.accept(AdvancedValuables_BlockClass.RED_GARNET_WALL);
+                output.accept(AdvancedValuables_BlockClass.RED_GARNET_DOOR);
+                output.accept(AdvancedValuables_BlockClass.RED_GARNET_TRAPDOOR);
+
+                output.accept(AdvancedValuables_BlockClass.BLUE_GARNET_STAIRS);
+                output.accept(AdvancedValuables_BlockClass.BLUE_GARNET_SLAB);
+                output.accept(AdvancedValuables_BlockClass.BLUE_GARNET_PRESSURE_PLATE);
+                output.accept(AdvancedValuables_BlockClass.BLUE_GARNET_BUTTON);
+                output.accept(AdvancedValuables_BlockClass.BLUE_GARNET_FENCE);
+                output.accept(AdvancedValuables_BlockClass.BLUE_GARNET_FENCE_GATE);
+                output.accept(AdvancedValuables_BlockClass.BLUE_GARNET_WALL);
+                output.accept(AdvancedValuables_BlockClass.BLUE_GARNET_DOOR);
+                output.accept(AdvancedValuables_BlockClass.BLUE_GARNET_TRAPDOOR);
+
+                output.accept(AdvancedValuables_BlockClass.PINK_GARNET_STAIRS);
+                output.accept(AdvancedValuables_BlockClass.PINK_GARNET_SLAB);
+                output.accept(AdvancedValuables_BlockClass.PINK_GARNET_PRESSURE_PLATE);
+                output.accept(AdvancedValuables_BlockClass.PINK_GARNET_BUTTON);
+                output.accept(AdvancedValuables_BlockClass.PINK_GARNET_FENCE);
+                output.accept(AdvancedValuables_BlockClass.PINK_GARNET_FENCE_GATE);
+                output.accept(AdvancedValuables_BlockClass.PINK_GARNET_WALL);
+                output.accept(AdvancedValuables_BlockClass.PINK_GARNET_DOOR);
+                output.accept(AdvancedValuables_BlockClass.PINK_GARNET_TRAPDOOR);
+
+                output.accept(AdvancedValuables_BlockClass.YELLOW_GARNET_STAIRS);
+                output.accept(AdvancedValuables_BlockClass.YELLOW_GARNET_SLAB);
+                output.accept(AdvancedValuables_BlockClass.YELLOW_GARNET_PRESSURE_PLATE);
+                output.accept(AdvancedValuables_BlockClass.YELLOW_GARNET_BUTTON);
+                output.accept(AdvancedValuables_BlockClass.YELLOW_GARNET_FENCE);
+                output.accept(AdvancedValuables_BlockClass.YELLOW_GARNET_FENCE_GATE);
+                output.accept(AdvancedValuables_BlockClass.YELLOW_GARNET_WALL);
+                output.accept(AdvancedValuables_BlockClass.YELLOW_GARNET_DOOR);
+                output.accept(AdvancedValuables_BlockClass.YELLOW_GARNET_TRAPDOOR);
+
+                output.accept(AdvancedValuables_BlockClass.FUSION_STAIRS);
+                output.accept(AdvancedValuables_BlockClass.FUSION_SLAB);
+                output.accept(AdvancedValuables_BlockClass.FUSION_PRESSURE_PLATE);
+                output.accept(AdvancedValuables_BlockClass.FUSION_BUTTON);
+                output.accept(AdvancedValuables_BlockClass.FUSION_FENCE);
+                output.accept(AdvancedValuables_BlockClass.FUSION_FENCE_GATE);
+                output.accept(AdvancedValuables_BlockClass.FUSION_WALL);
+                output.accept(AdvancedValuables_BlockClass.FUSION_DOOR);
+                output.accept(AdvancedValuables_BlockClass.FUSION_TRAPDOOR);
+
+                output.accept(AdvancedValuables_BlockClass.RUBY_STAIRS);
+                output.accept(AdvancedValuables_BlockClass.RUBY_SLAB);
+                output.accept(AdvancedValuables_BlockClass.RUBY_PRESSURE_PLATE);
+                output.accept(AdvancedValuables_BlockClass.RUBY_BUTTON);
+                output.accept(AdvancedValuables_BlockClass.RUBY_FENCE);
+                output.accept(AdvancedValuables_BlockClass.RUBY_FENCE_GATE);
+                output.accept(AdvancedValuables_BlockClass.RUBY_WALL);
+                output.accept(AdvancedValuables_BlockClass.RUBY_DOOR);
+                output.accept(AdvancedValuables_BlockClass.RUBY_TRAPDOOR);
+            })
+            .build());
+
     public static void register(IEventBus eventBus)
     {
         AV_REGISTER_CMT.register(eventBus);

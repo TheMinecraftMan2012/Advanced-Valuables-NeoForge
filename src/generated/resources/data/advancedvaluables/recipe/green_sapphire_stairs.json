@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "green_sapphire",
+  "key": {
+    "#": {
+      "item": "advancedvaluables:green_sapphire"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "advancedvaluables:green_sapphire_stairs"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "blue_garnet",
+  "ingredients": [
+    {
+      "item": "advancedvaluables:blue_garnet"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:blue_garnet_button"
+  }
+}

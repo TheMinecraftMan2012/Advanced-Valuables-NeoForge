@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "pink_garnet",
+  "key": {
+    "#": {
+      "item": "advancedvaluables:pink_garnet"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 2,
+    "id": "advancedvaluables:pink_garnet_trapdoor"
+  }
+}

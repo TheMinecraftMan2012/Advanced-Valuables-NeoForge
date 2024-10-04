@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "yellow_garnet",
+  "key": {
+    "#": {
+      "item": "advancedvaluables:yellow_garnet"
+    }
+  },
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "advancedvaluables:yellow_garnet_door"
+  }
+}

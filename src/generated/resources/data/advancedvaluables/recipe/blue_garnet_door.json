@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "blue_garnet",
+  "key": {
+    "#": {
+      "item": "advancedvaluables:blue_garnet"
+    }
+  },
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "advancedvaluables:blue_garnet_door"
+  }
+}

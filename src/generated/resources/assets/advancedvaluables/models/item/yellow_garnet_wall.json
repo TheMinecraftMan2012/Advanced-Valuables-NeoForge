@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "advancedvaluables:block/yellow_garnet_block"
+  }
+}

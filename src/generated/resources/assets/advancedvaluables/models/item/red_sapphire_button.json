@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "advancedvaluables:block/red_sapphire_block"
+  }
+}

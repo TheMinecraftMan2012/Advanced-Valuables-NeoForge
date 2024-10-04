@@ -6,11 +6,11 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_BlockClass;
 import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_ItemClass;
 import net.theminecraftman.advancedvaluables.AdvancedValuables;
@@ -374,6 +374,115 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
         oreSmelting(recipeOutput, IRON_SMELTING_BLOCK, RecipeCategory.MISC, Blocks.IRON_BLOCK, 0.25f, 100, "iron_block");
         oreSmelting(recipeOutput, GOLD_SMELTING_BLOCK, RecipeCategory.MISC, Blocks.GOLD_BLOCK, 0.25f, 100, "gold_block");
         oreSmelting(recipeOutput, COPPER_SMELTING_BLOCK, RecipeCategory.MISC, Blocks.COPPER_BLOCK, 0.25f, 100, "copper_block");
+
+        // -- Decor Blocks -- //
+        generateBuildingBlocks(recipeOutput,
+                AdvancedValuables_BlockClass.RED_SAPPHIRE_STAIRS,
+                AdvancedValuables_BlockClass.RED_SAPPHIRE_SLAB,
+                AdvancedValuables_BlockClass.RED_SAPPHIRE_PRESSURE_PLATE,
+                AdvancedValuables_BlockClass.RED_SAPPHIRE_BUTTON,
+                AdvancedValuables_BlockClass.RED_SAPPHIRE_FENCE,
+                AdvancedValuables_BlockClass.RED_SAPPHIRE_FENCE_GATE,
+                AdvancedValuables_BlockClass.RED_SAPPHIRE_WALL,
+                AdvancedValuables_BlockClass.RED_SAPPHIRE_DOOR,
+                AdvancedValuables_BlockClass.RED_SAPPHIRE_TRAPDOOR,
+                AdvancedValuables_ItemClass.RED_SAPPHIRE, "red_sapphire", "has_red_sapphire");
+
+        generateBuildingBlocks(recipeOutput,
+                AdvancedValuables_BlockClass.BLUE_SAPPHIRE_STAIRS,
+                AdvancedValuables_BlockClass.BLUE_SAPPHIRE_SLAB,
+                AdvancedValuables_BlockClass.BLUE_SAPPHIRE_PRESSURE_PLATE,
+                AdvancedValuables_BlockClass.BLUE_SAPPHIRE_BUTTON,
+                AdvancedValuables_BlockClass.BLUE_SAPPHIRE_FENCE,
+                AdvancedValuables_BlockClass.BLUE_SAPPHIRE_FENCE_GATE,
+                AdvancedValuables_BlockClass.BLUE_SAPPHIRE_WALL,
+                AdvancedValuables_BlockClass.BLUE_SAPPHIRE_DOOR,
+                AdvancedValuables_BlockClass.BLUE_SAPPHIRE_TRAPDOOR,
+                AdvancedValuables_ItemClass.BLUE_SAPPHIRE, "blue_sapphire", "has_blue_sapphire");
+
+        generateBuildingBlocks(recipeOutput,
+                AdvancedValuables_BlockClass.GREEN_SAPPHIRE_STAIRS,
+                AdvancedValuables_BlockClass.GREEN_SAPPHIRE_SLAB,
+                AdvancedValuables_BlockClass.GREEN_SAPPHIRE_PRESSURE_PLATE,
+                AdvancedValuables_BlockClass.GREEN_SAPPHIRE_BUTTON,
+                AdvancedValuables_BlockClass.GREEN_SAPPHIRE_FENCE,
+                AdvancedValuables_BlockClass.GREEN_SAPPHIRE_FENCE_GATE,
+                AdvancedValuables_BlockClass.GREEN_SAPPHIRE_WALL,
+                AdvancedValuables_BlockClass.GREEN_SAPPHIRE_DOOR,
+                AdvancedValuables_BlockClass.GREEN_SAPPHIRE_TRAPDOOR,
+                AdvancedValuables_ItemClass.GREEN_SAPPHIRE, "green_sapphire", "has_green_sapphire");
+
+        generateBuildingBlocks(recipeOutput,
+                AdvancedValuables_BlockClass.RED_GARNET_STAIRS,
+                AdvancedValuables_BlockClass.RED_GARNET_SLAB,
+                AdvancedValuables_BlockClass.RED_GARNET_PRESSURE_PLATE,
+                AdvancedValuables_BlockClass.RED_GARNET_BUTTON,
+                AdvancedValuables_BlockClass.RED_GARNET_FENCE,
+                AdvancedValuables_BlockClass.RED_GARNET_FENCE_GATE,
+                AdvancedValuables_BlockClass.RED_GARNET_WALL,
+                AdvancedValuables_BlockClass.RED_GARNET_DOOR,
+                AdvancedValuables_BlockClass.RED_GARNET_TRAPDOOR,
+                AdvancedValuables_ItemClass.RED_GARNET, "red_garnet", "has_red_garnet");
+
+        generateBuildingBlocks(recipeOutput,
+                AdvancedValuables_BlockClass.BLUE_GARNET_STAIRS,
+                AdvancedValuables_BlockClass.BLUE_GARNET_SLAB,
+                AdvancedValuables_BlockClass.BLUE_GARNET_PRESSURE_PLATE,
+                AdvancedValuables_BlockClass.BLUE_GARNET_BUTTON,
+                AdvancedValuables_BlockClass.BLUE_GARNET_FENCE,
+                AdvancedValuables_BlockClass.BLUE_GARNET_FENCE_GATE,
+                AdvancedValuables_BlockClass.BLUE_GARNET_WALL,
+                AdvancedValuables_BlockClass.BLUE_GARNET_DOOR,
+                AdvancedValuables_BlockClass.BLUE_GARNET_TRAPDOOR,
+                AdvancedValuables_ItemClass.BLUE_GARNET, "blue_garnet", "has_blue_garnet");
+
+        generateBuildingBlocks(recipeOutput,
+                AdvancedValuables_BlockClass.PINK_GARNET_STAIRS,
+                AdvancedValuables_BlockClass.PINK_GARNET_SLAB,
+                AdvancedValuables_BlockClass.PINK_GARNET_PRESSURE_PLATE,
+                AdvancedValuables_BlockClass.PINK_GARNET_BUTTON,
+                AdvancedValuables_BlockClass.PINK_GARNET_FENCE,
+                AdvancedValuables_BlockClass.PINK_GARNET_FENCE_GATE,
+                AdvancedValuables_BlockClass.PINK_GARNET_WALL,
+                AdvancedValuables_BlockClass.PINK_GARNET_DOOR,
+                AdvancedValuables_BlockClass.PINK_GARNET_TRAPDOOR,
+                AdvancedValuables_ItemClass.PINK_GARNET, "pink_garnet", "has_pink_garnet");
+
+        generateBuildingBlocks(recipeOutput,
+                AdvancedValuables_BlockClass.YELLOW_GARNET_STAIRS,
+                AdvancedValuables_BlockClass.YELLOW_GARNET_SLAB,
+                AdvancedValuables_BlockClass.YELLOW_GARNET_PRESSURE_PLATE,
+                AdvancedValuables_BlockClass.YELLOW_GARNET_BUTTON,
+                AdvancedValuables_BlockClass.YELLOW_GARNET_FENCE,
+                AdvancedValuables_BlockClass.YELLOW_GARNET_FENCE_GATE,
+                AdvancedValuables_BlockClass.YELLOW_GARNET_WALL,
+                AdvancedValuables_BlockClass.YELLOW_GARNET_DOOR,
+                AdvancedValuables_BlockClass.YELLOW_GARNET_TRAPDOOR,
+                AdvancedValuables_ItemClass.YELLOW_GARNET, "yellow_garnet", "has_yellow_garnet");
+
+        generateBuildingBlocks(recipeOutput,
+                AdvancedValuables_BlockClass.FUSION_STAIRS,
+                AdvancedValuables_BlockClass.FUSION_SLAB,
+                AdvancedValuables_BlockClass.FUSION_PRESSURE_PLATE,
+                AdvancedValuables_BlockClass.FUSION_BUTTON,
+                AdvancedValuables_BlockClass.FUSION_FENCE,
+                AdvancedValuables_BlockClass.FUSION_FENCE_GATE,
+                AdvancedValuables_BlockClass.FUSION_WALL,
+                AdvancedValuables_BlockClass.FUSION_DOOR,
+                AdvancedValuables_BlockClass.FUSION_TRAPDOOR,
+                AdvancedValuables_ItemClass.FUSION_GEM, "fusion_gem", "has_fusion_gem");
+
+        generateBuildingBlocks(recipeOutput,
+                AdvancedValuables_BlockClass.RUBY_STAIRS,
+                AdvancedValuables_BlockClass.RUBY_SLAB,
+                AdvancedValuables_BlockClass.RUBY_PRESSURE_PLATE,
+                AdvancedValuables_BlockClass.RUBY_BUTTON,
+                AdvancedValuables_BlockClass.RUBY_FENCE,
+                AdvancedValuables_BlockClass.RUBY_FENCE_GATE,
+                AdvancedValuables_BlockClass.RUBY_WALL,
+                AdvancedValuables_BlockClass.RUBY_DOOR,
+                AdvancedValuables_BlockClass.RUBY_TRAPDOOR,
+                AdvancedValuables_ItemClass.RUBY, "ruby", "has_ruby");
     }
 
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> ingredients, RecipeCategory recipeCategory, ItemLike result,
@@ -502,5 +611,27 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
                 .pattern("aaa")
                 .define('a', ingredient).define('b', Items.APPLE)
                 .unlockedBy(group, has(ingredient)).save(output);
+    }
+
+    private static void generateBuildingBlocks(RecipeOutput output ,DeferredBlock<StairBlock> result_stair,
+                                               DeferredBlock<SlabBlock> result_slab,
+                                               DeferredBlock<PressurePlateBlock> result_pressure_plate,
+                                               DeferredBlock<ButtonBlock> result_button,
+                                               DeferredBlock<FenceBlock> result_fence,
+                                               DeferredBlock<FenceGateBlock> result_fence_gate,
+                                               DeferredBlock<WallBlock> result_wall,
+                                               DeferredBlock<DoorBlock> result_door,
+                                               DeferredBlock<TrapDoorBlock> result_trapdoor,
+                                               DeferredItem<Item> ingredient, String group, String unlock)
+    {
+        stairBuilder(result_stair, Ingredient.of(ingredient)).group(group).unlockedBy(unlock, has(ingredient)).save(output);
+        slab(output, RecipeCategory.BUILDING_BLOCKS, result_slab, ingredient);
+        pressurePlate(output, result_pressure_plate, ingredient);
+        buttonBuilder(result_button, Ingredient.of(ingredient)).group(group).unlockedBy(unlock, has(ingredient)).save(output);
+        fenceBuilder(result_fence, Ingredient.of(ingredient)).group(group).unlockedBy(unlock, has(ingredient)).save(output);
+        fenceGateBuilder(result_fence_gate, Ingredient.of(ingredient)).group(group).unlockedBy(unlock, has(ingredient)).save(output);
+        wall(output, RecipeCategory.BUILDING_BLOCKS, result_wall, ingredient);
+        doorBuilder(result_door, Ingredient.of(ingredient)).group(group).unlockedBy(unlock, has(ingredient)).save(output);
+        trapdoorBuilder(result_trapdoor, Ingredient.of(ingredient)).group(group).unlockedBy(unlock, has(ingredient)).save(output);
     }
 }

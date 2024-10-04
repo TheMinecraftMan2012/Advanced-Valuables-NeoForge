@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "green_sapphire",
+  "ingredients": [
+    {
+      "item": "advancedvaluables:green_sapphire"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:green_sapphire_button"
+  }
+}
