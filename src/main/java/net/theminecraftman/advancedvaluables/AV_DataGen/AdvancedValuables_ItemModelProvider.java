@@ -166,8 +166,8 @@ public class AdvancedValuables_ItemModelProvider extends ItemModelProvider
         buttonItem(AdvancedValuables_BlockClass.BLUE_GARNET_BUTTON, AdvancedValuables_BlockClass.BLUE_GARNET_BLOCK);
         buttonItem(AdvancedValuables_BlockClass.PINK_GARNET_BUTTON, AdvancedValuables_BlockClass.PINK_GARNET_BLOCK);
         buttonItem(AdvancedValuables_BlockClass.YELLOW_GARNET_BUTTON, AdvancedValuables_BlockClass.YELLOW_GARNET_BLOCK);
-        fenceItem(AdvancedValuables_BlockClass.FUSION_BUTTON, AdvancedValuables_BlockClass.FUSION_BLOCK);
-        fenceItem(AdvancedValuables_BlockClass.RUBY_BUTTON, AdvancedValuables_BlockClass.RUBY_BLOCK);
+        buttonItem(AdvancedValuables_BlockClass.FUSION_BUTTON, AdvancedValuables_BlockClass.FUSION_BLOCK);
+        buttonItem(AdvancedValuables_BlockClass.RUBY_BUTTON, AdvancedValuables_BlockClass.RUBY_BLOCK);
 
         fenceItem(AdvancedValuables_BlockClass.RED_SAPPHIRE_FENCE, AdvancedValuables_BlockClass.RED_SAPPHIRE_BLOCK);
         fenceItem(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_FENCE, AdvancedValuables_BlockClass.BLUE_SAPPHIRE_BLOCK);

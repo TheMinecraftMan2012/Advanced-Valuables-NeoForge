@@ -22,7 +22,8 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 @Mod(AdvancedValuables.MOD_ID)
-public class AdvancedValuables {
+public class AdvancedValuables
+{
     public static final String MOD_ID = "advancedvaluables";
     private static final Logger LOGGER = LogUtils.getLogger();
 

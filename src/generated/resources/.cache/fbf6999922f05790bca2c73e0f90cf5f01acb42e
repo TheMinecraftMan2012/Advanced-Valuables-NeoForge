@@ -1,4 +1,4 @@
-// 1.21	2024-10-04T22:20:27.0128036	Item Models: advancedvaluables
+// 1.21	2024-10-06T17:26:38.5872123	Item Models: advancedvaluables
 a8bb5b86cbcbed22be6ae5dca43cf5d0095e2c68 assets/advancedvaluables/models/item/blue_garnet.json
 5b906133d2293e2e36bff806a09e2512476e6878 assets/advancedvaluables/models/item/blue_garnet_apple.json
 4b5b433e86f356c9f372400c9b62ddc732f49bc3 assets/advancedvaluables/models/item/blue_garnet_axe.json
@@ -34,7 +34,7 @@ cf713d7117af8d21af0e5abd239493e41004e939 assets/advancedvaluables/models/item/bl
 cb14a71df7928f82b68e518a1b16df6e5439a9d6 assets/advancedvaluables/models/item/fusion_apple.json
 65ef8780297777e15bfd68aeaefc735007be1128 assets/advancedvaluables/models/item/fusion_axe.json
 cdaaf69343392e232606c36f582c86eb4785162f assets/advancedvaluables/models/item/fusion_boots.json
-129b50b367cda14624edc57031849d5dcd6eb714 assets/advancedvaluables/models/item/fusion_button.json
+3dd91c306959ac577dd007cfce45b1d997949a13 assets/advancedvaluables/models/item/fusion_button.json
 df0fcb8ce599ecbd2a6d82d81776443d5a500ca7 assets/advancedvaluables/models/item/fusion_chestplate.json
 26b5c23cddf949868eb977e8d9d829a9dd18b657 assets/advancedvaluables/models/item/fusion_door.json
 129b50b367cda14624edc57031849d5dcd6eb714 assets/advancedvaluables/models/item/fusion_fence.json
@@ -116,7 +116,7 @@ c75a58ecbc10e5652dc3ba73c1827fe719722b30 assets/advancedvaluables/models/item/re
 d891cf034b5ddd07e626d32d359a0ae8a70404ae assets/advancedvaluables/models/item/ruby_apple.json
 9a1e8a18daa714be35f2e2d3060d7a1f85607524 assets/advancedvaluables/models/item/ruby_axe.json
 87608c13f0cffdcfac74e0fb74fcfa6c8add4afe assets/advancedvaluables/models/item/ruby_boots.json
-e8eccfa406d3730fa4e05980d6d95c3c064d694d assets/advancedvaluables/models/item/ruby_button.json
+7fbdc44ec16ed9d5c206604a3f8f81b5ca312bb8 assets/advancedvaluables/models/item/ruby_button.json
 0aa7d5210ca5c5b3f2f755387b608a0ab2b12819 assets/advancedvaluables/models/item/ruby_chestplate.json
 fc5b6eca6b7fda019682294445e3cbaa8d63bac1 assets/advancedvaluables/models/item/ruby_door.json
 e8eccfa406d3730fa4e05980d6d95c3c064d694d assets/advancedvaluables/models/item/ruby_fence.json
