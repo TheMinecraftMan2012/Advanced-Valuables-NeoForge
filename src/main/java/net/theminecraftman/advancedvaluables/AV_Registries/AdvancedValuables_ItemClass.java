@@ -11,6 +11,8 @@ import net.theminecraftman.advancedvaluables.AV_Libraries.ToolsComponents.Advanc
 import net.theminecraftman.advancedvaluables.AV_Libraries.ToolsComponents.AdvancedValuables_ToolsTier;
 import net.theminecraftman.advancedvaluables.AdvancedValuables;
 
+import java.util.function.Supplier;
+
 public class AdvancedValuables_ItemClass
 {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(AdvancedValuables.MOD_ID);
