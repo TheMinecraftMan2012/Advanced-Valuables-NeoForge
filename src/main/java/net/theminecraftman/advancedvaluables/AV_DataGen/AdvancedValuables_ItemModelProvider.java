@@ -2,18 +2,14 @@ package net.theminecraftman.advancedvaluables.AV_DataGen;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.ButtonBlock;
-import net.minecraft.world.level.block.FenceBlock;
-import net.minecraft.world.level.block.WallBlock;
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
-import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_BlockClass;
-import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_ItemClass;
+import net.theminecraftman.advancedvaluables.AV_Registries.AdvancedValuables_BlockClass;
+import net.theminecraftman.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
 import net.theminecraftman.advancedvaluables.AdvancedValuables;
 
 public class AdvancedValuables_ItemModelProvider extends ItemModelProvider
@@ -198,6 +194,18 @@ public class AdvancedValuables_ItemModelProvider extends ItemModelProvider
         basicItem(AdvancedValuables_BlockClass.YELLOW_GARNET_DOOR.asItem());
         basicItem(AdvancedValuables_BlockClass.FUSION_DOOR.asItem());
         basicItem(AdvancedValuables_BlockClass.RUBY_DOOR.asItem());
+
+        handheldItem(AdvancedValuables_ItemClass.RED_SAPPHIRE_HAMMER);
+        handheldItem(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_HAMMER);
+        handheldItem(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_HAMMER);
+        handheldItem(AdvancedValuables_ItemClass.RED_GARNET_HAMMER);
+        handheldItem(AdvancedValuables_ItemClass.BLUE_GARNET_HAMMER);
+        handheldItem(AdvancedValuables_ItemClass.PINK_GARNET_HAMMER);
+        handheldItem(AdvancedValuables_ItemClass.YELLOW_GARNET_HAMMER);
+        handheldItem(AdvancedValuables_ItemClass.FUSION_HAMMER);
+        handheldItem(AdvancedValuables_ItemClass.RUBY_HAMMER);
+
+        basicItem(AdvancedValuables_ItemClass.HAMMER_WIREFRAME.get());
     }
 
     private ItemModelBuilder handheldItem(DeferredItem<?> item) {

@@ -10,9 +10,9 @@ import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.registries.DeferredRegister;
-import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_BlockClass;
-import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_ItemClass;
+import net.theminecraftman.advancedvaluables.AV_Libraries.Hammer.HammerItem;
+import net.theminecraftman.advancedvaluables.AV_Registries.AdvancedValuables_BlockClass;
+import net.theminecraftman.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
 import net.theminecraftman.advancedvaluables.AdvancedValuables;
 
 import java.util.List;
@@ -483,6 +483,26 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
                 AdvancedValuables_BlockClass.RUBY_DOOR,
                 AdvancedValuables_BlockClass.RUBY_TRAPDOOR,
                 AdvancedValuables_ItemClass.RUBY, "ruby", "has_ruby");
+
+        // -- Hammer Wireframe Crafting -- //
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.HAMMER_WIREFRAME)
+                .pattern("aaa")
+                .pattern("aaa")
+                .pattern(" a ")
+                .define('a', Items.IRON_INGOT)
+                .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT)).group("hammer")
+                .save(recipeOutput);
+
+        // -- Hammer Crafting -- //
+        generateHammerRecipe(recipeOutput, AdvancedValuables_ItemClass.RED_SAPPHIRE, AdvancedValuables_ItemClass.RED_SAPPHIRE_HAMMER);
+        generateHammerRecipe(recipeOutput, AdvancedValuables_ItemClass.BLUE_SAPPHIRE, AdvancedValuables_ItemClass.BLUE_SAPPHIRE_HAMMER);
+        generateHammerRecipe(recipeOutput, AdvancedValuables_ItemClass.GREEN_SAPPHIRE, AdvancedValuables_ItemClass.GREEN_SAPPHIRE_HAMMER);
+        generateHammerRecipe(recipeOutput, AdvancedValuables_ItemClass.RED_GARNET, AdvancedValuables_ItemClass.RED_GARNET_HAMMER);
+        generateHammerRecipe(recipeOutput, AdvancedValuables_ItemClass.BLUE_GARNET, AdvancedValuables_ItemClass.BLUE_GARNET_HAMMER);
+        generateHammerRecipe(recipeOutput, AdvancedValuables_ItemClass.PINK_GARNET, AdvancedValuables_ItemClass.PINK_GARNET_HAMMER);
+        generateHammerRecipe(recipeOutput, AdvancedValuables_ItemClass.YELLOW_GARNET, AdvancedValuables_ItemClass.YELLOW_GARNET_HAMMER);
+        generateHammerRecipe(recipeOutput, AdvancedValuables_ItemClass.FUSION_GEM, AdvancedValuables_ItemClass.FUSION_HAMMER);
+        generateHammerRecipe(recipeOutput, AdvancedValuables_ItemClass.RUBY, AdvancedValuables_ItemClass.RUBY_HAMMER);
     }
 
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> ingredients, RecipeCategory recipeCategory, ItemLike result,
@@ -510,7 +530,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
     }
 
     // -- Shortcuts -- // -- Tools -- //
-    private static void generateBlockRecipe(RecipeOutput output, DeferredBlock<Block> result, DeferredItem<Item> ingredient, String group)
+    private void generateBlockRecipe(RecipeOutput output, DeferredBlock<Block> result, DeferredItem<Item> ingredient, String group)
     {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
                 .pattern("aaa")
@@ -520,7 +540,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
                 .unlockedBy(group, has(ingredient)).save(output);
     }
 
-    private static void generatePickaxeRecipe(RecipeOutput output, DeferredItem<PickaxeItem> result, DeferredItem<Item> ingredient, String group)
+    private void generatePickaxeRecipe(RecipeOutput output, DeferredItem<PickaxeItem> result, DeferredItem<Item> ingredient, String group)
     {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
                 .pattern("aaa")
@@ -529,7 +549,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
                 .define('a', ingredient).define('b', Items.STICK)
                 .unlockedBy(group, has(ingredient)).save(output);
     }
-    private static void generateAxeRecipe(RecipeOutput output, DeferredItem<AxeItem> result, DeferredItem<Item> ingredient, String group)
+    private void generateAxeRecipe(RecipeOutput output, DeferredItem<AxeItem> result, DeferredItem<Item> ingredient, String group)
     {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
                 .pattern("aa ")
@@ -538,7 +558,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
                 .define('a', ingredient).define('b', Items.STICK)
                 .unlockedBy(group, has(ingredient)).save(output);
     }
-    private static void generateShovelRecipe(RecipeOutput output, DeferredItem<ShovelItem> result, DeferredItem<Item> ingredient, String group)
+    private void generateShovelRecipe(RecipeOutput output, DeferredItem<ShovelItem> result, DeferredItem<Item> ingredient, String group)
     {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
                 .pattern(" a ")
@@ -547,7 +567,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
                 .define('a', ingredient).define('b', Items.STICK)
                 .unlockedBy(group, has(ingredient)).save(output);
     }
-    private static void generateHoeRecipe(RecipeOutput output, DeferredItem<HoeItem> result, DeferredItem<Item> ingredient, String group)
+    private void generateHoeRecipe(RecipeOutput output, DeferredItem<HoeItem> result, DeferredItem<Item> ingredient, String group)
     {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
                 .pattern("aa ")
@@ -556,7 +576,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
                 .define('a', ingredient).define('b', Items.STICK)
                 .unlockedBy(group, has(ingredient)).save(output);
     }
-    private static void generateSwordRecipe(RecipeOutput output, DeferredItem<SwordItem> result, DeferredItem<Item> ingredient, String group)
+    private void generateSwordRecipe(RecipeOutput output, DeferredItem<SwordItem> result, DeferredItem<Item> ingredient, String group)
     {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
                 .pattern(" a ")
@@ -567,7 +587,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
     }
 
     // -- Shortcuts -- // -- Armor -- //
-    private static void generateArmorRecipe(RecipeOutput output,
+    private void generateArmorRecipe(RecipeOutput output,
                                             DeferredItem<ArmorItem> result_helmet,
                                             DeferredItem<ArmorItem> result_chestplate,
                                             DeferredItem<ArmorItem> result_leggings,
@@ -603,7 +623,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
                 .unlockedBy(group, has(ingredient)).save(output);
     }
 
-    private static void generateAppleRecipe(RecipeOutput output, DeferredItem<Item> apple_result, DeferredItem<Item> ingredient, String group)
+    private void generateAppleRecipe(RecipeOutput output, DeferredItem<Item> apple_result, DeferredItem<Item> ingredient, String group)
     {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, apple_result)
                 .pattern("aaa")
@@ -613,7 +633,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
                 .unlockedBy(group, has(ingredient)).save(output);
     }
 
-    private static void generateBuildingBlocks(RecipeOutput output ,DeferredBlock<StairBlock> result_stair,
+    private void generateBuildingBlocks(RecipeOutput output ,DeferredBlock<StairBlock> result_stair,
                                                DeferredBlock<SlabBlock> result_slab,
                                                DeferredBlock<PressurePlateBlock> result_pressure_plate,
                                                DeferredBlock<ButtonBlock> result_button,
@@ -633,5 +653,13 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
         wall(output, RecipeCategory.BUILDING_BLOCKS, result_wall, ingredient);
         doorBuilder(result_door, Ingredient.of(ingredient)).group(group).unlockedBy(unlock, has(ingredient)).save(output);
         trapdoorBuilder(result_trapdoor, Ingredient.of(ingredient)).group(group).unlockedBy(unlock, has(ingredient)).save(output);
+    }
+
+    private void generateHammerRecipe(RecipeOutput output, DeferredItem<Item> ingredient, DeferredItem<HammerItem> result)
+    {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result)
+                .requires(ingredient).requires(AdvancedValuables_ItemClass.HAMMER_WIREFRAME)
+                .unlockedBy("has_hammer_wireframe", has(ingredient)).group("hammer")
+                .save(output);
     }
 }

@@ -11,7 +11,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
-import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_BlockClass;
+import net.theminecraftman.advancedvaluables.AV_Registries.AdvancedValuables_BlockClass;
 import net.theminecraftman.advancedvaluables.AdvancedValuables;
 
 import java.util.List;

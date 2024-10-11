@@ -8,8 +8,8 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_BlockClass;
-import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_ItemClass;
+import net.theminecraftman.advancedvaluables.AV_Registries.AdvancedValuables_BlockClass;
+import net.theminecraftman.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
 import net.theminecraftman.advancedvaluables.AdvancedValuables;
 
 public class AdvancedValuables_CreativeModeTabs
@@ -196,6 +196,16 @@ public class AdvancedValuables_CreativeModeTabs
                 output.accept(AdvancedValuables_ItemClass.RUBY_CHESTPLATE.get());
                 output.accept(AdvancedValuables_ItemClass.RUBY_LEGGINGS.get());
                 output.accept(AdvancedValuables_ItemClass.RUBY_BOOTS.get());
+
+                output.accept(AdvancedValuables_ItemClass.RED_SAPPHIRE_HAMMER);
+                output.accept(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_HAMMER);
+                output.accept(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_HAMMER);
+                output.accept(AdvancedValuables_ItemClass.RED_GARNET_HAMMER);
+                output.accept(AdvancedValuables_ItemClass.BLUE_GARNET_HAMMER);
+                output.accept(AdvancedValuables_ItemClass.PINK_GARNET_HAMMER);
+                output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_HAMMER);
+                output.accept(AdvancedValuables_ItemClass.FUSION_HAMMER);
+                output.accept(AdvancedValuables_ItemClass.RUBY_HAMMER);
             })
             .build());
 

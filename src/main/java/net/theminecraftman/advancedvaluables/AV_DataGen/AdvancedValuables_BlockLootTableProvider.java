@@ -10,16 +10,13 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 
-import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredItem;
-import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_BlockClass;
-import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_ItemClass;
+import net.theminecraftman.advancedvaluables.AV_Registries.AdvancedValuables_BlockClass;
+import net.theminecraftman.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
 
 import java.util.Set;
 

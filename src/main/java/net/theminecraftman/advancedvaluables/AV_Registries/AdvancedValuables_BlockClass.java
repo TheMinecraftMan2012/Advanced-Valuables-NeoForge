@@ -1,4 +1,4 @@
-package net.theminecraftman.advancedvaluables.AV_Templates;
+package net.theminecraftman.advancedvaluables.AV_Registries;
 
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;

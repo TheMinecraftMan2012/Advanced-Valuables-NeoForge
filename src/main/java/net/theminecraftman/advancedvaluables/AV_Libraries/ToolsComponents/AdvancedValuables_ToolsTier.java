@@ -1,9 +1,9 @@
-package net.theminecraftman.advancedvaluables.AV_ToolsComponents;
+package net.theminecraftman.advancedvaluables.AV_Libraries.ToolsComponents;
 
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.neoforge.common.SimpleTier;
-import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_ItemClass;
+import net.theminecraftman.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
 import net.theminecraftman.advancedvaluables.util.AdvancedValuables_Tags;
 
 public class AdvancedValuables_ToolsTier

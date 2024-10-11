@@ -1,4 +1,4 @@
-package net.theminecraftman.advancedvaluables.AV_Templates.FoodComponents;
+package net.theminecraftman.advancedvaluables.AV_Libraries.FoodComponents;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;

@@ -1,4 +1,4 @@
-package net.theminecraftman.advancedvaluables.AV_ToolsComponents;
+package net.theminecraftman.advancedvaluables.AV_Libraries.ToolsComponents;
 
 import net.minecraft.Util;
 import net.minecraft.core.Holder;
@@ -10,7 +10,7 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_ItemClass;
+import net.theminecraftman.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
 import net.theminecraftman.advancedvaluables.AdvancedValuables;
 
 import java.util.EnumMap;

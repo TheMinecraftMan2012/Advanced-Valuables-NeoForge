@@ -6,7 +6,7 @@ import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_BlockClass;
+import net.theminecraftman.advancedvaluables.AV_Registries.AdvancedValuables_BlockClass;
 import net.theminecraftman.advancedvaluables.AdvancedValuables;
 
 public class AdvancedValuables_BlockStateProvider extends BlockStateProvider

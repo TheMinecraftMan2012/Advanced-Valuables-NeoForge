@@ -1,13 +1,14 @@
-package net.theminecraftman.advancedvaluables.AV_Templates;
+package net.theminecraftman.advancedvaluables.AV_Registries;
 
 import net.minecraft.core.Holder;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.theminecraftman.advancedvaluables.AV_Templates.FoodComponents.AdvancedValuables_FoodProperties;
-import net.theminecraftman.advancedvaluables.AV_ToolsComponents.AdvancedValuables_ArmorMaterials;
-import net.theminecraftman.advancedvaluables.AV_ToolsComponents.AdvancedValuables_ToolsTier;
+import net.theminecraftman.advancedvaluables.AV_Libraries.FoodComponents.AdvancedValuables_FoodProperties;
+import net.theminecraftman.advancedvaluables.AV_Libraries.Hammer.HammerItem;
+import net.theminecraftman.advancedvaluables.AV_Libraries.ToolsComponents.AdvancedValuables_ArmorMaterials;
+import net.theminecraftman.advancedvaluables.AV_Libraries.ToolsComponents.AdvancedValuables_ToolsTier;
 import net.theminecraftman.advancedvaluables.AdvancedValuables;
 
 public class AdvancedValuables_ItemClass
@@ -156,7 +157,6 @@ public class AdvancedValuables_ItemClass
     public static final DeferredItem<ArmorItem> RUBY_BOOTS = registerArmorItem("ruby_boots", AdvancedValuables_ArmorMaterials.RUBY, ArmorItem.Type.BOOTS, 40);
 
     // -- Effective Foods -- //
-
     public static final DeferredItem<Item> RED_SAPPHIRE_APPLE = ITEMS.registerSimpleItem("red_sapphire_apple", new Item.Properties().food(AdvancedValuables_FoodProperties.RED_SAPPHIRE_APPLE));
     public static final DeferredItem<Item> BLUE_SAPPHIRE_APPLE = ITEMS.registerSimpleItem("blue_sapphire_apple", new Item.Properties().food(AdvancedValuables_FoodProperties.BLUE_SAPPHIRE_APPLE));
     public static final DeferredItem<Item> GREEN_SAPPHIRE_APPLE = ITEMS.registerSimpleItem("green_sapphire_apple", new Item.Properties().food(AdvancedValuables_FoodProperties.GREEN_SAPPHIRE_APPLE));
@@ -168,6 +168,22 @@ public class AdvancedValuables_ItemClass
 
     public static final DeferredItem<Item> FUSION_APPLE = ITEMS.registerSimpleItem("fusion_apple", new Item.Properties().food(AdvancedValuables_FoodProperties.FUSION_APPLE));
     public static final DeferredItem<Item> RUBY_APPLE = ITEMS.registerSimpleItem("ruby_apple", new Item.Properties().food(AdvancedValuables_FoodProperties.RUBY_APPLE));
+
+    // -- Hammers -- //
+    public static final DeferredItem<HammerItem> RED_SAPPHIRE_HAMMER = registerHammerItem("red_sapphire_hammer", AdvancedValuables_ToolsTier.RED_SAPPHIRE_TOOL_TIER);
+    public static final DeferredItem<HammerItem> BLUE_SAPPHIRE_HAMMER = registerHammerItem("blue_sapphire_hammer", AdvancedValuables_ToolsTier.BLUE_SAPPHIRE_TOOL_TIER);
+    public static final DeferredItem<HammerItem> GREEN_SAPPHIRE_HAMMER = registerHammerItem("green_sapphire_hammer", AdvancedValuables_ToolsTier.GREEN_SAPPHIRE_TOOL_TIER);
+
+    public static final DeferredItem<HammerItem> RED_GARNET_HAMMER = registerHammerItem("red_garnet_hammer", AdvancedValuables_ToolsTier.RED_GARNET_TOOL_TIER);
+    public static final DeferredItem<HammerItem> BLUE_GARNET_HAMMER = registerHammerItem("blue_garnet_hammer", AdvancedValuables_ToolsTier.BLUE_GARNET_TOOL_TIER);
+    public static final DeferredItem<HammerItem> PINK_GARNET_HAMMER = registerHammerItem("pink_garnet_hammer", AdvancedValuables_ToolsTier.PINK_GARNET_TOOL_TIER);
+    public static final DeferredItem<HammerItem> YELLOW_GARNET_HAMMER = registerHammerItem("yellow_garnet_hammer", AdvancedValuables_ToolsTier.YELLOW_GARNET_TOOL_TIER);
+
+    public static final DeferredItem<HammerItem> FUSION_HAMMER = registerHammerItem("fusion_hammer", AdvancedValuables_ToolsTier.FUSION_TOOL_TIER);
+    public static final DeferredItem<HammerItem> RUBY_HAMMER = registerHammerItem("ruby_hammer", AdvancedValuables_ToolsTier.RUBY_TOOL_TIER);
+
+    // -- Hammer Crafting Requirement -- //
+    public static final DeferredItem<Item> HAMMER_WIREFRAME = ITEMS.registerSimpleItem("hammer_wireframe");
 
     private static DeferredItem<PickaxeItem> registerPickaxeItem(String name, Tier tier)
     {
@@ -223,6 +239,12 @@ public class AdvancedValuables_ItemClass
     private static DeferredItem<ArmorItem> registerArmorItem(String name, Holder<ArmorMaterial> armorMaterial, ArmorItem.Type armorType, int getDurability)
     {
         return ITEMS.register(name, () -> new ArmorItem(armorMaterial, armorType, new Item.Properties().durability(armorType.getDurability(getDurability))));
+    }
+
+    // -- Hammer -- //
+    private static DeferredItem<HammerItem> registerHammerItem(String name, Tier tier)
+    {
+        return ITEMS.register(name, () -> new HammerItem(tier, new Item.Properties().attributes(HammerItem.createAttributes(tier, 7F, -3.5f))));
     }
 
     public static void register(IEventBus eventBus)

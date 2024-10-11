@@ -1,9 +1,10 @@
 package net.theminecraftman.advancedvaluables;
 
+import net.minecraft.world.item.CreativeModeTabs;
 import net.theminecraftman.advancedvaluables.AV_CMT.AdvancedValuables_CreativeModeTabs;
-import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_BlockClass;
-import net.theminecraftman.advancedvaluables.AV_Templates.AdvancedValuables_ItemClass;
-import net.theminecraftman.advancedvaluables.AV_ToolsComponents.AdvancedValuables_ArmorMaterials;
+import net.theminecraftman.advancedvaluables.AV_Registries.AdvancedValuables_BlockClass;
+import net.theminecraftman.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
+import net.theminecraftman.advancedvaluables.AV_Libraries.ToolsComponents.AdvancedValuables_ArmorMaterials;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -51,7 +52,10 @@ public class AdvancedValuables
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS)
+        {
+            event.accept(AdvancedValuables_ItemClass.HAMMER_WIREFRAME);
+        }
     }
 
     @SubscribeEvent
