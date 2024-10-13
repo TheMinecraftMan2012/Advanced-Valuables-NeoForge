@@ -19,6 +19,8 @@ public class HammerItem extends DiggerItem
         super(tier, BlockTags.MINEABLE_WITH_PICKAXE, properties);
     }
 
+    // -- Help taken from Kaupenjoe. See https://youtu.be/-EuJTKoLzlM?si=wl433_BoUGwaIJzc -- //
+
     public static List<BlockPos> getBlocksToBeDestroyed(int range, BlockPos initialBlockPos, ServerPlayer player)
     {
         List<BlockPos> positions = new ArrayList<>();
