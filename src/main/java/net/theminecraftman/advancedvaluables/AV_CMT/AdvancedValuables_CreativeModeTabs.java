@@ -63,14 +63,8 @@ public class AdvancedValuables_CreativeModeTabs
                 output.accept(AdvancedValuables_BlockClass.YELLOW_RAW_GARNET_BLOCK.get());
                 output.accept(AdvancedValuables_BlockClass.RAW_FUSION_BLOCK.get());
                 output.accept(AdvancedValuables_BlockClass.RAW_RUBY_BLOCK.get());
-            })
-            .build());
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AV_VALUABLE_ORES_TAB = AV_REGISTER_CMT.register("valuable_ores", () -> CreativeModeTab.builder()
-            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "valuables"))
-            .title(Component.translatable("creativetab.advancedvaluables.valuable_ores"))
-            .icon(() -> new ItemStack(AdvancedValuables_BlockClass.FUSION_ORE.get()))
-            .displayItems((params, output) -> {
+                // -- Ores -- //
                 output.accept(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_ORE);
                 output.accept(AdvancedValuables_BlockClass.RED_SAPPHIRE_ORE);
                 output.accept(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_ORE);
@@ -94,7 +88,7 @@ public class AdvancedValuables_CreativeModeTabs
             .build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AV_TOOLS_ARMOR = AV_REGISTER_CMT.register("tools_armor", () -> CreativeModeTab.builder()
-            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "valuable_ores"))
+            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "valuables"))
             .title(Component.translatable("creativetab.advancedvaluables.tools_armor"))
             .icon(() -> new ItemStack(AdvancedValuables_ItemClass.FUSION_PICKAXE.get()))
             .displayItems((params, output) -> {
@@ -212,7 +206,7 @@ public class AdvancedValuables_CreativeModeTabs
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AV_FOODS_TAB = AV_REGISTER_CMT.register("foods", () -> CreativeModeTab.builder()
             .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "tools_armor"))
             .icon(() -> new ItemStack(AdvancedValuables_ItemClass.FUSION_APPLE.get()))
-            .title(Component.translatable("creativetab.advancedvaluables.foods"))
+            .title(Component.literal("Foods"))
             .displayItems((params, output) -> {
                 output.accept(AdvancedValuables_ItemClass.RED_SAPPHIRE_APPLE);
                 output.accept(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_APPLE);
@@ -230,7 +224,7 @@ public class AdvancedValuables_CreativeModeTabs
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AV_DECOR_TAB = AV_REGISTER_CMT.register("decor", () -> CreativeModeTab.builder()
             .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "foods"))
-            .icon(() -> new ItemStack(AdvancedValuables_BlockClass.RED_SAPPHIRE_DOOR))
+            .icon(() -> new ItemStack(AdvancedValuables_BlockClass.FUSION_STAIRS))
             .title(Component.translatable("creativetab.advancedvaluables.decor"))
             .displayItems((params, output) -> {
                 output.accept(AdvancedValuables_BlockClass.RED_SAPPHIRE_STAIRS);

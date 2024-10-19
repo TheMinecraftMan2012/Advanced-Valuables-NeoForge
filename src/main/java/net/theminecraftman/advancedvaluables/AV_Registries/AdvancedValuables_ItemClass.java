@@ -148,10 +148,10 @@ public class AdvancedValuables_ItemClass
     public static final DeferredItem<ArmorItem> YELLOW_GARNET_LEGGINGS = registerArmorItem("yellow_garnet_leggings", AdvancedValuables_ArmorMaterials.YELLOW_GARNET, ArmorItem.Type.LEGGINGS, 18);
     public static final DeferredItem<ArmorItem> YELLOW_GARNET_BOOTS = registerArmorItem("yellow_garnet_boots", AdvancedValuables_ArmorMaterials.YELLOW_GARNET, ArmorItem.Type.BOOTS, 18);
 
-    public static final DeferredItem<ArmorItem> FUSION_HELMET = registerArmorItem("fusion_helmet", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorItem.Type.HELMET, 50);
-    public static final DeferredItem<ArmorItem> FUSION_CHESTPLATE = registerArmorItem("fusion_chestplate", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorItem.Type.CHESTPLATE, 50);
-    public static final DeferredItem<ArmorItem> FUSION_LEGGINGS = registerArmorItem("fusion_leggings", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorItem.Type.LEGGINGS, 50);
-    public static final DeferredItem<ArmorItem> FUSION_BOOTS = registerArmorItem("fusion_boots", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorItem.Type.BOOTS, 50);
+    public static final DeferredItem<ArmorItem> FUSION_HELMET = registerFireResistantArmorItem("fusion_helmet", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorItem.Type.HELMET, 50);
+    public static final DeferredItem<ArmorItem> FUSION_CHESTPLATE = registerFireResistantArmorItem("fusion_chestplate", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorItem.Type.CHESTPLATE, 50);
+    public static final DeferredItem<ArmorItem> FUSION_LEGGINGS = registerFireResistantArmorItem("fusion_leggings", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorItem.Type.LEGGINGS, 50);
+    public static final DeferredItem<ArmorItem> FUSION_BOOTS = registerFireResistantArmorItem("fusion_boots", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorItem.Type.BOOTS, 50);
 
     public static final DeferredItem<ArmorItem> RUBY_HELMET = registerArmorItem("ruby_helmet", AdvancedValuables_ArmorMaterials.RUBY, ArmorItem.Type.HELMET, 40);
     public static final DeferredItem<ArmorItem> RUBY_CHESTPLATE = registerArmorItem("ruby_chestplate", AdvancedValuables_ArmorMaterials.RUBY, ArmorItem.Type.CHESTPLATE, 40);
@@ -168,7 +168,7 @@ public class AdvancedValuables_ItemClass
     public static final DeferredItem<Item> PINK_GARNET_APPLE = ITEMS.registerSimpleItem("pink_garnet_apple", new Item.Properties().food(AdvancedValuables_FoodProperties.PINK_GARNET_APPLE));
     public static final DeferredItem<Item> YELLOW_GARNET_APPLE = ITEMS.registerSimpleItem("yellow_garnet_apple", new Item.Properties().food(AdvancedValuables_FoodProperties.YELLOW_GARNET_APPLE));
 
-    public static final DeferredItem<Item> FUSION_APPLE = ITEMS.registerSimpleItem("fusion_apple", new Item.Properties().food(AdvancedValuables_FoodProperties.FUSION_APPLE));
+    public static final DeferredItem<Item> FUSION_APPLE = ITEMS.registerSimpleItem("fusion_apple", new Item.Properties().food(AdvancedValuables_FoodProperties.FUSION_APPLE).fireResistant());
     public static final DeferredItem<Item> RUBY_APPLE = ITEMS.registerSimpleItem("ruby_apple", new Item.Properties().food(AdvancedValuables_FoodProperties.RUBY_APPLE));
 
     // -- Hammers -- //
@@ -181,7 +181,7 @@ public class AdvancedValuables_ItemClass
     public static final DeferredItem<HammerItem> PINK_GARNET_HAMMER = registerHammerItem("pink_garnet_hammer", AdvancedValuables_ToolsTier.PINK_GARNET_TOOL_TIER);
     public static final DeferredItem<HammerItem> YELLOW_GARNET_HAMMER = registerHammerItem("yellow_garnet_hammer", AdvancedValuables_ToolsTier.YELLOW_GARNET_TOOL_TIER);
 
-    public static final DeferredItem<HammerItem> FUSION_HAMMER = registerHammerItem("fusion_hammer", AdvancedValuables_ToolsTier.FUSION_TOOL_TIER);
+    public static final DeferredItem<HammerItem> FUSION_HAMMER = registerFireResistantHammerItem("fusion_hammer", AdvancedValuables_ToolsTier.FUSION_TOOL_TIER);
     public static final DeferredItem<HammerItem> RUBY_HAMMER = registerHammerItem("ruby_hammer", AdvancedValuables_ToolsTier.RUBY_TOOL_TIER);
 
     // -- Hammer Crafting Requirement -- //
@@ -243,10 +243,20 @@ public class AdvancedValuables_ItemClass
         return ITEMS.register(name, () -> new ArmorItem(armorMaterial, armorType, new Item.Properties().durability(armorType.getDurability(getDurability))));
     }
 
+    private static DeferredItem<ArmorItem> registerFireResistantArmorItem(String name, Holder<ArmorMaterial> armorMaterial, ArmorItem.Type armorType, int getDurability)
+    {
+        return ITEMS.register(name, () -> new ArmorItem(armorMaterial, armorType, new Item.Properties().durability(armorType.getDurability(getDurability)).fireResistant()));
+    }
+
     // -- Hammer -- //
     private static DeferredItem<HammerItem> registerHammerItem(String name, Tier tier)
     {
         return ITEMS.register(name, () -> new HammerItem(tier, new Item.Properties().attributes(HammerItem.createAttributes(tier, 7F, -3.5f))));
+    }
+
+    private static DeferredItem<HammerItem> registerFireResistantHammerItem(String name, Tier tier)
+    {
+        return ITEMS.register(name, () -> new HammerItem(tier, new Item.Properties().attributes(HammerItem.createAttributes(tier, 7F, -3.5f)).fireResistant()));
     }
 
     public static void register(IEventBus eventBus)

@@ -14,7 +14,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @EventBusSubscriber(modid = AdvancedValuables.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
-public class AdvancedValuables_Events
+public class HammerItemEvents
 {
     // -- Help taken from Kaupenjoe. See https://youtu.be/-EuJTKoLzlM?si=wl433_BoUGwaIJzc -- //
 

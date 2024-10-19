@@ -1,9 +1,7 @@
 {
-  "creativetab.advancedvaluables.valuables": "Advanced Valuables : Valuables",
-  "creativetab.advancedvaluables.valuable_ores": "Advanced Valuables : Valuable Ores",
-  "creativetab.advancedvaluables.tools_armor": "Advanced Valuables : Tools & Armor",
-  "creativetab.advancedvaluables.foods": "Advanced Valuables : Foods",
-  "creativetab.advancedvaluables.decor": "Advanced Valuables : Decor Blocks",
+  "creativetab.advancedvaluables.valuables": "Valuables and Ores",
+  "creativetab.advancedvaluables.tools_armor": "Tools & Armor",
+  "creativetab.advancedvaluables.decor": "Decor Blocks",
 
   "item.advancedvaluables.blue_sapphire": "Blue Sapphire",
   "item.advancedvaluables.red_sapphire": "Red Sapphire",
