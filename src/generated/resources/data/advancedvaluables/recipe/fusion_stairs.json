@@ -3,9 +3,7 @@
   "category": "building",
   "group": "fusion_gem",
   "key": {
-    "#": {
-      "item": "advancedvaluables:fusion_gem"
-    }
+    "#": "advancedvaluables:fusion_gem"
   },
   "pattern": [
     "#  ",

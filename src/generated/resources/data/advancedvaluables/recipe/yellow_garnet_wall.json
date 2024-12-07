@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "advancedvaluables:yellow_garnet"
-    }
+    "#": "advancedvaluables:yellow_garnet"
   },
   "pattern": [
     "###",

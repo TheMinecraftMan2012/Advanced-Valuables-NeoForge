@@ -4,9 +4,7 @@
   "cookingtime": 200,
   "experience": 0.25,
   "group": "ruby",
-  "ingredient": {
-    "item": "advancedvaluables:ruby_ore"
-  },
+  "ingredient": "advancedvaluables:ruby_ore",
   "result": {
     "count": 1,
     "id": "advancedvaluables:ruby"

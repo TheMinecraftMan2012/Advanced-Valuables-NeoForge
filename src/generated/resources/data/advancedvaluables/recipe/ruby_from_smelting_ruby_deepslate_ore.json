@@ -4,9 +4,7 @@
   "cookingtime": 200,
   "experience": 0.25,
   "group": "ruby",
-  "ingredient": {
-    "item": "advancedvaluables:ruby_deepslate_ore"
-  },
+  "ingredient": "advancedvaluables:ruby_deepslate_ore",
   "result": {
     "count": 1,
     "id": "advancedvaluables:ruby"

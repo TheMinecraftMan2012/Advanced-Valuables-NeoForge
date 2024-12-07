@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "a": {
-      "item": "advancedvaluables:red_garnet"
-    }
+    "a": "advancedvaluables:red_garnet"
   },
   "pattern": [
     "a a",

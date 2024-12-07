@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "advancedvaluables:green_sapphire"
-    }
+    "#": "advancedvaluables:green_sapphire"
   },
   "pattern": [
     "###"

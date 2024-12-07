@@ -3,12 +3,8 @@
   "category": "redstone",
   "group": "yellow_garnet",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "advancedvaluables:yellow_garnet"
-    }
+    "#": "minecraft:stick",
+    "W": "advancedvaluables:yellow_garnet"
   },
   "pattern": [
     "#W#",

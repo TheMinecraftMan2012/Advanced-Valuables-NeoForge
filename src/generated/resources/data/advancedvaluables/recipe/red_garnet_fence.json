@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "red_garnet",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "advancedvaluables:red_garnet"
-    }
+    "#": "minecraft:stick",
+    "W": "advancedvaluables:red_garnet"
   },
   "pattern": [
     "W#W",

@@ -3,9 +3,7 @@
   "category": "building",
   "group": "pink_garnet",
   "key": {
-    "#": {
-      "item": "advancedvaluables:pink_garnet"
-    }
+    "#": "advancedvaluables:pink_garnet"
   },
   "pattern": [
     "#  ",

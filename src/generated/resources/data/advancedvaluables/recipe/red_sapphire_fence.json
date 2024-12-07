@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "red_sapphire",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "advancedvaluables:red_sapphire"
-    }
+    "#": "minecraft:stick",
+    "W": "advancedvaluables:red_sapphire"
   },
   "pattern": [
     "W#W",

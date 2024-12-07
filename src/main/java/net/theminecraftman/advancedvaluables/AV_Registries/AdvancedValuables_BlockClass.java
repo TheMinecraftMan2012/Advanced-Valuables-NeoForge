@@ -457,7 +457,7 @@ public class AdvancedValuables_BlockClass
 
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block)
     {
-        AdvancedValuables_ItemClass.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()
+        AdvancedValuables_ItemClass.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().useBlockDescriptionPrefix()
                 .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name)))));
     }
 

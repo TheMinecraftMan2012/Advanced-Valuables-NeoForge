@@ -3,9 +3,7 @@
   "category": "redstone",
   "group": "pink_garnet",
   "ingredients": [
-    {
-      "item": "advancedvaluables:pink_garnet"
-    }
+    "advancedvaluables:pink_garnet"
   ],
   "result": {
     "count": 1,

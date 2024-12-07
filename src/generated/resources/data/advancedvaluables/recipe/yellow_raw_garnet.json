@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "advancedvaluables:yellow_raw_garnet_block"
-    }
+    "advancedvaluables:yellow_raw_garnet_block"
   ],
   "result": {
     "count": 9,

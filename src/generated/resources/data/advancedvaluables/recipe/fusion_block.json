@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "a": {
-      "item": "advancedvaluables:fusion_gem"
-    }
+    "a": "advancedvaluables:fusion_gem"
   },
   "pattern": [
     "aaa",

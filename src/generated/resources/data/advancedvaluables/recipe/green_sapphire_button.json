@@ -3,9 +3,7 @@
   "category": "redstone",
   "group": "green_sapphire",
   "ingredients": [
-    {
-      "item": "advancedvaluables:green_sapphire"
-    }
+    "advancedvaluables:green_sapphire"
   ],
   "result": {
     "count": 1,

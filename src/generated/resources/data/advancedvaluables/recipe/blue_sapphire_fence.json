@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "blue_sapphire",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "advancedvaluables:blue_sapphire"
-    }
+    "#": "minecraft:stick",
+    "W": "advancedvaluables:blue_sapphire"
   },
   "pattern": [
     "W#W",

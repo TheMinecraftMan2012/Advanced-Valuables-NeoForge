@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "a": {
-      "item": "advancedvaluables:red_sapphire"
-    },
-    "b": {
-      "item": "minecraft:apple"
-    }
+    "a": "advancedvaluables:red_sapphire",
+    "b": "minecraft:apple"
   },
   "pattern": [
     "aaa",

@@ -1,0 +1,14 @@
+{
+   "layers": {
+      "humanoid": [
+         {
+            "texture": "advancedvaluables:ruby"
+         }
+      ],
+      "humanoid_leggings": [
+         {
+            "texture": "advancedvaluables:ruby"
+         }
+      ]
+   }
+}

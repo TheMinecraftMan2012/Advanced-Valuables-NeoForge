@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "a": {
-      "item": "advancedvaluables:blue_sapphire"
-    }
+    "a": "advancedvaluables:blue_sapphire"
   },
   "pattern": [
     "   ",

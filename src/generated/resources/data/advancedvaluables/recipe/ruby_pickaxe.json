@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "a": {
-      "item": "advancedvaluables:ruby"
-    },
-    "b": {
-      "item": "minecraft:stick"
-    }
+    "a": "advancedvaluables:ruby",
+    "b": "minecraft:stick"
   },
   "pattern": [
     "aaa",

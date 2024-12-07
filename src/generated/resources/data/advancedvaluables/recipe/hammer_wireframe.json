@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "hammer",
   "key": {
-    "a": {
-      "item": "minecraft:iron_ingot"
-    }
+    "a": "minecraft:iron_ingot"
   },
   "pattern": [
     "aaa",

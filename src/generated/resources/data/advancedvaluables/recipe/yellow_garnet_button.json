@@ -3,9 +3,7 @@
   "category": "redstone",
   "group": "yellow_garnet",
   "ingredients": [
-    {
-      "item": "advancedvaluables:yellow_garnet"
-    }
+    "advancedvaluables:yellow_garnet"
   ],
   "result": {
     "count": 1,

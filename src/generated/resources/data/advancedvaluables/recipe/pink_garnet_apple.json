@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "a": {
-      "item": "advancedvaluables:pink_garnet"
-    },
-    "b": {
-      "item": "minecraft:apple"
-    }
+    "a": "advancedvaluables:pink_garnet",
+    "b": "minecraft:apple"
   },
   "pattern": [
     "aaa",

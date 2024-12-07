@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "fusion_gem",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "advancedvaluables:fusion_gem"
-    }
+    "#": "minecraft:stick",
+    "W": "advancedvaluables:fusion_gem"
   },
   "pattern": [
     "W#W",

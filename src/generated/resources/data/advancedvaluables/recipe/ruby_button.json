@@ -3,9 +3,7 @@
   "category": "redstone",
   "group": "ruby",
   "ingredients": [
-    {
-      "item": "advancedvaluables:ruby"
-    }
+    "advancedvaluables:ruby"
   ],
   "result": {
     "count": 1,

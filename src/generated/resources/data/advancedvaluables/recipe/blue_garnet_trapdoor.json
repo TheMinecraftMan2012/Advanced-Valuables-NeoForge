@@ -3,9 +3,7 @@
   "category": "redstone",
   "group": "blue_garnet",
   "key": {
-    "#": {
-      "item": "advancedvaluables:blue_garnet"
-    }
+    "#": "advancedvaluables:blue_garnet"
   },
   "pattern": [
     "###",

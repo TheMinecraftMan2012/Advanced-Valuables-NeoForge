@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "hammer",
   "ingredients": [
-    {
-      "item": "advancedvaluables:red_sapphire"
-    },
-    {
-      "item": "advancedvaluables:hammer_wireframe"
-    }
+    "advancedvaluables:red_sapphire",
+    "advancedvaluables:hammer_wireframe"
   ],
   "result": {
     "count": 1,

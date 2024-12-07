@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "a": {
-      "item": "advancedvaluables:green_sapphire"
-    },
-    "b": {
-      "item": "minecraft:apple"
-    }
+    "a": "advancedvaluables:green_sapphire",
+    "b": "minecraft:apple"
   },
   "pattern": [
     "aaa",

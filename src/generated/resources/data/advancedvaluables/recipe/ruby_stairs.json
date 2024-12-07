@@ -3,9 +3,7 @@
   "category": "building",
   "group": "ruby",
   "key": {
-    "#": {
-      "item": "advancedvaluables:ruby"
-    }
+    "#": "advancedvaluables:ruby"
   },
   "pattern": [
     "#  ",

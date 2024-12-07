@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "hammer",
   "ingredients": [
-    {
-      "item": "advancedvaluables:pink_garnet"
-    },
-    {
-      "item": "advancedvaluables:hammer_wireframe"
-    }
+    "advancedvaluables:pink_garnet",
+    "advancedvaluables:hammer_wireframe"
   ],
   "result": {
     "count": 1,

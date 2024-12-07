@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "ruby",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "advancedvaluables:ruby"
-    }
+    "#": "minecraft:stick",
+    "W": "advancedvaluables:ruby"
   },
   "pattern": [
     "W#W",

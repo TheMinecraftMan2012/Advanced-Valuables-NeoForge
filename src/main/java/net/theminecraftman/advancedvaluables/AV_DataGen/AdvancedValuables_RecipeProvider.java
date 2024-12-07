@@ -35,7 +35,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider implements 
         @Override
         protected RecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput)
         {
-            return null;
+            return new AdvancedValuables_RecipeProvider(provider, recipeOutput);
         }
 
         @Override

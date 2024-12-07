@@ -3,9 +3,7 @@
   "category": "redstone",
   "group": "fusion_gem",
   "ingredients": [
-    {
-      "item": "advancedvaluables:fusion_gem"
-    }
+    "advancedvaluables:fusion_gem"
   ],
   "result": {
     "count": 1,

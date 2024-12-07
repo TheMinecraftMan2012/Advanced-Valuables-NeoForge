@@ -4,9 +4,7 @@
   "cookingtime": 100,
   "experience": 0.25,
   "group": "gold_block",
-  "ingredient": {
-    "item": "minecraft:raw_gold_block"
-  },
+  "ingredient": "minecraft:raw_gold_block",
   "result": {
     "count": 1,
     "id": "minecraft:gold_block"

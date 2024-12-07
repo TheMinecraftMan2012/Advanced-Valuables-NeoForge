@@ -3,9 +3,7 @@
   "category": "redstone",
   "group": "red_sapphire",
   "key": {
-    "#": {
-      "item": "advancedvaluables:red_sapphire"
-    }
+    "#": "advancedvaluables:red_sapphire"
   },
   "pattern": [
     "###",
