@@ -1,0 +1,14 @@
+{
+   "layers": {
+      "humanoid": [
+         {
+            "texture": "advancedvaluables:blue_garnet"
+         }
+      ],
+      "humanoid_leggings": [
+         {
+            "texture": "advancedvaluables:blue_garnet"
+         }
+      ]
+   }
+}

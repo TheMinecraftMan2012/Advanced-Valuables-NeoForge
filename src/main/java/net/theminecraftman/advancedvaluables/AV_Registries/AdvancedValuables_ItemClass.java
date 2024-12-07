@@ -1,45 +1,70 @@
 package net.theminecraftman.advancedvaluables.AV_Registries;
 
 import net.minecraft.core.Holder;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.component.Consumables;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import net.theminecraftman.advancedvaluables.AV_Libraries.FoodComponents.AdvancedValuables_FoodConsumables;
 import net.theminecraftman.advancedvaluables.AV_Libraries.FoodComponents.AdvancedValuables_FoodProperties;
 import net.theminecraftman.advancedvaluables.AV_Libraries.Hammer.HammerItem;
 import net.theminecraftman.advancedvaluables.AV_Libraries.ToolsComponents.AdvancedValuables_ArmorMaterials;
 import net.theminecraftman.advancedvaluables.AV_Libraries.ToolsComponents.AdvancedValuables_ToolsTier;
 import net.theminecraftman.advancedvaluables.AdvancedValuables;
 
-import java.util.function.Supplier;
-
-public class AdvancedValuables_ItemClass
+public class  AdvancedValuables_ItemClass
 {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(AdvancedValuables.MOD_ID);
 
-    public static final DeferredItem<Item> BLUE_SAPPHIRE = ITEMS.registerSimpleItem("blue_sapphire");
-    public static final DeferredItem<Item> RED_SAPPHIRE = ITEMS.registerSimpleItem("red_sapphire");
-    public static final DeferredItem<Item> GREEN_SAPPHIRE = ITEMS.registerSimpleItem("green_sapphire");
+    public static final DeferredItem<Item> BLUE_SAPPHIRE = ITEMS.registerSimpleItem("blue_sapphire", new Item.Properties()
+            .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "blue_sapphire"))));
+    public static final DeferredItem<Item> RED_SAPPHIRE = ITEMS.registerSimpleItem("red_sapphire", new Item.Properties()
+            .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "red_sapphire"))));
+    public static final DeferredItem<Item> GREEN_SAPPHIRE = ITEMS.registerSimpleItem("green_sapphire", new Item.Properties()
+            .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "green_sapphire"))));
 
-    public static final DeferredItem<Item> RED_GARNET = ITEMS.registerSimpleItem("red_garnet");
-    public static final DeferredItem<Item> PINK_GARNET = ITEMS.registerSimpleItem("pink_garnet");
-    public static final DeferredItem<Item> BLUE_GARNET = ITEMS.registerSimpleItem("blue_garnet");
-    public static final DeferredItem<Item> YELLOW_GARNET = ITEMS.registerSimpleItem("yellow_garnet");
+    public static final DeferredItem<Item> RED_GARNET = ITEMS.registerSimpleItem("red_garnet", new Item.Properties()
+            .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "red_garnet"))));
+    public static final DeferredItem<Item> PINK_GARNET = ITEMS.registerSimpleItem("pink_garnet", new Item.Properties()
+            .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "pink_garnet"))));
+    public static final DeferredItem<Item> BLUE_GARNET = ITEMS.registerSimpleItem("blue_garnet", new Item.Properties()
+            .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "blue_garnet"))));
+    public static final DeferredItem<Item> YELLOW_GARNET = ITEMS.registerSimpleItem("yellow_garnet", new Item.Properties()
+            .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "yellow_garnet"))));
 
-    public static final DeferredItem<Item> FUSION_GEM = ITEMS.registerSimpleItem("fusion_gem", new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> RUBY = ITEMS.registerSimpleItem("ruby");
+    public static final DeferredItem<Item> FUSION_GEM = ITEMS.registerSimpleItem("fusion_gem", new Item.Properties().fireResistant()
+            .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "fusion_gem"))));
+    public static final DeferredItem<Item> RUBY = ITEMS.registerSimpleItem("ruby", new Item.Properties()
+            .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "ruby"))));
 
-    public static final DeferredItem<Item> BLUE_RAW_SAPPHIRE = ITEMS.registerSimpleItem("blue_raw_sapphire");
-    public static final DeferredItem<Item> RED_RAW_SAPPHIRE = ITEMS.registerSimpleItem("red_raw_sapphire");
-    public static final DeferredItem<Item> GREEN_RAW_SAPPHIRE = ITEMS.registerSimpleItem("green_raw_sapphire");
+    public static final DeferredItem<Item> BLUE_RAW_SAPPHIRE = ITEMS.registerSimpleItem("blue_raw_sapphire", new Item.Properties()
+            .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "blue_raw_sapphire"))));
+    public static final DeferredItem<Item> RED_RAW_SAPPHIRE = ITEMS.registerSimpleItem("red_raw_sapphire", new Item.Properties()
+            .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "red_raw_sapphire"))));
+    public static final DeferredItem<Item> GREEN_RAW_SAPPHIRE = ITEMS.registerSimpleItem("green_raw_sapphire", new Item.Properties()
+            .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "green_raw_sapphire"))));
 
-    public static final DeferredItem<Item> RED_RAW_GARNET = ITEMS.registerSimpleItem("red_raw_garnet");
-    public static final DeferredItem<Item> PINK_RAW_GARNET = ITEMS.registerSimpleItem("pink_raw_garnet");
-    public static final DeferredItem<Item> BLUE_RAW_GARNET = ITEMS.registerSimpleItem("blue_raw_garnet");
-    public static final DeferredItem<Item> YELLOW_RAW_GARNET = ITEMS.registerSimpleItem("yellow_raw_garnet");
+    public static final DeferredItem<Item> RED_RAW_GARNET = ITEMS.registerSimpleItem("red_raw_garnet", new Item.Properties()
+            .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "red_raw_garnet"))));
+    public static final DeferredItem<Item> PINK_RAW_GARNET = ITEMS.registerSimpleItem("pink_raw_garnet", new Item.Properties()
+            .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "pink_raw_garnet"))));
+    public static final DeferredItem<Item> BLUE_RAW_GARNET = ITEMS.registerSimpleItem("blue_raw_garnet", new Item.Properties()
+            .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "blue_raw_garnet"))));
+    public static final DeferredItem<Item> YELLOW_RAW_GARNET = ITEMS.registerSimpleItem("yellow_raw_garnet", new Item.Properties()
+            .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "yellow_raw_garnet"))));
 
-    public static final DeferredItem<Item> RAW_FUSION_GEM = ITEMS.registerSimpleItem("raw_fusion_gem", new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> RAW_RUBY = ITEMS.registerSimpleItem("raw_ruby");
+    public static final DeferredItem<Item> RAW_FUSION_GEM = ITEMS.registerSimpleItem("raw_fusion_gem", new Item.Properties().fireResistant()
+            .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "raw_fusion_gem"))));
+    public static final DeferredItem<Item> RAW_RUBY = ITEMS.registerSimpleItem("raw_ruby", new Item.Properties()
+            .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "raw_ruby"))));
 
     // -- Tools & Armor -- //
     // -- Pickaxes -- //
@@ -113,63 +138,63 @@ public class AdvancedValuables_ItemClass
     public static final DeferredItem<SwordItem> RUBY_SWORD = registerSwordItem("ruby_sword", AdvancedValuables_ToolsTier.RUBY_TOOL_TIER);
 
     // -- Armors -- //
-    public static final DeferredItem<ArmorItem> RED_SAPPHIRE_HELMET = registerArmorItem("red_sapphire_helmet", AdvancedValuables_ArmorMaterials.RED_SAPPHIRE, ArmorItem.Type.HELMET, 15);
-    public static final DeferredItem<ArmorItem> RED_SAPPHIRE_CHESTPLATE = registerArmorItem("red_sapphire_chestplate", AdvancedValuables_ArmorMaterials.RED_SAPPHIRE, ArmorItem.Type.CHESTPLATE, 15);
-    public static final DeferredItem<ArmorItem> RED_SAPPHIRE_LEGGINGS = registerArmorItem("red_sapphire_leggings", AdvancedValuables_ArmorMaterials.RED_SAPPHIRE, ArmorItem.Type.LEGGINGS, 15);
-    public static final DeferredItem<ArmorItem> RED_SAPPHIRE_BOOTS = registerArmorItem("red_sapphire_boots", AdvancedValuables_ArmorMaterials.RED_SAPPHIRE, ArmorItem.Type.BOOTS, 15);
+    public static final DeferredItem<ArmorItem> RED_SAPPHIRE_HELMET = registerArmorItem("red_sapphire_helmet", AdvancedValuables_ArmorMaterials.RED_SAPPHIRE, ArmorType.HELMET, 15);
+    public static final DeferredItem<ArmorItem> RED_SAPPHIRE_CHESTPLATE = registerArmorItem("red_sapphire_chestplate", AdvancedValuables_ArmorMaterials.RED_SAPPHIRE, ArmorType.CHESTPLATE, 15);
+    public static final DeferredItem<ArmorItem> RED_SAPPHIRE_LEGGINGS = registerArmorItem("red_sapphire_leggings", AdvancedValuables_ArmorMaterials.RED_SAPPHIRE, ArmorType.LEGGINGS, 15);
+    public static final DeferredItem<ArmorItem> RED_SAPPHIRE_BOOTS = registerArmorItem("red_sapphire_boots", AdvancedValuables_ArmorMaterials.RED_SAPPHIRE, ArmorType.BOOTS, 15);
 
-    public static final DeferredItem<ArmorItem> BLUE_SAPPHIRE_HELMET = registerArmorItem("blue_sapphire_helmet", AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE, ArmorItem.Type.HELMET, 15);
-    public static final DeferredItem<ArmorItem> BLUE_SAPPHIRE_CHESTPLATE = registerArmorItem("blue_sapphire_chestplate", AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE, ArmorItem.Type.CHESTPLATE, 15);
-    public static final DeferredItem<ArmorItem> BLUE_SAPPHIRE_LEGGINGS = registerArmorItem("blue_sapphire_leggings", AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE, ArmorItem.Type.LEGGINGS, 15);
-    public static final DeferredItem<ArmorItem> BLUE_SAPPHIRE_BOOTS = registerArmorItem("blue_sapphire_boots", AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE, ArmorItem.Type.BOOTS, 15);
+    public static final DeferredItem<ArmorItem> BLUE_SAPPHIRE_HELMET = registerArmorItem("blue_sapphire_helmet", AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE, ArmorType.HELMET, 15);
+    public static final DeferredItem<ArmorItem> BLUE_SAPPHIRE_CHESTPLATE = registerArmorItem("blue_sapphire_chestplate", AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE, ArmorType.CHESTPLATE, 15);
+    public static final DeferredItem<ArmorItem> BLUE_SAPPHIRE_LEGGINGS = registerArmorItem("blue_sapphire_leggings", AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE, ArmorType.LEGGINGS, 15);
+    public static final DeferredItem<ArmorItem> BLUE_SAPPHIRE_BOOTS = registerArmorItem("blue_sapphire_boots", AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE, ArmorType.BOOTS, 15);
 
-    public static final DeferredItem<ArmorItem> GREEN_SAPPHIRE_HELMET = registerArmorItem("green_sapphire_helmet", AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE, ArmorItem.Type.HELMET, 15);
-    public static final DeferredItem<ArmorItem> GREEN_SAPPHIRE_CHESTPLATE = registerArmorItem("green_sapphire_chestplate", AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE, ArmorItem.Type.CHESTPLATE, 15);
-    public static final DeferredItem<ArmorItem> GREEN_SAPPHIRE_LEGGINGS = registerArmorItem("green_sapphire_leggings", AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE, ArmorItem.Type.LEGGINGS, 15);
-    public static final DeferredItem<ArmorItem> GREEN_SAPPHIRE_BOOTS = registerArmorItem("green_sapphire_boots", AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE, ArmorItem.Type.BOOTS, 15);
+    public static final DeferredItem<ArmorItem> GREEN_SAPPHIRE_HELMET = registerArmorItem("green_sapphire_helmet", AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE, ArmorType.HELMET, 15);
+    public static final DeferredItem<ArmorItem> GREEN_SAPPHIRE_CHESTPLATE = registerArmorItem("green_sapphire_chestplate", AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE, ArmorType.CHESTPLATE, 15);
+    public static final DeferredItem<ArmorItem> GREEN_SAPPHIRE_LEGGINGS = registerArmorItem("green_sapphire_leggings", AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE, ArmorType.LEGGINGS, 15);
+    public static final DeferredItem<ArmorItem> GREEN_SAPPHIRE_BOOTS = registerArmorItem("green_sapphire_boots", AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE, ArmorType.BOOTS, 15);
 
-    public static final DeferredItem<ArmorItem> RED_GARNET_HELMET = registerArmorItem("red_garnet_helmet", AdvancedValuables_ArmorMaterials.RED_GARNET, ArmorItem.Type.HELMET, 18);
-    public static final DeferredItem<ArmorItem> RED_GARNET_CHESTPLATE = registerArmorItem("red_garnet_chestplate", AdvancedValuables_ArmorMaterials.RED_GARNET, ArmorItem.Type.CHESTPLATE, 18);
-    public static final DeferredItem<ArmorItem> RED_GARNET_LEGGINGS = registerArmorItem("red_garnet_leggings", AdvancedValuables_ArmorMaterials.RED_GARNET, ArmorItem.Type.LEGGINGS, 18);
-    public static final DeferredItem<ArmorItem> RED_GARNET_BOOTS = registerArmorItem("red_garnet_boots", AdvancedValuables_ArmorMaterials.RED_GARNET, ArmorItem.Type.BOOTS, 18);
+    public static final DeferredItem<ArmorItem> RED_GARNET_HELMET = registerArmorItem("red_garnet_helmet", AdvancedValuables_ArmorMaterials.RED_GARNET, ArmorType.HELMET, 18);
+    public static final DeferredItem<ArmorItem> RED_GARNET_CHESTPLATE = registerArmorItem("red_garnet_chestplate", AdvancedValuables_ArmorMaterials.RED_GARNET, ArmorType.CHESTPLATE, 18);
+    public static final DeferredItem<ArmorItem> RED_GARNET_LEGGINGS = registerArmorItem("red_garnet_leggings", AdvancedValuables_ArmorMaterials.RED_GARNET, ArmorType.LEGGINGS, 18);
+    public static final DeferredItem<ArmorItem> RED_GARNET_BOOTS = registerArmorItem("red_garnet_boots", AdvancedValuables_ArmorMaterials.RED_GARNET, ArmorType.BOOTS, 18);
 
-    public static final DeferredItem<ArmorItem> BLUE_GARNET_HELMET = registerArmorItem("blue_garnet_helmet", AdvancedValuables_ArmorMaterials.BLUE_GARNET, ArmorItem.Type.HELMET, 18);
-    public static final DeferredItem<ArmorItem> BLUE_GARNET_CHESTPLATE = registerArmorItem("blue_garnet_chestplate", AdvancedValuables_ArmorMaterials.BLUE_GARNET, ArmorItem.Type.CHESTPLATE, 18);
-    public static final DeferredItem<ArmorItem> BLUE_GARNET_LEGGINGS = registerArmorItem("blue_garnet_leggings", AdvancedValuables_ArmorMaterials.BLUE_GARNET, ArmorItem.Type.LEGGINGS, 18);
-    public static final DeferredItem<ArmorItem> BLUE_GARNET_BOOTS = registerArmorItem("blue_garnet_boots", AdvancedValuables_ArmorMaterials.BLUE_GARNET, ArmorItem.Type.BOOTS, 18);
+    public static final DeferredItem<ArmorItem> BLUE_GARNET_HELMET = registerArmorItem("blue_garnet_helmet", AdvancedValuables_ArmorMaterials.BLUE_GARNET, ArmorType.HELMET, 18);
+    public static final DeferredItem<ArmorItem> BLUE_GARNET_CHESTPLATE = registerArmorItem("blue_garnet_chestplate", AdvancedValuables_ArmorMaterials.BLUE_GARNET, ArmorType.CHESTPLATE, 18);
+    public static final DeferredItem<ArmorItem> BLUE_GARNET_LEGGINGS = registerArmorItem("blue_garnet_leggings", AdvancedValuables_ArmorMaterials.BLUE_GARNET, ArmorType.LEGGINGS, 18);
+    public static final DeferredItem<ArmorItem> BLUE_GARNET_BOOTS = registerArmorItem("blue_garnet_boots", AdvancedValuables_ArmorMaterials.BLUE_GARNET, ArmorType.BOOTS, 18);
 
-    public static final DeferredItem<ArmorItem> PINK_GARNET_HELMET = registerArmorItem("pink_garnet_helmet", AdvancedValuables_ArmorMaterials.PINK_GARNET, ArmorItem.Type.HELMET, 18);
-    public static final DeferredItem<ArmorItem> PINK_GARNET_CHESTPLATE = registerArmorItem("pink_garnet_chestplate", AdvancedValuables_ArmorMaterials.PINK_GARNET, ArmorItem.Type.CHESTPLATE, 18);
-    public static final DeferredItem<ArmorItem> PINK_GARNET_LEGGINGS = registerArmorItem("pink_garnet_leggings", AdvancedValuables_ArmorMaterials.PINK_GARNET, ArmorItem.Type.LEGGINGS, 18);
-    public static final DeferredItem<ArmorItem> PINK_GARNET_BOOTS = registerArmorItem("pink_garnet_boots", AdvancedValuables_ArmorMaterials.PINK_GARNET, ArmorItem.Type.BOOTS, 18);
+    public static final DeferredItem<ArmorItem> PINK_GARNET_HELMET = registerArmorItem("pink_garnet_helmet", AdvancedValuables_ArmorMaterials.PINK_GARNET, ArmorType.HELMET, 18);
+    public static final DeferredItem<ArmorItem> PINK_GARNET_CHESTPLATE = registerArmorItem("pink_garnet_chestplate", AdvancedValuables_ArmorMaterials.PINK_GARNET, ArmorType.CHESTPLATE, 18);
+    public static final DeferredItem<ArmorItem> PINK_GARNET_LEGGINGS = registerArmorItem("pink_garnet_leggings", AdvancedValuables_ArmorMaterials.PINK_GARNET, ArmorType.LEGGINGS, 18);
+    public static final DeferredItem<ArmorItem> PINK_GARNET_BOOTS = registerArmorItem("pink_garnet_boots", AdvancedValuables_ArmorMaterials.PINK_GARNET, ArmorType.BOOTS, 18);
 
-    public static final DeferredItem<ArmorItem> YELLOW_GARNET_HELMET = registerArmorItem("yellow_garnet_helmet", AdvancedValuables_ArmorMaterials.YELLOW_GARNET, ArmorItem.Type.HELMET, 18);
-    public static final DeferredItem<ArmorItem> YELLOW_GARNET_CHESTPLATE = registerArmorItem("yellow_garnet_chestplate", AdvancedValuables_ArmorMaterials.YELLOW_GARNET, ArmorItem.Type.CHESTPLATE, 18);
-    public static final DeferredItem<ArmorItem> YELLOW_GARNET_LEGGINGS = registerArmorItem("yellow_garnet_leggings", AdvancedValuables_ArmorMaterials.YELLOW_GARNET, ArmorItem.Type.LEGGINGS, 18);
-    public static final DeferredItem<ArmorItem> YELLOW_GARNET_BOOTS = registerArmorItem("yellow_garnet_boots", AdvancedValuables_ArmorMaterials.YELLOW_GARNET, ArmorItem.Type.BOOTS, 18);
+    public static final DeferredItem<ArmorItem> YELLOW_GARNET_HELMET = registerArmorItem("yellow_garnet_helmet", AdvancedValuables_ArmorMaterials.YELLOW_GARNET, ArmorType.HELMET, 18);
+    public static final DeferredItem<ArmorItem> YELLOW_GARNET_CHESTPLATE = registerArmorItem("yellow_garnet_chestplate", AdvancedValuables_ArmorMaterials.YELLOW_GARNET, ArmorType.CHESTPLATE, 18);
+    public static final DeferredItem<ArmorItem> YELLOW_GARNET_LEGGINGS = registerArmorItem("yellow_garnet_leggings", AdvancedValuables_ArmorMaterials.YELLOW_GARNET, ArmorType.LEGGINGS, 18);
+    public static final DeferredItem<ArmorItem> YELLOW_GARNET_BOOTS = registerArmorItem("yellow_garnet_boots", AdvancedValuables_ArmorMaterials.YELLOW_GARNET, ArmorType.BOOTS, 18);
 
-    public static final DeferredItem<ArmorItem> FUSION_HELMET = registerFireResistantArmorItem("fusion_helmet", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorItem.Type.HELMET, 50);
-    public static final DeferredItem<ArmorItem> FUSION_CHESTPLATE = registerFireResistantArmorItem("fusion_chestplate", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorItem.Type.CHESTPLATE, 50);
-    public static final DeferredItem<ArmorItem> FUSION_LEGGINGS = registerFireResistantArmorItem("fusion_leggings", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorItem.Type.LEGGINGS, 50);
-    public static final DeferredItem<ArmorItem> FUSION_BOOTS = registerFireResistantArmorItem("fusion_boots", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorItem.Type.BOOTS, 50);
+    public static final DeferredItem<ArmorItem> FUSION_HELMET = registerFireResistantArmorItem("fusion_helmet", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorType.HELMET, 50);
+    public static final DeferredItem<ArmorItem> FUSION_CHESTPLATE = registerFireResistantArmorItem("fusion_chestplate", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorType.CHESTPLATE, 50);
+    public static final DeferredItem<ArmorItem> FUSION_LEGGINGS = registerFireResistantArmorItem("fusion_leggings", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorType.LEGGINGS, 50);
+    public static final DeferredItem<ArmorItem> FUSION_BOOTS = registerFireResistantArmorItem("fusion_boots", AdvancedValuables_ArmorMaterials.FUSION_GEM, ArmorType.BOOTS, 50);
 
-    public static final DeferredItem<ArmorItem> RUBY_HELMET = registerArmorItem("ruby_helmet", AdvancedValuables_ArmorMaterials.RUBY, ArmorItem.Type.HELMET, 40);
-    public static final DeferredItem<ArmorItem> RUBY_CHESTPLATE = registerArmorItem("ruby_chestplate", AdvancedValuables_ArmorMaterials.RUBY, ArmorItem.Type.CHESTPLATE, 40);
-    public static final DeferredItem<ArmorItem> RUBY_LEGGINGS = registerArmorItem("ruby_leggings", AdvancedValuables_ArmorMaterials.RUBY, ArmorItem.Type.LEGGINGS, 40);
-    public static final DeferredItem<ArmorItem> RUBY_BOOTS = registerArmorItem("ruby_boots", AdvancedValuables_ArmorMaterials.RUBY, ArmorItem.Type.BOOTS, 40);
+    public static final DeferredItem<ArmorItem> RUBY_HELMET = registerArmorItem("ruby_helmet", AdvancedValuables_ArmorMaterials.RUBY, ArmorType.HELMET, 40);
+    public static final DeferredItem<ArmorItem> RUBY_CHESTPLATE = registerArmorItem("ruby_chestplate", AdvancedValuables_ArmorMaterials.RUBY, ArmorType.CHESTPLATE, 40);
+    public static final DeferredItem<ArmorItem> RUBY_LEGGINGS = registerArmorItem("ruby_leggings", AdvancedValuables_ArmorMaterials.RUBY, ArmorType.LEGGINGS, 40);
+    public static final DeferredItem<ArmorItem> RUBY_BOOTS = registerArmorItem("ruby_boots", AdvancedValuables_ArmorMaterials.RUBY, ArmorType.BOOTS, 40);
 
     // -- Effective Foods -- //
-    public static final DeferredItem<Item> RED_SAPPHIRE_APPLE = ITEMS.registerSimpleItem("red_sapphire_apple", new Item.Properties().food(AdvancedValuables_FoodProperties.RED_SAPPHIRE_APPLE));
-    public static final DeferredItem<Item> BLUE_SAPPHIRE_APPLE = ITEMS.registerSimpleItem("blue_sapphire_apple", new Item.Properties().food(AdvancedValuables_FoodProperties.BLUE_SAPPHIRE_APPLE));
-    public static final DeferredItem<Item> GREEN_SAPPHIRE_APPLE = ITEMS.registerSimpleItem("green_sapphire_apple", new Item.Properties().food(AdvancedValuables_FoodProperties.GREEN_SAPPHIRE_APPLE));
+    public static final DeferredItem<Item> RED_SAPPHIRE_APPLE = registerFoodItem("red_sapphire_apple", AdvancedValuables_FoodProperties.RED_SAPPHIRE_APPLE, AdvancedValuables_FoodConsumables.RED_SAPPHIRE_APPLE);
+    public static final DeferredItem<Item> BLUE_SAPPHIRE_APPLE = registerFoodItem("blue_sapphire_apple", AdvancedValuables_FoodProperties.BLUE_SAPPHIRE_APPLE, AdvancedValuables_FoodConsumables.BLUE_SAPPHIRE_APPLE);
+    public static final DeferredItem<Item> GREEN_SAPPHIRE_APPLE = registerFoodItem("green_sapphire_apple", AdvancedValuables_FoodProperties.GREEN_SAPPHIRE_APPLE, AdvancedValuables_FoodConsumables.GREEN_SAPPHIRE_APPLE);
 
-    public static final DeferredItem<Item> RED_GARNET_APPLE = ITEMS.registerSimpleItem("red_garnet_apple", new Item.Properties().food(AdvancedValuables_FoodProperties.RED_GARNET_APPLE));
-    public static final DeferredItem<Item> BLUE_GARNET_APPLE = ITEMS.registerSimpleItem("blue_garnet_apple", new Item.Properties().food(AdvancedValuables_FoodProperties.BLUE_GARNET_APPLE));
-    public static final DeferredItem<Item> PINK_GARNET_APPLE = ITEMS.registerSimpleItem("pink_garnet_apple", new Item.Properties().food(AdvancedValuables_FoodProperties.PINK_GARNET_APPLE));
-    public static final DeferredItem<Item> YELLOW_GARNET_APPLE = ITEMS.registerSimpleItem("yellow_garnet_apple", new Item.Properties().food(AdvancedValuables_FoodProperties.YELLOW_GARNET_APPLE));
+    public static final DeferredItem<Item> RED_GARNET_APPLE = registerFoodItem("red_garnet_apple", AdvancedValuables_FoodProperties.RED_GARNET_APPLE, AdvancedValuables_FoodConsumables.RED_GARNET_APPLE);
+    public static final DeferredItem<Item> BLUE_GARNET_APPLE = registerFoodItem("blue_garnet_apple", AdvancedValuables_FoodProperties.BLUE_GARNET_APPLE, AdvancedValuables_FoodConsumables.BLUE_GARNET_APPLE);
+    public static final DeferredItem<Item> PINK_GARNET_APPLE = registerFoodItem("pink_garnet_apple", AdvancedValuables_FoodProperties.PINK_GARNET_APPLE, AdvancedValuables_FoodConsumables.PINK_GARNET_APPLE);
+    public static final DeferredItem<Item> YELLOW_GARNET_APPLE = registerFoodItem("yellow_garnet_apple", AdvancedValuables_FoodProperties.YELLOW_GARNET_APPLE, AdvancedValuables_FoodConsumables.YELLOW_GARNET_APPLE);
 
-    public static final DeferredItem<Item> FUSION_APPLE = ITEMS.registerSimpleItem("fusion_apple", new Item.Properties().food(AdvancedValuables_FoodProperties.FUSION_APPLE).fireResistant());
-    public static final DeferredItem<Item> RUBY_APPLE = ITEMS.registerSimpleItem("ruby_apple", new Item.Properties().food(AdvancedValuables_FoodProperties.RUBY_APPLE));
+    public static final DeferredItem<Item> FUSION_APPLE = registerFoodItem("fusion_apple", AdvancedValuables_FoodProperties.FUSION_APPLE, AdvancedValuables_FoodConsumables.FUSION_APPLE);
+    public static final DeferredItem<Item> RUBY_APPLE = registerFoodItem("ruby_apple", AdvancedValuables_FoodProperties.RUBY_APPLE, AdvancedValuables_FoodConsumables.RUBY_APPLE);
 
     // -- Hammers -- //
     public static final DeferredItem<HammerItem> RED_SAPPHIRE_HAMMER = registerHammerItem("red_sapphire_hammer", AdvancedValuables_ToolsTier.RED_SAPPHIRE_TOOL_TIER);
@@ -187,76 +212,98 @@ public class AdvancedValuables_ItemClass
     // -- Hammer Crafting Requirement -- //
     public static final DeferredItem<Item> HAMMER_WIREFRAME = ITEMS.registerSimpleItem("hammer_wireframe");
 
-    private static DeferredItem<PickaxeItem> registerPickaxeItem(String name, Tier tier)
+    private static DeferredItem<PickaxeItem> registerPickaxeItem(String name, ToolMaterial tier)
     {
-        return ITEMS.register(name, () -> new PickaxeItem(tier, new Item.Properties().attributes(PickaxeItem.createAttributes(tier, 1, -2.8f))));
+        return ITEMS.register(name, () -> new PickaxeItem(tier, 1, -2.8f, new Item.Properties()
+                .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name)))));
     }
 
-    private static DeferredItem<AxeItem> registerAxeItem(String name, Tier tier)
+    private static DeferredItem<AxeItem> registerAxeItem(String name, ToolMaterial tier)
     {
-        return ITEMS.register(name, () -> new AxeItem(tier, new Item.Properties().attributes(AxeItem.createAttributes(tier, 6, -3.2f))));
+        return ITEMS.register(name, () -> new AxeItem(tier, 6, -3.2f, new Item.Properties()
+                .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name)))));
     }
 
-    private static DeferredItem<ShovelItem> registerShovelItem(String name, Tier tier)
+    private static DeferredItem<ShovelItem> registerShovelItem(String name, ToolMaterial tier)
     {
-        return ITEMS.register(name, () -> new ShovelItem(tier, new Item.Properties().attributes(ShovelItem.createAttributes(tier, 1.5f, -3f))));
+        return ITEMS.register(name, () -> new ShovelItem(tier, 1.5f, -3f, new Item.Properties()
+                .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name)))));
     }
 
-    private static DeferredItem<HoeItem> registerHoeItem(String name, Tier tier)
+    private static DeferredItem<HoeItem> registerHoeItem(String name, ToolMaterial tier)
     {
-        return ITEMS.register(name, () -> new HoeItem(tier, new Item.Properties().attributes(HoeItem.createAttributes(tier, 0, -3f))));
+        return ITEMS.register(name, () -> new HoeItem(tier, 0, -3f, new Item.Properties()
+                .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name)))));
     }
 
-    private static DeferredItem<SwordItem> registerSwordItem(String name, Tier tier)
+    private static DeferredItem<SwordItem> registerSwordItem(String name, ToolMaterial tier)
     {
-        return ITEMS.register(name, () -> new SwordItem(tier, new Item.Properties().attributes(SwordItem.createAttributes(tier, 3, -2.4f))));
+        return ITEMS.register(name, () -> new SwordItem(tier, 3, -2.4f, new Item.Properties()
+                .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name)))));
     }
 
-    private static DeferredItem<PickaxeItem> registerFireResistantPickaxeItem(String name, Tier tier)
+    private static DeferredItem<PickaxeItem> registerFireResistantPickaxeItem(String name, ToolMaterial tier)
     {
-        return ITEMS.register(name, () -> new PickaxeItem(tier, new Item.Properties().attributes(PickaxeItem.createAttributes(tier, 1, -2.8f)).fireResistant()));
+        return ITEMS.register(name, () -> new PickaxeItem(tier, 1, -2.8f, new Item.Properties().fireResistant()
+                .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name)))));
     }
 
-    private static DeferredItem<AxeItem> registerFireResistantAxeItem(String name, Tier tier)
+    private static DeferredItem<AxeItem> registerFireResistantAxeItem(String name, ToolMaterial tier)
     {
-        return ITEMS.register(name, () -> new AxeItem(tier, new Item.Properties().attributes(AxeItem.createAttributes(tier, 6, -3.2f)).fireResistant()));
+        return ITEMS.register(name, () -> new AxeItem(tier, 6, -3.2f, new Item.Properties().fireResistant()
+                .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name)))));
     }
 
-    private static DeferredItem<ShovelItem> registerFireResistantShovelItem(String name, Tier tier)
+    private static DeferredItem<ShovelItem> registerFireResistantShovelItem(String name, ToolMaterial tier)
     {
-        return ITEMS.register(name, () -> new ShovelItem(tier, new Item.Properties().attributes(ShovelItem.createAttributes(tier, 1.5f, -3f)).fireResistant()));
+        return ITEMS.register(name, () -> new ShovelItem(tier, 1.5f, -3f, new Item.Properties().fireResistant()
+                .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name)))));
     }
 
-    private static DeferredItem<HoeItem> registerFireResistantHoeItem(String name, Tier tier)
+    private static DeferredItem<HoeItem> registerFireResistantHoeItem(String name, ToolMaterial tier)
     {
-        return ITEMS.register(name, () -> new HoeItem(tier, new Item.Properties().attributes(HoeItem.createAttributes(tier, 0, -3f)).fireResistant()));
+        return ITEMS.register(name, () -> new HoeItem(tier, 0, -3f, new Item.Properties().fireResistant()
+                .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name)))));
     }
 
-    private static DeferredItem<SwordItem> registerFireResistantSwordItem(String name, Tier tier)
+    private static DeferredItem<SwordItem> registerFireResistantSwordItem(String name, ToolMaterial tier)
     {
-        return ITEMS.register(name, () -> new SwordItem(tier, new Item.Properties().attributes(SwordItem.createAttributes(tier, 3, -2.4f)).fireResistant()));
+        return ITEMS.register(name, () -> new SwordItem(tier, 3, -2.4f, new Item.Properties().fireResistant()
+                .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name)))));
     }
 
     // -- Armor -- //
-    private static DeferredItem<ArmorItem> registerArmorItem(String name, Holder<ArmorMaterial> armorMaterial, ArmorItem.Type armorType, int getDurability)
+    private static DeferredItem<ArmorItem> registerArmorItem(String name, ArmorMaterial armorMaterial, ArmorType armorType, int getDurability)
     {
-        return ITEMS.register(name, () -> new ArmorItem(armorMaterial, armorType, new Item.Properties().durability(armorType.getDurability(getDurability))));
+        return ITEMS.register(name, () -> new ArmorItem(armorMaterial, armorType, new Item.Properties().durability(armorType.getDurability(getDurability))
+                .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name)))));
     }
 
-    private static DeferredItem<ArmorItem> registerFireResistantArmorItem(String name, Holder<ArmorMaterial> armorMaterial, ArmorItem.Type armorType, int getDurability)
+    private static DeferredItem<ArmorItem> registerFireResistantArmorItem(String name, ArmorMaterial armorMaterial, ArmorType armorType, int getDurability)
     {
-        return ITEMS.register(name, () -> new ArmorItem(armorMaterial, armorType, new Item.Properties().durability(armorType.getDurability(getDurability)).fireResistant()));
+        return ITEMS.register(name, () -> new ArmorItem(armorMaterial, armorType, new Item.Properties().durability(armorType.getDurability(getDurability)).fireResistant()
+                .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name)))));
     }
 
     // -- Hammer -- //
-    private static DeferredItem<HammerItem> registerHammerItem(String name, Tier tier)
+    private static DeferredItem<HammerItem> registerHammerItem(String name, ToolMaterial tier)
     {
-        return ITEMS.register(name, () -> new HammerItem(tier, new Item.Properties().attributes(HammerItem.createAttributes(tier, 7F, -3.5f))));
+        return ITEMS.register(name, () -> new HammerItem(tier, 7F, -3.5f, new Item.Properties()
+                .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name)))));
     }
 
-    private static DeferredItem<HammerItem> registerFireResistantHammerItem(String name, Tier tier)
+    private static DeferredItem<HammerItem> registerFireResistantHammerItem(String name, ToolMaterial tier)
     {
-        return ITEMS.register(name, () -> new HammerItem(tier, new Item.Properties().attributes(HammerItem.createAttributes(tier, 7F, -3.5f)).fireResistant()));
+        return ITEMS.register(name, () -> new HammerItem(tier, 7F, -3.5f, new Item.Properties().fireResistant()
+                .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name)))));
+    }
+
+    // -- Food -- //
+    private static DeferredItem<Item> registerFoodItem(String name, FoodProperties properties, Consumable consumable)
+    {
+        return ITEMS.registerSimpleItem(name, new Item.Properties()
+                .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name)))
+                .food(properties, consumable));
     }
 
     public static void register(IEventBus eventBus)

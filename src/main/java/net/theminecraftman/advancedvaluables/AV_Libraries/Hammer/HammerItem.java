@@ -5,7 +5,8 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.DiggerItem;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.phys.BlockHitResult;
 
@@ -14,9 +15,9 @@ import java.util.List;
 
 public class HammerItem extends DiggerItem
 {
-    public HammerItem(Tier tier, Properties properties)
+    public HammerItem(ToolMaterial toolMaterial, float attackDamage, float attackSpeed, Item.Properties properties)
     {
-        super(tier, BlockTags.MINEABLE_WITH_PICKAXE, properties);
+        super(toolMaterial, BlockTags.MINEABLE_WITH_PICKAXE, attackDamage, attackSpeed, properties);
     }
 
     // -- Help taken from Kaupenjoe. See https://youtu.be/-EuJTKoLzlM?si=wl433_BoUGwaIJzc -- //

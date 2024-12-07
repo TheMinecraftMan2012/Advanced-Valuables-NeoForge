@@ -1,126 +1,114 @@
 package net.theminecraftman.advancedvaluables.AV_Libraries.ToolsComponents;
 
 import net.minecraft.Util;
-import net.minecraft.core.Holder;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredRegister;
-import net.theminecraftman.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorType;
 import net.theminecraftman.advancedvaluables.AdvancedValuables;
+import net.theminecraftman.advancedvaluables.util.AdvancedValuables_Tags;
 
 import java.util.EnumMap;
-import java.util.List;
 
 public class AdvancedValuables_ArmorMaterials
 {
-    public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS = DeferredRegister.create(Registries.ARMOR_MATERIAL, AdvancedValuables.MOD_ID);
+    public static final ArmorMaterial RED_SAPPHIRE = new ArmorMaterial(1200,
+            Util.make(new EnumMap<>(ArmorType.class), attribute -> {
+                attribute.put(ArmorType.BOOTS, 2);
+                attribute.put(ArmorType.LEGGINGS, 4);
+                attribute.put(ArmorType.CHESTPLATE, 6);
+                attribute.put(ArmorType.HELMET, 2);
+                attribute.put(ArmorType.BODY, 4);
+            }), 20, SoundEvents.ARMOR_EQUIP_GENERIC, 0, 0,
+            AdvancedValuables_Tags.Items.RED_SAPPHIRE_REPAIR,
+            ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "red_sapphire")
+    );
 
-    public static final Holder<ArmorMaterial> RED_SAPPHIRE = ARMOR_MATERIALS.register("red_sapphire", () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 2);
-                map.put(ArmorItem.Type.LEGGINGS, 4);
-                map.put(ArmorItem.Type.CHESTPLATE, 6);
-                map.put(ArmorItem.Type.HELMET, 2);
-                map.put(ArmorItem.Type.BODY, 4);
-            }), 20, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(AdvancedValuables_ItemClass.RED_SAPPHIRE.get()),
-            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "red_sapphire"))), 0, 0
-    ));
+    public static final ArmorMaterial BLUE_SAPPHIRE = new ArmorMaterial(1200,
+            Util.make(new EnumMap<>(ArmorType.class), attribute -> {
+                attribute.put(ArmorType.BOOTS, 2);
+                attribute.put(ArmorType.LEGGINGS, 4);
+                attribute.put(ArmorType.CHESTPLATE, 6);
+                attribute.put(ArmorType.HELMET, 2);
+                attribute.put(ArmorType.BODY, 4);
+            }), 20, SoundEvents.ARMOR_EQUIP_GENERIC, 0, 0, AdvancedValuables_Tags.Items.BLUE_SAPPHIRE_REPAIR,
+            ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "blue_sapphire")
+    );
 
-    public static final Holder<ArmorMaterial> BLUE_SAPPHIRE = ARMOR_MATERIALS.register("blue_sapphire", () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 2);
-                map.put(ArmorItem.Type.LEGGINGS, 4);
-                map.put(ArmorItem.Type.CHESTPLATE, 6);
-                map.put(ArmorItem.Type.HELMET, 2);
-                map.put(ArmorItem.Type.BODY, 4);
-            }), 20, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get()),
-            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "blue_sapphire"))), 0, 0
-    ));
+    public static final ArmorMaterial GREEN_SAPPHIRE = new ArmorMaterial(1200,
+            Util.make(new EnumMap<>(ArmorType.class), attribute -> {
+                attribute.put(ArmorType.BOOTS, 2);
+                attribute.put(ArmorType.LEGGINGS, 4);
+                attribute.put(ArmorType.CHESTPLATE, 6);
+                attribute.put(ArmorType.HELMET, 2);
+                attribute.put(ArmorType.BODY, 4);
+            }), 20, SoundEvents.ARMOR_EQUIP_GENERIC, 0, 0, AdvancedValuables_Tags.Items.GREEN_SAPPHIRE_REPAIR,
+            ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "green_sapphire")
+    );
 
-    public static final Holder<ArmorMaterial> GREEN_SAPPHIRE = ARMOR_MATERIALS.register("green_sapphire", () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 2);
-                map.put(ArmorItem.Type.LEGGINGS, 4);
-                map.put(ArmorItem.Type.CHESTPLATE, 6);
-                map.put(ArmorItem.Type.HELMET, 2);
-                map.put(ArmorItem.Type.BODY, 4);
-            }), 20, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get()),
-            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "green_sapphire"))), 0, 0
-    ));
+    public static final ArmorMaterial RED_GARNET = new ArmorMaterial(1200,
+            Util.make(new EnumMap<>(ArmorType.class), attribute -> {
+                attribute.put(ArmorType.BOOTS, 2);
+                attribute.put(ArmorType.LEGGINGS, 4);
+                attribute.put(ArmorType.CHESTPLATE, 6);
+                attribute.put(ArmorType.HELMET, 2);
+                attribute.put(ArmorType.BODY, 4);
+            }), 20, SoundEvents.ARMOR_EQUIP_GENERIC, 0, 0, AdvancedValuables_Tags.Items.RED_GARNET_REPAIR,
+            ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "red_garnet")
+    );
 
-    public static final Holder<ArmorMaterial> RED_GARNET = ARMOR_MATERIALS.register("red_garnet", () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 2);
-                map.put(ArmorItem.Type.LEGGINGS, 4);
-                map.put(ArmorItem.Type.CHESTPLATE, 6);
-                map.put(ArmorItem.Type.HELMET, 2);
-                map.put(ArmorItem.Type.BODY, 4);
-            }), 20, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(AdvancedValuables_ItemClass.RED_GARNET.get()),
-            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "red_garnet"))), 0, 0
-    ));
+    public static final ArmorMaterial BLUE_GARNET = new ArmorMaterial(1200,
+            Util.make(new EnumMap<>(ArmorType.class), attribute -> {
+                attribute.put(ArmorType.BOOTS, 2);
+                attribute.put(ArmorType.LEGGINGS, 4);
+                attribute.put(ArmorType.CHESTPLATE, 6);
+                attribute.put(ArmorType.HELMET, 2);
+                attribute.put(ArmorType.BODY, 4);
+            }), 20, SoundEvents.ARMOR_EQUIP_GENERIC, 0, 0, AdvancedValuables_Tags.Items.BLUE_GARNET_REPAIR,
+            ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "blue_garnet")
+    );
 
-    public static final Holder<ArmorMaterial> BLUE_GARNET = ARMOR_MATERIALS.register("blue_garnet", () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 2);
-                map.put(ArmorItem.Type.LEGGINGS, 4);
-                map.put(ArmorItem.Type.CHESTPLATE, 6);
-                map.put(ArmorItem.Type.HELMET, 2);
-                map.put(ArmorItem.Type.BODY, 4);
-            }), 20, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(AdvancedValuables_ItemClass.BLUE_GARNET.get()),
-            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "blue_garnet"))), 0, 0
-    ));
+    public static final ArmorMaterial PINK_GARNET = new ArmorMaterial(1200,
+            Util.make(new EnumMap<>(ArmorType.class), attribute -> {
+                attribute.put(ArmorType.BOOTS, 2);
+                attribute.put(ArmorType.LEGGINGS, 4);
+                attribute.put(ArmorType.CHESTPLATE, 6);
+                attribute.put(ArmorType.HELMET, 2);
+                attribute.put(ArmorType.BODY, 4);
+            }), 20, SoundEvents.ARMOR_EQUIP_GENERIC, 0, 0, AdvancedValuables_Tags.Items.PINK_GARNET_REPAIR,
+            ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "pink_garnet")
+    );
 
-    public static final Holder<ArmorMaterial> PINK_GARNET = ARMOR_MATERIALS.register("pink_garnet", () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 2);
-                map.put(ArmorItem.Type.LEGGINGS, 4);
-                map.put(ArmorItem.Type.CHESTPLATE, 6);
-                map.put(ArmorItem.Type.HELMET, 2);
-                map.put(ArmorItem.Type.BODY, 4);
-            }), 20, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(AdvancedValuables_ItemClass.PINK_GARNET.get()),
-            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "pink_garnet"))), 0, 0
-    ));
+    public static final ArmorMaterial YELLOW_GARNET = new ArmorMaterial(1200,
+            Util.make(new EnumMap<>(ArmorType.class), attribute -> {
+                attribute.put(ArmorType.BOOTS, 2);
+                attribute.put(ArmorType.LEGGINGS, 4);
+                attribute.put(ArmorType.CHESTPLATE, 6);
+                attribute.put(ArmorType.HELMET, 2);
+                attribute.put(ArmorType.BODY, 4);
+            }), 20, SoundEvents.ARMOR_EQUIP_GENERIC, 0, 0, AdvancedValuables_Tags.Items.BLUE_GARNET_REPAIR,
+            ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "yellow_garnet")
+    );
 
-    public static final Holder<ArmorMaterial> YELLOW_GARNET = ARMOR_MATERIALS.register("yellow_garnet", () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 2);
-                map.put(ArmorItem.Type.LEGGINGS, 4);
-                map.put(ArmorItem.Type.CHESTPLATE, 6);
-                map.put(ArmorItem.Type.HELMET, 2);
-                map.put(ArmorItem.Type.BODY, 4);
-            }), 20, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(AdvancedValuables_ItemClass.YELLOW_GARNET.get()),
-            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "yellow_garnet"))), 0, 0
-    ));
+    public static final ArmorMaterial FUSION_GEM = new ArmorMaterial(1200,
+            Util.make(new EnumMap<>(ArmorType.class), attribute -> {
+                attribute.put(ArmorType.BOOTS, 2);
+                attribute.put(ArmorType.LEGGINGS, 4);
+                attribute.put(ArmorType.CHESTPLATE, 6);
+                attribute.put(ArmorType.HELMET, 2);
+                attribute.put(ArmorType.BODY, 4);
+            }), 20, SoundEvents.ARMOR_EQUIP_GENERIC, 0, 0, AdvancedValuables_Tags.Items.FUSION_REPAIR,
+            ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "fusion_gem")
+    );
 
-    public static final Holder<ArmorMaterial> FUSION_GEM = ARMOR_MATERIALS.register("fusion_gem", () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 10);
-                map.put(ArmorItem.Type.LEGGINGS, 10);
-                map.put(ArmorItem.Type.CHESTPLATE, 10);
-                map.put(ArmorItem.Type.HELMET, 10);
-                map.put(ArmorItem.Type.BODY, 10);
-            }), 20, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(AdvancedValuables_ItemClass.FUSION_GEM.get()),
-            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "fusion_gem"))), 0, 0
-    ));
-
-    public static final Holder<ArmorMaterial> RUBY = ARMOR_MATERIALS.register("ruby", () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 2);
-                map.put(ArmorItem.Type.LEGGINGS, 4);
-                map.put(ArmorItem.Type.CHESTPLATE, 6);
-                map.put(ArmorItem.Type.HELMET, 2);
-                map.put(ArmorItem.Type.BODY, 4);
-            }), 20, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(AdvancedValuables_ItemClass.RUBY.get()),
-            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "ruby"))), 0, 0
-    ));
-
-    public static void register(IEventBus eventBus)
-    {
-        ARMOR_MATERIALS.register(eventBus);
-    }
+    public static final ArmorMaterial RUBY = new ArmorMaterial(1200,
+            Util.make(new EnumMap<>(ArmorType.class), attribute -> {
+                attribute.put(ArmorType.BOOTS, 2);
+                attribute.put(ArmorType.LEGGINGS, 4);
+                attribute.put(ArmorType.CHESTPLATE, 6);
+                attribute.put(ArmorType.HELMET, 2);
+                attribute.put(ArmorType.BODY, 4);
+            }), 20, SoundEvents.ARMOR_EQUIP_GENERIC, 0, 0, AdvancedValuables_Tags.Items.RUBY_REPAIR,
+            ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "ruby")
+    );
 }

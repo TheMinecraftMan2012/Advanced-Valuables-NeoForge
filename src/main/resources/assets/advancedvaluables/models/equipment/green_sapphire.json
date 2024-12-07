@@ -1,0 +1,14 @@
+{
+   "layers": {
+      "humanoid": [
+         {
+            "texture": "advancedvaluables:green_sapphire"
+         }
+      ],
+      "humanoid_leggings": [
+         {
+            "texture": "advancedvaluables:green_sapphire"
+         }
+      ]
+   }
+}

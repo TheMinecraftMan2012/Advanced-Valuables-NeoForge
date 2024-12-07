@@ -27,7 +27,7 @@ public class AdvancedValuables_DataGenerators
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        generator.addProvider(event.includeServer(), new AdvancedValuables_RecipeProvider(output, lookupProvider));
+        generator.addProvider(event.includeServer(), new AdvancedValuables_RecipeProvider.Runner(output, lookupProvider));
         generator.addProvider(event.includeServer(), new LootTableProvider(output, Collections.emptySet(),
                 List.of(new LootTableProvider.SubProviderEntry(AdvancedValuables_BlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
 

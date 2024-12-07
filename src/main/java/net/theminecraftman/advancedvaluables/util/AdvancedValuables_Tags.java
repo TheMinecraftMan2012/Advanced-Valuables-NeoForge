@@ -34,6 +34,18 @@ public class AdvancedValuables_Tags
     {
         public static final TagKey<Item> VALUABLE_ITEMS = createTag("valuable_items");
 
+        public static final TagKey<Item> RED_SAPPHIRE_REPAIR = createTag("red_sapphire_repair");
+        public static final TagKey<Item> BLUE_SAPPHIRE_REPAIR = createTag("blue_sapphire_repair");
+        public static final TagKey<Item> GREEN_SAPPHIRE_REPAIR = createTag("green_sapphire_repair");
+
+        public static final TagKey<Item> RED_GARNET_REPAIR = createTag("red_garnet_repair");
+        public static final TagKey<Item> BLUE_GARNET_REPAIR = createTag("blue_garnet_repair");
+        public static final TagKey<Item> PINK_GARNET_REPAIR = createTag("pink_garnet_repair");
+        public static final TagKey<Item> YELLOW_GARNET_REPAIR = createTag("yellow_garnet_repair");
+
+        public static final TagKey<Item> FUSION_REPAIR = createTag("fusion_repair");
+        public static final TagKey<Item> RUBY_REPAIR = createTag("ruby_repair");
+
         private static TagKey<Item> createTag(String name)
         {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name));
