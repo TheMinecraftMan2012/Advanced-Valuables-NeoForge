@@ -1,0 +1,22 @@
+{
+  "values": [
+    "advancedvaluables:blue_sapphire",
+    "advancedvaluables:red_sapphire",
+    "advancedvaluables:green_sapphire",
+    "advancedvaluables:red_garnet",
+    "advancedvaluables:blue_garnet",
+    "advancedvaluables:pink_garnet",
+    "advancedvaluables:yellow_garnet",
+    "advancedvaluables:fusion_gem",
+    "advancedvaluables:ruby",
+    "advancedvaluables:blue_raw_sapphire",
+    "advancedvaluables:red_raw_sapphire",
+    "advancedvaluables:green_raw_sapphire",
+    "advancedvaluables:red_raw_garnet",
+    "advancedvaluables:blue_raw_garnet",
+    "advancedvaluables:pink_raw_garnet",
+    "advancedvaluables:yellow_raw_garnet",
+    "advancedvaluables:raw_fusion_gem",
+    "advancedvaluables:raw_ruby"
+  ]
+}

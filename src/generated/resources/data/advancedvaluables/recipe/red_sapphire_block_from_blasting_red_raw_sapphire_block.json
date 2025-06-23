@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "red_sapphire",
+  "ingredient": "advancedvaluables:red_raw_sapphire_block",
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:red_sapphire_block"
+  }
+}

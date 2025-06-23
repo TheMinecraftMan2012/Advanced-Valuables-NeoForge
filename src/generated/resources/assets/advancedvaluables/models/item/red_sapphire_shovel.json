@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "advancedvaluables:item/red_sapphire_shovel"
+  }
+}

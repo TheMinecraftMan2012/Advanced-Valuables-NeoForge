@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "bottom": "advancedvaluables:block/yellow_garnet_door_bottom",
+    "top": "advancedvaluables:block/yellow_garnet_door_top"
+  }
+}

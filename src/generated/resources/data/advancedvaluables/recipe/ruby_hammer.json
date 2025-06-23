@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "hammer",
+  "ingredients": [
+    "advancedvaluables:ruby",
+    "advancedvaluables:hammer_wireframe"
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:ruby_hammer"
+  }
+}

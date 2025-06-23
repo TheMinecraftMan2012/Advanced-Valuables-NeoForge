@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "red_sapphire",
+  "ingredients": [
+    "advancedvaluables:red_sapphire"
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:red_sapphire_button"
+  }
+}

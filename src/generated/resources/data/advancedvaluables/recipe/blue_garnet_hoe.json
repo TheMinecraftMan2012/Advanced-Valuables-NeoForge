@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": "advancedvaluables:blue_garnet",
+    "b": "minecraft:stick"
+  },
+  "pattern": [
+    "aa ",
+    " b ",
+    " b "
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:blue_garnet_hoe"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "fusion_gem",
+  "key": {
+    "#": "advancedvaluables:fusion_gem"
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 2,
+    "id": "advancedvaluables:fusion_trapdoor"
+  }
+}
