@@ -4,7 +4,7 @@ import net.minecraft.world.food.FoodProperties;
 
 public class AdvancedValuables_FoodProperties
 {
-    public static final FoodProperties RED_SAPPHIRE_APPLE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.25f).alwaysEdible().build();
+    public static final FoodProperties RED_SAPPHIRE_APPLE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.25f).build();
     public static final FoodProperties BLUE_SAPPHIRE_APPLE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.25f).alwaysEdible().build();
     public static final FoodProperties GREEN_SAPPHIRE_APPLE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.25f).alwaysEdible().build();
     public static final FoodProperties RED_GARNET_APPLE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.25f).alwaysEdible().build();
