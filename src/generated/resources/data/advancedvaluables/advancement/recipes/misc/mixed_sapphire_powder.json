@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blue_sapphire": {
+      "conditions": {
+        "items": [
+          {
+            "items": "advancedvaluables:blue_sapphire"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_green_sapphire": {
+      "conditions": {
+        "items": [
+          {
+            "items": "advancedvaluables:green_sapphire"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_red_sapphire": {
+      "conditions": {
+        "items": [
+          {
+            "items": "advancedvaluables:red_sapphire"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "advancedvaluables:mixed_sapphire_powder"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_red_sapphire",
+      "has_blue_sapphire",
+      "has_green_sapphire"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "advancedvaluables:mixed_sapphire_powder"
+    ]
+  }
+}

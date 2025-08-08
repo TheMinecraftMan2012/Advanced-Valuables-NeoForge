@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": "advancedvaluables:fusion_gem",
+    "b": "minecraft:stick"
+  },
+  "pattern": [
+    "aaa",
+    " b ",
+    " b "
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:fusion_pickaxe"
+  }
+}

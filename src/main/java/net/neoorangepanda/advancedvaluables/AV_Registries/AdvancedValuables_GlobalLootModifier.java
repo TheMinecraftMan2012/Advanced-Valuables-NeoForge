@@ -1,0 +1,25 @@
+package net.neoorangepanda.advancedvaluables.AV_Registries;
+
+import com.mojang.serialization.MapCodec;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.neoorangepanda.advancedvaluables.AV_GlobalLootModifier.AdvancedValuables_AddItemModifier;
+import net.neoorangepanda.advancedvaluables.AdvancedValuables;
+
+import java.util.function.Supplier;
+
+public class AdvancedValuables_GlobalLootModifier
+{
+    public static final DeferredRegister<MapCodec<? extends IGlobalLootModifier>> LOOT_MODIFIER_SERIALIZERS =
+            DeferredRegister.create(NeoForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, AdvancedValuables.MOD_ID);
+
+    public static final Supplier<MapCodec<? extends IGlobalLootModifier>> ADD_ITEM =
+            LOOT_MODIFIER_SERIALIZERS.register("add_item", () -> AdvancedValuables_AddItemModifier.CODEC);
+
+    public static void register(IEventBus eventBus)
+    {
+        LOOT_MODIFIER_SERIALIZERS.register(eventBus);
+    }
+}

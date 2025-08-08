@@ -1,0 +1,8 @@
+{
+  "type": "advancedvaluables:gem_grinder",
+  "ingredient": "advancedvaluables:ruby",
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:ruby_powder"
+  }
+}

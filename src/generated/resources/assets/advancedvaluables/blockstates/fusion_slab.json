@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "advancedvaluables:block/fusion_slab"
+    },
+    "type=double": {
+      "model": "advancedvaluables:block/fusion_block"
+    },
+    "type=top": {
+      "model": "advancedvaluables:block/fusion_slab_top"
+    }
+  }
+}

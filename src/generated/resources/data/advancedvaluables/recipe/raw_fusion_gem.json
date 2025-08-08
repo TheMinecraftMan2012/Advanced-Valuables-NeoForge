@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "advancedvaluables:raw_fusion_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "advancedvaluables:raw_fusion_gem"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blue_sapphire": {
+      "conditions": {
+        "items": [
+          {
+            "items": "advancedvaluables:blue_sapphire"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "advancedvaluables:blue_sapphire_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_blue_sapphire"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "advancedvaluables:blue_sapphire_slab"
+    ]
+  }
+}

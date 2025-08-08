@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "advancedvaluables:block/green_sapphire_slab"
+    },
+    "type=double": {
+      "model": "advancedvaluables:block/green_sapphire_block"
+    },
+    "type=top": {
+      "model": "advancedvaluables:block/green_sapphire_slab_top"
+    }
+  }
+}

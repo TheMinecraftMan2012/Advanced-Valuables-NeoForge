@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "advancedvaluables:block/fusion_block",
+    "side": "advancedvaluables:block/fusion_block",
+    "top": "advancedvaluables:block/fusion_block"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "fusion_gem",
+  "key": {
+    "#": "advancedvaluables:fusion_gem"
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "advancedvaluables:fusion_stairs"
+  }
+}

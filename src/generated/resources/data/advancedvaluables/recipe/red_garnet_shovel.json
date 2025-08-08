@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": "advancedvaluables:red_garnet",
+    "b": "minecraft:stick"
+  },
+  "pattern": [
+    " a ",
+    " b ",
+    " b "
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:red_garnet_shovel"
+  }
+}

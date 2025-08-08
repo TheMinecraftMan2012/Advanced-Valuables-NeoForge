@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "advancedvaluables:item/blue_garnet_chestplate",
+    "layer1": "minecraft:trims/items/blue_garnet_trim_netherite"
+  }
+}
