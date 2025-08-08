@@ -1,8 +1,4 @@
 {
-  "creativetab.advancedvaluables.valuables": "Valuables and Ores",
-  "creativetab.advancedvaluables.tools_armor": "Tools & Armor",
-  "creativetab.advancedvaluables.decor": "Decor Blocks",
-
   "item.advancedvaluables.blue_sapphire": "Blue Sapphire",
   "item.advancedvaluables.red_sapphire": "Red Sapphire",
   "item.advancedvaluables.green_sapphire": "Green Sapphire",
@@ -221,6 +217,9 @@
   "block.advancedvaluables.ruby_door": "Ruby Door",
   "block.advancedvaluables.ruby_trapdoor": "Ruby Trapdoor",
 
+  "block.advancedvaluables.gem_grinder": "Gem Grinder",
+  "block.advancedvaluables.fusion_gem_station": "Fusion Gem Station",
+
   "item.advancedvaluables.red_sapphire_helmet": "Red Sapphire Helmet",
   "item.advancedvaluables.red_sapphire_chestplate": "Red Sapphire Chestplate",
   "item.advancedvaluables.red_sapphire_leggings": "Red Sapphire Leggings",
@@ -276,5 +275,25 @@
   "item.advancedvaluables.yellow_garnet_apple": "Yellow Garnet Apple",
 
   "item.advancedvaluables.fusion_apple": "Fusion Apple",
-  "item.advancedvaluables.ruby_apple": "Ruby Apple"
+  "item.advancedvaluables.ruby_apple": "Ruby Apple",
+
+  "enchantment.advancedvaluables.smitebolt": "Smitebolt",
+  "enchantment.advancedvaluables.sheep_killer": "Sheep Killer",
+  "enchantment.advancedvaluables.poison_shard": "Poison Shard",
+
+  "advancedvaluables.configuration.AV_VillagerTrades": "Enable Villager Trade",
+
+  "item.advancedvaluables.red_sapphire_powder": "Red Sapphire Powder",
+  "item.advancedvaluables.blue_sapphire_powder": "Blue Sapphire Powder",
+  "item.advancedvaluables.green_sapphire_powder": "Green Sapphire Powder",
+
+  "item.advancedvaluables.red_garnet_powder": "Red Garnet Powder",
+  "item.advancedvaluables.blue_garnet_powder": "Blue Garnet Powder",
+  "item.advancedvaluables.pink_garnet_powder": "Pink Garnet Powder",
+  "item.advancedvaluables.yellow_garnet_powder": "Yellow Garnet Powder",
+
+  "item.advancedvaluables.ruby_powder": "Ruby Powder",
+
+  "item.advancedvaluables.mixed_sapphire_powder": "Mixed Sapphire Powder",
+  "item.advancedvaluables.mixed_garnet_powder": "Mixed Garnet Powder"
 }

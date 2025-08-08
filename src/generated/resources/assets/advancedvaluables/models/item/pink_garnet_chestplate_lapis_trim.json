@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "advancedvaluables:item/pink_garnet_chestplate",
-    "layer1": "minecraft:trims/items/pink_garnet_trim_lapis"
-  }
-}
