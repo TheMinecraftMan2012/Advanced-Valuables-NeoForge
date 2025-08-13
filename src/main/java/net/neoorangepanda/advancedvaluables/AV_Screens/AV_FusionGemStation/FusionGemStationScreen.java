@@ -34,7 +34,7 @@ public class FusionGemStationScreen extends AbstractContainerScreen<FusionGemSta
     {
         if(menu.isCrafting())
         {
-            guiGraphics.blit(RenderType.GUI_TEXTURED, ARROW_TEXTURE, x + 79+5, y + 37, 0, 0, menu.getScaledArrowProgress(), 16, 24, 16);
+            guiGraphics.blit(RenderType.GUI_TEXTURED, ARROW_TEXTURE, x + 79 + 5, y + 37, 0, 0, menu.getScaledArrowProgress(), 16, 24, 16);
         }
     }
 
