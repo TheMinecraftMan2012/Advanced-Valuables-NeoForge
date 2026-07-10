@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": "advancedvaluables:blue_sapphire",
+    "b": "minecraft:stick"
+  },
+  "pattern": [
+    "aa ",
+    "ab ",
+    " b "
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:blue_sapphire_axe"
+  }
+}

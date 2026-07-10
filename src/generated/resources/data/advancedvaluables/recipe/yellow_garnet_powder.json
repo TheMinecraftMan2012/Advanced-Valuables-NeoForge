@@ -1,0 +1,8 @@
+{
+  "type": "advancedvaluables:gem_grinder",
+  "ingredient": "advancedvaluables:yellow_garnet",
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:yellow_garnet_powder"
+  }
+}

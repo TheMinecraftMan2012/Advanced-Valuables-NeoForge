@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_post",
+  "textures": {
+    "texture": "advancedvaluables:block/green_sapphire_block"
+  }
+}

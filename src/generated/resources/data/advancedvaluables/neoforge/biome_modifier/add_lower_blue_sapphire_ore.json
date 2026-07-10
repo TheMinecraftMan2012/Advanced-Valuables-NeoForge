@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": "advancedvaluables:lower_blue_sapphire_ore",
+  "step": "underground_ores"
+}

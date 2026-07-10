@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "hammer",
+  "ingredients": [
+    "advancedvaluables:pink_garnet",
+    "advancedvaluables:hammer_wireframe"
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedvaluables:pink_garnet_hammer"
+  }
+}
