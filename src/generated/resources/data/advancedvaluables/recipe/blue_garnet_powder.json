@@ -1,8 +1,0 @@
-{
-  "type": "advancedvaluables:gem_grinder",
-  "ingredient": "advancedvaluables:blue_garnet",
-  "result": {
-    "count": 1,
-    "id": "advancedvaluables:blue_garnet_powder"
-  }
-}

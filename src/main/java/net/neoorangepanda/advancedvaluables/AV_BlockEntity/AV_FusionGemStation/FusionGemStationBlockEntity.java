@@ -19,11 +19,13 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_Entities;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
 import net.neoorangepanda.advancedvaluables.AV_Screens.AV_FusionGemStation.FusionGemStationMenu;
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nullable;
 
 public class FusionGemStationBlockEntity extends BlockEntity implements MenuProvider
 {
@@ -107,23 +109,30 @@ public class FusionGemStationBlockEntity extends BlockEntity implements MenuProv
     }
 
     @Override
-    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries)
+    protected void saveAdditional(ValueOutput output)
     {
-        tag.put("inventory", handler.serializeNBT(registries));
-        tag.putInt("fusion_gem_station.progress", progress);
-        tag.putInt("fusion_gem_station.max_progress", maxProgress);
+        handler.serialize(output);
+        output.putInt("fusion_gem_station.progress", progress);
+        output.putInt("fusion_gem_station.max_progress", maxProgress);
 
-        super.saveAdditional(tag, registries);
+        super.saveAdditional(output);
     }
 
     @Override
-    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries)
+    protected void loadAdditional(ValueInput input)
     {
-        super.loadAdditional(tag, registries);
+        super.loadAdditional(input);
 
-        handler.deserializeNBT(registries, tag.getCompound("inventory"));
-        progress = tag.getInt("fusion_gem_station.progress");
-        maxProgress = tag.getInt("fusion_gem_station.max_progress");
+        handler.deserialize(input);
+        progress = input.getInt("fusion_gem_station.progress").get();
+        maxProgress = input.getInt("fusion_gem_station.max_progress").get();
+    }
+
+    @Override
+    public void preRemoveSideEffects(BlockPos pos, BlockState state)
+    {
+        drops();
+        super.preRemoveSideEffects(pos, state);
     }
 
     @Override

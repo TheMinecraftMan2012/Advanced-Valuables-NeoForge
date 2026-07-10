@@ -22,7 +22,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_Entities;
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nullable;
 
 public class FusionGemStationBlock extends BaseEntityBlock
 {
@@ -77,21 +77,9 @@ public class FusionGemStationBlock extends BaseEntityBlock
         return InteractionResult.SUCCESS;
     }
 
+    @Nullable
     @Override
-    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving)
-    {
-        if (pState.getBlock() != pNewState.getBlock()) {
-            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-            if (blockEntity instanceof FusionGemStationBlockEntity fusionGemStationBlockEntity) {
-                fusionGemStationBlockEntity.drops();
-            }
-        }
-
-        super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
-    }
-
-    @Override
-    public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType)
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType)
     {
         if (level.isClientSide()) return null;
 

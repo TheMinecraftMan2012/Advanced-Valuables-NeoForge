@@ -1,15 +1,15 @@
 package net.neoorangepanda.advancedvaluables.AV_Libraries.ToolsComponents;
 
-import net.minecraft.Util;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.Util;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.item.equipment.EquipmentAsset;
 import net.minecraft.world.item.equipment.EquipmentAssets;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
-import net.neoorangepanda.advancedvaluables.util.AdvancedValuables_Tags;
+import net.neoorangepanda.advancedvaluables.AV_Utils.AdvancedValuables_Tags;
 
 import java.util.EnumMap;
 
@@ -110,6 +110,6 @@ public class AdvancedValuables_ArmorMaterials
 
     private static ResourceKey<EquipmentAsset> createArmorId(String armorId)
     {
-        return ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, armorId));
+        return ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, armorId));
     }
 }

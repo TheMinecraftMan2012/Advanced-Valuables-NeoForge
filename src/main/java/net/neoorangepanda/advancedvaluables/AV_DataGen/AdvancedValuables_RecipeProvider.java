@@ -10,7 +10,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoorangepanda.advancedvaluables.AV_Libraries.AV_SpecialItems.HammerItem;
+import net.neoorangepanda.advancedvaluables.AV_Libraries.Items.HammerItem;
 import net.neoorangepanda.advancedvaluables.AV_RecipeProvider.AV_GemGrinder.GemGrinderRecipeProvider;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_BlockClass;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
@@ -547,6 +547,34 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
                 .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT)).group("hammer")
                 .save(this.output);
 
+        // -- Fusion Gem Station Block & Gem Grinder Block -- //
+        shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.GEM_GRINDER)
+                .pattern("aaa")
+                .pattern("aba")
+                .pattern("dcd")
+                .define('a', Items.IRON_INGOT)
+                .define('b', AdvancedValuables_ItemClass.BLUE_SAPPHIRE)
+                .define('c', Items.DIAMOND)
+                .define('d', AdvancedValuables_BlockClass.RED_SAPPHIRE_BLOCK)
+                .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
+                .unlockedBy("has_blue_sapphire_block", has(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_BLOCK))
+                .unlockedBy("has_diamond", has(Items.DIAMOND))
+                .save(this.output);
+
+        shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.FUSION_GEM_STATION)
+                .pattern("aaa")
+                .pattern("bcd")
+                .pattern("aaa")
+                .define('a', Items.IRON_INGOT)
+                .define('b', AdvancedValuables_ItemClass.MIXED_SAPPHIRE_POWDER)
+                .define('c', AdvancedValuables_ItemClass.MIXED_GARNET_POWDER)
+                .define('d', AdvancedValuables_ItemClass.RUBY_POWDER)
+                .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
+                .unlockedBy("has_mixed_sapphire_powder", has(AdvancedValuables_ItemClass.MIXED_SAPPHIRE_POWDER))
+                .unlockedBy("has_mixed_garnet_powder", has(AdvancedValuables_ItemClass.MIXED_GARNET_POWDER))
+                .unlockedBy("has_ruby_powder", has(AdvancedValuables_ItemClass.RUBY_POWDER))
+                .save(this.output);
+
         // -- Hammer Crafting -- //
         generateHammerRecipe(this.output, AdvancedValuables_ItemClass.RED_SAPPHIRE, AdvancedValuables_ItemClass.RED_SAPPHIRE_HAMMER);
         generateHammerRecipe(this.output, AdvancedValuables_ItemClass.BLUE_SAPPHIRE, AdvancedValuables_ItemClass.BLUE_SAPPHIRE_HAMMER);
@@ -594,7 +622,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
                 .unlockedBy(group, has(ingredient)).save(output);
     }
 
-    private void generatePickaxeRecipe(RecipeOutput output, DeferredItem<PickaxeItem> result, DeferredItem<Item> ingredient, String group)
+    private void generatePickaxeRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
     {
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, result)
                 .pattern("aaa")
@@ -603,7 +631,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
                 .define('a', ingredient).define('b', Items.STICK)
                 .unlockedBy(group, has(ingredient)).save(output);
     }
-    private void generateAxeRecipe(RecipeOutput output, DeferredItem<AxeItem> result, DeferredItem<Item> ingredient, String group)
+    private void generateAxeRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
     {
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, result)
                 .pattern("aa ")
@@ -612,7 +640,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
                 .define('a', ingredient).define('b', Items.STICK)
                 .unlockedBy(group, has(ingredient)).save(output);
     }
-    private void generateShovelRecipe(RecipeOutput output, DeferredItem<ShovelItem> result, DeferredItem<Item> ingredient, String group)
+    private void generateShovelRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
     {
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, result)
                 .pattern(" a ")
@@ -621,7 +649,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
                 .define('a', ingredient).define('b', Items.STICK)
                 .unlockedBy(group, has(ingredient)).save(output);
     }
-    private void generateHoeRecipe(RecipeOutput output, DeferredItem<HoeItem> result, DeferredItem<Item> ingredient, String group)
+    private void generateHoeRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
     {
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, result)
                 .pattern("aa ")
@@ -630,7 +658,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
                 .define('a', ingredient).define('b', Items.STICK)
                 .unlockedBy(group, has(ingredient)).save(output);
     }
-    private void generateSwordRecipe(RecipeOutput output, DeferredItem<SwordItem> result, DeferredItem<Item> ingredient, String group)
+    private void generateSwordRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
     {
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, result)
                 .pattern(" a ")
@@ -642,10 +670,10 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
 
     // -- Shortcuts -- // -- Armor -- //
     private void generateArmorRecipe(RecipeOutput output,
-                                            DeferredItem<ArmorItem> result_helmet,
-                                            DeferredItem<ArmorItem> result_chestplate,
-                                            DeferredItem<ArmorItem> result_leggings,
-                                            DeferredItem<ArmorItem> result_boots,
+                                            DeferredItem<Item> result_helmet,
+                                            DeferredItem<Item> result_chestplate,
+                                            DeferredItem<Item> result_leggings,
+                                            DeferredItem<Item> result_boots,
                                             DeferredItem<Item> ingredient, String group)
     {
         ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, result_chestplate)

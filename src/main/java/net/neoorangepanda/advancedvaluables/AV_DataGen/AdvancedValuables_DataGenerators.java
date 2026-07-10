@@ -15,7 +15,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-@EventBusSubscriber(modid = AdvancedValuables.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = AdvancedValuables.MOD_ID)
 public class AdvancedValuables_DataGenerators
 {
     @SubscribeEvent
@@ -30,10 +30,15 @@ public class AdvancedValuables_DataGenerators
                 List.of(new LootTableProvider.SubProviderEntry(AdvancedValuables_BlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
         BlockTagsProvider blockTagsProvider = new AdvancedValuables_BlockTagProvider(output, lookupProvider);
         generator.addProvider(true, blockTagsProvider);
-        generator.addProvider(true, new AdvancedValuables_ItemTagProvider(output, lookupProvider, blockTagsProvider.contentsGetter()));
+        generator.addProvider(true, new AdvancedValuables_ItemTagProvider(output, lookupProvider));
         generator.addProvider(true, new AdvancedValuables_ModelProvider(output));
         generator.addProvider(true, new AdvancedValuables_DatapackProvider(output, lookupProvider));
         generator.addProvider(true, new AdvancedValuables_GlobalLootModifierProvider(output, lookupProvider));
+        generator.addProvider(true, new AdvancedValuables_ParticleDescriptionProvider(output));
+        generator.addProvider(true, new AdvancedValuables_TrimmedArmorModelProvider(output));
+        generator.addProvider(true, new AdvancedValuables_VanillaArmorTrimOverrideProvider(output));
+        generator.addProvider(true, new AdvancedValuables_TrimAtlasOverrideProvider(output));
+        generator.addProvider(true, new AdvancedValuables_ArmorTrimAtlasOverrideProvider(output));
     }
 
     @SubscribeEvent
@@ -48,9 +53,13 @@ public class AdvancedValuables_DataGenerators
                 List.of(new LootTableProvider.SubProviderEntry(AdvancedValuables_BlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
         BlockTagsProvider blockTagsProvider = new AdvancedValuables_BlockTagProvider(output, lookupProvider);
         generator.addProvider(true, blockTagsProvider);
-        generator.addProvider(true, new AdvancedValuables_ItemTagProvider(output, lookupProvider, blockTagsProvider.contentsGetter()));
+        generator.addProvider(true, new AdvancedValuables_ItemTagProvider(output, lookupProvider));
         generator.addProvider(true, new AdvancedValuables_ModelProvider(output));
         generator.addProvider(true, new AdvancedValuables_DatapackProvider(output, lookupProvider));
         generator.addProvider(true, new AdvancedValuables_GlobalLootModifierProvider(output, lookupProvider));
+        generator.addProvider(true, new AdvancedValuables_TrimmedArmorModelProvider(output));
+        generator.addProvider(true, new AdvancedValuables_VanillaArmorTrimOverrideProvider(output));
+        generator.addProvider(true, new AdvancedValuables_TrimAtlasOverrideProvider(output));
+        generator.addProvider(true, new AdvancedValuables_ArmorTrimAtlasOverrideProvider(output));
     }
 }

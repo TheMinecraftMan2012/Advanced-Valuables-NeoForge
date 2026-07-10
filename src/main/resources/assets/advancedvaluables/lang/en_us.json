@@ -280,6 +280,7 @@
   "enchantment.advancedvaluables.smitebolt": "Smitebolt",
   "enchantment.advancedvaluables.sheep_killer": "Sheep Killer",
   "enchantment.advancedvaluables.poison_shard": "Poison Shard",
+  "enchantment.advancedvaluables.gem_infestation": "Gem Infestation",
 
   "advancedvaluables.configuration.AV_VillagerTrades": "Enable Villager Trade",
 
@@ -295,5 +296,29 @@
   "item.advancedvaluables.ruby_powder": "Ruby Powder",
 
   "item.advancedvaluables.mixed_sapphire_powder": "Mixed Sapphire Powder",
-  "item.advancedvaluables.mixed_garnet_powder": "Mixed Garnet Powder"
+  "item.advancedvaluables.mixed_garnet_powder": "Mixed Garnet Powder",
+
+  "effect.advancedvaluables.red_sapphire_emission": "RedSapp Emission",
+  "effect.advancedvaluables.blue_sapphire_emission": "BlueSapp Emission",
+  "effect.advancedvaluables.green_sapphire_emission": "GreenSapp Emission",
+
+  "effect.advancedvaluables.red_garnet_emission": "RedGart Emission",
+  "effect.advancedvaluables.blue_garnet_emission": "BlueGart Emission",
+  "effect.advancedvaluables.pink_garnet_emission": "PinkGart Emission",
+  "effect.advancedvaluables.yellow_garnet_emission": "YellowGart Emission",
+
+  "effect.advancedvaluables.fusion_gem_emission": "FusGem Emission",
+  "effect.advancedvaluables.ruby_emission": "Ruby Emission",
+
+  "trim_material.advancedvaluables.red_sapphire": "Red Sapphire Material",
+  "trim_material.advancedvaluables.blue_sapphire": "Blue Sapphire Material",
+  "trim_material.advancedvaluables.green_sapphire": "Green Sapphire Material",
+
+  "trim_material.advancedvaluables.red_garnet": "Red Garnet Material",
+  "trim_material.advancedvaluables.blue_garnet": "Blue Garnet Material",
+  "trim_material.advancedvaluables.pink_garnet": "Pink Garnet Material",
+  "trim_material.advancedvaluables.yellow_garnet": "Yellow Garnet Material",
+
+  "trim_material.advancedvaluables.fusion_gem": "Fusion Gem Material",
+  "trim_material.advancedvaluables.ruby": "Ruby Material"
 }

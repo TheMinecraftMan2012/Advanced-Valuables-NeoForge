@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "advancedvaluables:block/green_sapphire_block",
-    "side": "advancedvaluables:block/green_sapphire_block",
-    "top": "advancedvaluables:block/green_sapphire_block"
-  }
-}

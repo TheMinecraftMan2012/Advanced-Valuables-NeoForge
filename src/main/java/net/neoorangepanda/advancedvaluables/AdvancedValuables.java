@@ -1,14 +1,16 @@
 package net.neoorangepanda.advancedvaluables;
 
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoorangepanda.advancedvaluables.AV_BlockEntity.AV_FusionGemStation.FusionGemStationBlockEntityRenderer;
 import net.neoorangepanda.advancedvaluables.AV_CMT.AdvancedValuables_CreativeModeTabs;
+import net.neoorangepanda.advancedvaluables.AV_Libraries.Particles.*;
 import net.neoorangepanda.advancedvaluables.AV_Registries.*;
 import net.neoorangepanda.advancedvaluables.AV_Screens.AV_FusionGemStation.FusionGemStationScreen;
 import net.neoorangepanda.advancedvaluables.AV_Screens.AV_GemGrinder.GemGrinderScreen;
@@ -16,7 +18,6 @@ import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
-import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -51,6 +52,8 @@ public class AdvancedValuables
         AdvancedValuables_Entities.register(modEventBus);
         AdvancedValuables_Recipes.register(modEventBus);
         AdvancedValuables_MenuTypes.register(modEventBus);
+        AdvancedValuables_Particles.register(modEventBus);
+        AdvancedValuables_MobEffects.register(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, AdvancedValuables_Config.SPEC);
     }
@@ -75,35 +78,35 @@ public class AdvancedValuables
 
     }
 
-    @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = MOD_ID)
     public static class ClientModEvents
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.RED_SAPPHIRE_DOOR.get(), RenderType.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_DOOR.get(), RenderType.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_DOOR.get(), RenderType.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.RED_SAPPHIRE_DOOR.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_DOOR.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_DOOR.get(), ChunkSectionLayer.CUTOUT);
 
-            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.RED_GARNET_DOOR.get(), RenderType.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.BLUE_GARNET_DOOR.get(), RenderType.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.PINK_GARNET_DOOR.get(), RenderType.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.YELLOW_GARNET_DOOR.get(), RenderType.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.RED_GARNET_DOOR.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.BLUE_GARNET_DOOR.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.PINK_GARNET_DOOR.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.YELLOW_GARNET_DOOR.get(), ChunkSectionLayer.CUTOUT);
 
-            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.FUSION_DOOR.get(), RenderType.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.RUBY_DOOR.get(), RenderType.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.FUSION_DOOR.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.RUBY_DOOR.get(), ChunkSectionLayer.CUTOUT);
 
-            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.RED_SAPPHIRE_TRAPDOOR.get(), RenderType.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_TRAPDOOR.get(), RenderType.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_TRAPDOOR.get(), RenderType.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.RED_SAPPHIRE_TRAPDOOR.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_TRAPDOOR.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_TRAPDOOR.get(), ChunkSectionLayer.CUTOUT);
 
-            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.RED_GARNET_TRAPDOOR.get(), RenderType.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.BLUE_GARNET_TRAPDOOR.get(), RenderType.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.PINK_GARNET_TRAPDOOR.get(), RenderType.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.YELLOW_GARNET_TRAPDOOR.get(), RenderType.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.RED_GARNET_TRAPDOOR.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.BLUE_GARNET_TRAPDOOR.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.PINK_GARNET_TRAPDOOR.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.YELLOW_GARNET_TRAPDOOR.get(), ChunkSectionLayer.CUTOUT);
 
-            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.FUSION_TRAPDOOR.get(), RenderType.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.RUBY_TRAPDOOR.get(), RenderType.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.FUSION_TRAPDOOR.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AdvancedValuables_BlockClass.RUBY_TRAPDOOR.get(), ChunkSectionLayer.CUTOUT);
         }
 
         @SubscribeEvent
@@ -117,6 +120,22 @@ public class AdvancedValuables
         public static void registerBlockEntityRenderer(EntityRenderersEvent.RegisterRenderers event)
         {
             event.registerBlockEntityRenderer(AdvancedValuables_Entities.FUSION_GEM_STATION_BE.get(), FusionGemStationBlockEntityRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void registerParticleFactories(RegisterParticleProvidersEvent event)
+        {
+            event.registerSpriteSet(AdvancedValuables_Particles.RED_SAPPHIRE_PARTICLES.get(), AdvancedValuablesParticles.Provider::new);
+            event.registerSpriteSet(AdvancedValuables_Particles.BLUE_SAPPHIRE_PARTICLES.get(), AdvancedValuablesParticles.Provider::new);
+            event.registerSpriteSet(AdvancedValuables_Particles.GREEN_SAPPHIRE_PARTICLES.get(), AdvancedValuablesParticles.Provider::new);
+
+            event.registerSpriteSet(AdvancedValuables_Particles.RED_GARNET_PARTICLES.get(), AdvancedValuablesParticles.Provider::new);
+            event.registerSpriteSet(AdvancedValuables_Particles.BLUE_GARNET_PARTICLES.get(), AdvancedValuablesParticles.Provider::new);
+            event.registerSpriteSet(AdvancedValuables_Particles.PINK_GARNET_PARTICLES.get(), AdvancedValuablesParticles.Provider::new);
+            event.registerSpriteSet(AdvancedValuables_Particles.YELLOW_GARNET_PARTICLES.get(), AdvancedValuablesParticles.Provider::new);
+
+            event.registerSpriteSet(AdvancedValuables_Particles.FUSION_GEM_PARTICLES.get(), AdvancedValuablesParticles.Provider::new);
+            event.registerSpriteSet(AdvancedValuables_Particles.RUBY_PARTICLES.get(), AdvancedValuablesParticles.Provider::new);
         }
     }
 }

@@ -3,25 +3,17 @@ package net.neoorangepanda.advancedvaluables.AV_DataGen;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
-import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.renderer.item.BlockModelWrapper;
-import net.minecraft.client.renderer.item.SelectItemModel;
-import net.minecraft.client.renderer.item.properties.select.DisplayContext;
 import net.minecraft.core.Holder;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.level.block.Block;
 import net.neoorangepanda.advancedvaluables.AV_Libraries.ToolsComponents.AdvancedValuables_ArmorMaterials;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_BlockClass;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
 import java.util.stream.Stream;
 
 public class AdvancedValuables_ModelProvider extends ModelProvider
@@ -114,6 +106,16 @@ public class AdvancedValuables_ModelProvider extends ModelProvider
         itemModels.generateFlatItem(AdvancedValuables_ItemClass.RUBY_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(AdvancedValuables_ItemClass.RUBY_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
 
+        itemModels.generateFlatItem(AdvancedValuables_ItemClass.RED_SAPPHIRE_HAMMER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_HAMMER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_HAMMER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(AdvancedValuables_ItemClass.RED_GARNET_HAMMER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(AdvancedValuables_ItemClass.BLUE_GARNET_HAMMER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(AdvancedValuables_ItemClass.PINK_GARNET_HAMMER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(AdvancedValuables_ItemClass.YELLOW_GARNET_HAMMER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(AdvancedValuables_ItemClass.FUSION_HAMMER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(AdvancedValuables_ItemClass.RUBY_HAMMER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+
         itemModels.generateFlatItem(AdvancedValuables_ItemClass.RED_SAPPHIRE_APPLE.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_APPLE.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_APPLE.get(), ModelTemplates.FLAT_ITEM);
@@ -137,50 +139,50 @@ public class AdvancedValuables_ModelProvider extends ModelProvider
 
         itemModels.generateFlatItem(AdvancedValuables_ItemClass.ILLEGAL_FOOD.get(), ModelTemplates.FLAT_ITEM);
 
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RED_SAPPHIRE_HELMET.get(), AdvancedValuables_ArmorMaterials.RED_SAPPHIRE_EQA, "red_sapphire", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RED_SAPPHIRE_CHESTPLATE.get(), AdvancedValuables_ArmorMaterials.RED_SAPPHIRE_EQA, "red_sapphire", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RED_SAPPHIRE_LEGGINGS.get(), AdvancedValuables_ArmorMaterials.RED_SAPPHIRE_EQA, "red_sapphire", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RED_SAPPHIRE_BOOTS.get(), AdvancedValuables_ArmorMaterials.RED_SAPPHIRE_EQA, "red_sapphire", false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RED_SAPPHIRE_HELMET.get(), AdvancedValuables_ArmorMaterials.RED_SAPPHIRE_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "red_sapphire"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RED_SAPPHIRE_CHESTPLATE.get(), AdvancedValuables_ArmorMaterials.RED_SAPPHIRE_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "red_sapphire"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RED_SAPPHIRE_LEGGINGS.get(), AdvancedValuables_ArmorMaterials.RED_SAPPHIRE_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "red_sapphire"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RED_SAPPHIRE_BOOTS.get(), AdvancedValuables_ArmorMaterials.RED_SAPPHIRE_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "red_sapphire"), false);
 
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_HELMET.get(), AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE_EQA, "blue_sapphire", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_CHESTPLATE.get(), AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE_EQA, "blue_sapphire", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_LEGGINGS.get(), AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE_EQA, "blue_sapphire", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_BOOTS.get(), AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE_EQA, "blue_sapphire", false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_HELMET.get(), AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "blue_sapphire"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_CHESTPLATE.get(), AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "blue_sapphire"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_LEGGINGS.get(), AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "blue_sapphire"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_BOOTS.get(), AdvancedValuables_ArmorMaterials.BLUE_SAPPHIRE_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "blue_sapphire"), false);
 
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_HELMET.get(), AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE_EQA, "green_sapphire", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_CHESTPLATE.get(), AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE_EQA, "green_sapphire", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_LEGGINGS.get(), AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE_EQA, "green_sapphire", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_BOOTS.get(), AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE_EQA, "green_sapphire", false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_HELMET.get(), AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "green_sapphire"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_CHESTPLATE.get(), AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "green_sapphire"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_LEGGINGS.get(), AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "green_sapphire"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_BOOTS.get(), AdvancedValuables_ArmorMaterials.GREEN_SAPPHIRE_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "green_sapphire"), false);
 
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RED_GARNET_HELMET.get(), AdvancedValuables_ArmorMaterials.RED_GARNET_EQA, "red_garnet", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RED_GARNET_CHESTPLATE.get(), AdvancedValuables_ArmorMaterials.RED_GARNET_EQA, "red_garnet", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RED_GARNET_LEGGINGS.get(), AdvancedValuables_ArmorMaterials.RED_GARNET_EQA, "red_garnet", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RED_GARNET_BOOTS.get(), AdvancedValuables_ArmorMaterials.RED_GARNET_EQA, "red_garnet", false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RED_GARNET_HELMET.get(), AdvancedValuables_ArmorMaterials.RED_GARNET_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "red_garnet"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RED_GARNET_CHESTPLATE.get(), AdvancedValuables_ArmorMaterials.RED_GARNET_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "red_garnet"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RED_GARNET_LEGGINGS.get(), AdvancedValuables_ArmorMaterials.RED_GARNET_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "red_garnet"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RED_GARNET_BOOTS.get(), AdvancedValuables_ArmorMaterials.RED_GARNET_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "red_garnet"), false);
 
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.BLUE_GARNET_HELMET.get(), AdvancedValuables_ArmorMaterials.BLUE_GARNET_EQA, "blue_garnet", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.BLUE_GARNET_CHESTPLATE.get(), AdvancedValuables_ArmorMaterials.BLUE_GARNET_EQA, "blue_garnet", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.BLUE_GARNET_LEGGINGS.get(), AdvancedValuables_ArmorMaterials.BLUE_GARNET_EQA, "blue_garnet", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.BLUE_GARNET_BOOTS.get(), AdvancedValuables_ArmorMaterials.BLUE_GARNET_EQA, "blue_garnet", false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.BLUE_GARNET_HELMET.get(), AdvancedValuables_ArmorMaterials.BLUE_GARNET_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "blue_garnet"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.BLUE_GARNET_CHESTPLATE.get(), AdvancedValuables_ArmorMaterials.BLUE_GARNET_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "blue_garnet"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.BLUE_GARNET_LEGGINGS.get(), AdvancedValuables_ArmorMaterials.BLUE_GARNET_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "blue_garnet"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.BLUE_GARNET_BOOTS.get(), AdvancedValuables_ArmorMaterials.BLUE_GARNET_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "blue_garnet"), false);
 
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.PINK_GARNET_HELMET.get(), AdvancedValuables_ArmorMaterials.PINK_GARNET_EQA, "pink_garnet", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.PINK_GARNET_CHESTPLATE.get(), AdvancedValuables_ArmorMaterials.PINK_GARNET_EQA, "pink_garnet", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.PINK_GARNET_LEGGINGS.get(), AdvancedValuables_ArmorMaterials.PINK_GARNET_EQA, "pink_garnet", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.PINK_GARNET_BOOTS.get(), AdvancedValuables_ArmorMaterials.PINK_GARNET_EQA, "pink_garnet", false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.PINK_GARNET_HELMET.get(), AdvancedValuables_ArmorMaterials.PINK_GARNET_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "pink_garnet"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.PINK_GARNET_CHESTPLATE.get(), AdvancedValuables_ArmorMaterials.PINK_GARNET_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "pink_garnet"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.PINK_GARNET_LEGGINGS.get(), AdvancedValuables_ArmorMaterials.PINK_GARNET_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "pink_garnet"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.PINK_GARNET_BOOTS.get(), AdvancedValuables_ArmorMaterials.PINK_GARNET_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "pink_garnet"), false);
 
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.YELLOW_GARNET_HELMET.get(), AdvancedValuables_ArmorMaterials.YELLOW_GARNET_EQA, "yellow_garnet", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.YELLOW_GARNET_CHESTPLATE.get(), AdvancedValuables_ArmorMaterials.YELLOW_GARNET_EQA, "yellow_garnet", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.YELLOW_GARNET_LEGGINGS.get(), AdvancedValuables_ArmorMaterials.YELLOW_GARNET_EQA, "yellow_garnet", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.YELLOW_GARNET_BOOTS.get(), AdvancedValuables_ArmorMaterials.YELLOW_GARNET_EQA, "yellow_garnet", false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.YELLOW_GARNET_HELMET.get(), AdvancedValuables_ArmorMaterials.YELLOW_GARNET_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "yellow_garnet"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.YELLOW_GARNET_CHESTPLATE.get(), AdvancedValuables_ArmorMaterials.YELLOW_GARNET_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "yellow_garnet"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.YELLOW_GARNET_LEGGINGS.get(), AdvancedValuables_ArmorMaterials.YELLOW_GARNET_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "yellow_garnet"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.YELLOW_GARNET_BOOTS.get(), AdvancedValuables_ArmorMaterials.YELLOW_GARNET_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "yellow_garnet"), false);
 
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.FUSION_HELMET.get(), AdvancedValuables_ArmorMaterials.FUSION_GEM_EQA, "fusion_gem", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.FUSION_CHESTPLATE.get(), AdvancedValuables_ArmorMaterials.FUSION_GEM_EQA, "fusion_gem", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.FUSION_LEGGINGS.get(), AdvancedValuables_ArmorMaterials.FUSION_GEM_EQA, "fusion_gem", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.FUSION_BOOTS.get(), AdvancedValuables_ArmorMaterials.FUSION_GEM_EQA, "fusion_gem", false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.FUSION_HELMET.get(), AdvancedValuables_ArmorMaterials.FUSION_GEM_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "fusion_gem"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.FUSION_CHESTPLATE.get(), AdvancedValuables_ArmorMaterials.FUSION_GEM_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "fusion_gem"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.FUSION_LEGGINGS.get(), AdvancedValuables_ArmorMaterials.FUSION_GEM_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "fusion_gem"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.FUSION_BOOTS.get(), AdvancedValuables_ArmorMaterials.FUSION_GEM_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "fusion_gem"), false);
 
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RUBY_HELMET.get(), AdvancedValuables_ArmorMaterials.RUBY_EQA, "ruby", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RUBY_CHESTPLATE.get(), AdvancedValuables_ArmorMaterials.RUBY_EQA, "ruby", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RUBY_LEGGINGS.get(), AdvancedValuables_ArmorMaterials.RUBY_EQA, "ruby", false);
-        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RUBY_BOOTS.get(), AdvancedValuables_ArmorMaterials.RUBY_EQA, "ruby", false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RUBY_HELMET.get(), AdvancedValuables_ArmorMaterials.RUBY_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "ruby"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RUBY_CHESTPLATE.get(), AdvancedValuables_ArmorMaterials.RUBY_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "ruby"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RUBY_LEGGINGS.get(), AdvancedValuables_ArmorMaterials.RUBY_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "ruby"), false);
+        itemModels.generateTrimmableItem(AdvancedValuables_ItemClass.RUBY_BOOTS.get(), AdvancedValuables_ArmorMaterials.RUBY_EQA, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "ruby"), false);
 
         blockModels.createTrivialCube(AdvancedValuables_BlockClass.BLUE_RAW_SAPPHIRE_BLOCK.get());
         blockModels.createTrivialCube(AdvancedValuables_BlockClass.RED_RAW_SAPPHIRE_BLOCK.get());
@@ -310,115 +312,6 @@ public class AdvancedValuables_ModelProvider extends ModelProvider
                 .pressurePlate(AdvancedValuables_BlockClass.RUBY_PRESSURE_PLATE.get())
                 .door(AdvancedValuables_BlockClass.RUBY_DOOR.get())
                 .trapdoor(AdvancedValuables_BlockClass.RUBY_TRAPDOOR.get());
-
-
-        itemModels.itemModelOutput.accept(AdvancedValuables_ItemClass.RED_SAPPHIRE_HAMMER.get(),
-                new SelectItemModel.Unbaked(new SelectItemModel.UnbakedSwitch<>(new DisplayContext(),
-                        List.of(
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.GUI), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/red_sapphire_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIXED), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/red_sapphire_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.GROUND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/red_sapphire_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIRST_PERSON_LEFT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/red_sapphire_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/red_sapphire_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.THIRD_PERSON_LEFT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/red_sapphire_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/red_sapphire_hammer_in_hand"), Collections.emptyList())))),
-                        Optional.of(new BlockModelWrapper.Unbaked(ModelLocationUtils.getModelLocation(AdvancedValuables_ItemClass.RED_SAPPHIRE_HAMMER.get()), Collections.emptyList()))));
-
-        itemModels.itemModelOutput.accept(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_HAMMER.get(),
-                new SelectItemModel.Unbaked(new SelectItemModel.UnbakedSwitch<>(new DisplayContext(),
-                        List.of(
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.GUI), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/blue_sapphire_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIXED), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/blue_sapphire_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.GROUND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/blue_sapphire_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIRST_PERSON_LEFT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/blue_sapphire_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/blue_sapphire_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/blue_sapphire_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.THIRD_PERSON_LEFT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/blue_sapphire_hammer_in_hand"), Collections.emptyList())))),
-                        Optional.of(new BlockModelWrapper.Unbaked(ModelLocationUtils.getModelLocation(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_HAMMER.get()), Collections.emptyList()))));
-
-        itemModels.itemModelOutput.accept(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_HAMMER.get(),
-                new SelectItemModel.Unbaked(new SelectItemModel.UnbakedSwitch<>(new DisplayContext(),
-                        List.of(
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.GUI), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/green_sapphire_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIXED), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/green_sapphire_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.GROUND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/green_sapphire_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIRST_PERSON_LEFT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/green_sapphire_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/green_sapphire_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.THIRD_PERSON_LEFT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/green_sapphire_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/green_sapphire_hammer_in_hand"), Collections.emptyList())))),
-                        Optional.of(new BlockModelWrapper.Unbaked(ModelLocationUtils.getModelLocation(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_HAMMER.get()), Collections.emptyList()))));
-
-        itemModels.itemModelOutput.accept(AdvancedValuables_ItemClass.RED_GARNET_HAMMER.get(),
-                new SelectItemModel.Unbaked(new SelectItemModel.UnbakedSwitch<>(new DisplayContext(),
-                        List.of(
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.GUI), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/red_garnet_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIXED), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/red_garnet_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.GROUND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/red_garnet_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIRST_PERSON_LEFT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/red_garnet_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/red_garnet_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.THIRD_PERSON_LEFT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/red_garnet_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/red_garnet_hammer_in_hand"), Collections.emptyList())))),
-                        Optional.of(new BlockModelWrapper.Unbaked(ModelLocationUtils.getModelLocation(AdvancedValuables_ItemClass.RED_GARNET_HAMMER.get()), Collections.emptyList()))));
-
-        itemModels.itemModelOutput.accept(AdvancedValuables_ItemClass.BLUE_GARNET_HAMMER.get(),
-                new SelectItemModel.Unbaked(new SelectItemModel.UnbakedSwitch<>(new DisplayContext(),
-                        List.of(
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.GUI), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/blue_garnet_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIXED), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/blue_garnet_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.GROUND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/blue_garnet_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIRST_PERSON_LEFT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/blue_garnet_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/blue_garnet_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/blue_garnet_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.THIRD_PERSON_LEFT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/blue_garnet_hammer_in_hand"), Collections.emptyList())))),
-                        Optional.of(new BlockModelWrapper.Unbaked(ModelLocationUtils.getModelLocation(AdvancedValuables_ItemClass.BLUE_GARNET_HAMMER.get()), Collections.emptyList()))));
-
-        itemModels.itemModelOutput.accept(AdvancedValuables_ItemClass.PINK_GARNET_HAMMER.get(),
-                new SelectItemModel.Unbaked(new SelectItemModel.UnbakedSwitch<>(new DisplayContext(),
-                        List.of(
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.GUI), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/pink_garnet_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIXED), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/pink_garnet_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.GROUND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/pink_garnet_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIRST_PERSON_LEFT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/pink_garnet_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/pink_garnet_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/pink_garnet_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.THIRD_PERSON_LEFT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/pink_garnet_hammer_in_hand"), Collections.emptyList())))),
-                        Optional.of(new BlockModelWrapper.Unbaked(ModelLocationUtils.getModelLocation(AdvancedValuables_ItemClass.PINK_GARNET_HAMMER.get()), Collections.emptyList()))));
-
-        itemModels.itemModelOutput.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_HAMMER.get(),
-                new SelectItemModel.Unbaked(new SelectItemModel.UnbakedSwitch<>(new DisplayContext(),
-                        List.of(
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.GUI), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/yellow_garnet_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIXED), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/yellow_garnet_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.GROUND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/yellow_garnet_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIRST_PERSON_LEFT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/yellow_garnet_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/yellow_garnet_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/yellow_garnet_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.THIRD_PERSON_LEFT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/yellow_garnet_hammer_in_hand"), Collections.emptyList())))),
-                        Optional.of(new BlockModelWrapper.Unbaked(ModelLocationUtils.getModelLocation(AdvancedValuables_ItemClass.YELLOW_GARNET_HAMMER.get()), Collections.emptyList()))));
-
-        itemModels.itemModelOutput.accept(AdvancedValuables_ItemClass.FUSION_HAMMER.get(),
-                new SelectItemModel.Unbaked(new SelectItemModel.UnbakedSwitch<>(new DisplayContext(),
-                        List.of(
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.GUI), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/fusion_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIXED), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/fusion_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.GROUND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/fusion_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIRST_PERSON_LEFT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/fusion_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/fusion_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/fusion_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.THIRD_PERSON_LEFT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/fusion_hammer_in_hand"), Collections.emptyList())))),
-                        Optional.of(new BlockModelWrapper.Unbaked(ModelLocationUtils.getModelLocation(AdvancedValuables_ItemClass.FUSION_HAMMER.get()), Collections.emptyList()))));
-
-        itemModels.itemModelOutput.accept(AdvancedValuables_ItemClass.RUBY_HAMMER.get(),
-                new SelectItemModel.Unbaked(new SelectItemModel.UnbakedSwitch<>(new DisplayContext(),
-                        List.of(
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.GUI), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/ruby_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIXED), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/ruby_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.GROUND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/ruby_hammer"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIRST_PERSON_LEFT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/ruby_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/ruby_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/ruby_hammer_in_hand"), Collections.emptyList())),
-                                new SelectItemModel.SwitchCase<>(List.of(ItemDisplayContext.THIRD_PERSON_LEFT_HAND), new BlockModelWrapper.Unbaked(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "item/ruby_hammer_in_hand"), Collections.emptyList())))),
-                        Optional.of(new BlockModelWrapper.Unbaked(ModelLocationUtils.getModelLocation(AdvancedValuables_ItemClass.FUSION_HAMMER.get()), Collections.emptyList()))));
     }
 
     @Override

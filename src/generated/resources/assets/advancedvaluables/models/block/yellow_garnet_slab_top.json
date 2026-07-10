@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "advancedvaluables:block/yellow_garnet_block",
-    "side": "advancedvaluables:block/yellow_garnet_block",
-    "top": "advancedvaluables:block/yellow_garnet_block"
-  }
-}

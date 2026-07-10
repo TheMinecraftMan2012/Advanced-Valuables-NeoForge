@@ -3,7 +3,7 @@ package net.neoorangepanda.advancedvaluables.AV_WorldGen;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -11,6 +11,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
+import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_BlockClass;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
 
@@ -18,16 +19,37 @@ import java.util.List;
 
 public class AdvancedValuables_ConfiguredFeatures
 {
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_BLUE_SAPPHIRE_ORE_KEY = registerKey("blue_sapphire_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_RED_SAPPHIRE_ORE_KEY = registerKey("red_sapphire_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_GREEN_SAPPHIRE_ORE_KEY = registerKey("green_sapphire_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> UPPER_RED_SAPPHIRE_ORE = registerKey("upper_red_sapphire_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MEDIUM_RED_SAPPHIRE_ORE = registerKey("medium_red_sapphire_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LOWER_RED_SAPPHIRE_ORE = registerKey("lower_red_sapphire_ore");
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_RED_GARNET_ORE_KEY = registerKey("red_garnet_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_BLUE_GARNET_ORE_KEY = registerKey("blue_garnet_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_PINK_GARNET_ORE_KEY = registerKey("pink_garnet_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_YELLOW_GARNET_ORE_KEY = registerKey("yellow_garnet_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> UPPER_BLUE_SAPPHIRE_ORE = registerKey("upper_blue_sapphire_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MEDIUM_BLUE_SAPPHIRE_ORE = registerKey("medium_blue_sapphire_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LOWER_BLUE_SAPPHIRE_ORE = registerKey("lower_blue_sapphire_ore");
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_RUBY_ORE_KEY = registerKey("ruby_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> UPPER_GREEN_SAPPHIRE_ORE = registerKey("upper_green_sapphire_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MEDIUM_GREEN_SAPPHIRE_ORE = registerKey("medium_green_sapphire_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LOWER_GREEN_SAPPHIRE_ORE = registerKey("lower_green_sapphire_ore");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> UPPER_RED_GARNET_ORE = registerKey("upper_red_garnet_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MEDIUM_RED_GARNET_ORE = registerKey("medium_red_garnet_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LOWER_RED_GARNET_ORE = registerKey("lower_red_garnet_ore");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> UPPER_BLUE_GARNET_ORE = registerKey("upper_blue_garnet_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MEDIUM_BLUE_GARNET_ORE = registerKey("medium_blue_garnet_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LOWER_BLUE_GARNET_ORE = registerKey("lower_blue_garnet_ore");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> UPPER_PINK_GARNET_ORE = registerKey("upper_pink_garnet_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MEDIUM_PINK_GARNET_ORE = registerKey("medium_pink_garnet_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LOWER_PINK_GARNET_ORE = registerKey("lower_pink_garnet_ore");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> UPPER_YELLOW_GARNET_ORE = registerKey("upper_yellow_garnet_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MEDIUM_YELLOW_GARNET_ORE = registerKey("medium_yellow_garnet_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LOWER_YELLOW_GARNET_ORE = registerKey("lower_yellow_garnet_ore");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> UPPER_RUBY_ORE = registerKey("upper_ruby_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MEDIUM_RUBY_ORE = registerKey("medium_ruby_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LOWER_RUBY_ORE = registerKey("lower_ruby_ore");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context)
     {
@@ -69,21 +91,42 @@ public class AdvancedValuables_ConfiguredFeatures
                 OreConfiguration.target(deepslateReplaceable, AdvancedValuables_BlockClass.DEEPSLATE_RUBY_ORE.get().defaultBlockState())
         );
 
-        register(context, OVERWORLD_BLUE_SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(overworld_blue_sapphire_ores, 9));
-        register(context, OVERWORLD_RED_SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(overworld_red_sapphire_ores, 9));
-        register(context, OVERWORLD_GREEN_SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(overworld_green_sapphire_ores, 9));
+        register(context, LOWER_BLUE_SAPPHIRE_ORE, Feature.ORE, new OreConfiguration(overworld_blue_sapphire_ores, 4));
+        register(context, MEDIUM_BLUE_SAPPHIRE_ORE, Feature.ORE, new OreConfiguration(overworld_blue_sapphire_ores, 4));
+        register(context, UPPER_BLUE_SAPPHIRE_ORE, Feature.ORE, new OreConfiguration(overworld_blue_sapphire_ores, 4));
 
-        register(context, OVERWORLD_RED_GARNET_ORE_KEY, Feature.ORE, new OreConfiguration(overworld_red_garnet_ores, 9));
-        register(context, OVERWORLD_BLUE_GARNET_ORE_KEY, Feature.ORE, new OreConfiguration(overworld_blue_garnet_ores, 9));
-        register(context, OVERWORLD_PINK_GARNET_ORE_KEY, Feature.ORE, new OreConfiguration(overworld_pink_garnet_ores, 9));
-        register(context, OVERWORLD_YELLOW_GARNET_ORE_KEY, Feature.ORE, new OreConfiguration(overworld_yellow_garnet_ores, 9));
+        register(context, LOWER_RED_SAPPHIRE_ORE, Feature.ORE, new OreConfiguration(overworld_red_sapphire_ores, 4));
+        register(context, MEDIUM_RED_SAPPHIRE_ORE, Feature.ORE, new OreConfiguration(overworld_red_sapphire_ores, 4));
+        register(context, UPPER_RED_SAPPHIRE_ORE, Feature.ORE, new OreConfiguration(overworld_red_sapphire_ores, 4));
 
-        register(context, OVERWORLD_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(overworld_ruby_ores, 9));
+        register(context, LOWER_GREEN_SAPPHIRE_ORE, Feature.ORE, new OreConfiguration(overworld_green_sapphire_ores, 4));
+        register(context, MEDIUM_GREEN_SAPPHIRE_ORE, Feature.ORE, new OreConfiguration(overworld_green_sapphire_ores, 4));
+        register(context, UPPER_GREEN_SAPPHIRE_ORE, Feature.ORE, new OreConfiguration(overworld_green_sapphire_ores, 4));
+
+        register(context, LOWER_RED_GARNET_ORE, Feature.ORE, new OreConfiguration(overworld_red_garnet_ores, 4));
+        register(context, MEDIUM_RED_GARNET_ORE, Feature.ORE, new OreConfiguration(overworld_red_garnet_ores, 4));
+        register(context, UPPER_RED_GARNET_ORE, Feature.ORE, new OreConfiguration(overworld_red_garnet_ores, 4));
+
+        register(context, LOWER_BLUE_GARNET_ORE, Feature.ORE, new OreConfiguration(overworld_blue_garnet_ores, 4));
+        register(context, MEDIUM_BLUE_GARNET_ORE, Feature.ORE, new OreConfiguration(overworld_blue_garnet_ores, 4));
+        register(context, UPPER_BLUE_GARNET_ORE, Feature.ORE, new OreConfiguration(overworld_blue_garnet_ores, 4));
+
+        register(context, LOWER_PINK_GARNET_ORE, Feature.ORE, new OreConfiguration(overworld_pink_garnet_ores, 4));
+        register(context, MEDIUM_PINK_GARNET_ORE, Feature.ORE, new OreConfiguration(overworld_pink_garnet_ores, 4));
+        register(context, UPPER_PINK_GARNET_ORE, Feature.ORE, new OreConfiguration(overworld_pink_garnet_ores, 4));
+
+        register(context, LOWER_YELLOW_GARNET_ORE, Feature.ORE, new OreConfiguration(overworld_yellow_garnet_ores, 4));
+        register(context, MEDIUM_YELLOW_GARNET_ORE, Feature.ORE, new OreConfiguration(overworld_yellow_garnet_ores, 4));
+        register(context, UPPER_YELLOW_GARNET_ORE, Feature.ORE, new OreConfiguration(overworld_yellow_garnet_ores, 4));
+
+        register(context, LOWER_RUBY_ORE, Feature.ORE, new OreConfiguration(overworld_ruby_ores, 4));
+        register(context, MEDIUM_RUBY_ORE, Feature.ORE, new OreConfiguration(overworld_ruby_ores, 4));
+        register(context, UPPER_RUBY_ORE, Feature.ORE, new OreConfiguration(overworld_ruby_ores, 4));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name)
     {
-        return ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name));
+        return ResourceKey.create(Registries.CONFIGURED_FEATURE, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name));
     }
 
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstrapContext<ConfiguredFeature<?, ?>> context,

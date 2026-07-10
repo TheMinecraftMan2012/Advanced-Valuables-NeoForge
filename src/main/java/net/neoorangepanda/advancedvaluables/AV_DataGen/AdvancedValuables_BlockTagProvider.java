@@ -6,7 +6,7 @@ import net.minecraft.tags.BlockTags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_BlockClass;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
-import net.neoorangepanda.advancedvaluables.util.AdvancedValuables_Tags;
+import net.neoorangepanda.advancedvaluables.AV_Utils.AdvancedValuables_Tags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -160,5 +160,9 @@ public class AdvancedValuables_BlockTagProvider extends BlockTagsProvider
                 .add(AdvancedValuables_BlockClass.YELLOW_GARNET_WALL.get())
                 .add(AdvancedValuables_BlockClass.FUSION_WALL.get())
                 .add(AdvancedValuables_BlockClass.RUBY_WALL.get());
+
+        this.tag(AdvancedValuables_Tags.Blocks.AV_CRAFTERS)
+                .add(AdvancedValuables_BlockClass.GEM_GRINDER.get())
+                .add(AdvancedValuables_BlockClass.FUSION_GEM_STATION.get());
     }
 }

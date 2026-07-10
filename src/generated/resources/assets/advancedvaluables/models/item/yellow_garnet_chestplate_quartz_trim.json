@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "advancedvaluables:item/yellow_garnet_chestplate",
-    "layer1": "minecraft:trims/items/yellow_garnet_trim_quartz"
-  }
-}

@@ -7,6 +7,7 @@ import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoorangepanda.advancedvaluables.AV_Enchantments.AdvancedValuables_EnchantmentBootstrap;
+import net.neoorangepanda.advancedvaluables.AV_Trims.AdvancedValuables_TrimMaterial;
 import net.neoorangepanda.advancedvaluables.AV_WorldGen.AdvancedValuables_BiomeModifiers;
 import net.neoorangepanda.advancedvaluables.AV_WorldGen.AdvancedValuables_ConfiguredFeatures;
 import net.neoorangepanda.advancedvaluables.AV_WorldGen.AdvancedValuables_PlacedFeatures;
@@ -18,6 +19,7 @@ import java.util.concurrent.CompletableFuture;
 public class AdvancedValuables_DatapackProvider extends DatapackBuiltinEntriesProvider
 {
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
+            .add(Registries.TRIM_MATERIAL, AdvancedValuables_TrimMaterial::bootstrap)
             .add(Registries.CONFIGURED_FEATURE, AdvancedValuables_ConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, AdvancedValuables_PlacedFeatures::bootstrap)
             .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, AdvancedValuables_BiomeModifiers::bootstrap)

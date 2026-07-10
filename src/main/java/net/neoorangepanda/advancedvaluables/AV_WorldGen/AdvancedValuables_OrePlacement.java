@@ -15,4 +15,9 @@ public class AdvancedValuables_OrePlacement
     {
         return orePlacement(CountPlacement.of(count), heightRange);
     }
+
+    public static List<PlacementModifier> rareOrePlacement(int pChance, PlacementModifier pHeightRange)
+    {
+        return orePlacement(RarityFilter.onAverageOnceEvery(pChance), pHeightRange);
+    }
 }

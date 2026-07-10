@@ -2,7 +2,7 @@ package net.neoorangepanda.advancedvaluables.AV_CMT;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
@@ -88,7 +88,7 @@ public class AdvancedValuables_CreativeModeTabs
             .build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AV_TOOLS_ARMOR = AV_REGISTER_CMT.register("tools_armor", () -> CreativeModeTab.builder()
-            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "valuables"))
+            .withTabsBefore(Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "valuables"))
             .title(Component.literal("Advanced Valuables Tools and Armor"))
             .icon(() -> new ItemStack(AdvancedValuables_ItemClass.FUSION_PICKAXE.get()))
             .displayItems((params, output) -> {
@@ -204,7 +204,7 @@ public class AdvancedValuables_CreativeModeTabs
             .build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AV_FOODS_TAB = AV_REGISTER_CMT.register("foods", () -> CreativeModeTab.builder()
-            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "tools_armor"))
+            .withTabsBefore(Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "tools_armor"))
             .icon(() -> new ItemStack(AdvancedValuables_ItemClass.FUSION_APPLE.get()))
             .title(Component.literal("Advanced Valuables Foods"))
             .displayItems((params, output) -> {
@@ -223,7 +223,7 @@ public class AdvancedValuables_CreativeModeTabs
             .build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AV_DECOR_TAB = AV_REGISTER_CMT.register("decor", () -> CreativeModeTab.builder()
-            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "foods"))
+            .withTabsBefore(Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "foods"))
             .icon(() -> new ItemStack(AdvancedValuables_BlockClass.FUSION_STAIRS))
             .title(Component.literal("Advanced Valuables Decorations"))
             .displayItems((params, output) -> {
@@ -320,7 +320,7 @@ public class AdvancedValuables_CreativeModeTabs
             .build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AV_CRAFTING_TAB = AV_REGISTER_CMT.register("crafting", () -> CreativeModeTab.builder()
-            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "decor"))
+            .withTabsBefore(Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "decor"))
             .icon(() -> new ItemStack(AdvancedValuables_BlockClass.GEM_GRINDER))
             .title(Component.literal("Advanced Valuables Crafting"))
             .displayItems((params, output) -> {

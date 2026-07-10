@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "advancedvaluables:block/blue_sapphire_block",
-    "side": "advancedvaluables:block/blue_sapphire_block",
-    "top": "advancedvaluables:block/blue_sapphire_block"
-  }
-}

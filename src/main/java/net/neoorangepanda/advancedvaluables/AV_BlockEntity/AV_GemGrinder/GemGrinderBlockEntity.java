@@ -20,14 +20,16 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.neoorangepanda.advancedvaluables.AV_Recipes.AV_GemGrinderRecipe.GemGrinderRecipe;
 import net.neoorangepanda.advancedvaluables.AV_Recipes.AV_GemGrinderRecipe.GemGrinderRecipeInput;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_Entities;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_Recipes;
 import net.neoorangepanda.advancedvaluables.AV_Screens.AV_GemGrinder.GemGrinderMenu;
-import org.jetbrains.annotations.Nullable;
 
+import javax.annotation.Nullable;
 import java.util.Optional;
 
 public class GemGrinderBlockEntity extends BlockEntity implements MenuProvider
@@ -109,22 +111,30 @@ public class GemGrinderBlockEntity extends BlockEntity implements MenuProvider
     }
 
     @Override
-    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-        tag.put("inventory", handler.serializeNBT(registries));
-        tag.putInt("gem_grinder.progress", progress);
-        tag.putInt("gem_grinder.max_progress", maxProgress);
+    protected void saveAdditional(ValueOutput output)
+    {
+        handler.serialize(output);
+        output.putInt("gem_grinder.progress", progress);
+        output.putInt("gem_grinder.max_progress", maxProgress);
 
-        super.saveAdditional(tag, registries);
+        super.saveAdditional(output);
     }
 
     @Override
-    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries)
+    protected void loadAdditional(ValueInput input)
     {
-        super.loadAdditional(tag, registries);
+        super.loadAdditional(input);
 
-        handler.deserializeNBT(registries, tag.getCompound("inventory"));
-        progress = tag.getInt("gem_grinder.progress");
-        maxProgress = tag.getInt("gem_grinder.max_progress");
+        handler.deserialize(input);
+        progress = input.getInt("gem_grinder.progress").get();
+        maxProgress = input.getInt("gem_grinder.max_progress").get();
+    }
+
+    @Override
+    public void preRemoveSideEffects(BlockPos pos, BlockState state)
+    {
+        drops();
+        super.preRemoveSideEffects(pos, state);
     }
 
     public void tick(Level level, BlockPos blockPos, BlockState state)

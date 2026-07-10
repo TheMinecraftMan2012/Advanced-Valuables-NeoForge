@@ -2,7 +2,7 @@ package net.neoorangepanda.advancedvaluables.AV_DataGen;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
@@ -140,7 +140,7 @@ public class AdvancedValuables_GlobalLootModifierProvider extends GlobalLootModi
     private void addLootModifier(String modifier, String location, DeferredItem<Item> item)
     {
         add(modifier, new AdvancedValuables_AddItemModifier(new LootItemCondition[]{
-               new LootTableIdCondition.Builder(ResourceLocation.withDefaultNamespace(location)).build()
+               new LootTableIdCondition.Builder(Identifier.withDefaultNamespace(location)).build()
         }, item.get()));
     }
 }

@@ -1,7 +1,7 @@
 package net.neoorangepanda.advancedvaluables.AV_Libraries.ToolsComponents;
 
 import net.minecraft.world.item.ToolMaterial;
-import net.neoorangepanda.advancedvaluables.util.AdvancedValuables_Tags;
+import net.neoorangepanda.advancedvaluables.AV_Utils.AdvancedValuables_Tags;
 
 public class AdvancedValuables_ToolsTier
 {

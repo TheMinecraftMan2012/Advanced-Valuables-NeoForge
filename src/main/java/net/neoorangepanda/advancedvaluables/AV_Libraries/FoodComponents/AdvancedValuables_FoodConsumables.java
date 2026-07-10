@@ -22,7 +22,7 @@ public class AdvancedValuables_FoodConsumables
     public static final Consumable FUSION_APPLE = Consumables.defaultFood().onConsume(new ApplyStatusEffectsConsumeEffect(
             List.of(
                     new MobEffectInstance(MobEffects.ABSORPTION, 800, 100),
-                    new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 800, 100),
+                    new MobEffectInstance(MobEffects.RESISTANCE, 800, 100),
                     new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 800, 100)
             )
     )).build();
@@ -30,7 +30,7 @@ public class AdvancedValuables_FoodConsumables
     public static final Consumable RUBY_APPLE = Consumables.defaultFood().onConsume(new ApplyStatusEffectsConsumeEffect(
             List.of(
                     new MobEffectInstance(MobEffects.ABSORPTION, 800, 100),
-                    new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 800, 100),
+                    new MobEffectInstance(MobEffects.RESISTANCE, 800, 100),
                     new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 800, 100)
             )
     )).build();
@@ -39,15 +39,15 @@ public class AdvancedValuables_FoodConsumables
             List.of(
                     new MobEffectInstance(MobEffects.REGENERATION, 999999999, 99),
                     new MobEffectInstance(MobEffects.ABSORPTION, 999999999, 99),
-                    new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 999999999, 99),
+                    new MobEffectInstance(MobEffects.RESISTANCE, 999999999, 99),
                     new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 999999999, 99),
                     new MobEffectInstance(MobEffects.HEALTH_BOOST, 999999999, 99),
                     new MobEffectInstance(MobEffects.WATER_BREATHING, 999999999, 99),
                     new MobEffectInstance(MobEffects.NIGHT_VISION, 999999999, 99),
-                    new MobEffectInstance(MobEffects.DAMAGE_BOOST, 999999999, 99),
-                    new MobEffectInstance(MobEffects.DIG_SPEED, 999999999, 99),
-                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 999999999, 99),
-                    new MobEffectInstance(MobEffects.JUMP, 999999999, 99),
+                    new MobEffectInstance(MobEffects.INSTANT_DAMAGE, 999999999, 99),
+                    new MobEffectInstance(MobEffects.HASTE, 999999999, 99),
+                    new MobEffectInstance(MobEffects.SPEED, 999999999, 99),
+                    new MobEffectInstance(MobEffects.JUMP_BOOST, 999999999, 99),
                     new MobEffectInstance(MobEffects.SATURATION, 999999999, 99)
             )
     )).build();

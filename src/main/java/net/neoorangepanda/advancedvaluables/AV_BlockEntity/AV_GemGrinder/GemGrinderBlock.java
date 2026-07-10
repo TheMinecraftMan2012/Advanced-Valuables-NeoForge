@@ -22,7 +22,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_Entities;
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nullable;
 
 public class GemGrinderBlock extends BaseEntityBlock
 {
@@ -75,19 +75,6 @@ public class GemGrinderBlock extends BaseEntityBlock
         }
 
         return InteractionResult.SUCCESS;
-    }
-
-    @Override
-    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving)
-    {
-        if (pState.getBlock() != pNewState.getBlock()) {
-            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-            if (blockEntity instanceof GemGrinderBlockEntity growthChamberBlockEntity) {
-                growthChamberBlockEntity.drops();
-            }
-        }
-
-        super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
     }
 
     @Override

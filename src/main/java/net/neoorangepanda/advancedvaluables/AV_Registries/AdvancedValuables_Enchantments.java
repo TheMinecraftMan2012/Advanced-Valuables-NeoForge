@@ -24,6 +24,9 @@ public class AdvancedValuables_Enchantments
     public static final Supplier<MapCodec<? extends EnchantmentEntityEffect>> POISON_SHARD =
             ENTITY_ENCHANTMENT_EFFECTS.register("poison_shard", () -> PoisonShardEnchantmentEffect.CODEC);
 
+    public static final Supplier<MapCodec<? extends EnchantmentEntityEffect>> GEM_INFESTATION =
+            ENTITY_ENCHANTMENT_EFFECTS.register("gem_infestation", () -> GemInfestationEnchantmentEffect.CODEC);
+
     public static void register(IEventBus eventBus)
     {
         ENTITY_ENCHANTMENT_EFFECTS.register(eventBus);

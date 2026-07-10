@@ -2,28 +2,31 @@ package net.neoorangepanda.advancedvaluables.AV_DataGen;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.data.ItemTagsProvider;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
-import net.neoorangepanda.advancedvaluables.util.AdvancedValuables_Tags;
+import net.neoorangepanda.advancedvaluables.AV_Utils.AdvancedValuables_Tags;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
 public class AdvancedValuables_ItemTagProvider extends ItemTagsProvider
 {
 
-    public AdvancedValuables_ItemTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider,
-                                             CompletableFuture<TagLookup<Block>> blockTags)
+    public AdvancedValuables_ItemTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider)
     {
-        super(output, lookupProvider, blockTags, AdvancedValuables.MOD_ID);
+        super(output, lookupProvider, AdvancedValuables.MOD_ID);
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider provider)
+    protected void addTags(HolderLookup.@NotNull Provider provider)
     {
         tag(AdvancedValuables_Tags.Items.VALUABLE_ITEMS)
+                .addTags(AdvancedValuables_Tags.Items.SMELT_ITEMS, AdvancedValuables_Tags.Items.RAW_ITEMS);
+
+        tag(AdvancedValuables_Tags.Items.SMELT_ITEMS)
                 .add(AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get())
                 .add(AdvancedValuables_ItemClass.RED_SAPPHIRE.get())
                 .add(AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get())
@@ -32,7 +35,9 @@ public class AdvancedValuables_ItemTagProvider extends ItemTagsProvider
                 .add(AdvancedValuables_ItemClass.PINK_GARNET.get())
                 .add(AdvancedValuables_ItemClass.YELLOW_GARNET.get())
                 .add(AdvancedValuables_ItemClass.FUSION_GEM.get())
-                .add(AdvancedValuables_ItemClass.RUBY.get())
+                .add(AdvancedValuables_ItemClass.RUBY.get());
+
+        tag(AdvancedValuables_Tags.Items.RAW_ITEMS)
                 .add(AdvancedValuables_ItemClass.BLUE_RAW_SAPPHIRE.get())
                 .add(AdvancedValuables_ItemClass.RED_RAW_SAPPHIRE.get())
                 .add(AdvancedValuables_ItemClass.GREEN_RAW_SAPPHIRE.get())
@@ -42,6 +47,50 @@ public class AdvancedValuables_ItemTagProvider extends ItemTagsProvider
                 .add(AdvancedValuables_ItemClass.YELLOW_RAW_GARNET.get())
                 .add(AdvancedValuables_ItemClass.RAW_FUSION_GEM.get())
                 .add(AdvancedValuables_ItemClass.RAW_RUBY.get());
+
+        tag(AdvancedValuables_Tags.Items.AV_HELMETS)
+                .add(AdvancedValuables_ItemClass.RED_SAPPHIRE_HELMET.get())
+                .add(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_HELMET.get())
+                .add(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_HELMET.get())
+                .add(AdvancedValuables_ItemClass.RED_GARNET_HELMET.get())
+                .add(AdvancedValuables_ItemClass.BLUE_GARNET_HELMET.get())
+                .add(AdvancedValuables_ItemClass.PINK_GARNET_HELMET.get())
+                .add(AdvancedValuables_ItemClass.YELLOW_GARNET_HELMET.get())
+                .add(AdvancedValuables_ItemClass.FUSION_HELMET.get())
+                .add(AdvancedValuables_ItemClass.RUBY_HELMET.get());
+
+        tag(AdvancedValuables_Tags.Items.AV_BOOTS)
+                .add(AdvancedValuables_ItemClass.RED_SAPPHIRE_BOOTS.get())
+                .add(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_BOOTS.get())
+                .add(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_BOOTS.get())
+                .add(AdvancedValuables_ItemClass.RED_GARNET_BOOTS.get())
+                .add(AdvancedValuables_ItemClass.BLUE_GARNET_BOOTS.get())
+                .add(AdvancedValuables_ItemClass.PINK_GARNET_BOOTS.get())
+                .add(AdvancedValuables_ItemClass.YELLOW_GARNET_BOOTS.get())
+                .add(AdvancedValuables_ItemClass.FUSION_BOOTS.get())
+                .add(AdvancedValuables_ItemClass.RUBY_BOOTS.get());
+
+        tag(AdvancedValuables_Tags.Items.AV_LEGGINGS)
+                .add(AdvancedValuables_ItemClass.RED_SAPPHIRE_LEGGINGS.get())
+                .add(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_LEGGINGS.get())
+                .add(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_LEGGINGS.get())
+                .add(AdvancedValuables_ItemClass.RED_GARNET_LEGGINGS.get())
+                .add(AdvancedValuables_ItemClass.BLUE_GARNET_LEGGINGS.get())
+                .add(AdvancedValuables_ItemClass.PINK_GARNET_LEGGINGS.get())
+                .add(AdvancedValuables_ItemClass.YELLOW_GARNET_LEGGINGS.get())
+                .add(AdvancedValuables_ItemClass.FUSION_LEGGINGS.get())
+                .add(AdvancedValuables_ItemClass.RUBY_LEGGINGS.get());
+
+        tag(AdvancedValuables_Tags.Items.AV_CHESTPLATES)
+                .add(AdvancedValuables_ItemClass.RED_SAPPHIRE_CHESTPLATE.get())
+                .add(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_CHESTPLATE.get())
+                .add(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_CHESTPLATE.get())
+                .add(AdvancedValuables_ItemClass.RED_GARNET_CHESTPLATE.get())
+                .add(AdvancedValuables_ItemClass.BLUE_GARNET_CHESTPLATE.get())
+                .add(AdvancedValuables_ItemClass.PINK_GARNET_CHESTPLATE.get())
+                .add(AdvancedValuables_ItemClass.YELLOW_GARNET_CHESTPLATE.get())
+                .add(AdvancedValuables_ItemClass.FUSION_CHESTPLATE.get())
+                .add(AdvancedValuables_ItemClass.RUBY_CHESTPLATE.get());
 
         tag(AdvancedValuables_Tags.Items.AV_PICKAXES)
                 .add(AdvancedValuables_ItemClass.RED_SAPPHIRE_PICKAXE.get())
@@ -128,5 +177,16 @@ public class AdvancedValuables_ItemTagProvider extends ItemTagsProvider
         tag(ItemTags.SHOVELS).addTag(AdvancedValuables_Tags.Items.AV_SHOVELS);
         tag(ItemTags.HOES).addTag(AdvancedValuables_Tags.Items.AV_HOES);
         tag(ItemTags.SWORDS).addTag(AdvancedValuables_Tags.Items.AV_SWORDS);
+
+        tag(ItemTags.TRIM_MATERIALS).addTag(AdvancedValuables_Tags.Items.SMELT_ITEMS);
+        tag(ItemTags.TRIMMABLE_ARMOR)
+                .addTags(AdvancedValuables_Tags.Items.AV_CHESTPLATES,
+                        AdvancedValuables_Tags.Items.AV_HELMETS,
+                        AdvancedValuables_Tags.Items.AV_LEGGINGS,
+                        AdvancedValuables_Tags.Items.AV_BOOTS);
+        tag(ItemTags.HEAD_ARMOR).addTag(AdvancedValuables_Tags.Items.AV_HELMETS);
+        tag(ItemTags.CHEST_ARMOR).addTag(AdvancedValuables_Tags.Items.AV_CHESTPLATES);
+        tag(ItemTags.LEG_ARMOR).addTag(AdvancedValuables_Tags.Items.AV_LEGGINGS);
+        tag(ItemTags.FOOT_ARMOR).addTag(AdvancedValuables_Tags.Items.AV_BOOTS);
     }
 }
