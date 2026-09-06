@@ -6,12 +6,13 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
 public class AdvancedValuables_Particles
 {
-    public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPE = DeferredRegister.create(BuiltInRegistries.PARTICLE_TYPE, AdvancedValuables.MOD_ID);
+    public static final DeferredRegister<@NotNull ParticleType<?>> PARTICLE_TYPE = DeferredRegister.create(BuiltInRegistries.PARTICLE_TYPE, AdvancedValuables.MOD_ID);
 
     public static final Supplier<SimpleParticleType> RED_SAPPHIRE_PARTICLES = PARTICLE_TYPE.register("red_sapphire_particles", () -> new SimpleParticleType(true));
     public static final Supplier<SimpleParticleType> BLUE_SAPPHIRE_PARTICLES = PARTICLE_TYPE.register("blue_sapphire_particles", () -> new SimpleParticleType(true));
@@ -24,6 +25,23 @@ public class AdvancedValuables_Particles
 
     public static final Supplier<SimpleParticleType> FUSION_GEM_PARTICLES = PARTICLE_TYPE.register("fusion_gem_particles", () -> new SimpleParticleType(true));
     public static final Supplier<SimpleParticleType> RUBY_PARTICLES = PARTICLE_TYPE.register("ruby_particles", () -> new SimpleParticleType(true));
+
+    public static final Supplier<SimpleParticleType> SPARKITE_PARTICLES = PARTICLE_TYPE.register("sparkite_particles", () -> new SimpleParticleType(true));
+
+    public static final Supplier<SimpleParticleType> RED_SAPPHIRE_BLOCK_BREAK_PARTICLES = PARTICLE_TYPE.register("red_sapphire_block_break_particles", () -> new SimpleParticleType(true));
+    public static final Supplier<SimpleParticleType> BLUE_SAPPHIRE_BLOCK_BREAK_PARTICLES = PARTICLE_TYPE.register("blue_sapphire_block_break_particles", () -> new SimpleParticleType(true));
+    public static final Supplier<SimpleParticleType> GREEN_SAPPHIRE_BLOCK_BREAK_PARTICLES = PARTICLE_TYPE.register("green_sapphire_block_break_particles", () -> new SimpleParticleType(true));
+
+    public static final Supplier<SimpleParticleType> RED_GARNET_BLOCK_BREAK_PARTICLES = PARTICLE_TYPE.register("red_garnet_block_break_particles", () -> new SimpleParticleType(true));
+    public static final Supplier<SimpleParticleType> BLUE_GARNET_BLOCK_BREAK_PARTICLES = PARTICLE_TYPE.register("blue_garnet_block_break_particles", () -> new SimpleParticleType(true));
+    public static final Supplier<SimpleParticleType> PINK_GARNET_BLOCK_BREAK_PARTICLES = PARTICLE_TYPE.register("pink_garnet_block_break_particles", () -> new SimpleParticleType(true));
+    public static final Supplier<SimpleParticleType> YELLOW_GARNET_BLOCK_BREAK_PARTICLES = PARTICLE_TYPE.register("yellow_garnet_block_break_particles", () -> new SimpleParticleType(true));
+
+    public static final Supplier<SimpleParticleType> FUSION_GEM_BLOCK_BREAK_PARTICLES = PARTICLE_TYPE.register("fusion_gem_block_break_particles", () -> new SimpleParticleType(true));
+    public static final Supplier<SimpleParticleType> RUBY_BLOCK_BREAK_PARTICLES = PARTICLE_TYPE.register("ruby_block_break_particles", () -> new SimpleParticleType(true));
+
+    public static final Supplier<SimpleParticleType> SPARKITE_BLOCK_BREAK_PARTICLES = PARTICLE_TYPE.register("sparkite_block_break_particles", () -> new SimpleParticleType(true));
+    
 
     public static void register(IEventBus eventBus)
     {

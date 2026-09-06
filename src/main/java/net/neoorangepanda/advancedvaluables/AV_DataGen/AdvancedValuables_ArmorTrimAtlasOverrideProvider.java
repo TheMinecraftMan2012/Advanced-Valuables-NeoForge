@@ -9,6 +9,7 @@ import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -16,7 +17,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-public class AdvancedValuables_ArmorTrimAtlasOverrideProvider implements DataProvider {
+public class AdvancedValuables_ArmorTrimAtlasOverrideProvider implements DataProvider
+{
 
     private final PackOutput.PathProvider atlasPathProvider;
     private final String modId;
@@ -33,7 +35,7 @@ public class AdvancedValuables_ArmorTrimAtlasOverrideProvider implements DataPro
     }
 
     @Override
-    public CompletableFuture<?> run(CachedOutput cache)
+    public @NotNull CompletableFuture<?> run(@NotNull CachedOutput cache)
     {
         JsonObject armorTrimsAtlas = loadVanillaArmorTrimsAtlas();
         injectCustomTrimPermutations(armorTrimsAtlas);
@@ -101,7 +103,7 @@ public class AdvancedValuables_ArmorTrimAtlasOverrideProvider implements DataPro
     }
 
     @Override
-    public String getName()
+    public @NotNull String getName()
     {
         return "Armor Trim Atlas Override (armor_trims.json)";
     }

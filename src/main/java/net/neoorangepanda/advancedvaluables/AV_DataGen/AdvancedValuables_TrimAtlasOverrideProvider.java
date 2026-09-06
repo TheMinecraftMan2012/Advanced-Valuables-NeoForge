@@ -9,6 +9,7 @@ import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -33,7 +34,7 @@ public class AdvancedValuables_TrimAtlasOverrideProvider implements DataProvider
     }
 
     @Override
-    public CompletableFuture<?> run(CachedOutput cache)
+    public @NotNull CompletableFuture<?> run(@NotNull CachedOutput cache)
     {
         JsonObject itemsAtlas = loadVanillaItemsAtlas();
         injectCustomTrimPermutations(itemsAtlas);
@@ -49,7 +50,7 @@ public class AdvancedValuables_TrimAtlasOverrideProvider implements DataProvider
             if (is == null)
             {
                 throw new IllegalStateException("Could not find vanilla assets/minecraft/atlases/items.json on classpath. " +
-                        "Make sure client resources are available to your datagen run.");
+                        "Make sure client resources are available to your Datagen run.");
             }
             try (InputStreamReader reader = new InputStreamReader(is, StandardCharsets.UTF_8))
             {
@@ -102,7 +103,7 @@ public class AdvancedValuables_TrimAtlasOverrideProvider implements DataProvider
     }
 
     @Override
-    public String getName()
+    public @NotNull String getName()
     {
         return "Trim Item Atlas Override (items.json)";
     }

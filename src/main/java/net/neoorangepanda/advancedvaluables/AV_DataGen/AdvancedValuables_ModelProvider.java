@@ -13,6 +13,7 @@ import net.neoorangepanda.advancedvaluables.AV_Libraries.ToolsComponents.Advance
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_BlockClass;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.stream.Stream;
 
@@ -37,6 +38,8 @@ public class AdvancedValuables_ModelProvider extends ModelProvider
 
         itemModels.generateFlatItem(AdvancedValuables_ItemClass.FUSION_GEM.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(AdvancedValuables_ItemClass.RUBY.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModels.generateFlatItem(AdvancedValuables_ItemClass.SPARKITE.get(), ModelTemplates.FLAT_ITEM);
 
         itemModels.generateFlatItem(AdvancedValuables_ItemClass.BLUE_RAW_SAPPHIRE.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(AdvancedValuables_ItemClass.RED_RAW_SAPPHIRE.get(), ModelTemplates.FLAT_ITEM);
@@ -105,6 +108,16 @@ public class AdvancedValuables_ModelProvider extends ModelProvider
         itemModels.generateFlatItem(AdvancedValuables_ItemClass.RUBY_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(AdvancedValuables_ItemClass.RUBY_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(AdvancedValuables_ItemClass.RUBY_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+
+        itemModels.generateSpear(AdvancedValuables_ItemClass.RED_SAPPHIRE_SPEAR.get());
+        itemModels.generateSpear(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_SPEAR.get());
+        itemModels.generateSpear(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_SPEAR.get());
+        itemModels.generateSpear(AdvancedValuables_ItemClass.RED_GARNET_SPEAR.get());
+        itemModels.generateSpear(AdvancedValuables_ItemClass.BLUE_GARNET_SPEAR.get());
+        itemModels.generateSpear(AdvancedValuables_ItemClass.PINK_GARNET_SPEAR.get());
+        itemModels.generateSpear(AdvancedValuables_ItemClass.YELLOW_GARNET_SPEAR.get());
+        itemModels.generateSpear(AdvancedValuables_ItemClass.FUSION_SPEAR.get());
+        itemModels.generateSpear(AdvancedValuables_ItemClass.RUBY_SPEAR.get());
 
         itemModels.generateFlatItem(AdvancedValuables_ItemClass.RED_SAPPHIRE_HAMMER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_HAMMER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
@@ -214,6 +227,8 @@ public class AdvancedValuables_ModelProvider extends ModelProvider
         blockModels.createTrivialCube(AdvancedValuables_BlockClass.DEEPSLATE_FUSION_ORE.get());
         blockModels.createTrivialCube(AdvancedValuables_BlockClass.DEEPSLATE_RUBY_ORE.get());
 
+        blockModels.createTrivialCube(AdvancedValuables_BlockClass.SPARKITE_BLOCK.get());
+
         blockModels.family(AdvancedValuables_BlockClass.RED_SAPPHIRE_BLOCK.get())
                 .fence(AdvancedValuables_BlockClass.RED_SAPPHIRE_FENCE.get())
                 .fenceGate(AdvancedValuables_BlockClass.RED_SAPPHIRE_FENCE_GATE.get())
@@ -315,17 +330,20 @@ public class AdvancedValuables_ModelProvider extends ModelProvider
     }
 
     @Override
-    protected Stream<? extends Holder<Block>> getKnownBlocks()
+    @SuppressWarnings("deprecation")
+    protected @NotNull Stream<? extends Holder<@NotNull Block>> getKnownBlocks()
     {
         return AdvancedValuables_BlockClass.BLOCKS.getEntries().stream()
-                .filter(block -> !block.is(AdvancedValuables_BlockClass.GEM_GRINDER) && !block.is(AdvancedValuables_BlockClass.FUSION_GEM_STATION));
+                .filter(block -> !block.is(AdvancedValuables_BlockClass.GEM_GRINDER) &&
+                                 !block.is(AdvancedValuables_BlockClass.FUSION_GEM_STATION));
     }
 
     @Override
-    protected Stream<? extends Holder<Item>> getKnownItems()
+    protected @NotNull Stream<? extends Holder<@NotNull Item>> getKnownItems()
     {
         return AdvancedValuables_ItemClass.ITEMS.getEntries().stream()
                 .filter(item -> item.get() != AdvancedValuables_BlockClass.GEM_GRINDER.asItem() &&
-                                item.get() != AdvancedValuables_BlockClass.FUSION_GEM_STATION.asItem());
+                                item.get() != AdvancedValuables_BlockClass.FUSION_GEM_STATION.asItem() &&
+                                item.get() != AdvancedValuables_ItemClass.SPARKITE_STAFF.get());
     }
 }

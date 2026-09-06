@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "advancedvaluables:item/raw_fusion_gem"
-  }
-}

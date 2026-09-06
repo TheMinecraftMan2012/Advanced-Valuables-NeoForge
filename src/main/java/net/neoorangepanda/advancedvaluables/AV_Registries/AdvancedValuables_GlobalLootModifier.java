@@ -7,12 +7,14 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoorangepanda.advancedvaluables.AV_GlobalLootModifier.AdvancedValuables_AddItemModifier;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
+@SuppressWarnings("unused")
 public class AdvancedValuables_GlobalLootModifier
 {
-    public static final DeferredRegister<MapCodec<? extends IGlobalLootModifier>> LOOT_MODIFIER_SERIALIZERS =
+    public static final DeferredRegister<@NotNull MapCodec<? extends IGlobalLootModifier>> LOOT_MODIFIER_SERIALIZERS =
             DeferredRegister.create(NeoForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, AdvancedValuables.MOD_ID);
 
     public static final Supplier<MapCodec<? extends IGlobalLootModifier>> ADD_ITEM =

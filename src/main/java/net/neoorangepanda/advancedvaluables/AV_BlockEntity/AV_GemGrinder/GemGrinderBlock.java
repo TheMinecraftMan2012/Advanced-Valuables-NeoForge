@@ -3,8 +3,6 @@ package net.neoorangepanda.advancedvaluables.AV_BlockEntity.AV_GemGrinder;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
@@ -18,10 +16,13 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_Entities;
+import org.jetbrains.annotations.NotNull;
+
 import javax.annotation.Nullable;
 
 public class GemGrinderBlock extends BaseEntityBlock
@@ -35,50 +36,57 @@ public class GemGrinderBlock extends BaseEntityBlock
     }
 
     @Override
-    protected MapCodec<? extends BaseEntityBlock> codec()
+    protected @NotNull MapCodec<? extends BaseEntityBlock> codec()
     {
         return CODEC;
     }
 
     @Override
-    protected RenderShape getRenderShape(BlockState state)
+    protected @NotNull RenderShape getRenderShape(@NotNull BlockState state)
     {
         return RenderShape.MODEL;
     }
 
     @Override
-    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context)
+    protected @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context)
     {
         return VOXEL_SHAPE;
     }
 
     @Override
-    public @Nullable BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState)
+    public @Nullable BlockEntity newBlockEntity(@NotNull BlockPos blockPos, @NotNull BlockState blockState)
     {
         return new GemGrinderBlockEntity(blockPos, blockState);
     }
 
     @Override
-    protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult)
+    public boolean onDestroyedByPlayer(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull  ItemStack toolStack, boolean willHarvest, @NotNull FluidState fluid)
+    {
+        BlockEntity blockEntity = level.getBlockEntity(pos);
+        if (blockEntity instanceof GemGrinderBlockEntity gemGrinderBlockEntity) gemGrinderBlockEntity.drops();
+        return super.onDestroyedByPlayer(state, level, pos, player, toolStack, willHarvest, fluid);
+    }
+
+    @Override
+    protected@NotNull  InteractionResult useWithoutItem(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull BlockHitResult hitResult)
     {
         if (!level.isClientSide())
         {
             BlockEntity entity = level.getBlockEntity(pos);
-            if (entity instanceof GemGrinderBlockEntity gemGrinderBlockEntity)
+            if(entity instanceof GemGrinderBlockEntity gemGrinderBlockEntity)
             {
-                ((ServerPlayer) player).openMenu(new SimpleMenuProvider(gemGrinderBlockEntity, Component.literal("Gem Grinder")), pos);
+                player.openMenu(new SimpleMenuProvider(gemGrinderBlockEntity, Component.translatable("block.advancedvaluables.gem_grinder")), pos);
             }
             else
             {
-                throw new IllegalStateException("container provider missing");
+                throw new IllegalStateException("Container provider missing.");
             }
         }
-
         return InteractionResult.SUCCESS;
     }
 
     @Override
-    public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType)
+    public @Nullable <T extends BlockEntity> BlockEntityTicker<@NotNull T> getTicker(Level level, @NotNull BlockState state, @NotNull BlockEntityType<@NotNull T> blockEntityType)
     {
         if (level.isClientSide()) return null;
 

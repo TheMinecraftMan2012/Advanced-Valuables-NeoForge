@@ -7,12 +7,13 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoorangepanda.advancedvaluables.AV_Enchantments.enchants.*;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
 public class AdvancedValuables_Enchantments
 {
-    public static final DeferredRegister<MapCodec<? extends EnchantmentEntityEffect>> ENTITY_ENCHANTMENT_EFFECTS =
+    public static final DeferredRegister<@NotNull MapCodec<? extends EnchantmentEntityEffect>> ENTITY_ENCHANTMENT_EFFECTS =
             DeferredRegister.create(Registries.ENCHANTMENT_ENTITY_EFFECT_TYPE, AdvancedValuables.MOD_ID);
 
     public static final Supplier<MapCodec<? extends EnchantmentEntityEffect>> SMITEBOLT =

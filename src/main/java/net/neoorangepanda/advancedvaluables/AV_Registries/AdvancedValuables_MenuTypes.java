@@ -11,15 +11,16 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoorangepanda.advancedvaluables.AV_Screens.AV_FusionGemStation.FusionGemStationMenu;
 import net.neoorangepanda.advancedvaluables.AV_Screens.AV_GemGrinder.GemGrinderMenu;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
+import org.jetbrains.annotations.NotNull;
 
 public class AdvancedValuables_MenuTypes
 {
-    public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(Registries.MENU, AdvancedValuables.MOD_ID);
+    public static final DeferredRegister<@NotNull MenuType<?>> MENUS = DeferredRegister.create(Registries.MENU, AdvancedValuables.MOD_ID);
 
-    public static final DeferredHolder<MenuType<?>, MenuType<GemGrinderMenu>> GEM_GRINDER_MENU = registerMenuType("growth_chamber_menu", GemGrinderMenu::new);
-    public static final DeferredHolder<MenuType<?>, MenuType<FusionGemStationMenu>> FUSION_GEM_STATION_MENU = registerMenuType("fusion_gem_station_menu", FusionGemStationMenu::new);
+    public static final DeferredHolder<@NotNull MenuType<?>, @NotNull MenuType<@NotNull GemGrinderMenu>> GEM_GRINDER_MENU = registerMenuType("growth_chamber_menu", GemGrinderMenu::new);
+    public static final DeferredHolder<@NotNull MenuType<?>, @NotNull MenuType<@NotNull FusionGemStationMenu>> FUSION_GEM_STATION_MENU = registerMenuType("fusion_gem_station_menu", FusionGemStationMenu::new);
 
-    private static <T extends AbstractContainerMenu>DeferredHolder<MenuType<?>, MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory)
+    private static <T extends AbstractContainerMenu>DeferredHolder<@NotNull MenuType<?>, @NotNull MenuType<@NotNull T>> registerMenuType(String name, IContainerFactory<@NotNull T> factory)
     {
         return MENUS.register(name, () -> IMenuTypeExtension.create(factory));
     }

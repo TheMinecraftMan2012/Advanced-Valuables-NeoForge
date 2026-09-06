@@ -24,54 +24,66 @@
   "item.advancedvaluables.red_sapphire_shovel": "Red Sapphire Shovel",
   "item.advancedvaluables.red_sapphire_hoe": "Red Sapphire Hoe",
   "item.advancedvaluables.red_sapphire_sword": "Red Sapphire Sword",
+  "item.advancedvaluables.red_sapphire_spear": "Red Sapphire Spear",
 
   "item.advancedvaluables.blue_sapphire_pickaxe": "Blue Sapphire Pickaxe",
   "item.advancedvaluables.blue_sapphire_axe": "Blue Sapphire Axe",
   "item.advancedvaluables.blue_sapphire_shovel": "Blue Sapphire Shovel",
   "item.advancedvaluables.blue_sapphire_hoe": "Blue Sapphire Hoe",
   "item.advancedvaluables.blue_sapphire_sword": "Blue Sapphire Sword",
+  "item.advancedvaluables.blue_sapphire_spear": "Blue Sapphire Spear",
 
   "item.advancedvaluables.green_sapphire_pickaxe": "Green Sapphire Pickaxe",
   "item.advancedvaluables.green_sapphire_axe": "Green Sapphire Axe",
   "item.advancedvaluables.green_sapphire_shovel": "Green Sapphire Shovel",
   "item.advancedvaluables.green_sapphire_hoe": "Green Sapphire Hoe",
   "item.advancedvaluables.green_sapphire_sword": "Green Sapphire Sword",
+  "item.advancedvaluables.green_sapphire_spear": "Green Sapphire Spear",
 
   "item.advancedvaluables.red_garnet_pickaxe": "Red Garnet Pickaxe",
   "item.advancedvaluables.red_garnet_axe": "Red Garnet Axe",
   "item.advancedvaluables.red_garnet_shovel": "Red Garnet Shovel",
   "item.advancedvaluables.red_garnet_hoe": "Red Garnet Hoe",
   "item.advancedvaluables.red_garnet_sword": "Red Garnet Sword",
+  "item.advancedvaluables.red_garnet_spear": "Red Garnet Spear",
 
   "item.advancedvaluables.blue_garnet_pickaxe": "Blue Garnet Pickaxe",
   "item.advancedvaluables.blue_garnet_axe": "Blue Garnet Axe",
   "item.advancedvaluables.blue_garnet_shovel": "Blue Garnet Shovel",
   "item.advancedvaluables.blue_garnet_hoe": "Blue Garnet Hoe",
   "item.advancedvaluables.blue_garnet_sword": "Blue Garnet Sword",
+  "item.advancedvaluables.blue_garnet_spear": "Blue Garnet Spear",
 
   "item.advancedvaluables.pink_garnet_pickaxe": "Pink Garnet Pickaxe",
   "item.advancedvaluables.pink_garnet_axe": "Pink Garnet Axe",
   "item.advancedvaluables.pink_garnet_shovel": "Pink Garnet Shovel",
   "item.advancedvaluables.pink_garnet_hoe": "Pink Garnet Hoe",
   "item.advancedvaluables.pink_garnet_sword": "Pink Garnet Sword",
+  "item.advancedvaluables.pink_garnet_spear": "Pink Garnet Spear",
 
   "item.advancedvaluables.yellow_garnet_pickaxe": "Yellow Garnet Pickaxe",
   "item.advancedvaluables.yellow_garnet_axe": "Yellow Garnet Axe",
   "item.advancedvaluables.yellow_garnet_shovel": "Yellow Garnet Shovel",
   "item.advancedvaluables.yellow_garnet_hoe": "Yellow Garnet Hoe",
   "item.advancedvaluables.yellow_garnet_sword": "Yellow Garnet Sword",
+  "item.advancedvaluables.yellow_garnet_spear": "Yellow Garnet Spear",
 
   "item.advancedvaluables.fusion_pickaxe": "Fusion Pickaxe",
   "item.advancedvaluables.fusion_axe": "Fusion Axe",
   "item.advancedvaluables.fusion_shovel": "Fusion Shovel",
   "item.advancedvaluables.fusion_hoe": "Fusion Hoe",
   "item.advancedvaluables.fusion_sword": "Fusion Sword",
+  "item.advancedvaluables.fusion_spear": "Fusion Spear",
 
   "item.advancedvaluables.ruby_pickaxe": "Ruby Pickaxe",
   "item.advancedvaluables.ruby_axe": "Ruby Axe",
   "item.advancedvaluables.ruby_shovel": "Ruby Shovel",
   "item.advancedvaluables.ruby_hoe": "Ruby Hoe",
   "item.advancedvaluables.ruby_sword": "Ruby Sword",
+  "item.advancedvaluables.ruby_spear": "Ruby Spear",
+
+  "item.advancedvaluables.sparkite": "Sparkite",
+  "item.advancedvaluables.sparkite_staff": "Sparkite Staff",
 
   "item.advancedvaluables.red_sapphire_hammer": "Red Sapphire Hammer",
   "item.advancedvaluables.blue_sapphire_hammer": "Blue Sapphire Hammer",
@@ -217,6 +229,8 @@
   "block.advancedvaluables.ruby_door": "Ruby Door",
   "block.advancedvaluables.ruby_trapdoor": "Ruby Trapdoor",
 
+  "block.advancedvaluables.sparkite_block": "Sparkite Block",
+
   "block.advancedvaluables.gem_grinder": "Gem Grinder",
   "block.advancedvaluables.fusion_gem_station": "Fusion Gem Station",
 
@@ -320,5 +334,77 @@
   "trim_material.advancedvaluables.yellow_garnet": "Yellow Garnet Material",
 
   "trim_material.advancedvaluables.fusion_gem": "Fusion Gem Material",
-  "trim_material.advancedvaluables.ruby": "Ruby Material"
+  "trim_material.advancedvaluables.ruby": "Ruby Material",
+
+  "item.minecraft.potion.effect.red_sapphire_emission": "Potion of Red Sapphire Emission",
+  "item.minecraft.potion.effect.blue_sapphire_emission": "Potion of Blue Sapphire Emission",
+  "item.minecraft.potion.effect.green_sapphire_emission": "Potion of Green Sapphire Emission",
+
+  "item.minecraft.potion.effect.red_garnet_emission": "Potion of Red Garnet Emission",
+  "item.minecraft.potion.effect.blue_garnet_emission": "Potion of Blue Garnet Emission",
+  "item.minecraft.potion.effect.pink_garnet_emission": "Potion of Pink Garnet Emission",
+  "item.minecraft.potion.effect.yellow_garnet_emission": "Potion of Yellow Garnet Emission",
+
+  "item.minecraft.potion.effect.fusion_gem_emission": "Potion of Fusion Gem Emission",
+  "item.minecraft.potion.effect.ruby_emission": "Potion of Ruby Emission",
+
+  "item.minecraft.potion.effect.long_red_sapphire_emission": "Potion of Red Sapphire Emission",
+  "item.minecraft.potion.effect.long_blue_sapphire_emission": "Potion of Blue Sapphire Emission",
+  "item.minecraft.potion.effect.long_green_sapphire_emission": "Potion of Green Sapphire Emission",
+
+  "item.minecraft.potion.effect.long_red_garnet_emission": "Potion of Red Garnet Emission",
+  "item.minecraft.potion.effect.long_blue_garnet_emission": "Potion of Blue Garnet Emission",
+  "item.minecraft.potion.effect.long_pink_garnet_emission": "Potion of Pink Garnet Emission",
+  "item.minecraft.potion.effect.long_yellow_garnet_emission": "Potion of Yellow Garnet Emission",
+
+  "item.minecraft.potion.effect.long_fusion_gem_emission": "Potion of Fusion Gem Emission",
+  "item.minecraft.potion.effect.long_ruby_emission": "Potion of Ruby Emission",
+
+  "item.minecraft.splash_potion.effect.red_sapphire_emission": "Splash Potion of Red Sapphire Emission",
+  "item.minecraft.splash_potion.effect.blue_sapphire_emission": "Splash Potion of Blue Sapphire Emission",
+  "item.minecraft.splash_potion.effect.green_sapphire_emission": "Splash Potion of Green Sapphire Emission",
+
+  "item.minecraft.splash_potion.effect.red_garnet_emission": "Splash Potion of Red Garnet Emission",
+  "item.minecraft.splash_potion.effect.blue_garnet_emission": "Splash Potion of Blue Garnet Emission",
+  "item.minecraft.splash_potion.effect.pink_garnet_emission": "Splash Potion of Pink Garnet Emission",
+  "item.minecraft.splash_potion.effect.yellow_garnet_emission": "Splash Potion of Yellow Garnet Emission",
+
+  "item.minecraft.splash_potion.effect.fusion_gem_emission": "Splash Potion of Fusion Gem Emission",
+  "item.minecraft.splash_potion.effect.ruby_emission": "Splash Potion of Ruby Emission",
+
+  "item.minecraft.splash_potion.effect.long_red_sapphire_emission": "Splash Potion of Red Sapphire Emission",
+  "item.minecraft.splash_potion.effect.long_blue_sapphire_emission": "Splash Potion of Blue Sapphire Emission",
+  "item.minecraft.splash_potion.effect.long_green_sapphire_emission": "Splash Potion of Green Sapphire Emission",
+
+  "item.minecraft.splash_potion.effect.long_red_garnet_emission": "Splash Potion of Red Garnet Emission",
+  "item.minecraft.splash_potion.effect.long_blue_garnet_emission": "Splash Potion of Blue Garnet Emission",
+  "item.minecraft.splash_potion.effect.long_pink_garnet_emission": "Splash Potion of Pink Garnet Emission",
+  "item.minecraft.splash_potion.effect.long_yellow_garnet_emission": "Splash Potion of Yellow Garnet Emission",
+
+  "item.minecraft.splash_potion.effect.long_fusion_gem_emission": "Splash Potion of Fusion Gem Emission",
+  "item.minecraft.splash_potion.effect.long_ruby_emission": "Splash Potion of Ruby Emission",
+
+  "item.minecraft.lingering_potion.effect.red_sapphire_emission": "Lingering Potion of Red Sapphire Emission",
+  "item.minecraft.lingering_potion.effect.blue_sapphire_emission": "Lingering Potion of Blue Sapphire Emission",
+  "item.minecraft.lingering_potion.effect.green_sapphire_emission": "Lingering Potion of Green Sapphire Emission",
+
+  "item.minecraft.lingering_potion.effect.red_garnet_emission": "Lingering Potion of Red Garnet Emission",
+  "item.minecraft.lingering_potion.effect.blue_garnet_emission": "Lingering Potion of Blue Garnet Emission",
+  "item.minecraft.lingering_potion.effect.pink_garnet_emission": "Lingering Potion of Pink Garnet Emission",
+  "item.minecraft.lingering_potion.effect.yellow_garnet_emission": "Lingering Potion of Yellow Garnet Emission",
+
+  "item.minecraft.lingering_potion.effect.fusion_gem_emission": "Lingering Potion of Fusion Gem Emission",
+  "item.minecraft.lingering_potion.effect.ruby_emission": "Lingering Potion of Ruby Emission",
+
+  "item.minecraft.lingering_potion.effect.long_red_sapphire_emission": "Lingering Potion of Red Sapphire Emission",
+  "item.minecraft.lingering_potion.effect.long_blue_sapphire_emission": "Lingering Potion of Blue Sapphire Emission",
+  "item.minecraft.lingering_potion.effect.long_green_sapphire_emission": "Lingering Potion of Green Sapphire Emission",
+
+  "item.minecraft.lingering_potion.effect.long_red_garnet_emission": "Lingering Potion of Red Garnet Emission",
+  "item.minecraft.lingering_potion.effect.long_blue_garnet_emission": "Lingering Potion of Blue Garnet Emission",
+  "item.minecraft.lingering_potion.effect.long_pink_garnet_emission": "Lingering Potion of Pink Garnet Emission",
+  "item.minecraft.lingering_potion.effect.long_yellow_garnet_emission": "Lingering Potion of Yellow Garnet Emission",
+
+  "item.minecraft.lingering_potion.effect.long_fusion_gem_emission": "Lingering Potion of Fusion Gem Emission",
+  "item.minecraft.lingering_potion.effect.long_ruby_emission": "Lingering Potion of Ruby Emission"
 }

@@ -2,6 +2,7 @@ package net.neoorangepanda.advancedvaluables;
 
 import net.neoforged.neoforge.common.ModConfigSpec;
 
+@SuppressWarnings("unused")
 public class AdvancedValuables_Config
 {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();

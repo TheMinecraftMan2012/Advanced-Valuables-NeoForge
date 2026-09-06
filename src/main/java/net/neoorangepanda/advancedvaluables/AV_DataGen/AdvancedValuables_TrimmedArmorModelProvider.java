@@ -7,6 +7,7 @@ import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Map;
@@ -51,7 +52,7 @@ public class AdvancedValuables_TrimmedArmorModelProvider implements DataProvider
     }
 
     @Override
-    public CompletableFuture<?> run(CachedOutput cache)
+    public @NotNull CompletableFuture<?> run(@NotNull CachedOutput cache)
     {
         var futures = new java.util.ArrayList<CompletableFuture<?>>();
 
@@ -131,7 +132,7 @@ public class AdvancedValuables_TrimmedArmorModelProvider implements DataProvider
     }
 
     @Override
-    public String getName()
+    public @NotNull String getName()
     {
         return "Trimmed Armor Models: " + modid;
     }

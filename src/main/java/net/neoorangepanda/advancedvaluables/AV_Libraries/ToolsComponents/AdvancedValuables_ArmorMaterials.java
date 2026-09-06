@@ -10,22 +10,23 @@ import net.minecraft.world.item.equipment.EquipmentAsset;
 import net.minecraft.world.item.equipment.EquipmentAssets;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
 import net.neoorangepanda.advancedvaluables.AV_Utils.AdvancedValuables_Tags;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.EnumMap;
 
 public class AdvancedValuables_ArmorMaterials
 {
-    public static ResourceKey<EquipmentAsset> RED_SAPPHIRE_EQA = createArmorId("red_sapphire");
-    public static ResourceKey<EquipmentAsset> BLUE_SAPPHIRE_EQA = createArmorId("blue_sapphire");
-    public static ResourceKey<EquipmentAsset> GREEN_SAPPHIRE_EQA = createArmorId("green_sapphire");
+    public static ResourceKey<@NotNull EquipmentAsset> RED_SAPPHIRE_EQA = createArmorId("red_sapphire");
+    public static ResourceKey<@NotNull EquipmentAsset> BLUE_SAPPHIRE_EQA = createArmorId("blue_sapphire");
+    public static ResourceKey<@NotNull EquipmentAsset> GREEN_SAPPHIRE_EQA = createArmorId("green_sapphire");
 
-    public static ResourceKey<EquipmentAsset> RED_GARNET_EQA = createArmorId("red_garnet");
-    public static ResourceKey<EquipmentAsset> BLUE_GARNET_EQA = createArmorId("blue_garnet");
-    public static ResourceKey<EquipmentAsset> PINK_GARNET_EQA = createArmorId("pink_garnet");
-    public static ResourceKey<EquipmentAsset> YELLOW_GARNET_EQA = createArmorId("yellow_garnet");
+    public static ResourceKey<@NotNull EquipmentAsset> RED_GARNET_EQA = createArmorId("red_garnet");
+    public static ResourceKey<@NotNull EquipmentAsset> BLUE_GARNET_EQA = createArmorId("blue_garnet");
+    public static ResourceKey<@NotNull EquipmentAsset> PINK_GARNET_EQA = createArmorId("pink_garnet");
+    public static ResourceKey<@NotNull EquipmentAsset> YELLOW_GARNET_EQA = createArmorId("yellow_garnet");
 
-    public static ResourceKey<EquipmentAsset> FUSION_GEM_EQA = createArmorId("fusion_gem");
-    public static ResourceKey<EquipmentAsset> RUBY_EQA = createArmorId("ruby");
+    public static ResourceKey<@NotNull EquipmentAsset> FUSION_GEM_EQA = createArmorId("fusion_gem");
+    public static ResourceKey<@NotNull EquipmentAsset> RUBY_EQA = createArmorId("ruby");
 
     public static final ArmorMaterial RED_SAPPHIRE = new ArmorMaterial(1200,
             Util.make(new EnumMap<>(ArmorType.class), attribute -> {
@@ -108,7 +109,7 @@ public class AdvancedValuables_ArmorMaterials
                 attribute.put(ArmorType.BODY, 4);
             }), 20, SoundEvents.ARMOR_EQUIP_GENERIC, 7f, 0, AdvancedValuables_Tags.Items.RUBY_REPAIR, RUBY_EQA);
 
-    private static ResourceKey<EquipmentAsset> createArmorId(String armorId)
+    private static ResourceKey<@NotNull EquipmentAsset> createArmorId(String armorId)
     {
         return ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, armorId));
     }

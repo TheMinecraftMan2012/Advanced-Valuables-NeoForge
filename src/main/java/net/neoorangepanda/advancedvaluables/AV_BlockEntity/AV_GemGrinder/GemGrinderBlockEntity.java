@@ -22,28 +22,29 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
-import net.neoforged.neoforge.items.ItemStackHandler;
+import net.neoforged.neoforge.transfer.access.ItemAccess;
+import net.neoforged.neoforge.transfer.item.ItemResource;
+import net.neoforged.neoforge.transfer.item.ItemStacksResourceHandler;
+import net.neoforged.neoforge.transfer.transaction.Transaction;
 import net.neoorangepanda.advancedvaluables.AV_Recipes.AV_GemGrinderRecipe.GemGrinderRecipe;
 import net.neoorangepanda.advancedvaluables.AV_Recipes.AV_GemGrinderRecipe.GemGrinderRecipeInput;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_Entities;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_Recipes;
 import net.neoorangepanda.advancedvaluables.AV_Screens.AV_GemGrinder.GemGrinderMenu;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
 
 public class GemGrinderBlockEntity extends BlockEntity implements MenuProvider
 {
-    public final ItemStackHandler handler = new ItemStackHandler(2)
+    public final ItemStacksResourceHandler inventory = new ItemStacksResourceHandler(2)
     {
         @Override
-        protected void onContentsChanged(int slot)
+        protected void onContentsChanged(int index, ItemStack previousContents)
         {
-            setChanged();
-            if (!level.isClientSide())
-            {
-                level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
-            }
+            super.onContentsChanged(index, previousContents);
+            GemGrinderBlockEntity.this.setChanged();
         }
     };
 
@@ -57,7 +58,8 @@ public class GemGrinderBlockEntity extends BlockEntity implements MenuProvider
     public GemGrinderBlockEntity(BlockPos pos, BlockState blockState)
     {
         super(AdvancedValuables_Entities.GEM_GRINDER_BE.get(), pos, blockState);
-        data = new ContainerData() {
+        data = new ContainerData()
+        {
             @Override
             public int get(int i)
             {
@@ -88,58 +90,53 @@ public class GemGrinderBlockEntity extends BlockEntity implements MenuProvider
     }
 
     @Override
-    public Component getDisplayName()
+    public @NotNull Component getDisplayName()
     {
         return Component.translatable("block.advancedvaluables.gem_grinder");
     }
 
     @Override
-    public @Nullable AbstractContainerMenu createMenu(int i, Inventory inventory, Player player)
+    public @Nullable AbstractContainerMenu createMenu(int containerId, @NotNull Inventory inventory, @NotNull Player player)
     {
-        return new GemGrinderMenu(i, inventory, this, this.data);
+        return new GemGrinderMenu(containerId, inventory, this, this.inventory, this.data);
     }
 
     public void drops()
     {
-        SimpleContainer inventory = new SimpleContainer(handler.getSlots());
-        for (int i = 0; i < handler.getSlots(); i++)
+        SimpleContainer inv = new SimpleContainer(this.inventory.size());
+        for (int i = 0; i < this.inventory.size(); i++)
         {
-            inventory.setItem(i, handler.getStackInSlot(i));
+            ItemAccess itemAccess = ItemAccess.forHandlerIndex(inventory, 0);
+            inv.setItem(i, new ItemStack(itemAccess.getResource().getItem(), itemAccess.getAmount()));
         }
 
-        Containers.dropContents(this.level, this.worldPosition, inventory);
+        assert this.level != null;
+        Containers.dropContents(this.level, this.worldPosition, inv);
     }
 
     @Override
-    protected void saveAdditional(ValueOutput output)
+    protected void saveAdditional(@NotNull ValueOutput output)
     {
-        handler.serialize(output);
+        super.saveAdditional(output);
+
         output.putInt("gem_grinder.progress", progress);
         output.putInt("gem_grinder.max_progress", maxProgress);
-
-        super.saveAdditional(output);
+        output.putChild("inventory", inventory);
     }
 
     @Override
-    protected void loadAdditional(ValueInput input)
+    protected void loadAdditional(@NotNull ValueInput input)
     {
         super.loadAdditional(input);
 
-        handler.deserialize(input);
-        progress = input.getInt("gem_grinder.progress").get();
-        maxProgress = input.getInt("gem_grinder.max_progress").get();
-    }
-
-    @Override
-    public void preRemoveSideEffects(BlockPos pos, BlockState state)
-    {
-        drops();
-        super.preRemoveSideEffects(pos, state);
+        progress = input.getIntOr("gem_grinder.progress", 0);
+        maxProgress = input.getIntOr("gem_grinder.max_progress", 72);
+        input.child("inventory").ifPresent(inventory::deserialize);
     }
 
     public void tick(Level level, BlockPos blockPos, BlockState state)
     {
-        if (hasRecipe())
+        if (hasRecipe(level, blockPos))
         {
             increaseCraftingProgress();
             setChanged(level, blockPos, state);
@@ -149,18 +146,23 @@ public class GemGrinderBlockEntity extends BlockEntity implements MenuProvider
                 craftItem();
                 resetProgress();
             }
-        } else {
-            resetProgress();
-        }
+        } else resetProgress();
     }
 
     private void craftItem()
     {
-        Optional<RecipeHolder<GemGrinderRecipe>> recipe = getCurrentRecipe();
-        ItemStack output = recipe.get().value().output();
+        Optional<RecipeHolder<@NotNull GemGrinderRecipe>> recipe = getCurrentRecipe();
+        ItemStack output = recipe.get().value().output().create();
 
-        handler.extractItem(INPUT_SLOT, 1, false);
-        handler.setStackInSlot(OUTPUT_SLOT, new ItemStack(output.getItem(), handler.getStackInSlot(OUTPUT_SLOT).getCount() + output.getCount()));
+        try (Transaction transaction = Transaction.openRoot())
+        {
+            ItemAccess itemAccess = ItemAccess.forHandlerIndex(inventory, OUTPUT_SLOT);
+
+            inventory.extract(inventory.getResource(INPUT_SLOT), 1, transaction);
+            inventory.set(OUTPUT_SLOT, ItemResource.of(output), itemAccess.getAmount() + output.getCount());
+
+            transaction.commit();
+        }
     }
 
     private void resetProgress()
@@ -179,41 +181,44 @@ public class GemGrinderBlockEntity extends BlockEntity implements MenuProvider
         progress++;
     }
 
-    private boolean hasRecipe()
+    private boolean hasRecipe(Level level, BlockPos blockPos)
     {
-        Optional<RecipeHolder<GemGrinderRecipe>> recipe = getCurrentRecipe();
+        boolean isPoweredWithRedstone = level.hasNeighborSignal(blockPos);
+        Optional<RecipeHolder<@NotNull GemGrinderRecipe>> recipe = getCurrentRecipe();
         if (recipe.isEmpty()) return false;
-
-        ItemStack output = recipe.get().value().output();
-        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
+        ItemStack output = recipe.get().value().assemble(new GemGrinderRecipeInput(inventory.getResource(INPUT_SLOT).toStack()));
+        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output) && isPoweredWithRedstone;
     }
 
-    private Optional<RecipeHolder<GemGrinderRecipe>> getCurrentRecipe()
+    private Optional<RecipeHolder<@NotNull GemGrinderRecipe>> getCurrentRecipe()
     {
-        return ((ServerLevel) this.level).recipeAccess().getRecipeFor(AdvancedValuables_Recipes.GEM_GRINDER_TYPE.get(), new GemGrinderRecipeInput(handler.getStackInSlot(INPUT_SLOT)), level);
+        assert this.level != null;
+        return ((ServerLevel) this.level).recipeAccess().getRecipeFor(AdvancedValuables_Recipes.GEM_GRINDER_TYPE.get(),
+                new GemGrinderRecipeInput(inventory.getResource(INPUT_SLOT).toStack()), level);
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output)
     {
-        return handler.getStackInSlot(OUTPUT_SLOT).isEmpty() || handler.getStackInSlot(OUTPUT_SLOT).getItem() == output.getItem();
+        return inventory.getResource(OUTPUT_SLOT).isEmpty() ||
+                inventory.getResource(OUTPUT_SLOT).is(output.getItem());
     }
 
     private boolean canInsertAmountIntoOutputSlot(int count)
     {
-        int maxCount = handler.getStackInSlot(OUTPUT_SLOT).isEmpty() ? 64 : handler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
-        int currentCount = handler.getStackInSlot(OUTPUT_SLOT).getCount();
+        int maxCount = inventory.getResource(OUTPUT_SLOT).isEmpty() ? 64 : inventory.getResource(OUTPUT_SLOT).getMaxStackSize();
+        int currentCount = inventory.getAmountAsInt(OUTPUT_SLOT);
 
         return maxCount >= currentCount + count;
     }
 
     @Override
-    public CompoundTag getUpdateTag(HolderLookup.Provider registries)
+    public @NotNull CompoundTag getUpdateTag(HolderLookup.@NotNull Provider registries)
     {
         return saveWithoutMetadata(registries);
     }
 
     @Override
-    public @Nullable Packet<ClientGamePacketListener> getUpdatePacket()
+    public @Nullable Packet<@NotNull ClientGamePacketListener> getUpdatePacket()
     {
         return ClientboundBlockEntityDataPacket.create(this);
     }

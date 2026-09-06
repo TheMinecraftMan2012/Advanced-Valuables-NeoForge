@@ -11,12 +11,14 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_BlockClass;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
+import org.jetbrains.annotations.NotNull;
 
+@SuppressWarnings("unused")
 public class AdvancedValuables_CreativeModeTabs
 {
-    public static final DeferredRegister<CreativeModeTab> AV_REGISTER_CMT = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, AdvancedValuables.MOD_ID);
+    public static final DeferredRegister<@NotNull CreativeModeTab> AV_REGISTER_CMT = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, AdvancedValuables.MOD_ID);
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AV_VALUABLE_TAB = AV_REGISTER_CMT.register("valuables", () -> CreativeModeTab.builder()
+    public static final DeferredHolder<@NotNull CreativeModeTab, @NotNull CreativeModeTab> AV_VALUABLE_TAB = AV_REGISTER_CMT.register("valuables", () -> CreativeModeTab.builder()
             .title(Component.literal("Advanced Valuables Gemstones"))
             .icon(() -> new ItemStack(AdvancedValuables_ItemClass.FUSION_GEM.get()))
             .displayItems((params, output) -> {
@@ -84,10 +86,14 @@ public class AdvancedValuables_CreativeModeTabs
                 output.accept(AdvancedValuables_BlockClass.DEEPSLATE_YELLOW_GARNET_ORE);
                 output.accept(AdvancedValuables_BlockClass.DEEPSLATE_FUSION_ORE);
                 output.accept(AdvancedValuables_BlockClass.DEEPSLATE_RUBY_ORE);
+
+                output.accept(AdvancedValuables_ItemClass.SPARKITE);
+                output.accept(AdvancedValuables_BlockClass.SPARKITE_BLOCK);
+                output.accept(AdvancedValuables_ItemClass.SPARKITE_STAFF);
             })
             .build());
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AV_TOOLS_ARMOR = AV_REGISTER_CMT.register("tools_armor", () -> CreativeModeTab.builder()
+    public static final DeferredHolder<@NotNull CreativeModeTab, @NotNull CreativeModeTab> AV_TOOLS_ARMOR = AV_REGISTER_CMT.register("tools_armor", () -> CreativeModeTab.builder()
             .withTabsBefore(Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "valuables"))
             .title(Component.literal("Advanced Valuables Tools and Armor"))
             .icon(() -> new ItemStack(AdvancedValuables_ItemClass.FUSION_PICKAXE.get()))
@@ -97,54 +103,64 @@ public class AdvancedValuables_CreativeModeTabs
                 output.accept(AdvancedValuables_ItemClass.RED_SAPPHIRE_SHOVEL);
                 output.accept(AdvancedValuables_ItemClass.RED_SAPPHIRE_HOE);
                 output.accept(AdvancedValuables_ItemClass.RED_SAPPHIRE_SWORD);
+                output.accept(AdvancedValuables_ItemClass.RED_SAPPHIRE_SPEAR);
 
                 output.accept(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_PICKAXE);
                 output.accept(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_AXE);
                 output.accept(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_SHOVEL);
                 output.accept(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_HOE);
                 output.accept(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_SWORD);
+                output.accept(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_SWORD);
+                output.accept(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_SPEAR);
 
                 output.accept(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_PICKAXE);
                 output.accept(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_AXE);
                 output.accept(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_SHOVEL);
                 output.accept(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_HOE);
                 output.accept(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_SWORD);
+                output.accept(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_SPEAR);
 
                 output.accept(AdvancedValuables_ItemClass.RED_GARNET_PICKAXE);
                 output.accept(AdvancedValuables_ItemClass.RED_GARNET_AXE);
                 output.accept(AdvancedValuables_ItemClass.RED_GARNET_SHOVEL);
                 output.accept(AdvancedValuables_ItemClass.RED_GARNET_HOE);
                 output.accept(AdvancedValuables_ItemClass.RED_GARNET_SWORD);
+                output.accept(AdvancedValuables_ItemClass.RED_GARNET_SPEAR);
 
                 output.accept(AdvancedValuables_ItemClass.BLUE_GARNET_PICKAXE);
                 output.accept(AdvancedValuables_ItemClass.BLUE_GARNET_AXE);
                 output.accept(AdvancedValuables_ItemClass.BLUE_GARNET_SHOVEL);
                 output.accept(AdvancedValuables_ItemClass.BLUE_GARNET_HOE);
                 output.accept(AdvancedValuables_ItemClass.BLUE_GARNET_SWORD);
+                output.accept(AdvancedValuables_ItemClass.BLUE_GARNET_SPEAR);
 
                 output.accept(AdvancedValuables_ItemClass.PINK_GARNET_PICKAXE);
                 output.accept(AdvancedValuables_ItemClass.PINK_GARNET_AXE);
                 output.accept(AdvancedValuables_ItemClass.PINK_GARNET_SHOVEL);
                 output.accept(AdvancedValuables_ItemClass.PINK_GARNET_HOE);
                 output.accept(AdvancedValuables_ItemClass.PINK_GARNET_SWORD);
+                output.accept(AdvancedValuables_ItemClass.PINK_GARNET_SPEAR);
 
                 output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_PICKAXE);
                 output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_AXE);
                 output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_SHOVEL);
                 output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_HOE);
                 output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_SWORD);
+                output.accept(AdvancedValuables_ItemClass.YELLOW_GARNET_SPEAR);
 
                 output.accept(AdvancedValuables_ItemClass.FUSION_PICKAXE);
                 output.accept(AdvancedValuables_ItemClass.FUSION_AXE);
                 output.accept(AdvancedValuables_ItemClass.FUSION_SHOVEL);
                 output.accept(AdvancedValuables_ItemClass.FUSION_HOE);
                 output.accept(AdvancedValuables_ItemClass.FUSION_SWORD);
+                output.accept(AdvancedValuables_ItemClass.FUSION_SPEAR);
 
                 output.accept(AdvancedValuables_ItemClass.RUBY_PICKAXE);
                 output.accept(AdvancedValuables_ItemClass.RUBY_AXE);
                 output.accept(AdvancedValuables_ItemClass.RUBY_SHOVEL);
                 output.accept(AdvancedValuables_ItemClass.RUBY_HOE);
                 output.accept(AdvancedValuables_ItemClass.RUBY_SWORD);
+                output.accept(AdvancedValuables_ItemClass.RUBY_SPEAR);
 
                 output.accept(AdvancedValuables_ItemClass.RED_SAPPHIRE_HELMET.get());
                 output.accept(AdvancedValuables_ItemClass.RED_SAPPHIRE_CHESTPLATE.get());
@@ -203,7 +219,7 @@ public class AdvancedValuables_CreativeModeTabs
             })
             .build());
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AV_FOODS_TAB = AV_REGISTER_CMT.register("foods", () -> CreativeModeTab.builder()
+    public static final DeferredHolder<@NotNull CreativeModeTab, @NotNull CreativeModeTab> AV_FOODS_TAB = AV_REGISTER_CMT.register("foods", () -> CreativeModeTab.builder()
             .withTabsBefore(Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "tools_armor"))
             .icon(() -> new ItemStack(AdvancedValuables_ItemClass.FUSION_APPLE.get()))
             .title(Component.literal("Advanced Valuables Foods"))
@@ -222,7 +238,7 @@ public class AdvancedValuables_CreativeModeTabs
             })
             .build());
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AV_DECOR_TAB = AV_REGISTER_CMT.register("decor", () -> CreativeModeTab.builder()
+    public static final DeferredHolder<@NotNull CreativeModeTab, @NotNull CreativeModeTab> AV_DECOR_TAB = AV_REGISTER_CMT.register("decor", () -> CreativeModeTab.builder()
             .withTabsBefore(Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "foods"))
             .icon(() -> new ItemStack(AdvancedValuables_BlockClass.FUSION_STAIRS))
             .title(Component.literal("Advanced Valuables Decorations"))
@@ -319,7 +335,7 @@ public class AdvancedValuables_CreativeModeTabs
             })
             .build());
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AV_CRAFTING_TAB = AV_REGISTER_CMT.register("crafting", () -> CreativeModeTab.builder()
+    public static final DeferredHolder<@NotNull CreativeModeTab, @NotNull CreativeModeTab> AV_CRAFTING_TAB = AV_REGISTER_CMT.register("crafting", () -> CreativeModeTab.builder()
             .withTabsBefore(Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, "decor"))
             .icon(() -> new ItemStack(AdvancedValuables_BlockClass.GEM_GRINDER))
             .title(Component.literal("Advanced Valuables Crafting"))

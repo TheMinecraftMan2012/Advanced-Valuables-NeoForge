@@ -10,13 +10,14 @@ import net.minecraft.world.item.enchantment.EnchantedItemInUse;
 import net.minecraft.world.item.enchantment.effects.EnchantmentEntityEffect;
 import net.minecraft.world.phys.Vec3;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_Particles;
+import org.jetbrains.annotations.NotNull;
 
 public record GemInfestationEnchantmentEffect() implements EnchantmentEntityEffect
 {
     public static final MapCodec<GemInfestationEnchantmentEffect> CODEC = MapCodec.unit(GemInfestationEnchantmentEffect::new);
 
     @Override
-    public void apply(ServerLevel serverLevel, int enchantmentLevel, EnchantedItemInUse item, Entity entity, Vec3 origin)
+    public void apply(@NotNull ServerLevel serverLevel, int enchantmentLevel, @NotNull EnchantedItemInUse item, @NotNull Entity entity, @NotNull Vec3 origin)
     {
         if (entity instanceof LivingEntity livingEntity)
         {
@@ -97,7 +98,7 @@ public record GemInfestationEnchantmentEffect() implements EnchantmentEntityEffe
     }
 
     @Override
-    public MapCodec<? extends EnchantmentEntityEffect> codec()
+    public @NotNull MapCodec<? extends EnchantmentEntityEffect> codec()
     {
         return CODEC;
     }

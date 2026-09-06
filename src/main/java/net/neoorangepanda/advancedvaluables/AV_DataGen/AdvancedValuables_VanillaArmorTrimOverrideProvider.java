@@ -7,6 +7,7 @@ import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
@@ -48,7 +49,7 @@ public class AdvancedValuables_VanillaArmorTrimOverrideProvider implements DataP
     }
 
     @Override
-    public CompletableFuture<?> run(CachedOutput cache)
+    public @NotNull CompletableFuture<?> run(@NotNull CachedOutput cache)
     {
         var futures = new java.util.ArrayList<CompletableFuture<?>>();
         for (String base : VANILLA_ARMOR_BASES)
@@ -123,7 +124,7 @@ public class AdvancedValuables_VanillaArmorTrimOverrideProvider implements DataP
     }
 
     @Override
-    public String getName()
+    public @NotNull String getName()
     {
         return "Vanilla Armor Trim Overrides";
     }

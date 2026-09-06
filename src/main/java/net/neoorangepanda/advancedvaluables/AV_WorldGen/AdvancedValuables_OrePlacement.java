@@ -4,6 +4,7 @@ import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class AdvancedValuables_OrePlacement
 {
     public static List<PlacementModifier> orePlacement(PlacementModifier countPlacement, PlacementModifier heightRange)

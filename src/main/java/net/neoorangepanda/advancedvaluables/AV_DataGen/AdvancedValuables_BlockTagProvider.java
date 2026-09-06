@@ -3,10 +3,16 @@ package net.neoorangepanda.advancedvaluables.AV_DataGen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagFile;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.common.NeoForgeMod;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
+import net.neoforged.neoforgespi.locating.ForgeFeature;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_BlockClass;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
 import net.neoorangepanda.advancedvaluables.AV_Utils.AdvancedValuables_Tags;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -19,7 +25,7 @@ public class AdvancedValuables_BlockTagProvider extends BlockTagsProvider
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider provider)
+    protected void addTags(HolderLookup.@NotNull Provider provider)
     {
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_BLOCK.get())
@@ -58,7 +64,8 @@ public class AdvancedValuables_BlockTagProvider extends BlockTagsProvider
                 .add(AdvancedValuables_BlockClass.DEEPSLATE_YELLOW_GARNET_ORE.get())
                 .add(AdvancedValuables_BlockClass.DEEPSLATE_FUSION_ORE.get())
                 .add(AdvancedValuables_BlockClass.DEEPSLATE_RUBY_ORE.get())
-                .add(AdvancedValuables_BlockClass.GEM_GRINDER.get());
+                .add(AdvancedValuables_BlockClass.GEM_GRINDER.get())
+                .add(AdvancedValuables_BlockClass.SPARKITE_BLOCK.get());
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_BLOCK.get())
@@ -98,19 +105,14 @@ public class AdvancedValuables_BlockTagProvider extends BlockTagsProvider
                 .add(AdvancedValuables_BlockClass.FUSION_BLOCK.get())
                 .add(AdvancedValuables_BlockClass.RAW_FUSION_BLOCK.get())
                 .add(AdvancedValuables_BlockClass.FUSION_ORE.get())
-                .add(AdvancedValuables_BlockClass.DEEPSLATE_FUSION_ORE.get());
+                .add(AdvancedValuables_BlockClass.DEEPSLATE_FUSION_ORE.get())
+                .add(AdvancedValuables_BlockClass.SPARKITE_BLOCK.get());
 
-        this.tag(AdvancedValuables_Tags.Blocks.NEEDS_ALL_SAPPHIRE_TOOL)
-                .addTag(BlockTags.NEEDS_IRON_TOOL);
-
-        this.tag(AdvancedValuables_Tags.Blocks.NEEDS_ALL_GARNET_TOOL)
-                .addTag(BlockTags.NEEDS_IRON_TOOL);
-
-        this.tag(AdvancedValuables_Tags.Blocks.NEEDS_FUSION_TOOL)
-                .addTag(BlockTags.NEEDS_DIAMOND_TOOL);
-
-        this.tag(AdvancedValuables_Tags.Blocks.NEEDS_RUBY_TOOL)
-                .addTag(BlockTags.NEEDS_IRON_TOOL);
+        this.tag(AdvancedValuables_Tags.Blocks.NEEDS_ALL_SAPPHIRE_TOOL).addTag(BlockTags.NEEDS_IRON_TOOL);
+        this.tag(AdvancedValuables_Tags.Blocks.NEEDS_ALL_GARNET_TOOL).addTag(BlockTags.NEEDS_IRON_TOOL);
+        this.tag(AdvancedValuables_Tags.Blocks.NEEDS_FUSION_TOOL).addTag(BlockTags.NEEDS_DIAMOND_TOOL);
+        this.tag(AdvancedValuables_Tags.Blocks.NEEDS_RUBY_TOOL).addTag(BlockTags.NEEDS_IRON_TOOL);
+        this.tag(AdvancedValuables_Tags.Blocks.NEEDS_SPARKITE_TOOL).addTag(BlockTags.NEEDS_DIAMOND_TOOL);
 
         this.tag(AdvancedValuables_Tags.Blocks.INCORRECT_FOR_ALL_SAPPHIRE_TOOL)
                 .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
@@ -127,6 +129,10 @@ public class AdvancedValuables_BlockTagProvider extends BlockTagsProvider
         this.tag(AdvancedValuables_Tags.Blocks.INCORRECT_FOR_RUBY_TOOL)
                 .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
                 .remove(AdvancedValuables_Tags.Blocks.NEEDS_RUBY_TOOL);
+
+        this.tag(AdvancedValuables_Tags.Blocks.INCORRECT_FOR_SPARKITE_TOOL)
+                .addTag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL)
+                .remove(AdvancedValuables_Tags.Blocks.NEEDS_FUSION_TOOL);
 
         this.tag(BlockTags.FENCES)
                 .add(AdvancedValuables_BlockClass.RED_SAPPHIRE_FENCE.get())

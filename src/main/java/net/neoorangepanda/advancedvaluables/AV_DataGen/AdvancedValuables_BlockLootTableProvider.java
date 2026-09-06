@@ -6,12 +6,9 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
-
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
@@ -19,9 +16,11 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_BlockClass;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
 
+@SuppressWarnings("unused")
 public class AdvancedValuables_BlockLootTableProvider extends BlockLootSubProvider
 {
     protected AdvancedValuables_BlockLootTableProvider(HolderLookup.Provider provider)
@@ -51,6 +50,8 @@ public class AdvancedValuables_BlockLootTableProvider extends BlockLootSubProvid
         dropSelf(AdvancedValuables_BlockClass.YELLOW_RAW_GARNET_BLOCK.get());
         dropSelf(AdvancedValuables_BlockClass.RAW_FUSION_BLOCK.get());
         dropSelf(AdvancedValuables_BlockClass.RAW_RUBY_BLOCK.get());
+
+        dropSelf(AdvancedValuables_BlockClass.SPARKITE_BLOCK.get());
 
         this.add(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_ORE.get(), block -> createMultipleOreDrops(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_ORE.get(), AdvancedValuables_ItemClass.BLUE_RAW_SAPPHIRE.get(), 2, 4));
         this.add(AdvancedValuables_BlockClass.RED_SAPPHIRE_ORE.get(), block -> createMultipleOreDrops(AdvancedValuables_BlockClass.RED_SAPPHIRE_ORE.get(), AdvancedValuables_ItemClass.RED_RAW_SAPPHIRE.get(), 2, 4));
@@ -167,7 +168,7 @@ public class AdvancedValuables_BlockLootTableProvider extends BlockLootSubProvid
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {
-        HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+        HolderLookup.RegistryLookup<@NotNull Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
         return this.createSilkTouchDispatchTable(pBlock, this.applyExplosionDecay(pBlock,
                 LootItem.lootTableItem(item)
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrops, maxDrops)))
@@ -175,7 +176,7 @@ public class AdvancedValuables_BlockLootTableProvider extends BlockLootSubProvid
     }
 
     @Override
-    protected Iterable<Block> getKnownBlocks()
+    protected @NotNull Iterable<Block> getKnownBlocks()
     {
         return AdvancedValuables_BlockClass.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
     }

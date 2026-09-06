@@ -2,82 +2,87 @@ package net.neoorangepanda.advancedvaluables.AV_Recipes.AV_GemGrinderRecipe;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_Recipes;
+import org.jetbrains.annotations.NotNull;
 
-public record GemGrinderRecipe(Ingredient ingredient, ItemStack output) implements Recipe<GemGrinderRecipeInput>
+import java.util.List;
+
+public record GemGrinderRecipe(List<Ingredient> inputItems, ItemStackTemplate output) implements Recipe<@NotNull GemGrinderRecipeInput>
 {
-    private NonNullList<Ingredient> getIngredients()
+    public static MapCodec<GemGrinderRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
+            Ingredient.CODEC.listOf().fieldOf("ingredients").forGetter(GemGrinderRecipe::inputItems),
+            ItemStackTemplate.CODEC.fieldOf("result").forGetter(GemGrinderRecipe::output)
+    ).apply(inst, GemGrinderRecipe::new));
+
+    public static StreamCodec<@NotNull RegistryFriendlyByteBuf, @NotNull GemGrinderRecipe> STREAM_CODEC =
+            StreamCodec.composite(
+                    Ingredient.CONTENTS_STREAM_CODEC.apply(ByteBufCodecs.list()), GemGrinderRecipe::inputItems,
+                    ItemStackTemplate.STREAM_CODEC, GemGrinderRecipe::output,
+                    GemGrinderRecipe::new);
+
+    public NonNullList<@NotNull Ingredient> getIngredients()
     {
-        NonNullList<Ingredient> list = NonNullList.create();
-        list.add(ingredient);
+        NonNullList<@NotNull Ingredient> list = NonNullList.create();
+        list.addAll(inputItems);
         return list;
     }
+
     @Override
-    public boolean matches(GemGrinderRecipeInput gemGrinderRecipeInput, Level level)
+    public boolean matches(GemGrinderRecipeInput pInput, Level pLevel)
     {
-        if (level.isClientSide()) return false;
-        return ingredient.test(gemGrinderRecipeInput.getItem(0));
+        if(pLevel.isClientSide()) return false;
+        for (int i = 0; i < inputItems.size(); i++) if(!inputItems.get(i).test(pInput.getItem(i))) return false;
+        return true;
     }
 
     @Override
-    public ItemStack assemble(GemGrinderRecipeInput gemGrinderRecipeInput, HolderLookup.Provider provider)
-        {
-        return output.copy();
+    public @NotNull ItemStack assemble(GemGrinderRecipeInput pInput)
+    {
+        return output.create().copy();
     }
 
     @Override
-    public RecipeSerializer<? extends Recipe<GemGrinderRecipeInput>> getSerializer()
+    public boolean showNotification()
+    {
+        return true;
+    }
+
+    @Override
+    public@NotNull  String group()
+    {
+        return "Grinding";
+    }
+
+
+    @Override
+    public @NotNull RecipeSerializer<@NotNull GemGrinderRecipe> getSerializer()
     {
         return AdvancedValuables_Recipes.GEM_GRINDER_SERIALIZER.get();
     }
 
     @Override
-    public RecipeType<? extends Recipe<GemGrinderRecipeInput>> getType()
+    public @NotNull RecipeType<? extends @NotNull Recipe<@NotNull GemGrinderRecipeInput>> getType()
     {
         return AdvancedValuables_Recipes.GEM_GRINDER_TYPE.get();
     }
 
     @Override
-    public PlacementInfo placementInfo()
+    public @NotNull PlacementInfo placementInfo()
     {
-        return PlacementInfo.create(ingredient);
+        return PlacementInfo.NOT_PLACEABLE;
     }
 
     @Override
-    public RecipeBookCategory recipeBookCategory()
+    public @NotNull RecipeBookCategory recipeBookCategory()
     {
         return RecipeBookCategories.CRAFTING_MISC;
-    }
-
-    public static class Serializer implements RecipeSerializer<GemGrinderRecipe>
-    {
-        public static final MapCodec<GemGrinderRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
-                Ingredient.CODEC.fieldOf("ingredient").forGetter(GemGrinderRecipe::ingredient),
-                ItemStack.CODEC.fieldOf("result").forGetter(GemGrinderRecipe::output)
-        ).apply(inst, GemGrinderRecipe::new));
-
-        public static final StreamCodec<RegistryFriendlyByteBuf, GemGrinderRecipe> STREAM_CODEC = StreamCodec.composite(
-                Ingredient.CONTENTS_STREAM_CODEC, GemGrinderRecipe::ingredient,
-                ItemStack.STREAM_CODEC, GemGrinderRecipe::output, GemGrinderRecipe::new
-        );
-
-        @Override
-        public MapCodec<GemGrinderRecipe> codec()
-        {
-            return CODEC;
-        }
-
-        @Override
-        public StreamCodec<RegistryFriendlyByteBuf, GemGrinderRecipe> streamCodec()
-        {
-            return STREAM_CODEC;
-        }
     }
 }

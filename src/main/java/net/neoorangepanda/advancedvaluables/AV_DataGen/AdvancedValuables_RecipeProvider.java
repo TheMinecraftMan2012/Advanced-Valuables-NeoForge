@@ -1,7 +1,6 @@
 package net.neoorangepanda.advancedvaluables.AV_DataGen;
 
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.*;
@@ -10,15 +9,15 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoorangepanda.advancedvaluables.AV_Libraries.Items.HammerItem;
-import net.neoorangepanda.advancedvaluables.AV_RecipeProvider.AV_GemGrinder.GemGrinderRecipeProvider;
+import net.neoorangepanda.advancedvaluables.AV_RecipeProvider.GemGrinderRecipeProvider;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_BlockClass;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
-import net.neoorangepanda.advancedvaluables.AdvancedValuables;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+@SuppressWarnings("all")
 public class AdvancedValuables_RecipeProvider extends RecipeProvider
 {
     protected AdvancedValuables_RecipeProvider(HolderLookup.Provider provider, RecipeOutput output)
@@ -34,13 +33,13 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
         }
 
         @Override
-        protected RecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput)
+        protected @NotNull RecipeProvider createRecipeProvider(HolderLookup.@NotNull Provider provider, @NotNull RecipeOutput recipeOutput)
         {
             return new AdvancedValuables_RecipeProvider(provider, recipeOutput);
         }
 
         @Override
-        public String getName()
+        public @NotNull String getName()
         {
             return "My Recipes";
         }
@@ -194,16 +193,16 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
         generateSwordRecipe(this.output, AdvancedValuables_ItemClass.RUBY_SWORD, AdvancedValuables_ItemClass.RUBY, "has_ruby");
 
         // -- Powders -- //
-        new GemGrinderRecipeProvider(new ItemStack(AdvancedValuables_ItemClass.RED_SAPPHIRE_POWDER.get()), Ingredient.of(AdvancedValuables_ItemClass.RED_SAPPHIRE)).save(this.output);
-        new GemGrinderRecipeProvider(new ItemStack(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_POWDER.get()), Ingredient.of(AdvancedValuables_ItemClass.BLUE_SAPPHIRE)).save(this.output);
-        new GemGrinderRecipeProvider(new ItemStack(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_POWDER.get()), Ingredient.of(AdvancedValuables_ItemClass.GREEN_SAPPHIRE)).save(this.output);
+        grind(AdvancedValuables_ItemClass.RED_SAPPHIRE, AdvancedValuables_ItemClass.RED_SAPPHIRE_POWDER, "has_red_sapphire");
+        grind(AdvancedValuables_ItemClass.BLUE_SAPPHIRE, AdvancedValuables_ItemClass.BLUE_SAPPHIRE_POWDER, "has_blue_sapphire");
+        grind(AdvancedValuables_ItemClass.GREEN_SAPPHIRE, AdvancedValuables_ItemClass.GREEN_SAPPHIRE_POWDER, "has_green_sapphire");
 
-        new GemGrinderRecipeProvider(new ItemStack(AdvancedValuables_ItemClass.RED_GARNET_POWDER.get()), Ingredient.of(AdvancedValuables_ItemClass.RED_GARNET)).save(this.output);
-        new GemGrinderRecipeProvider(new ItemStack(AdvancedValuables_ItemClass.BLUE_GARNET_POWDER.get()), Ingredient.of(AdvancedValuables_ItemClass.BLUE_GARNET)).save(this.output);
-        new GemGrinderRecipeProvider(new ItemStack(AdvancedValuables_ItemClass.PINK_GARNET_POWDER.get()), Ingredient.of(AdvancedValuables_ItemClass.PINK_GARNET)).save(this.output);
-        new GemGrinderRecipeProvider(new ItemStack(AdvancedValuables_ItemClass.YELLOW_GARNET_POWDER.get()), Ingredient.of(AdvancedValuables_ItemClass.YELLOW_GARNET)).save(this.output);
+        grind(AdvancedValuables_ItemClass.RED_GARNET, AdvancedValuables_ItemClass.RED_GARNET_POWDER, "has_red_garnet");
+        grind(AdvancedValuables_ItemClass.BLUE_GARNET, AdvancedValuables_ItemClass.BLUE_GARNET_POWDER, "has_blue_garnet");
+        grind(AdvancedValuables_ItemClass.PINK_GARNET, AdvancedValuables_ItemClass.PINK_GARNET_POWDER, "has_pink_garnet");
+        grind(AdvancedValuables_ItemClass.YELLOW_GARNET, AdvancedValuables_ItemClass.YELLOW_GARNET_POWDER, "has_yellow_garnet");
 
-        new GemGrinderRecipeProvider(new ItemStack(AdvancedValuables_ItemClass.RUBY_POWDER.get()), Ingredient.of(AdvancedValuables_ItemClass.RUBY)).save(this.output);
+        grind(AdvancedValuables_ItemClass.RUBY, AdvancedValuables_ItemClass.RUBY_POWDER, "has_ruby");
 
         // -- Armors -- //
         generateArmorRecipe(this.output,
@@ -275,88 +274,86 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
 
         // -- Crafting Recipe -- // -- Shapeless Recipe -- //
         // -- Red Sapphire -- //
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_SAPPHIRE.get(), 9)
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_SAPPHIRE.get(), 9)
                 .requires(AdvancedValuables_BlockClass.RED_SAPPHIRE_BLOCK.get())
                 .unlockedBy("has_red_sapphire_block", has(AdvancedValuables_BlockClass.RED_SAPPHIRE_BLOCK.get())).save(this.output);
 
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_RAW_SAPPHIRE.get(), 9)
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_RAW_SAPPHIRE.get(), 9)
                 .requires(AdvancedValuables_BlockClass.RED_RAW_SAPPHIRE_BLOCK.get())
                 .unlockedBy("has_red_raw_sapphire_block", has(AdvancedValuables_BlockClass.RED_RAW_SAPPHIRE_BLOCK.get())).save(this.output);
 
         // -- Blue Sapphire -- //
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get(), 9)
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get(), 9)
                 .requires(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_BLOCK.get())
                 .unlockedBy("has_blue_sapphire_block", has(AdvancedValuables_BlockClass.BLUE_SAPPHIRE_BLOCK.get())).save(this.output);
 
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_RAW_SAPPHIRE.get(), 9)
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_RAW_SAPPHIRE.get(), 9)
                 .requires(AdvancedValuables_BlockClass.BLUE_RAW_SAPPHIRE_BLOCK.get())
                 .unlockedBy("has_blue_raw_sapphire_block", has(AdvancedValuables_BlockClass.BLUE_RAW_SAPPHIRE_BLOCK.get())).save(this.output);
 
         // -- Green Sapphire -- //
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get(), 9)
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get(), 9)
                 .requires(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_BLOCK.get())
                 .unlockedBy("has_green_sapphire_block", has(AdvancedValuables_BlockClass.GREEN_SAPPHIRE_BLOCK.get())).save(this.output);
 
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.GREEN_RAW_SAPPHIRE.get(), 9)
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.GREEN_RAW_SAPPHIRE.get(), 9)
                 .requires(AdvancedValuables_BlockClass.GREEN_RAW_SAPPHIRE_BLOCK.get())
                 .unlockedBy("has_green_raw_sapphire_block", has(AdvancedValuables_BlockClass.GREEN_RAW_SAPPHIRE_BLOCK.get())).save(this.output);
 
         // -- Red Garnet -- //
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_GARNET.get(), 9)
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_GARNET.get(), 9)
                 .requires(AdvancedValuables_BlockClass.RED_GARNET_BLOCK.get())
                 .unlockedBy("has_red_garnet_block", has(AdvancedValuables_BlockClass.RED_GARNET_BLOCK.get())).save(this.output);
 
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_RAW_GARNET.get(), 9)
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_RAW_GARNET.get(), 9)
                 .requires(AdvancedValuables_BlockClass.RED_RAW_GARNET_BLOCK.get())
                 .unlockedBy("has_red_raw_garnet_block", has(AdvancedValuables_BlockClass.RED_RAW_GARNET_BLOCK.get())).save(this.output);
 
         // -- Blue Garnet -- //
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_GARNET.get(), 9)
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_GARNET.get(), 9)
                 .requires(AdvancedValuables_BlockClass.BLUE_GARNET_BLOCK.get())
                 .unlockedBy("has_blue_garnet_block", has(AdvancedValuables_BlockClass.BLUE_GARNET_BLOCK.get())).save(this.output);
 
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_RAW_GARNET.get(), 9)
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_RAW_GARNET.get(), 9)
                 .requires(AdvancedValuables_BlockClass.BLUE_RAW_GARNET_BLOCK.get())
                 .unlockedBy("has_blue_raw_garnet_block", has(AdvancedValuables_BlockClass.BLUE_RAW_GARNET_BLOCK.get())).save(this.output);
 
         // -- Yellow Garnet -- //
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.YELLOW_GARNET.get(), 9)
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.YELLOW_GARNET.get(), 9)
                 .requires(AdvancedValuables_BlockClass.YELLOW_GARNET_BLOCK.get())
                 .unlockedBy("has_yellow_garnet_block", has(AdvancedValuables_BlockClass.YELLOW_GARNET_BLOCK.get())).save(this.output);
 
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.YELLOW_RAW_GARNET.get(), 9)
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.YELLOW_RAW_GARNET.get(), 9)
                 .requires(AdvancedValuables_BlockClass.YELLOW_RAW_GARNET_BLOCK.get())
                 .unlockedBy("has_yellow_raw_garnet_block", has(AdvancedValuables_BlockClass.YELLOW_RAW_GARNET_BLOCK.get())).save(this.output);
 
         // -- Pink Garnet -- //
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.PINK_GARNET.get(), 9)
-                .requires(AdvancedValuables_BlockClass.PINK_GARNET_BLOCK.get())
-                .unlockedBy("has_pink_garnet_block", has(AdvancedValuables_BlockClass.PINK_GARNET_BLOCK.get())).save(this.output);
 
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.PINK_RAW_GARNET.get(), 9)
+
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.PINK_RAW_GARNET.get(), 9)
                 .requires(AdvancedValuables_BlockClass.PINK_RAW_GARNET_BLOCK.get())
                 .unlockedBy("has_pink_raw_garnet_block", has(AdvancedValuables_BlockClass.PINK_RAW_GARNET_BLOCK.get())).save(this.output);
 
         // -- Fusion Gem -- //
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.FUSION_GEM.get(), 9)
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.FUSION_GEM.get(), 9)
                 .requires(AdvancedValuables_BlockClass.FUSION_BLOCK.get())
                 .unlockedBy("has_fusion_block", has(AdvancedValuables_BlockClass.FUSION_BLOCK.get())).save(this.output);
 
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.RAW_FUSION_GEM.get(), 9)
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.RAW_FUSION_GEM.get(), 9)
                 .requires(AdvancedValuables_BlockClass.RAW_FUSION_BLOCK.get())
                 .unlockedBy("has_raw_fusion_block", has(AdvancedValuables_BlockClass.RAW_FUSION_BLOCK.get())).save(this.output);
 
         // -- Ruby -- //
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.RUBY.get(), 9)
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.RUBY.get(), 9)
                 .requires(AdvancedValuables_BlockClass.RUBY_BLOCK.get())
                 .unlockedBy("has_ruby_block", has(AdvancedValuables_BlockClass.RUBY_BLOCK.get())).save(this.output);
 
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.RAW_RUBY.get(), 9)
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.RAW_RUBY.get(), 9)
                 .requires(AdvancedValuables_BlockClass.RAW_RUBY_BLOCK.get())
                 .unlockedBy("has_raw_ruby_block", has(AdvancedValuables_BlockClass.RAW_RUBY_BLOCK.get())).save(this.output);
 
         // -- Powders -- //
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.MIXED_SAPPHIRE_POWDER)
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.MIXED_SAPPHIRE_POWDER)
                 .requires(AdvancedValuables_ItemClass.RED_SAPPHIRE_POWDER)
                 .requires(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_POWDER)
                 .requires(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_POWDER)
@@ -365,7 +362,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
                 .unlockedBy("has_green_sapphire", this.has(AdvancedValuables_ItemClass.GREEN_SAPPHIRE))
                 .save(this.output);
 
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, AdvancedValuables_ItemClass.MIXED_GARNET_POWDER)
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.MIXED_GARNET_POWDER)
                 .requires(AdvancedValuables_ItemClass.RED_GARNET_POWDER)
                 .requires(AdvancedValuables_ItemClass.BLUE_GARNET_POWDER)
                 .requires(AdvancedValuables_ItemClass.PINK_GARNET_POWDER)
@@ -376,58 +373,59 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
                 .unlockedBy("has_yellow_garnet", this.has(AdvancedValuables_ItemClass.YELLOW_GARNET))
                 .save(this.output);
 
+
         // -- Smelting (Raw Items - Solid Items) -- //
-        oreSmelting(this.output, BLUE_SAPPHIRE_SMELTING_ITEMS, RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get(), 0.25f, 200, "blue_sapphire");
-        oreSmelting(this.output, RED_SAPPHIRE_SMELTING_ITEMS, RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_SAPPHIRE.get(), 0.25f, 200, "red_sapphire");
-        oreSmelting(this.output, GREEN_SAPPHIRE_SMELTING_ITEMS, RecipeCategory.MISC, AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get(), 0.25f, 200, "green_sapphire");
-        oreSmelting(this.output, RED_GARNET_SMELTING_ITEMS, RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_GARNET.get(), 0.25f, 200, "red_garnet");
-        oreSmelting(this.output, BLUE_GARNET_SMELTING_ITEMS, RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_GARNET.get(), 0.25f, 200, "blue_garnet");
-        oreSmelting(this.output, PINK_GARNET_SMELTING_ITEMS, RecipeCategory.MISC, AdvancedValuables_ItemClass.PINK_GARNET.get(), 0.25f, 200, "pink_garnet");
-        oreSmelting(this.output, YELLOW_GARNET_SMELTING_ITEMS, RecipeCategory.MISC, AdvancedValuables_ItemClass.YELLOW_GARNET.get(), 0.25f, 200, "yellow_garnet");
-        oreSmelting(this.output, FUSION_GEM_SMELTING_ITEMS, RecipeCategory.MISC, AdvancedValuables_ItemClass.FUSION_GEM.get(), 0.25f, 200, "fusion_gem");
-        oreSmelting(this.output, RUBY_SMELTING_ITEMS, RecipeCategory.MISC, AdvancedValuables_ItemClass.RUBY.get(), 0.25f, 200, "ruby");
+        oreSmelting(BLUE_SAPPHIRE_SMELTING_ITEMS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get(), 0.25f, 200, "blue_sapphire");
+        oreSmelting(RED_SAPPHIRE_SMELTING_ITEMS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_ItemClass.RED_SAPPHIRE.get(), 0.25f, 200, "red_sapphire");
+        oreSmelting(GREEN_SAPPHIRE_SMELTING_ITEMS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get(), 0.25f, 200, "green_sapphire");
+        oreSmelting(RED_GARNET_SMELTING_ITEMS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_ItemClass.RED_GARNET.get(), 0.25f, 200, "red_garnet");
+        oreSmelting(BLUE_GARNET_SMELTING_ITEMS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_ItemClass.BLUE_GARNET.get(), 0.25f, 200, "blue_garnet");
+        oreSmelting(PINK_GARNET_SMELTING_ITEMS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_ItemClass.PINK_GARNET.get(), 0.25f, 200, "pink_garnet");
+        oreSmelting(YELLOW_GARNET_SMELTING_ITEMS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_ItemClass.YELLOW_GARNET.get(), 0.25f, 200, "yellow_garnet");
+        oreSmelting(FUSION_GEM_SMELTING_ITEMS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_ItemClass.FUSION_GEM.get(), 0.25f, 200, "fusion_gem");
+        oreSmelting(RUBY_SMELTING_ITEMS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_ItemClass.RUBY.get(), 0.25f, 200, "ruby");
 
         // -- Blasting (Raw Items - Solid Items) -- //
-        oreBlasting(this.output, BLUE_SAPPHIRE_SMELTING_ITEMS, RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get(), 0.25f, 100, "blue_sapphire");
-        oreBlasting(this.output, RED_SAPPHIRE_SMELTING_ITEMS, RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_SAPPHIRE.get(), 0.25f, 100, "red_sapphire");
-        oreBlasting(this.output, GREEN_SAPPHIRE_SMELTING_ITEMS, RecipeCategory.MISC, AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get(), 0.25f, 100, "green_sapphire");
-        oreBlasting(this.output, RED_GARNET_SMELTING_ITEMS, RecipeCategory.MISC, AdvancedValuables_ItemClass.RED_GARNET.get(), 0.25f, 100, "red_garnet");
-        oreBlasting(this.output, BLUE_GARNET_SMELTING_ITEMS, RecipeCategory.MISC, AdvancedValuables_ItemClass.BLUE_GARNET.get(), 0.25f, 100, "blue_garnet");
-        oreBlasting(this.output, PINK_GARNET_SMELTING_ITEMS, RecipeCategory.MISC, AdvancedValuables_ItemClass.PINK_GARNET.get(), 0.25f, 100, "pink_garnet");
-        oreBlasting(this.output, YELLOW_GARNET_SMELTING_ITEMS, RecipeCategory.MISC, AdvancedValuables_ItemClass.YELLOW_GARNET.get(), 0.25f, 200, "yellow_garnet");
-        oreBlasting(this.output, FUSION_GEM_SMELTING_ITEMS, RecipeCategory.MISC, AdvancedValuables_ItemClass.FUSION_GEM.get(), 0.25f, 100, "fusion_gem");
-        oreBlasting(this.output, RUBY_SMELTING_ITEMS, RecipeCategory.MISC, AdvancedValuables_ItemClass.RUBY.get(), 0.25f, 100, "ruby");
+        oreBlasting(BLUE_SAPPHIRE_SMELTING_ITEMS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get(), 0.25f, 100, "blue_sapphire");
+        oreBlasting(RED_SAPPHIRE_SMELTING_ITEMS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_ItemClass.RED_SAPPHIRE.get(), 0.25f, 100, "red_sapphire");
+        oreBlasting(GREEN_SAPPHIRE_SMELTING_ITEMS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_ItemClass.GREEN_SAPPHIRE.get(), 0.25f, 100, "green_sapphire");
+        oreBlasting(RED_GARNET_SMELTING_ITEMS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_ItemClass.RED_GARNET.get(), 0.25f, 100, "red_garnet");
+        oreBlasting(BLUE_GARNET_SMELTING_ITEMS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_ItemClass.BLUE_GARNET.get(), 0.25f, 100, "blue_garnet");
+        oreBlasting(PINK_GARNET_SMELTING_ITEMS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_ItemClass.PINK_GARNET.get(), 0.25f, 100, "pink_garnet");
+        oreBlasting(YELLOW_GARNET_SMELTING_ITEMS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_ItemClass.YELLOW_GARNET.get(), 0.25f, 200, "yellow_garnet");
+        oreBlasting(FUSION_GEM_SMELTING_ITEMS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_ItemClass.FUSION_GEM.get(), 0.25f, 100, "fusion_gem");
+        oreBlasting(RUBY_SMELTING_ITEMS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_ItemClass.RUBY.get(), 0.25f, 100, "ruby");
 
         // -- Smelting (Raw Blocks - Solid Blocks) -- //
-        oreSmelting(this.output, BLUE_SAPPHIRE_SMELTING_BLOCKS, RecipeCategory.MISC, AdvancedValuables_BlockClass.BLUE_SAPPHIRE_BLOCK.get(), 0.25f, 200, "blue_sapphire");
-        oreSmelting(this.output, RED_SAPPHIRE_SMELTING_BLOCKS, RecipeCategory.MISC, AdvancedValuables_BlockClass.RED_SAPPHIRE_BLOCK.get(), 0.25f, 200, "red_sapphire");
-        oreSmelting(this.output, GREEN_SAPPHIRE_SMELTING_BLOCKS, RecipeCategory.MISC, AdvancedValuables_BlockClass.GREEN_SAPPHIRE_BLOCK.get(), 0.25f, 200, "green_sapphire");
-        oreSmelting(this.output, RED_GARNET_SMELTING_BLOCKS, RecipeCategory.MISC, AdvancedValuables_BlockClass.RED_GARNET_BLOCK.get(), 0.25f, 200, "red_garnet");
-        oreSmelting(this.output, BLUE_GARNET_SMELTING_BLOCKS, RecipeCategory.MISC, AdvancedValuables_BlockClass.BLUE_GARNET_BLOCK.get(), 0.25f, 200, "blue_garnet");
-        oreSmelting(this.output, PINK_GARNET_SMELTING_BLOCKS, RecipeCategory.MISC, AdvancedValuables_BlockClass.PINK_GARNET_BLOCK.get(), 0.25f, 200, "pink_garnet");
-        oreSmelting(this.output, YELLOW_GARNET_SMELTING_BLOCKS, RecipeCategory.MISC, AdvancedValuables_BlockClass.YELLOW_GARNET_BLOCK.get(), 0.25f, 200, "yellow_garnet");
-        oreSmelting(this.output, FUSION_GEM_SMELTING_BLOCKS, RecipeCategory.MISC, AdvancedValuables_BlockClass.FUSION_BLOCK.get(), 0.25f, 200, "fusion_gem");
-        oreSmelting(this.output, RUBY_SMELTING_BLOCKS, RecipeCategory.MISC, AdvancedValuables_BlockClass.RUBY_BLOCK.get(), 0.25f, 200, "ruby");
+        oreSmelting(BLUE_SAPPHIRE_SMELTING_BLOCKS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_BlockClass.BLUE_SAPPHIRE_BLOCK.get(), 0.25f, 200, "blue_sapphire");
+        oreSmelting(RED_SAPPHIRE_SMELTING_BLOCKS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_BlockClass.RED_SAPPHIRE_BLOCK.get(), 0.25f, 200, "red_sapphire");
+        oreSmelting(GREEN_SAPPHIRE_SMELTING_BLOCKS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_BlockClass.GREEN_SAPPHIRE_BLOCK.get(), 0.25f, 200, "green_sapphire");
+        oreSmelting(RED_GARNET_SMELTING_BLOCKS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_BlockClass.RED_GARNET_BLOCK.get(), 0.25f, 200, "red_garnet");
+        oreSmelting(BLUE_GARNET_SMELTING_BLOCKS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_BlockClass.BLUE_GARNET_BLOCK.get(), 0.25f, 200, "blue_garnet");
+        oreSmelting(PINK_GARNET_SMELTING_BLOCKS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_BlockClass.PINK_GARNET_BLOCK.get(), 0.25f, 200, "pink_garnet");
+        oreSmelting(YELLOW_GARNET_SMELTING_BLOCKS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_BlockClass.YELLOW_GARNET_BLOCK.get(), 0.25f, 200, "yellow_garnet");
+        oreSmelting(FUSION_GEM_SMELTING_BLOCKS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_BlockClass.FUSION_BLOCK.get(), 0.25f, 200, "fusion_gem");
+        oreSmelting(RUBY_SMELTING_BLOCKS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_BlockClass.RUBY_BLOCK.get(), 0.25f, 200, "ruby");
 
         // -- Blasting (Raw Blocks - Solid Blocks) -- //
-        oreBlasting(this.output, BLUE_SAPPHIRE_SMELTING_BLOCKS, RecipeCategory.MISC, AdvancedValuables_BlockClass.BLUE_SAPPHIRE_BLOCK.get(), 0.25f, 100, "blue_sapphire");
-        oreBlasting(this.output, RED_SAPPHIRE_SMELTING_BLOCKS, RecipeCategory.MISC, AdvancedValuables_BlockClass.RED_SAPPHIRE_BLOCK.get(), 0.25f, 100, "red_sapphire");
-        oreBlasting(this.output, GREEN_SAPPHIRE_SMELTING_BLOCKS, RecipeCategory.MISC, AdvancedValuables_BlockClass.GREEN_SAPPHIRE_BLOCK.get(), 0.25f, 100, "green_sapphire");
-        oreBlasting(this.output, RED_GARNET_SMELTING_BLOCKS, RecipeCategory.MISC, AdvancedValuables_BlockClass.RED_GARNET_BLOCK.get(), 0.25f, 100, "red_garnet");
-        oreBlasting(this.output, BLUE_GARNET_SMELTING_BLOCKS, RecipeCategory.MISC, AdvancedValuables_BlockClass.BLUE_GARNET_BLOCK.get(), 0.25f, 100, "blue_garnet");
-        oreBlasting(this.output, PINK_GARNET_SMELTING_BLOCKS, RecipeCategory.MISC, AdvancedValuables_BlockClass.PINK_GARNET_BLOCK.get(), 0.25f, 100, "pink_garnet");
-        oreBlasting(this.output, YELLOW_GARNET_SMELTING_BLOCKS, RecipeCategory.MISC, AdvancedValuables_BlockClass.YELLOW_GARNET_BLOCK.get(), 0.25f, 200, "yellow_garnet");
-        oreBlasting(this.output, FUSION_GEM_SMELTING_BLOCKS, RecipeCategory.MISC, AdvancedValuables_BlockClass.FUSION_BLOCK.get(), 0.25f, 100, "fusion_gem");
-        oreBlasting(this.output, RUBY_SMELTING_BLOCKS, RecipeCategory.MISC, AdvancedValuables_BlockClass.RUBY_BLOCK.get(), 0.25f, 100, "ruby");
+        oreBlasting(BLUE_SAPPHIRE_SMELTING_BLOCKS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_BlockClass.BLUE_SAPPHIRE_BLOCK.get(), 0.25f, 100, "blue_sapphire");
+        oreBlasting(RED_SAPPHIRE_SMELTING_BLOCKS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_BlockClass.RED_SAPPHIRE_BLOCK.get(), 0.25f, 100, "red_sapphire");
+        oreBlasting(GREEN_SAPPHIRE_SMELTING_BLOCKS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_BlockClass.GREEN_SAPPHIRE_BLOCK.get(), 0.25f, 100, "green_sapphire");
+        oreBlasting(RED_GARNET_SMELTING_BLOCKS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_BlockClass.RED_GARNET_BLOCK.get(), 0.25f, 100, "red_garnet");
+        oreBlasting(BLUE_GARNET_SMELTING_BLOCKS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_BlockClass.BLUE_GARNET_BLOCK.get(), 0.25f, 100, "blue_garnet");
+        oreBlasting(PINK_GARNET_SMELTING_BLOCKS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_BlockClass.PINK_GARNET_BLOCK.get(), 0.25f, 100, "pink_garnet");
+        oreBlasting(YELLOW_GARNET_SMELTING_BLOCKS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_BlockClass.YELLOW_GARNET_BLOCK.get(), 0.25f, 200, "yellow_garnet");
+        oreBlasting(FUSION_GEM_SMELTING_BLOCKS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_BlockClass.FUSION_BLOCK.get(), 0.25f, 100, "fusion_gem");
+        oreBlasting(RUBY_SMELTING_BLOCKS, RecipeCategory.MISC, CookingBookCategory.BLOCKS, AdvancedValuables_BlockClass.RUBY_BLOCK.get(), 0.25f, 100, "ruby");
 
         // -- Add-ons -- //
-        oreBlasting(this.output, IRON_SMELTING_BLOCK, RecipeCategory.MISC, Blocks.IRON_BLOCK, 0.25f, 100, "iron_block");
-        oreBlasting(this.output, GOLD_SMELTING_BLOCK, RecipeCategory.MISC, Blocks.GOLD_BLOCK, 0.25f, 100, "gold_block");
-        oreBlasting(this.output, COPPER_SMELTING_BLOCK, RecipeCategory.MISC, Blocks.COPPER_BLOCK, 0.25f, 100, "copper_block");
+        oreBlasting(IRON_SMELTING_BLOCK, RecipeCategory.MISC, CookingBookCategory.BLOCKS, Blocks.IRON_BLOCK, 0.25f, 100, "iron_block");
+        oreBlasting(GOLD_SMELTING_BLOCK, RecipeCategory.MISC, CookingBookCategory.BLOCKS, Blocks.GOLD_BLOCK, 0.25f, 100, "gold_block");
+        oreBlasting(COPPER_SMELTING_BLOCK, RecipeCategory.MISC, CookingBookCategory.BLOCKS, Blocks.COPPER_BLOCK, 0.25f, 100, "copper_block");
 
-        oreSmelting(this.output, IRON_SMELTING_BLOCK, RecipeCategory.MISC, Blocks.IRON_BLOCK, 0.25f, 100, "iron_block");
-        oreSmelting(this.output, GOLD_SMELTING_BLOCK, RecipeCategory.MISC, Blocks.GOLD_BLOCK, 0.25f, 100, "gold_block");
-        oreSmelting(this.output, COPPER_SMELTING_BLOCK, RecipeCategory.MISC, Blocks.COPPER_BLOCK, 0.25f, 100, "copper_block");
+        oreSmelting(IRON_SMELTING_BLOCK, RecipeCategory.MISC, CookingBookCategory.BLOCKS, Blocks.IRON_BLOCK, 0.25f, 100, "iron_block");
+        oreSmelting(GOLD_SMELTING_BLOCK, RecipeCategory.MISC, CookingBookCategory.BLOCKS, Blocks.GOLD_BLOCK, 0.25f, 100, "gold_block");
+        oreSmelting(COPPER_SMELTING_BLOCK, RecipeCategory.MISC, CookingBookCategory.BLOCKS, Blocks.COPPER_BLOCK, 0.25f, 100, "copper_block");
 
         // -- Decor Blocks -- //
         generateBuildingBlocks(this.output,
@@ -538,6 +536,20 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
                 AdvancedValuables_BlockClass.RUBY_TRAPDOOR,
                 AdvancedValuables_ItemClass.RUBY, "ruby", "has_ruby");
 
+        // -- Sparkite block -- //
+        shaped(RecipeCategory.BUILDING_BLOCKS, AdvancedValuables_BlockClass.SPARKITE_BLOCK)
+                .pattern("aa ")
+                .pattern("aa ")
+                .pattern("   ")
+                .define('a', AdvancedValuables_ItemClass.SPARKITE)
+                .unlockedBy("has_sparkite", has(AdvancedValuables_ItemClass.SPARKITE)).group("sparkite_group")
+                .save(this.output);
+
+        shapeless(RecipeCategory.MISC, AdvancedValuables_ItemClass.SPARKITE, 4)
+                .requires(AdvancedValuables_BlockClass.SPARKITE_BLOCK)
+                .unlockedBy("has_sparkite_block", has(AdvancedValuables_BlockClass.SPARKITE_BLOCK.get()))
+                .save(this.output);
+
         // -- Hammer Wireframe Crafting -- //
         shaped(RecipeCategory.MISC, AdvancedValuables_ItemClass.HAMMER_WIREFRAME)
                 .pattern("aaa")
@@ -547,7 +559,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
                 .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT)).group("hammer")
                 .save(this.output);
 
-        // -- Fusion Gem Station Block & Gem Grinder Block -- //
+        // -- Gem Grinder Block -- //
         shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.GEM_GRINDER)
                 .pattern("aaa")
                 .pattern("aba")
@@ -561,6 +573,7 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
                 .unlockedBy("has_diamond", has(Items.DIAMOND))
                 .save(this.output);
 
+        // -- Fusion Gem Station Block -- //
         shaped(RecipeCategory.MISC, AdvancedValuables_BlockClass.FUSION_GEM_STATION)
                 .pattern("aaa")
                 .pattern("bcd")
@@ -587,34 +600,10 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
         generateHammerRecipe(this.output, AdvancedValuables_ItemClass.RUBY, AdvancedValuables_ItemClass.RUBY_HAMMER);
     }
 
-    protected void oreSmelting(RecipeOutput output, List<ItemLike> ingredients, RecipeCategory recipeCategory, ItemLike result,
-                               float experience, int cookingTime, String group)
-    {
-        oreCooking(output, RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe::new, ingredients, recipeCategory, result,
-                experience, cookingTime, group, "_from_smelting");
-    }
-
-    protected void oreBlasting(RecipeOutput output, List<ItemLike> ingredients, RecipeCategory recipeCategory, ItemLike result,
-                                      float experience, int cookingTime, String group)
-    {
-        oreCooking(output, RecipeSerializer.BLASTING_RECIPE, BlastingRecipe::new, ingredients, recipeCategory, result,
-                experience, cookingTime, group, "_from_blasting");
-    }
-
-    protected <T extends AbstractCookingRecipe> void oreCooking(RecipeOutput output, RecipeSerializer<T> cookingSerializer, AbstractCookingRecipe.Factory<T> factory,
-                                                                       List<ItemLike> ingredients, RecipeCategory category, ItemLike result, float experience, int cookingTime, String group, String recipeName)
-    {
-        for (ItemLike itemLike : ingredients)
-        {
-            SimpleCookingRecipeBuilder.generic(Ingredient.of(itemLike), category, result, experience, cookingTime, cookingSerializer, factory).group(group).unlockedBy(getHasName(itemLike), has(itemLike))
-                    .save(output, AdvancedValuables.MOD_ID + ":" + getItemName(result) + recipeName + "_" + getItemName(itemLike));
-        }
-    }
-
     // -- Shortcuts -- // -- Tools -- //
-    private void generateBlockRecipe(RecipeOutput output, DeferredBlock<Block> result, DeferredItem<Item> ingredient, String group)
+    private void generateBlockRecipe(RecipeOutput output, DeferredBlock<@NotNull Block> result, DeferredItem<@NotNull Item> ingredient, String group)
     {
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, result)
+        shaped(RecipeCategory.BUILDING_BLOCKS, result)
                 .pattern("aaa")
                 .pattern("aaa")
                 .pattern("aaa")
@@ -622,82 +611,91 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
                 .unlockedBy(group, has(ingredient)).save(output);
     }
 
-    private void generatePickaxeRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
+    private void generatePickaxeRecipe(RecipeOutput output, DeferredItem<@NotNull Item> result, DeferredItem<@NotNull Item> ingredient, String group)
     {
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, result)
+        shaped(RecipeCategory.TOOLS, result)
                 .pattern("aaa")
                 .pattern(" b ")
                 .pattern(" b ")
                 .define('a', ingredient).define('b', Items.STICK)
                 .unlockedBy(group, has(ingredient)).save(output);
     }
-    private void generateAxeRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
+    private void generateAxeRecipe(RecipeOutput output, DeferredItem<@NotNull Item> result, DeferredItem<@NotNull Item> ingredient, String group)
     {
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, result)
+        shaped(RecipeCategory.TOOLS, result)
                 .pattern("aa ")
                 .pattern("ab ")
                 .pattern(" b ")
                 .define('a', ingredient).define('b', Items.STICK)
                 .unlockedBy(group, has(ingredient)).save(output);
     }
-    private void generateShovelRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
+    private void generateShovelRecipe(RecipeOutput output, DeferredItem<@NotNull Item> result, DeferredItem<@NotNull Item> ingredient, String group)
     {
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, result)
+        shaped(RecipeCategory.TOOLS, result)
                 .pattern(" a ")
                 .pattern(" b ")
                 .pattern(" b ")
                 .define('a', ingredient).define('b', Items.STICK)
                 .unlockedBy(group, has(ingredient)).save(output);
     }
-    private void generateHoeRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
+    private void generateHoeRecipe(RecipeOutput output, DeferredItem<@NotNull Item> result, DeferredItem<@NotNull Item> ingredient, String group)
     {
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, result)
+        shaped(RecipeCategory.TOOLS, result)
                 .pattern("aa ")
                 .pattern(" b ")
                 .pattern(" b ")
                 .define('a', ingredient).define('b', Items.STICK)
                 .unlockedBy(group, has(ingredient)).save(output);
     }
-    private void generateSwordRecipe(RecipeOutput output, DeferredItem<Item> result, DeferredItem<Item> ingredient, String group)
+    private void generateSwordRecipe(RecipeOutput output, DeferredItem<@NotNull Item> result, DeferredItem<@NotNull Item> ingredient, String group)
     {
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, result)
+        shaped(RecipeCategory.COMBAT, result)
                 .pattern(" a ")
                 .pattern(" a ")
                 .pattern(" b ")
                 .define('a', ingredient).define('b', Items.STICK)
                 .unlockedBy(group, has(ingredient)).save(output);
     }
+    private void generateSpearRecipe(RecipeOutput output, DeferredItem<@NotNull Item> result, DeferredItem<@NotNull Item> ingredient, String group)
+    {
+        shaped(RecipeCategory.COMBAT, result)
+                .pattern("  a")
+                .pattern(" b ")
+                .pattern("b  ")
+                .define('a', ingredient).define('b', Items.STICK)
+                .unlockedBy(group, has(ingredient)).save(output);
+    }
 
     // -- Shortcuts -- // -- Armor -- //
     private void generateArmorRecipe(RecipeOutput output,
-                                            DeferredItem<Item> result_helmet,
-                                            DeferredItem<Item> result_chestplate,
-                                            DeferredItem<Item> result_leggings,
-                                            DeferredItem<Item> result_boots,
-                                            DeferredItem<Item> ingredient, String group)
+                                            DeferredItem<@NotNull Item> result_helmet,
+                                            DeferredItem<@NotNull Item> result_chestplate,
+                                            DeferredItem<@NotNull Item> result_leggings,
+                                            DeferredItem<@NotNull Item> result_boots,
+                                            DeferredItem<@NotNull Item> ingredient, String group)
     {
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, result_chestplate)
+        shaped(RecipeCategory.COMBAT, result_chestplate)
                 .pattern("a a")
                 .pattern("aaa")
                 .pattern("aaa")
                 .define('a', ingredient)
                 .unlockedBy(group, has(ingredient)).save(output);
 
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, result_leggings)
+        shaped(RecipeCategory.COMBAT, result_leggings)
                 .pattern("aaa")
                 .pattern("a a")
                 .pattern("a a")
                 .define('a', ingredient)
                 .unlockedBy(group, has(ingredient)).save(output);
 
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, result_helmet)
+        shaped(RecipeCategory.COMBAT, result_helmet)
                 .pattern("aaa")
                 .pattern("a a")
                 .pattern("   ")
                 .define('a', ingredient)
                 .unlockedBy(group, has(ingredient)).save(output);
 
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, result_boots)
+        shaped(RecipeCategory.COMBAT, result_boots)
                 .pattern("   ")
                 .pattern("a a")
                 .pattern("a a")
@@ -705,9 +703,9 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
                 .unlockedBy(group, has(ingredient)).save(output);
     }
 
-    private void generateAppleRecipe(RecipeOutput output, DeferredItem<Item> apple_result, DeferredItem<Item> ingredient, String group)
+    private void generateAppleRecipe(RecipeOutput output, DeferredItem<@NotNull Item> apple_result, DeferredItem<@NotNull Item> ingredient, String group)
     {
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, apple_result)
+        shaped(RecipeCategory.FOOD, apple_result)
                 .pattern("aaa")
                 .pattern("aba")
                 .pattern("aaa")
@@ -715,16 +713,16 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
                 .unlockedBy(group, has(ingredient)).save(output);
     }
 
-    private void generateBuildingBlocks(RecipeOutput output ,DeferredBlock<StairBlock> result_stair,
-                                               DeferredBlock<SlabBlock> result_slab,
-                                               DeferredBlock<PressurePlateBlock> result_pressure_plate,
-                                               DeferredBlock<ButtonBlock> result_button,
-                                               DeferredBlock<FenceBlock> result_fence,
-                                               DeferredBlock<FenceGateBlock> result_fence_gate,
-                                               DeferredBlock<WallBlock> result_wall,
-                                               DeferredBlock<DoorBlock> result_door,
-                                               DeferredBlock<TrapDoorBlock> result_trapdoor,
-                                               DeferredItem<Item> ingredient, String group, String unlock)
+    private void generateBuildingBlocks(RecipeOutput output, DeferredBlock<@NotNull StairBlock> result_stair,
+                                               DeferredBlock<@NotNull SlabBlock> result_slab,
+                                               DeferredBlock<@NotNull PressurePlateBlock> result_pressure_plate,
+                                               DeferredBlock<@NotNull ButtonBlock> result_button,
+                                               DeferredBlock<@NotNull FenceBlock> result_fence,
+                                               DeferredBlock<@NotNull FenceGateBlock> result_fence_gate,
+                                               DeferredBlock<@NotNull WallBlock> result_wall,
+                                               DeferredBlock<@NotNull DoorBlock> result_door,
+                                               DeferredBlock<@NotNull TrapDoorBlock> result_trapdoor,
+                                               DeferredItem<@NotNull Item> ingredient, String group, String unlock)
     {
         stairBuilder(result_stair, Ingredient.of(ingredient)).group(group).unlockedBy(unlock, has(ingredient)).save(output);
         slab(RecipeCategory.BUILDING_BLOCKS, result_slab, ingredient);
@@ -737,11 +735,19 @@ public class AdvancedValuables_RecipeProvider extends RecipeProvider
         trapdoorBuilder(result_trapdoor, Ingredient.of(ingredient)).group(group).unlockedBy(unlock, has(ingredient)).save(output);
     }
 
-    private void generateHammerRecipe(RecipeOutput output, DeferredItem<Item> ingredient, DeferredItem<HammerItem> result)
+    private void generateHammerRecipe(RecipeOutput output, DeferredItem<@NotNull Item> ingredient, DeferredItem<@NotNull Item> result)
     {
-        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, result)
+        shapeless(RecipeCategory.TOOLS, result)
                 .requires(ingredient).requires(AdvancedValuables_ItemClass.HAMMER_WIREFRAME)
                 .unlockedBy("has_hammer_wireframe", has(ingredient)).group("hammer")
                 .save(output);
+    }
+
+    private void grind(DeferredItem<@NotNull Item> inputItem, DeferredItem<@NotNull Item> resultItem, String unlock)
+    {
+        GemGrinderRecipeProvider.grinding(new ItemStackTemplate(resultItem), RecipeCategory.MISC)
+                .addIngredient(Ingredient.of(inputItem))
+                .unlockedBy(unlock, has(inputItem))
+                .save(this.output);
     }
 }

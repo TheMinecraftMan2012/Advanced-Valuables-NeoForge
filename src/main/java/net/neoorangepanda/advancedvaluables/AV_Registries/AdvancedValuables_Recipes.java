@@ -8,20 +8,21 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoorangepanda.advancedvaluables.AV_Recipes.AV_GemGrinderRecipe.GemGrinderRecipe;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
+import org.jetbrains.annotations.NotNull;
 
 public class AdvancedValuables_Recipes
 {
-    public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS = DeferredRegister.create(Registries.RECIPE_SERIALIZER, AdvancedValuables.MOD_ID);
-    public static final DeferredRegister<RecipeType<?>> TYPES = DeferredRegister.create(Registries.RECIPE_TYPE, AdvancedValuables.MOD_ID);
+    public static final DeferredRegister<@NotNull RecipeSerializer<?>> SERIALIZERS = DeferredRegister.create(Registries.RECIPE_SERIALIZER, AdvancedValuables.MOD_ID);
+    public static final DeferredRegister<@NotNull RecipeType<?>> TYPES = DeferredRegister.create(Registries.RECIPE_TYPE, AdvancedValuables.MOD_ID);
 
-    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<GemGrinderRecipe>> GEM_GRINDER_SERIALIZER =
-            SERIALIZERS.register("gem_grinder", GemGrinderRecipe.Serializer::new);
+    public static final DeferredHolder<@NotNull RecipeSerializer<?>, @NotNull RecipeSerializer<@NotNull GemGrinderRecipe>> GEM_GRINDER_SERIALIZER =
+            SERIALIZERS.register("grinding", () -> new RecipeSerializer<>(GemGrinderRecipe.CODEC, GemGrinderRecipe.STREAM_CODEC));
 
-    public static final DeferredHolder<RecipeType<?>, RecipeType<GemGrinderRecipe>> GEM_GRINDER_TYPE =
-            TYPES.register("gem_grinder", () -> new RecipeType<GemGrinderRecipe>() {
+    public static final DeferredHolder<@NotNull RecipeType<?>, @NotNull RecipeType<@NotNull GemGrinderRecipe>> GEM_GRINDER_TYPE =
+            TYPES.register("grinding", () -> new RecipeType<>() {
                 @Override
                 public String toString() {
-                    return "gem_grinder";
+                    return "grinding";
                 }
             });
 

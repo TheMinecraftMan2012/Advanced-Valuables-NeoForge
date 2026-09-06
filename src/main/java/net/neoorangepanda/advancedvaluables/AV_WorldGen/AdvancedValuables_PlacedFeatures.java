@@ -12,57 +12,47 @@ import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
 public class AdvancedValuables_PlacedFeatures
 {
-//    public static final ResourceKey<PlacedFeature> BLUE_SAPPHIRE_ORE_PLACED_KEY = registerKey("blue_sapphire_ore_placed");
-//    public static final ResourceKey<PlacedFeature> RED_SAPPHIRE_ORE_PLACED_KEY = registerKey("red_sapphire_ore_placed");
-//    public static final ResourceKey<PlacedFeature> GREEN_SAPPHIRE_ORE_PLACED_KEY = registerKey("green_sapphire_ore_placed");
-//
-//    public static final ResourceKey<PlacedFeature> RED_GARNET_ORE_PLACED_KEY = registerKey("red_garnet_ore_placed");
-//    public static final ResourceKey<PlacedFeature> BLUE_GARNET_ORE_PLACED_KEY = registerKey("blue_garnet_ore_placed");
-//    public static final ResourceKey<PlacedFeature> PINK_GARNET_ORE_PLACED_KEY = registerKey("pink_garnet_ore_placed");
-//    public static final ResourceKey<PlacedFeature> YELLOW_GARNET_ORE_PLACED_KEY = registerKey("yellow_garnet_ore_placed");
-//
-//    public static final ResourceKey<PlacedFeature> RUBY_ORE_PLACED_KEY = registerKey("ruby_ore_placed");
+    public static final ResourceKey<@NotNull PlacedFeature> UPPER_RED_SAPPHIRE_ORE = registerKey("upper_red_sapphire_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> MEDIUM_RED_SAPPHIRE_ORE = registerKey("medium_red_sapphire_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> LOWER_RED_SAPPHIRE_ORE = registerKey("lower_red_sapphire_ore");
 
-    public static final ResourceKey<PlacedFeature> UPPER_RED_SAPPHIRE_ORE = registerKey("upper_red_sapphire_ore");
-    public static final ResourceKey<PlacedFeature> MEDIUM_RED_SAPPHIRE_ORE = registerKey("medium_red_sapphire_ore");
-    public static final ResourceKey<PlacedFeature> LOWER_RED_SAPPHIRE_ORE = registerKey("lower_red_sapphire_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> UPPER_BLUE_SAPPHIRE_ORE = registerKey("upper_blue_sapphire_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> MEDIUM_BLUE_SAPPHIRE_ORE = registerKey("medium_blue_sapphire_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> LOWER_BLUE_SAPPHIRE_ORE = registerKey("lower_blue_sapphire_ore");
 
-    public static final ResourceKey<PlacedFeature> UPPER_BLUE_SAPPHIRE_ORE = registerKey("upper_blue_sapphire_ore");
-    public static final ResourceKey<PlacedFeature> MEDIUM_BLUE_SAPPHIRE_ORE = registerKey("medium_blue_sapphire_ore");
-    public static final ResourceKey<PlacedFeature> LOWER_BLUE_SAPPHIRE_ORE = registerKey("lower_blue_sapphire_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> UPPER_GREEN_SAPPHIRE_ORE = registerKey("upper_green_sapphire_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> MEDIUM_GREEN_SAPPHIRE_ORE = registerKey("medium_green_sapphire_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> LOWER_GREEN_SAPPHIRE_ORE = registerKey("lower_green_sapphire_ore");
 
-    public static final ResourceKey<PlacedFeature> UPPER_GREEN_SAPPHIRE_ORE = registerKey("upper_green_sapphire_ore");
-    public static final ResourceKey<PlacedFeature> MEDIUM_GREEN_SAPPHIRE_ORE = registerKey("medium_green_sapphire_ore");
-    public static final ResourceKey<PlacedFeature> LOWER_GREEN_SAPPHIRE_ORE = registerKey("lower_green_sapphire_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> UPPER_RED_GARNET_ORE = registerKey("upper_red_garnet_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> MEDIUM_RED_GARNET_ORE = registerKey("medium_red_garnet_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> LOWER_RED_GARNET_ORE = registerKey("lower_red_garnet_ore");
 
-    public static final ResourceKey<PlacedFeature> UPPER_RED_GARNET_ORE = registerKey("upper_red_garnet_ore");
-    public static final ResourceKey<PlacedFeature> MEDIUM_RED_GARNET_ORE = registerKey("medium_red_garnet_ore");
-    public static final ResourceKey<PlacedFeature> LOWER_RED_GARNET_ORE = registerKey("lower_red_garnet_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> UPPER_BLUE_GARNET_ORE = registerKey("upper_blue_garnet_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> MEDIUM_BLUE_GARNET_ORE = registerKey("medium_blue_garnet_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> LOWER_BLUE_GARNET_ORE = registerKey("lower_blue_garnet_ore");
 
-    public static final ResourceKey<PlacedFeature> UPPER_BLUE_GARNET_ORE = registerKey("upper_blue_garnet_ore");
-    public static final ResourceKey<PlacedFeature> MEDIUM_BLUE_GARNET_ORE = registerKey("medium_blue_garnet_ore");
-    public static final ResourceKey<PlacedFeature> LOWER_BLUE_GARNET_ORE = registerKey("lower_blue_garnet_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> UPPER_PINK_GARNET_ORE = registerKey("upper_pink_garnet_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> MEDIUM_PINK_GARNET_ORE = registerKey("medium_pink_garnet_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> LOWER_PINK_GARNET_ORE = registerKey("lower_pink_garnet_ore");
 
-    public static final ResourceKey<PlacedFeature> UPPER_PINK_GARNET_ORE = registerKey("upper_pink_garnet_ore");
-    public static final ResourceKey<PlacedFeature> MEDIUM_PINK_GARNET_ORE = registerKey("medium_pink_garnet_ore");
-    public static final ResourceKey<PlacedFeature> LOWER_PINK_GARNET_ORE = registerKey("lower_pink_garnet_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> UPPER_YELLOW_GARNET_ORE = registerKey("upper_yellow_garnet_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> MEDIUM_YELLOW_GARNET_ORE = registerKey("medium_yellow_garnet_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> LOWER_YELLOW_GARNET_ORE = registerKey("lower_yellow_garnet_ore");
 
-    public static final ResourceKey<PlacedFeature> UPPER_YELLOW_GARNET_ORE = registerKey("upper_yellow_garnet_ore");
-    public static final ResourceKey<PlacedFeature> MEDIUM_YELLOW_GARNET_ORE = registerKey("medium_yellow_garnet_ore");
-    public static final ResourceKey<PlacedFeature> LOWER_YELLOW_GARNET_ORE = registerKey("lower_yellow_garnet_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> UPPER_RUBY_ORE = registerKey("upper_ruby_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> MEDIUM_RUBY_ORE = registerKey("medium_ruby_ore");
+    public static final ResourceKey<@NotNull PlacedFeature> LOWER_RUBY_ORE = registerKey("lower_ruby_ore");
 
-    public static final ResourceKey<PlacedFeature> UPPER_RUBY_ORE = registerKey("upper_ruby_ore");
-    public static final ResourceKey<PlacedFeature> MEDIUM_RUBY_ORE = registerKey("medium_ruby_ore");
-    public static final ResourceKey<PlacedFeature> LOWER_RUBY_ORE = registerKey("lower_ruby_ore");
-
-    public static void bootstrap(BootstrapContext<PlacedFeature> context)
+    public static void bootstrap(BootstrapContext<@NotNull PlacedFeature> context)
     {
-        HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
+        HolderGetter<@NotNull ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, LOWER_BLUE_SAPPHIRE_ORE, configuredFeatures.getOrThrow(AdvancedValuables_ConfiguredFeatures.LOWER_BLUE_SAPPHIRE_ORE), AdvancedValuables_OrePlacement.commonOrePlacement(1,
                 HeightRangePlacement.uniform(VerticalAnchor.absolute(-53), VerticalAnchor.absolute(-15))));
@@ -121,12 +111,12 @@ public class AdvancedValuables_PlacedFeatures
                 HeightRangePlacement.uniform(VerticalAnchor.absolute(23), VerticalAnchor.absolute(60))));
     }
 
-    private static ResourceKey<PlacedFeature> registerKey(String name)
+    private static ResourceKey<@NotNull PlacedFeature> registerKey(String name)
     {
         return ResourceKey.create(Registries.PLACED_FEATURE, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, name));
     }
 
-    private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,
+    private static void register(BootstrapContext<@NotNull PlacedFeature> context, ResourceKey<@NotNull PlacedFeature> key, Holder<@NotNull ConfiguredFeature<?, ?>> configuration,
                                  List<PlacementModifier> modifiers)
     {
         context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));

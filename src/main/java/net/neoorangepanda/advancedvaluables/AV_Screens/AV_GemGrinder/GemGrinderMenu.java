@@ -7,23 +7,27 @@ import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.neoforged.neoforge.items.SlotItemHandler;
+import net.neoforged.neoforge.transfer.item.ItemStacksResourceHandler;
+import net.neoforged.neoforge.transfer.item.ResourceHandlerSlot;
 import net.neoorangepanda.advancedvaluables.AV_BlockEntity.AV_GemGrinder.GemGrinderBlockEntity;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_BlockClass;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_MenuTypes;
+import org.jetbrains.annotations.NotNull;
 
+@SuppressWarnings("all")
 public class GemGrinderMenu extends AbstractContainerMenu
 {
     public final GemGrinderBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
-    public GemGrinderMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData)
+    public GemGrinderMenu(int containerId, Inventory inv, FriendlyByteBuf extraData)
     {
-        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+        this(containerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new ItemStacksResourceHandler(2), new SimpleContainerData(2));
     }
 
-    public GemGrinderMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
+    public GemGrinderMenu(int pContainerId, Inventory inv, BlockEntity entity, ItemStacksResourceHandler handler, ContainerData data)
+    {
         super(AdvancedValuables_MenuTypes.GEM_GRINDER_MENU.get(), pContainerId);
         this.blockEntity = ((GemGrinderBlockEntity) entity);
         this.level = inv.player.level();
@@ -32,8 +36,8 @@ public class GemGrinderMenu extends AbstractContainerMenu
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
-        this.addSlot(new SlotItemHandler(blockEntity.handler, 0, 54, 22));
-        this.addSlot(new SlotItemHandler(blockEntity.handler, 1, 104, 22));
+        this.addSlot(new ResourceHandlerSlot(handler, handler::set, 0, 54, 22));
+        this.addSlot(new ResourceHandlerSlot(handler, handler::set, 1, 104, 22));
 
         addDataSlots(data);
     }
@@ -63,7 +67,7 @@ public class GemGrinderMenu extends AbstractContainerMenu
     private static final int TE_INVENTORY_SLOT_COUNT = 2;
 
     @Override
-    public ItemStack quickMoveStack(Player playerIn, int pIndex)
+    public @NotNull ItemStack quickMoveStack(@NotNull Player playerIn, int pIndex)
     {
         Slot sourceSlot = slots.get(pIndex);
         if (sourceSlot == null || !sourceSlot.hasItem()) return ItemStack.EMPTY;
@@ -97,7 +101,7 @@ public class GemGrinderMenu extends AbstractContainerMenu
     }
 
     @Override
-    public boolean stillValid(Player player)
+    public boolean stillValid(@NotNull Player player)
     {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()), player, AdvancedValuables_BlockClass.GEM_GRINDER.get());
     }

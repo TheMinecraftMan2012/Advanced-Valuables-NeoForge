@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/wall_inventory",
-  "textures": {
-    "wall": "advancedvaluables:block/blue_sapphire_block"
-  }
-}

@@ -4,6 +4,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
 import net.neoforged.neoforge.common.loot.LootTableIdCondition;
@@ -11,6 +12,7 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoorangepanda.advancedvaluables.AV_GlobalLootModifier.AdvancedValuables_AddItemModifier;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -137,10 +139,10 @@ public class AdvancedValuables_GlobalLootModifierProvider extends GlobalLootModi
         addLootModifier("ruby_from_shipwreck_treasure", "chests/shipwreck_treasure", AdvancedValuables_ItemClass.RUBY);
     }
 
-    private void addLootModifier(String modifier, String location, DeferredItem<Item> item)
+    private void addLootModifier(String modifier, String location, DeferredItem<@NotNull Item> item)
     {
-        add(modifier, new AdvancedValuables_AddItemModifier(new LootItemCondition[]{
-               new LootTableIdCondition.Builder(Identifier.withDefaultNamespace(location)).build()
-        }, item.get()));
+        add(modifier, new AdvancedValuables_AddItemModifier(new LootItemCondition[]
+                { new LootTableIdCondition.Builder(Identifier.withDefaultNamespace(location)).build() },
+                new ItemStackTemplate(item)));
     }
 }

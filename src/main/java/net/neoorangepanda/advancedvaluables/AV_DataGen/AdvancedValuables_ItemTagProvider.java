@@ -3,7 +3,6 @@ package net.neoorangepanda.advancedvaluables.AV_DataGen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
@@ -12,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
+@SuppressWarnings("all")
 public class AdvancedValuables_ItemTagProvider extends ItemTagsProvider
 {
 
@@ -24,7 +24,12 @@ public class AdvancedValuables_ItemTagProvider extends ItemTagsProvider
     protected void addTags(HolderLookup.@NotNull Provider provider)
     {
         tag(AdvancedValuables_Tags.Items.VALUABLE_ITEMS)
-                .addTags(AdvancedValuables_Tags.Items.SMELT_ITEMS, AdvancedValuables_Tags.Items.RAW_ITEMS);
+                .addTags(AdvancedValuables_Tags.Items.SMELT_ITEMS,
+                        AdvancedValuables_Tags.Items.RAW_ITEMS,
+                        AdvancedValuables_Tags.Items.ELEMENTAL_ITEMS);
+
+        tag(AdvancedValuables_Tags.Items.ELEMENTAL_ITEMS)
+                .add(AdvancedValuables_ItemClass.SPARKITE.get());
 
         tag(AdvancedValuables_Tags.Items.SMELT_ITEMS)
                 .add(AdvancedValuables_ItemClass.BLUE_SAPPHIRE.get())
@@ -137,6 +142,7 @@ public class AdvancedValuables_ItemTagProvider extends ItemTagsProvider
                 .add(AdvancedValuables_ItemClass.RUBY_HOE.get());
 
         tag(AdvancedValuables_Tags.Items.AV_SWORDS)
+                .addTag(AdvancedValuables_Tags.Items.AV_ELEMENTAL_WEAPONS)
                 .add(AdvancedValuables_ItemClass.RED_SAPPHIRE_SWORD.get())
                 .add(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_SWORD.get())
                 .add(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_SWORD.get())
@@ -146,6 +152,20 @@ public class AdvancedValuables_ItemTagProvider extends ItemTagsProvider
                 .add(AdvancedValuables_ItemClass.YELLOW_GARNET_SWORD.get())
                 .add(AdvancedValuables_ItemClass.FUSION_SWORD.get())
                 .add(AdvancedValuables_ItemClass.RUBY_SWORD.get());
+
+        tag(AdvancedValuables_Tags.Items.AV_SPEARS)
+                .add(AdvancedValuables_ItemClass.RED_SAPPHIRE_SPEAR.get())
+                .add(AdvancedValuables_ItemClass.BLUE_SAPPHIRE_SPEAR.get())
+                .add(AdvancedValuables_ItemClass.GREEN_SAPPHIRE_SPEAR.get())
+                .add(AdvancedValuables_ItemClass.RED_GARNET_SPEAR.get())
+                .add(AdvancedValuables_ItemClass.BLUE_GARNET_SPEAR.get())
+                .add(AdvancedValuables_ItemClass.PINK_GARNET_SPEAR.get())
+                .add(AdvancedValuables_ItemClass.YELLOW_GARNET_SPEAR.get())
+                .add(AdvancedValuables_ItemClass.FUSION_SPEAR.get())
+                .add(AdvancedValuables_ItemClass.RUBY_SPEAR.get());
+
+        tag(AdvancedValuables_Tags.Items.AV_ELEMENTAL_WEAPONS)
+                .add(AdvancedValuables_ItemClass.SPARKITE_STAFF.get());
 
         tag(AdvancedValuables_Tags.Items.AV_SAPPHIRE_POWDERS)
             .add(AdvancedValuables_ItemClass.RED_SAPPHIRE_POWDER.get())
@@ -171,12 +191,14 @@ public class AdvancedValuables_ItemTagProvider extends ItemTagsProvider
 
         tag(AdvancedValuables_Tags.Items.FUSION_REPAIR).add(AdvancedValuables_ItemClass.FUSION_GEM.get());
         tag(AdvancedValuables_Tags.Items.RUBY_REPAIR).add(AdvancedValuables_ItemClass.RUBY.get());
+        tag(AdvancedValuables_Tags.Items.SPARKITE_REPAIR).add(AdvancedValuables_ItemClass.SPARKITE.get());
 
         tag(ItemTags.PICKAXES).addTag(AdvancedValuables_Tags.Items.AV_PICKAXES);
         tag(ItemTags.AXES).addTag(AdvancedValuables_Tags.Items.AV_AXES);
         tag(ItemTags.SHOVELS).addTag(AdvancedValuables_Tags.Items.AV_SHOVELS);
         tag(ItemTags.HOES).addTag(AdvancedValuables_Tags.Items.AV_HOES);
         tag(ItemTags.SWORDS).addTag(AdvancedValuables_Tags.Items.AV_SWORDS);
+        tag(ItemTags.SPEARS).addTag(AdvancedValuables_Tags.Items.AV_SPEARS);
 
         tag(ItemTags.TRIM_MATERIALS).addTag(AdvancedValuables_Tags.Items.SMELT_ITEMS);
         tag(ItemTags.TRIMMABLE_ARMOR)

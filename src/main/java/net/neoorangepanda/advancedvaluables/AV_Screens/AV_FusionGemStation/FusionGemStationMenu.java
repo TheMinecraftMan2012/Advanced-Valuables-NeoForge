@@ -8,12 +8,15 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.neoforged.neoforge.items.SlotItemHandler;
+import net.neoforged.neoforge.transfer.item.ItemStacksResourceHandler;
+import net.neoforged.neoforge.transfer.item.ResourceHandlerSlot;
 import net.neoorangepanda.advancedvaluables.AV_BlockEntity.AV_FusionGemStation.FusionGemStationBlockEntity;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_BlockClass;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_MenuTypes;
+import org.jetbrains.annotations.NotNull;
 
+@SuppressWarnings("all")
 public class FusionGemStationMenu extends AbstractContainerMenu
 {
     public final FusionGemStationBlockEntity blockEntity;
@@ -22,59 +25,60 @@ public class FusionGemStationMenu extends AbstractContainerMenu
 
     public FusionGemStationMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData)
     {
-        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(5));
+        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new ItemStacksResourceHandler(5), new SimpleContainerData(2));
     }
 
-    public FusionGemStationMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(AdvancedValuables_MenuTypes.FUSION_GEM_STATION_MENU.get(), pContainerId);
+    public FusionGemStationMenu(int containedId, Inventory inventory, BlockEntity entity, ItemStacksResourceHandler handler, ContainerData containerData) {
+        super(AdvancedValuables_MenuTypes.FUSION_GEM_STATION_MENU.get(), containedId);
+
         this.blockEntity = ((FusionGemStationBlockEntity) entity);
-        this.level = inv.player.level();
-        this.data = data;
+        this.level = inventory.player.level();
+        this.data = containerData;
 
-        addPlayerInventory(inv);
-        addPlayerHotbar(inv);
+        addPlayerInventory(inventory);
+        addPlayerHotbar(inventory);
 
-        this.addSlot(new SlotItemHandler(blockEntity.handler, 0, 25, 28) {
+        this.addSlot(new ResourceHandlerSlot(handler, handler::set, 0, 25, 28) {
             @Override
-            public boolean mayPlace(ItemStack stack)
+            public boolean mayPlace(@NotNull ItemStack stack)
             {
                 return stack.is(Items.NETHERITE_INGOT);
             }
-        }); // Netherite Ingot
+        });
 
-        this.addSlot(new SlotItemHandler(blockEntity.handler, 1, 47, 28) {
+        this.addSlot(new ResourceHandlerSlot(handler, handler::set, 1, 47, 28) {
             @Override
-            public boolean mayPlace(ItemStack stack)
+            public boolean mayPlace(@NotNull ItemStack stack)
             {
                 return stack.is(AdvancedValuables_ItemClass.MIXED_SAPPHIRE_POWDER);
             }
         }); // Mixed Sapphire Powder
 
-        this.addSlot(new SlotItemHandler(blockEntity.handler, 2, 25, 50) {
+        this.addSlot(new ResourceHandlerSlot(handler, handler::set, 2, 25, 50) {
             @Override
-            public boolean mayPlace(ItemStack stack)
+            public boolean mayPlace(@NotNull ItemStack stack)
             {
                 return stack.is(AdvancedValuables_ItemClass.MIXED_GARNET_POWDER);
             }
         }); // Mixed Garnet Powder
 
-        this.addSlot(new SlotItemHandler(blockEntity.handler, 3, 47, 50) {
+        this.addSlot(new ResourceHandlerSlot(handler, handler::set, 3, 47, 50) {
             @Override
-            public boolean mayPlace(ItemStack stack)
+            public boolean mayPlace(@NotNull ItemStack stack)
             {
                 return stack.is(AdvancedValuables_ItemClass.RUBY_POWDER);
             }
         }); // Ruby Powder
 
-        this.addSlot(new SlotItemHandler(blockEntity.handler, 4, 128, 38) {
+        this.addSlot(new ResourceHandlerSlot(handler, handler::set, 4, 128, 38) {
             @Override
-            public boolean mayPlace(ItemStack stack)
+            public boolean mayPlace(@NotNull ItemStack stack)
             {
                 return false;
             }
         }); // Output
 
-        addDataSlots(data);
+        addDataSlots(containerData);
     }
 
     public boolean isCrafting()
@@ -102,7 +106,7 @@ public class FusionGemStationMenu extends AbstractContainerMenu
     private static final int TE_INVENTORY_SLOT_COUNT = 5;
 
     @Override
-    public ItemStack quickMoveStack(Player playerIn, int pIndex)
+    public @NotNull ItemStack quickMoveStack(@NotNull Player playerIn, int pIndex)
     {
         Slot sourceSlot = slots.get(pIndex);
         if (sourceSlot == null || !sourceSlot.hasItem()) return ItemStack.EMPTY;
@@ -136,7 +140,7 @@ public class FusionGemStationMenu extends AbstractContainerMenu
     }
 
     @Override
-    public boolean stillValid(Player player)
+    public boolean stillValid(@NotNull Player player)
     {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()), player, AdvancedValuables_BlockClass.FUSION_GEM_STATION.get());
     }

@@ -15,15 +15,16 @@ import net.neoorangepanda.advancedvaluables.AV_Enchantments.enchants.PoisonShard
 import net.neoorangepanda.advancedvaluables.AV_Enchantments.enchants.SheepKillerEnchantmentEffect;
 import net.neoorangepanda.advancedvaluables.AV_Enchantments.enchants.SmiteboltEnchantmentEffect;
 import net.neoorangepanda.advancedvaluables.AdvancedValuables;
+import org.jetbrains.annotations.NotNull;
 
 public class AdvancedValuables_EnchantmentBootstrap
 {
-    public static final ResourceKey<Enchantment> SMITEBOLT = createEnchantment("smitebolt");
-    public static final ResourceKey<Enchantment> SHEEP_KILLER = createEnchantment("sheep_killer");
-    public static final ResourceKey<Enchantment> POISON_SHARD = createEnchantment("poison_shard");
-    public static final ResourceKey<Enchantment> GEM_INFESTATION = createEnchantment("gem_infestation");
+    public static final ResourceKey<@NotNull Enchantment> SMITEBOLT = createEnchantment("smitebolt");
+    public static final ResourceKey<@NotNull Enchantment> SHEEP_KILLER = createEnchantment("sheep_killer");
+    public static final ResourceKey<@NotNull Enchantment> POISON_SHARD = createEnchantment("poison_shard");
+    public static final ResourceKey<@NotNull Enchantment> GEM_INFESTATION = createEnchantment("gem_infestation");
 
-    public static void bootstrap(BootstrapContext<Enchantment> context)
+    public static void bootstrap(BootstrapContext<@NotNull Enchantment> context)
     {
         var enchantments = context.lookup(Registries.ENCHANTMENT);
         var items = context.lookup(Registries.ITEM);
@@ -49,12 +50,12 @@ public class AdvancedValuables_EnchantmentBootstrap
                 .withEffect(EnchantmentEffectComponents.POST_ATTACK, EnchantmentTarget.ATTACKER, EnchantmentTarget.VICTIM, new GemInfestationEnchantmentEffect()));
     }
 
-    private static ResourceKey<Enchantment> createEnchantment(String enchantment)
+    private static ResourceKey<@NotNull Enchantment> createEnchantment(String enchantment)
     {
         return ResourceKey.create(Registries.ENCHANTMENT, Identifier.fromNamespaceAndPath(AdvancedValuables.MOD_ID, enchantment));
     }
 
-    private static void register(BootstrapContext<Enchantment> registry, ResourceKey<Enchantment> key, Enchantment.Builder builder)
+    private static void register(BootstrapContext<@NotNull Enchantment> registry, ResourceKey<@NotNull Enchantment> key, Enchantment.Builder builder)
     {
         registry.register(key, builder.build(key.identifier()));
     }

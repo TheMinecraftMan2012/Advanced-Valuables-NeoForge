@@ -21,20 +21,27 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
-import net.neoforged.neoforge.items.ItemStackHandler;
+import net.neoforged.neoforge.transfer.access.ItemAccess;
+import net.neoforged.neoforge.transfer.item.ItemResource;
+import net.neoforged.neoforge.transfer.item.ItemStacksResourceHandler;
+import net.neoforged.neoforge.transfer.transaction.Transaction;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_Entities;
 import net.neoorangepanda.advancedvaluables.AV_Registries.AdvancedValuables_ItemClass;
 import net.neoorangepanda.advancedvaluables.AV_Screens.AV_FusionGemStation.FusionGemStationMenu;
+import org.jetbrains.annotations.NotNull;
+
 import javax.annotation.Nullable;
 
 public class FusionGemStationBlockEntity extends BlockEntity implements MenuProvider
 {
-    public final ItemStackHandler handler = new ItemStackHandler(5)
+    public final ItemStacksResourceHandler inventory = new ItemStacksResourceHandler(5)
     {
         @Override
-        protected void onContentsChanged(int slot)
+        protected void onContentsChanged(int index, ItemStack previousContents)
         {
-            setChanged();
+            super.onContentsChanged(index, previousContents);
+            FusionGemStationBlockEntity.this.setChanged();
+            assert level != null;
             if (!level.isClientSide())
             {
                 level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
@@ -56,11 +63,12 @@ public class FusionGemStationBlockEntity extends BlockEntity implements MenuProv
     public FusionGemStationBlockEntity(BlockPos pos, BlockState blockState)
     {
         super(AdvancedValuables_Entities.FUSION_GEM_STATION_BE.get(), pos, blockState);
-        data = new ContainerData() {
+        this.data = new ContainerData() {
             @Override
             public int get(int i)
             {
-                return switch (i) {
+                return switch (i)
+                {
                     case 0 -> FusionGemStationBlockEntity.this.progress;
                     case 1 -> FusionGemStationBlockEntity.this.maxProgress;
                     default -> 0;
@@ -86,93 +94,104 @@ public class FusionGemStationBlockEntity extends BlockEntity implements MenuProv
     }
 
     @Override
-    public Component getDisplayName()
+    public @NotNull Component getDisplayName()
     {
         return Component.translatable("block.advancedvaluables.fusion_gem_station");
     }
 
     @Override
-    public @Nullable AbstractContainerMenu createMenu(int i, Inventory inventory, Player player)
+    public @Nullable AbstractContainerMenu createMenu(int containerId, @NotNull Inventory inventory, @NotNull Player player)
     {
-        return new FusionGemStationMenu(i, inventory, this, this.data);
+        return new FusionGemStationMenu(containerId, inventory, this, this.inventory, this.data);
     }
 
     public void drops()
     {
-        SimpleContainer inventory = new SimpleContainer(handler.getSlots());
-        for (int i = 0; i < handler.getSlots(); i++)
+        SimpleContainer inv = new SimpleContainer(this.inventory.size());
+        for (int i = 0; i < this.inventory.size(); i++)
         {
-            inventory.setItem(i, handler.getStackInSlot(i));
+            ItemAccess itemAccess = ItemAccess.forHandlerIndex(inventory, 0);
+            inv.setItem(i, new ItemStack(itemAccess.getResource().getItem(), itemAccess.getAmount()));
         }
 
-        Containers.dropContents(this.level, this.worldPosition, inventory);
+        assert this.level != null;
+        Containers.dropContents(this.level, this.worldPosition, inv);
     }
 
     @Override
-    protected void saveAdditional(ValueOutput output)
+    protected void saveAdditional(@NotNull ValueOutput output)
     {
-        handler.serialize(output);
+        super.saveAdditional(output);
+
         output.putInt("fusion_gem_station.progress", progress);
         output.putInt("fusion_gem_station.max_progress", maxProgress);
-
-        super.saveAdditional(output);
+        output.putChild("inventory", inventory);
     }
 
     @Override
-    protected void loadAdditional(ValueInput input)
+    protected void loadAdditional(@NotNull ValueInput input)
     {
         super.loadAdditional(input);
 
-        handler.deserialize(input);
-        progress = input.getInt("fusion_gem_station.progress").get();
-        maxProgress = input.getInt("fusion_gem_station.max_progress").get();
+        progress = input.getIntOr("fusion_gem_station.progress", 0);
+        maxProgress = input.getIntOr("fusion_gem_station.max_progress", 72);
+        input.child("inventory").ifPresent(inventory::deserialize);
     }
 
     @Override
-    public void preRemoveSideEffects(BlockPos pos, BlockState state)
-    {
-        drops();
-        super.preRemoveSideEffects(pos, state);
-    }
-
-    @Override
-    public CompoundTag getUpdateTag(HolderLookup.Provider registries)
+    public @NotNull CompoundTag getUpdateTag(HolderLookup.@NotNull Provider registries)
     {
         return saveWithoutMetadata(registries);
     }
 
     @Override
-    public @Nullable Packet<ClientGamePacketListener> getUpdatePacket()
+    public @Nullable Packet<@NotNull ClientGamePacketListener> getUpdatePacket()
     {
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
-    public void tick(Level level, BlockPos blockPos, BlockState state)
+    public void tick(Level level, BlockPos pos, BlockState state)
     {
-        if (hasRecipe())
+        if(hasRecipe(level, pos) && isOutputSlotEmptyOrReceivable())
         {
             increaseCraftingProgress();
-            setChanged(level, blockPos, state);
+            setChanged(level, pos, state);
 
-            if (hasCraftingFinished())
+            if(hasCraftingFinished())
             {
                 craftItem();
                 resetProgress();
             }
-        } else {
+        }
+        else
+        {
             resetProgress();
         }
     }
 
+
+    private boolean isOutputSlotEmptyOrReceivable()
+    {
+        return  inventory.getResource(OUTPUT_SLOT).isEmpty() ||
+                inventory.getResource(OUTPUT_SLOT).test(stack -> stack.count() < stack.getMaxStackSize());
+    }
+
     private void craftItem()
     {
-        ItemStack output_1 = new ItemStack(AdvancedValuables_ItemClass.FUSION_GEM.get());
+        ItemStack output = new ItemStack(AdvancedValuables_ItemClass.FUSION_GEM.get(), 1);
 
-        handler.extractItem(INPUT_SLOT_NETHERITE, 1, false);
-        handler.extractItem(INPUT_SLOT_POWDER_1, 1, false);
-        handler.extractItem(INPUT_SLOT_POWDER_2, 1, false);
-        handler.extractItem(INPUT_SLOT_POWDER_3, 1, false);
-        handler.setStackInSlot(OUTPUT_SLOT, new ItemStack(output_1.getItem(), handler.getStackInSlot(OUTPUT_SLOT).getCount() + output_1.getCount()));
+        try(Transaction transaction = Transaction.openRoot())
+        {
+            ItemAccess itemAccess = ItemAccess.forHandlerIndex(inventory, OUTPUT_SLOT);
+
+            inventory.extract(inventory.getResource(INPUT_SLOT_NETHERITE), 1, transaction);
+            inventory.extract(inventory.getResource(INPUT_SLOT_POWDER_1), 1, transaction);
+            inventory.extract(inventory.getResource(INPUT_SLOT_POWDER_2), 1, transaction);
+            inventory.extract(inventory.getResource(INPUT_SLOT_POWDER_3), 1, transaction);
+            inventory.set(OUTPUT_SLOT, ItemResource.of(output), itemAccess.getAmount() + output.getCount());
+
+            transaction.commit();
+        }
     }
 
     private void resetProgress()
@@ -188,41 +207,44 @@ public class FusionGemStationBlockEntity extends BlockEntity implements MenuProv
 
     private void increaseCraftingProgress()
     {
-        progress++;
+        this.progress++;
     }
 
-    private boolean hasRecipe()
+    private boolean hasRecipe(Level level, BlockPos blockPos)
     {
-        ItemStack slot_netherite = handler.getStackInSlot(INPUT_SLOT_NETHERITE);
-        ItemStack slot1 = handler.getStackInSlot(INPUT_SLOT_POWDER_1);
-        ItemStack slot2 = handler.getStackInSlot(INPUT_SLOT_POWDER_2);
-        ItemStack slot3 = handler.getStackInSlot(INPUT_SLOT_POWDER_3);
+        ItemStack output = new ItemStack(AdvancedValuables_ItemClass.FUSION_GEM.get());
+        boolean isPoweredWithRedstone = level.hasNeighborSignal(blockPos);
 
-        ItemStack output_1 = new ItemStack(AdvancedValuables_ItemClass.FUSION_GEM.get());
+        boolean checkNetheriteSlot = inventory.getResource(INPUT_SLOT_NETHERITE).toStack().is(Items.NETHERITE_INGOT);
+        boolean checkMixedSapphireSlot = inventory.getResource(INPUT_SLOT_POWDER_1).toStack().is(AdvancedValuables_ItemClass.MIXED_SAPPHIRE_POWDER.get());
+        boolean checkMixedGarnetSlot = inventory.getResource(INPUT_SLOT_POWDER_2).toStack().is(AdvancedValuables_ItemClass.MIXED_GARNET_POWDER.get());
+        boolean checkRubySlot = inventory.getResource(INPUT_SLOT_POWDER_3).toStack().is(AdvancedValuables_ItemClass.RUBY_POWDER.get());
+        boolean checkValidRecipe = checkNetheriteSlot && checkMixedSapphireSlot && checkMixedGarnetSlot && checkRubySlot;
 
-        return (slot_netherite.is(Items.NETHERITE_INGOT) &&
-                slot1.is(AdvancedValuables_ItemClass.MIXED_SAPPHIRE_POWDER) &&
-                slot2.is(AdvancedValuables_ItemClass.MIXED_GARNET_POWDER) &&
-                slot3.is(AdvancedValuables_ItemClass.RUBY_POWDER)) &&
-                canInsertAmountIntoOutputSlot(output_1.getCount(), OUTPUT_SLOT) && canInsertItemIntoOutputSlot(output_1, OUTPUT_SLOT);
+        boolean outputSlotAmount = canInsertAmountIntoOutputSlot(output.getCount());
+        boolean outputSlotItem = canInsertItemIntoOutputSlot(output);
+
+        return checkValidRecipe && outputSlotAmount && outputSlotItem && isPoweredWithRedstone;
     }
 
-    private boolean canInsertItemIntoOutputSlot(ItemStack output, int slot)
+    private boolean canInsertItemIntoOutputSlot(ItemStack output)
     {
-        return handler.getStackInSlot(slot).isEmpty() || handler.getStackInSlot(slot).getItem() == output.getItem();
+        return inventory.getResource(OUTPUT_SLOT).isEmpty() ||
+                inventory.getResource(OUTPUT_SLOT).is(output.getItem());
     }
 
-    private boolean canInsertAmountIntoOutputSlot(int count, int slot)
+    private boolean canInsertAmountIntoOutputSlot(int count)
     {
-        int maxCount = handler.getStackInSlot(slot).isEmpty() ? 64 : handler.getStackInSlot(slot).getMaxStackSize();
-        int currentCount = handler.getStackInSlot(slot).getCount();
+        int maxCount = inventory.getResource(OUTPUT_SLOT).isEmpty() ? 64 : inventory.getResource(OUTPUT_SLOT).getMaxStackSize();
+        int currentCount = inventory.getAmountAsInt(OUTPUT_SLOT);
 
         return maxCount >= currentCount + count;
     }
 
     private float rotation;
 
-    public float getRenderingRotation() {
+    public float getRenderingRotation()
+    {
         rotation += 0.5f;
         if(rotation >= 360) {
             rotation = 0;

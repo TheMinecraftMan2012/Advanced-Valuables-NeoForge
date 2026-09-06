@@ -9,13 +9,14 @@ import net.minecraft.world.entity.animal.sheep.Sheep;
 import net.minecraft.world.item.enchantment.EnchantedItemInUse;
 import net.minecraft.world.item.enchantment.effects.EnchantmentEntityEffect;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
 
 public record SheepKillerEnchantmentEffect() implements EnchantmentEntityEffect
 {
     public static final MapCodec<SheepKillerEnchantmentEffect> CODEC = MapCodec.unit(SheepKillerEnchantmentEffect::new);
 
     @Override
-    public void apply(ServerLevel serverLevel, int level, EnchantedItemInUse enchantedItemInUse, Entity entity, Vec3 vec3)
+    public void apply(@NotNull ServerLevel serverLevel, int level, @NotNull EnchantedItemInUse enchantedItemInUse, @NotNull Entity entity, @NotNull Vec3 vec3)
     {
         if (entity instanceof Sheep sheep)
         {
@@ -57,7 +58,7 @@ public record SheepKillerEnchantmentEffect() implements EnchantmentEntityEffect
     }
 
     @Override
-    public MapCodec<? extends EnchantmentEntityEffect> codec()
+    public @NotNull MapCodec<? extends EnchantmentEntityEffect> codec()
     {
         return CODEC;
     }
