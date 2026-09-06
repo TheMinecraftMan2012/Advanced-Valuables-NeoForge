@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "a": "advancedvaluables:pink_garnet",
+    "b": "minecraft:stick"
+  },
+  "pattern": [
+    "aa ",
+    "ab ",
+    " b "
+  ],
+  "result": {
+    "id": "advancedvaluables:pink_garnet_axe"
+  }
+}

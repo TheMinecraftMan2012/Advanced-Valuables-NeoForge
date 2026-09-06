@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": "advancedvaluables:red_garnet"
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "id": "advancedvaluables:red_garnet_pressure_plate"
+  }
+}

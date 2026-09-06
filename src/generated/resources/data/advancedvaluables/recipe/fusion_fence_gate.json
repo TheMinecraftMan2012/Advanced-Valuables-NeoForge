@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "fusion_gem",
+  "key": {
+    "#": "minecraft:stick",
+    "W": "advancedvaluables:fusion_gem"
+  },
+  "pattern": [
+    "#W#",
+    "#W#"
+  ],
+  "result": {
+    "id": "advancedvaluables:fusion_fence_gate"
+  }
+}

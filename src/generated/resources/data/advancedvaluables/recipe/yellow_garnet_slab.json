@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "advancedvaluables:yellow_garnet"
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "advancedvaluables:yellow_garnet_slab"
+  }
+}

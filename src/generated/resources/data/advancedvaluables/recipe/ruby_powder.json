@@ -1,0 +1,9 @@
+{
+  "type": "advancedvaluables:grinding",
+  "ingredients": [
+    "advancedvaluables:ruby"
+  ],
+  "result": {
+    "id": "advancedvaluables:ruby_powder"
+  }
+}

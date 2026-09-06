@@ -1,0 +1,9 @@
+{
+  "type": "advancedvaluables:grinding",
+  "ingredients": [
+    "advancedvaluables:blue_garnet"
+  ],
+  "result": {
+    "id": "advancedvaluables:blue_garnet_powder"
+  }
+}

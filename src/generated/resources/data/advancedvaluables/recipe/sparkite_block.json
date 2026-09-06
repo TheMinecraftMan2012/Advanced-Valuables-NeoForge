@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "sparkite_group",
+  "key": {
+    "a": "advancedvaluables:sparkite"
+  },
+  "pattern": [
+    "aa ",
+    "aa ",
+    "   "
+  ],
+  "result": {
+    "id": "advancedvaluables:sparkite_block"
+  }
+}

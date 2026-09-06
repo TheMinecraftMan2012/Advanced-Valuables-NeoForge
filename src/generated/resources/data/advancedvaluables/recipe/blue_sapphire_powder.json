@@ -1,0 +1,9 @@
+{
+  "type": "advancedvaluables:grinding",
+  "ingredients": [
+    "advancedvaluables:blue_sapphire"
+  ],
+  "result": {
+    "id": "advancedvaluables:blue_sapphire_powder"
+  }
+}

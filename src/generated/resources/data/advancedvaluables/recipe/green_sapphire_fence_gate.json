@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "green_sapphire",
+  "key": {
+    "#": "minecraft:stick",
+    "W": "advancedvaluables:green_sapphire"
+  },
+  "pattern": [
+    "#W#",
+    "#W#"
+  ],
+  "result": {
+    "id": "advancedvaluables:green_sapphire_fence_gate"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": "advancedvaluables:blue_garnet",
+    "b": "minecraft:apple"
+  },
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "result": {
+    "id": "advancedvaluables:blue_garnet_apple"
+  }
+}

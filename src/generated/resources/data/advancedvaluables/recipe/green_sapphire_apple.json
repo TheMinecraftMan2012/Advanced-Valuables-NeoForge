@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": "advancedvaluables:green_sapphire",
+    "b": "minecraft:apple"
+  },
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "result": {
+    "id": "advancedvaluables:green_sapphire_apple"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "a": "advancedvaluables:red_garnet"
+  },
+  "pattern": [
+    "aaa",
+    "a a",
+    "   "
+  ],
+  "result": {
+    "id": "advancedvaluables:red_garnet_helmet"
+  }
+}

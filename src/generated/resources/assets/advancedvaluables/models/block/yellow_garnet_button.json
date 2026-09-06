@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "advancedvaluables:block/yellow_garnet_block"
+  }
+}

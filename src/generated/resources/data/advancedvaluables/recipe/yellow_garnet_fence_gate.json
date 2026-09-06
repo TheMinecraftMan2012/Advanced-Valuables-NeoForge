@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "yellow_garnet",
+  "key": {
+    "#": "minecraft:stick",
+    "W": "advancedvaluables:yellow_garnet"
+  },
+  "pattern": [
+    "#W#",
+    "#W#"
+  ],
+  "result": {
+    "id": "advancedvaluables:yellow_garnet_fence_gate"
+  }
+}

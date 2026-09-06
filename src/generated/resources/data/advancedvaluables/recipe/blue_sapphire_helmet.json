@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "a": "advancedvaluables:blue_sapphire"
+  },
+  "pattern": [
+    "aaa",
+    "a a",
+    "   "
+  ],
+  "result": {
+    "id": "advancedvaluables:blue_sapphire_helmet"
+  }
+}

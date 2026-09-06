@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "ruby",
+  "key": {
+    "#": "minecraft:stick",
+    "W": "advancedvaluables:ruby"
+  },
+  "pattern": [
+    "#W#",
+    "#W#"
+  ],
+  "result": {
+    "id": "advancedvaluables:ruby_fence_gate"
+  }
+}

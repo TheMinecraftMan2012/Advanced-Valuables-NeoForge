@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "hammer",
+  "ingredients": [
+    "advancedvaluables:fusion_gem",
+    "advancedvaluables:hammer_wireframe"
+  ],
+  "result": {
+    "id": "advancedvaluables:fusion_hammer"
+  }
+}

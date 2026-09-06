@@ -1,0 +1,12 @@
+{
+  "type": "advancedvaluables:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/abandoned_mineshaft"
+    }
+  ],
+  "stack": {
+    "id": "advancedvaluables:red_sapphire"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": "advancedvaluables:fusion_gem"
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "id": "advancedvaluables:fusion_pressure_plate"
+  }
+}

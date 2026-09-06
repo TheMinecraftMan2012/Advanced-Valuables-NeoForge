@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "red_garnet",
+  "key": {
+    "#": "minecraft:stick",
+    "W": "advancedvaluables:red_garnet"
+  },
+  "pattern": [
+    "#W#",
+    "#W#"
+  ],
+  "result": {
+    "id": "advancedvaluables:red_garnet_fence_gate"
+  }
+}

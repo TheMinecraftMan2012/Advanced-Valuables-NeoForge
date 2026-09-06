@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "advancedvaluables:red_sapphire"
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "advancedvaluables:red_sapphire_wall"
+  }
+}

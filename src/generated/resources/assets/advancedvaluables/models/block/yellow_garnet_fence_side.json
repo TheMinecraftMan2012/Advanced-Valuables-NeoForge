@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "advancedvaluables:block/yellow_garnet_block"
+  }
+}

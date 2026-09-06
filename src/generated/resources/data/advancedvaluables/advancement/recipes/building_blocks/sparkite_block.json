@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sparkite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "advancedvaluables:sparkite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "advancedvaluables:sparkite_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_sparkite"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "advancedvaluables:sparkite_block"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "hammer",
+  "key": {
+    "a": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    "aaa",
+    "aaa",
+    " a "
+  ],
+  "result": {
+    "id": "advancedvaluables:hammer_wireframe"
+  }
+}

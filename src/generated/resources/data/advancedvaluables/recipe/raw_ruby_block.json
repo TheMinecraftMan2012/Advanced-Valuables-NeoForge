@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "a": "advancedvaluables:raw_ruby"
+  },
+  "pattern": [
+    "aaa",
+    "aaa",
+    "aaa"
+  ],
+  "result": {
+    "id": "advancedvaluables:raw_ruby_block"
+  }
+}

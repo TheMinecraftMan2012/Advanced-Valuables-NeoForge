@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_orientable_trapdoor_bottom",
+  "textures": {
+    "texture": "advancedvaluables:block/yellow_garnet_trapdoor"
+  }
+}

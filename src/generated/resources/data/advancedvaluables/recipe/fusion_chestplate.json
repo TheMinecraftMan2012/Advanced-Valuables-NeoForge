@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "a": "advancedvaluables:fusion_gem"
+  },
+  "pattern": [
+    "a a",
+    "aaa",
+    "aaa"
+  ],
+  "result": {
+    "id": "advancedvaluables:fusion_chestplate"
+  }
+}

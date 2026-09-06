@@ -1,0 +1,12 @@
+{
+  "type": "advancedvaluables:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/shipwreck_supply"
+    }
+  ],
+  "stack": {
+    "id": "advancedvaluables:green_sapphire"
+  }
+}

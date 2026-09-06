@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "a": "advancedvaluables:yellow_raw_garnet"
+  },
+  "pattern": [
+    "aaa",
+    "aaa",
+    "aaa"
+  ],
+  "result": {
+    "id": "advancedvaluables:yellow_raw_garnet_block"
+  }
+}

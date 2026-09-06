@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "a": "advancedvaluables:green_raw_sapphire"
+  },
+  "pattern": [
+    "aaa",
+    "aaa",
+    "aaa"
+  ],
+  "result": {
+    "id": "advancedvaluables:green_raw_sapphire_block"
+  }
+}

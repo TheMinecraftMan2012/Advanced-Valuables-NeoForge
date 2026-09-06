@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "a": "advancedvaluables:yellow_garnet"
+  },
+  "pattern": [
+    "   ",
+    "a a",
+    "a a"
+  ],
+  "result": {
+    "id": "advancedvaluables:yellow_garnet_boots"
+  }
+}

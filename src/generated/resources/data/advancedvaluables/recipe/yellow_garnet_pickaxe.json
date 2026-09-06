@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "a": "advancedvaluables:yellow_garnet",
+    "b": "minecraft:stick"
+  },
+  "pattern": [
+    "aaa",
+    " b ",
+    " b "
+  ],
+  "result": {
+    "id": "advancedvaluables:yellow_garnet_pickaxe"
+  }
+}

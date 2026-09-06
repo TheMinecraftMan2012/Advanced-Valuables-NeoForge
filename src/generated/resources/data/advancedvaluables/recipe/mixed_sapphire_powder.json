@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "advancedvaluables:red_sapphire_powder",
+    "advancedvaluables:blue_sapphire_powder",
+    "advancedvaluables:green_sapphire_powder"
+  ],
+  "result": {
+    "id": "advancedvaluables:mixed_sapphire_powder"
+  }
+}

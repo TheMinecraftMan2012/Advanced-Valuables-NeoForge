@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left_open",
+  "textures": {
+    "bottom": "advancedvaluables:block/red_sapphire_door_bottom",
+    "top": "advancedvaluables:block/red_sapphire_door_top"
+  }
+}

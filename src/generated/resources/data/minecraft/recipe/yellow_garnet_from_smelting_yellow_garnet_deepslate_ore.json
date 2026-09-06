@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "yellow_garnet",
+  "ingredient": "advancedvaluables:yellow_garnet_deepslate_ore",
+  "result": {
+    "id": "advancedvaluables:yellow_garnet"
+  }
+}
